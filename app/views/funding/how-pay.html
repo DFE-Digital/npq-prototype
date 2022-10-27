@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How is your course being paid for?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/choose-provider" method="post">
+      <h1 class="govuk-heading-xl">How is your course being paid for?</h1>
+
+      <!-- Early years or EHCO  -->
+      {% if data['whichsetting'] == "earlyyears" %}
+      {{ govukRadios({
+        name: "paymenteyll",
+        id: "paymenteyll",
+        items: [
+          {
+            value: "workplace",
+            text: "My workplace is covering the cost"
+          },
+          {
+            value: "me",
+            text: "I am paying"
+          },
+          {
+            value: "other",
+            text: "My NPQ is being paid for in another way",
+            hint: {
+              text: "For example, I am sharing the costs with my workplace"
+            }
+          }
+        ]
+      }) }}
+
+      {% else %}
+
+      {{ govukRadios({
+        name: "payment",
+        id: "payment",
+        items: [
+          {
+            value: "workplace",
+            text: "My workplace is covering the cost"
+          },
+          {
+            value: "trust",
+            text: "My trust is paying"
+          },
+          {
+            value: "me",
+            text: "I am paying"
+          },
+          {
+            value: "other",
+            text: "My NPQ is being paid for in another way",
+            hint: {
+              text: "For example, I am sharing the costs with my workplace"
+            }
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+
+{% block pageTitle %}
+  What organisation are you employed by?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/choose-npq" method="post">
+      {{ govukInput({
+        label: {
+          text: "What organisation are you employed by?",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          text: "For example 'Essex County Council', or 'I'm self employed'"
+        },
+        id: "employer",
+        name: "employer"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

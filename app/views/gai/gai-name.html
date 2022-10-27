@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What's your name?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        What's your name?
+      </h1>
+      <h3 class="govuk-fieldset__legend--m">Use the name on your official documents</h3>
+
+      <p>You should tell us the name that appears on your passport, driving licence or marriage certificate, if you have one. We’ll try to match it against our records.</p>
+      <p>If the names on your documents are different, give us the most recent one.</p>
+
+      <h3 class="govuk-fieldset__legend--m">Your name</h3>
+      <p>The name you give will be shown on official documents and certificates.</p>
+
+      <form class="form" action="/gai/gai-preferred-name" method="post">
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-body govuk-!-font-weight-bold"
+          },
+          id: "first-name",
+          name: "first-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-body govuk-!-font-weight-bold"
+          },
+          id: "last-name",
+          name: "last-name"
+        }) }}
+
+
+        {% set previousNameHtml %}
+          {{ govukInput({
+            id: "previous-first-name",
+            name: "previous-first-name",
+            label: {
+              text: "Previous first name (optional)",
+              classes: "govuk-body govuk-!-font-weight-bold"
+            }
+          }) }}
+
+          {{ govukInput({
+            id: "previous-last-name",
+            name: "previous-last-name",
+            label: {
+              text: "Previous last name (optional)",
+              classes: "govuk-body govuk-!-font-weight-bold"
+            }
+          }) }}
+
+          {% endset -%}
+
+          {{ govukRadios({
+            name: "contact",
+            fieldset: {
+              legend: {
+                text: "Have you ever changed your name?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: previousNameHtml
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              },
+              {
+                value: "not-say",
+                text: "Prefer not to say"
+              }
+            ]
+          }) }}
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

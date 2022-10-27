@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  Confirm your email address
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        We've emailed a confirmation code to {{ data['email'] }}
+      </h3>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
+    <h1 class="govuk-heading-xl">Confirm your email address</h1>
+
+    {{ govukInput({
+      label: {
+        text: "Enter your code",
+        isPageTitle: true,
+        classes: "govuk-label--s"
+      },
+      classes: "govuk-input--width-10",
+      id: "code",
+      name: "code"
+    }) }}
+    <p><a href="#">I have not received an email</a></p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "/ask-questions"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

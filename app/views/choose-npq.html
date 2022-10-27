@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  Which NPQ do you want to do?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Which NPQ do you want to do?</h1>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with NPQH and the Early Headship Coaching Offer
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <p>If you’re applying to start an NPQ for Headship (NPQH), you might also be applying for the Early Headship Coaching Offer, a package of structured face-to-face support for new headteachers.</p>
+        <p>To register for both you should:</p>
+        <ul class = "govuk-list govuk-list--bullet">
+          <li>complete your registration for an NPQH using this service</li>
+          <li>complete a separate registration for the Early Headship Coaching Offer, also using this service</li>
+        </ul>
+      </div>
+    </details>
+
+    <form class="form" action="/check-data/_funding-check" method="post">
+      {{ govukRadios({
+        name: "choosenpq",
+        items: [
+          {
+            value: "NPQLBC for Leading Behaviour and Culture (NPQLBC)",
+            text: "NPQ for Leading Behaviour and Culture (NPQLBC)"
+          },
+          {
+            value: "NPQLL NPQ for Leading Literacy (NPQLL)",
+            text: "NPQ for Leading Literacy (NPQLL)"
+          },
+          {
+            value: "NPQLT NPQ for Leading Teaching (NPQLT)",
+            text: "NPQ for Leading Teaching (NPQLT)"
+          },
+          {
+            value: "NPQ for Leading Teacher Development (NPQLTD)",
+            text: "NPQ for Leading Teacher Development (NPQLTD)"
+          },
+          {
+            value: "NPQ for Senior Leadership (NPQSL",
+            text: "NPQ for Senior Leadership (NPQSL)"
+          },
+          {
+            value: "NPQ for Headship (NPQH)",
+            text: "NPQ for Headship (NPQH)"
+          },
+          {
+            value: "NPQ for Executive Leadership (NPQEL)",
+            text: "NPQ for Executive Leadership (NPQEL)"
+          },
+          {
+            value: "NPQ for Early Years Leadership (NPQEYL)",
+            text: "NPQ for Early Years Leadership (NPQEYL)"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "The Early Headship Coaching Offer",
+            text: "The Early Headship Coaching Offer",
+            hint: {
+              text: "The Early Headship Coaching Offer is a package of structured face-to-face support for new headteachers."
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

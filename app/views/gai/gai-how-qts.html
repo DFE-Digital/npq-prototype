@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Did a university, SCITT or school award your QTS??
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/gai/gai-answers" method="post">
+        {{ govukRadios({
+          name: "how-qts",
+          fieldset: {
+            legend: {
+              text: "Did a university, SCITT or school award your QTS?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "University, SCITT or school",
+              text: "Yes"
+            },
+            {
+              value: "Other",
+              text: "No, I was awarded a QTS another way"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

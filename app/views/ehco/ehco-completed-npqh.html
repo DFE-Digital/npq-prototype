@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you studying for, or have you completed an NPQ for Headship (NPQH)?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="ehco-headteacher" method="post">
+      {{ govukRadios({
+        name: "completednpqh",
+        id: "completednpqh",
+        fieldset: {
+          legend: {
+            text: "Are you studying for, or have you completed an NPQ for Headship (NPQH)?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "I have completed an NPQH"
+          },
+          {
+            value: "yes",
+            text: "I am still studying for an NPQH"
+          },
+          {
+            value: "yes",
+            text: "I am about to start an NPQH"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "no",
+            text: "None of the above"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

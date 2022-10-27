@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you know your teacher reference number (TRN)?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you know your teacher reference number (TRN)?</h1>
+
+      <p>Your TRN is 7 digits long, for example 4567814.</p>
+      <p>It might include the letters RP and a slash, for example RP99/12345.</p>
+      <p>It’s previously been known as a QTS, GTC, DfE, DfES and DCSF number.</p>
+
+      <h3 class="govuk-fieldset__legend--m">Do you know your TRN?</h3>
+
+
+      <form class="form" action="/gai/gai-have-qts" method="post">
+        {% set trnHtml %}
+
+          {{ govukInput({
+            id: "trn",
+            name: "trn",
+            classes: "govuk-!-width-one-quarter",
+            isPageHeading: false,
+            label: {
+              text: "What is your TRN?",
+              classes: "govuk-body govuk-!-font-weight-bold"
+            }
+          }) }}
+
+          {% endset -%}
+
+          {{ govukRadios({
+            name: "knowTrn",
+            items: [
+
+            {
+              value: "yes",
+              text: "Yes, I know my TRN",
+              conditional: {
+                html: trnHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No, I need to continue without my TRN"
+            }
+
+
+            ]
+          }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

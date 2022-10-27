@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select your provider
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="sharing-data" method="post">
+      <h1 class="govuk-heading-xl">Select your provider</h1>
+      <p>These are the training providers who provide <strong>{{ data['choosenpq'] or "NPQLBC for Leading Behaviour and Culture (NPQLBC)"}}</strong>. Providers may have different entry requirements.</p>
+
+      {% if (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") or (data['choosenpq'] == "NPQLL NPQ for Leading Literacy (NPQLL)")%}
+
+      {{ govukRadios({
+        name: "provider",
+        id: "provider",
+        items: [
+          {
+            value: "Ambition Institute",
+            text: "Ambition Institute"
+          },
+          {
+            value: "Education Development Trust",
+            text: "Education Development Trust"
+          },
+          {
+            value: "School-Led Network",
+            text: "School-Led Network"
+          },
+          {
+            value: "Teacher Development Trust",
+            text: "Teacher Development Trust"
+          },
+          {
+            value: "Teach First",
+            text: "Teach First"
+          },
+          {
+            value: "UCL Institute of Education",
+            text: "UCL Institute of Education"
+          }
+        ]
+
+      }) }}
+
+      {% elseif data['choosenpq'] == "NPQ for Executive Leadership (NPQEL)" %}
+
+      {{ govukRadios({
+        name: "provider",
+        id: "provider",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "Ambition Institute",
+            text: "Ambition Institute"
+          },
+          {
+            value: "Best Practice Network (home of Outstanding Leaders Partnership)",
+            text: "Best Practice Network (home of Outstanding Leaders Partnership)"
+          },
+          {
+            value: "Church of England",
+            text: "Church of England"
+          },
+          {
+            value: "Education Development Trust",
+            text: "Education Development Trust"
+          },
+          {
+            value: "LLSE",
+            text: "LLSE"
+          },
+          {
+            value: "Teacher Development Trust",
+            text: "Teacher Development Trust"
+          },
+          {
+            value: "Teach First",
+            text: "Teach First"
+          },
+          {
+            value: "UCL Institute of Education",
+            text: "UCL Institute of Education"
+          }
+        ]
+
+      }) }}
+
+      {% else %}
+
+      {{ govukRadios({
+        name: "provider",
+        id: "provider",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "Ambition Institute",
+            text: "Ambition Institute"
+          },
+          {
+            value: "Best Practice Network (home of Outstanding Leaders Partnership)",
+            text: "Best Practice Network (home of Outstanding Leaders Partnership)"
+          },
+          {
+            value: "Church of England",
+            text: "Church of England"
+          },
+          {
+            value: "Education Development Trust",
+            text: "Education Development Trust"
+          },
+          {
+            value: "LLSE",
+            text: "LLSE"
+          },
+          {
+            value: "School-Led Network",
+            text: "School-Led Network"
+          },
+          {
+            value: "Teacher Development Trust",
+            text: "Teacher Development Trust"
+          },
+          {
+            value: "Teach First",
+            text: "Teach First"
+          },
+          {
+            value: "UCL Institute of Education",
+            text: "UCL Institute of Education"
+          }
+        ]
+
+      }) }}
+
+      {% endif %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

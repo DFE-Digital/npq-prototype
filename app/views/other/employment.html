@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  How are you employed?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="role" method="post">
+      {{ govukRadios({
+        name: "mentor",
+        id: "mentor",
+        fieldset: {
+          legend: {
+            text: "How are you employed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "In a virtual school (local authority run organisations that support the education of children in care)",
+            text: "In a virtual school (local authority run organisations that support the education of children in care)"
+          },
+          {
+            value: "In a hospital school",
+            text: "In a hospital school"
+          },
+          {
+            value: "In a young offender institution",
+            text: "In a young offender institution"
+          },
+          {
+            value: "As a supply teacher employed by a local authority",
+            text: "As a supply teacher employed by a local authority"
+          },
+          {
+            value: "As a lead mentor for an accredited initial teacher training (ITT) provider",
+            text: "As a lead mentor for an accredited initial teacher training (ITT) provider"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Other",
+            text: "Other"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

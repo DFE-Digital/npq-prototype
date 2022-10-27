@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  'Is {{ data['first-name'] }} {{ data['last-name'] }} your preferred name?'
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Is {{ data['first-name'] }} {{ data['last-name'] }} your preferred name?
+      </h1>
+
+      <p>We can use a different name in correspondence, and tell people what you prefer to be called.</p>
+
+      <form class="form" action="/gai/gai-dob" method="post">
+        {% set preferredNameHtml %}
+
+        <h3 class="govuk-fieldset__legend--m">What is your preferred name?</h3>
+          {{ govukInput({
+            id: "preferred-first-name",
+            name: "preferred-first-name",
+            label: {
+              text: "Preferred first name",
+              classes: "govuk-body govuk-!-font-weight-bold"
+            }
+          }) }}
+
+          {{ govukInput({
+            id: "preferred-last-name",
+            name: "preferred-last-name",
+            label: {
+              text: "Preferred last name",
+              classes: "govuk-body govuk-!-font-weight-bold"
+            }
+          }) }}
+
+          {% endset -%}
+
+          {{ govukRadios({
+            name: "preferredName",
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No, I prefer to be known by another name",
+                conditional: {
+                  html: preferredNameHtml
+                }
+              }
+
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

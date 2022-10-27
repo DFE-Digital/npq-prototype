@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers and confirm
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+      <!-- EHCO funded -->
+      {% if (data['choosenpq'] == "The Early Headship Coaching Offer") and (data['earlyheadship'] != 'no')%}
+        {% include 'includes/answers/ehco-funded.html' %}
+
+      <!-- EHCO not funded -->
+      {% elseif (data['choosenpq'] == "The Early Headship Coaching Offer") and ((data['earlyheadship'] == 'no') or (data['headteachers'] == 'no')) %}
+          {% include 'includes/answers/ehco-not-funded.html' %}
+
+      <!-- Private nursery with URN doing NPQEYL -->
+      {% elseif (data['nurserysetting'] == "private") and (data['haveurn'] == 'yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+        {% include 'includes/answers/ey-funded.html' %}
+
+      <!-- State nursery doing NPQEYL -->
+      {% elseif (data['nurserysetting'] == "state") and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+        {% include 'includes/answers/ey-no-ofsted.html' %}
+
+      <!-- Early years NOT doing NPQEYL -->
+      {% elseif (data['whichsetting'] == "Early years or childcare") and (data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)") %}
+        {% include 'includes/answers/ey-not-ey.html' %}
+
+      <!-- User not working in England -->
+      {% elseif data['wheredoyouwork'] != "England" %}
+        {% include 'includes/answers/not-eng.html' %}
+
+      <!-- User works in a private school -->
+      {% elseif data['whichschool'] == "private" %}
+        {% include 'includes/answers/private-school.html' %}
+
+      <!-- User works in another setting -->
+      {% elseif data['whichsetting'] == "Other" %}
+        {% include 'includes/answers/other.html' %}
+
+      {% else %}
+      <p>nothing</p>
+
+      {% endif %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+{% endblock %}

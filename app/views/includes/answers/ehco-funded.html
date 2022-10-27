@@ -1,0 +1,131 @@
+
+
+
+{% block page %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers and confirm</h1>
+
+      <form class='form' action="" method="post">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row" text-transform: capitalise>
+
+            <dt class="govuk-summary-list__key">
+              Where do you work?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['wheredoyouwork']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="where-do-you-work">
+                Change<span class="govuk-visually-hidden"> where do you work</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Work setting
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['whichsetting']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-setting">
+                Change<span class="govuk-visually-hidden"> work setting</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Workplace
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['whichschool']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="which-school">
+                Change<span class="govuk-visually-hidden"> workplace</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['choosenpq']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="choose-npq">
+                Change<span class="govuk-visually-hidden"> course</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have you completed an NPQH?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['completednpqh']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/ehco/ehco-completed-npqh">
+                Change<span class="govuk-visually-hidden"> have you completed an npqh</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Are you a head teacher?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['headteachers']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/ehco/ehco-headteacher">
+                Change<span class="govuk-visually-hidden"> are you a headteacher?</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Are you in your first 5 years of headship?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['earlyheadship']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/ehco/ehco-early-headship">
+                Change<span class="govuk-visually-hidden"> are you in your first 5 years of headship?</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Lead provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['provider']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="choose-provider">
+                Change<span class="govuk-visually-hidden"> lead provider</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  What's the name of your workplace?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data['workinnursery'] == "yes" %}
+      <h1 class="govuk-heading-xl">What's the name of your nursery?</h1>
+    {% else %}
+      <h1 class="govuk-heading-xl">What's the name of your workplace?</h1>
+    {% endif %}
+
+    <form class="form" action="choose-npq" method="post">
+      {{ govukInput({
+        hint: {
+          text: "Search for schools or 16 to 19 educational settings located in . If you work for a trust, enter one of their schools."
+        },
+        id: "whichschool",
+        name: "whichschool"
+      })
+    }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

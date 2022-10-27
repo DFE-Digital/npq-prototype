@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  Where do you work?
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-setting" method="post">
+      {{ govukRadios({
+        name: "wheredoyouwork",
+        fieldset: {
+          legend: {
+            text: "Where do you work?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "England",
+            text: "England"
+          },
+          {
+            value: "Scotland",
+            text: "Scotland"
+          },
+          {
+            value: "Wales",
+            text: "Wales"
+          },
+          {
+            value: "Northern Ireland",
+            text: "Northern Ireland"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Another country",
+            text: "Another country"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

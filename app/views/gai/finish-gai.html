@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  Continue to register for an NPQ
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-panel app-panel--interruption">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/chosen" method="post">
+        <h1 class="govuk-heading-xl">Continue to register for an NPQ</h1>
+
+        <p>Thank you, we’ve finished checking our records.</p>
+
+        <p>We’ll only need your email address (<strong>{{ data['email'] or "email@example.com" }}</strong>) to find your details in the future.</p>
+
+        <button class="govuk-button app-button--inverse govuk-!-margin-bottom-0" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  If your provider accepts your application, you’ll qualify for DfE scholarship funding
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        If your provider accepts your application, you’ll qualify for DfE scholarship funding
+      </h1>
+      <p>From the information you have provided, DfE scholarship funding should be available for the <strong>Early Headship Coaching Offer</strong>.</p>
+      <p>Your training provider will give you more details and confirm if you qualify for funding.</p>
+      <p><a href="already-funded">For prototype reference: If user has already applied for the EHCO</a></p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/choose-provider"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
