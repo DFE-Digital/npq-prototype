@@ -5,7 +5,7 @@ var funded = "yes"
 var locationt = "England"
 var settingt = "A school"
 var whichschoolt = "public"
-var nurserysettingt = "state"
+var nurserysettingt = "Local authority-maintained nursery"
 var mentort = "Other"
 var npqt = "NPQLBC"
 var hasurnt = "no"
@@ -94,7 +94,7 @@ router.post('/check-data/_funding-check', function(req, res){
 
   if(locationt == 'England'){
     // Works in a school setting or a state-funded nursery?
-    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting' || (settingt == "Early years or childcare" && (nurserysetting == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school')){
+    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
       if(npqt != 'The Early Headship Coaching Offer' && whichschoolt != 'private'){
         res.redirect('/funding/funding-vague')
       }
@@ -119,6 +119,9 @@ router.post('/check-data/_funding-check', function(req, res){
   }
     //Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
+      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
+        res.redirect('/funding/funding-vague')
+      }
       if(hasurnt == 'yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
       res.redirect('/funding/funding-vague')
     }

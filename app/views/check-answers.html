@@ -22,11 +22,15 @@
           {% include 'includes/answers/ehco-not-funded.html' %}
 
       <!-- Private nursery with URN doing NPQEYL -->
-      {% elseif (data['nurserysetting'] == "private") and (data['haveurn'] == 'yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+      {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
         {% include 'includes/answers/ey-funded.html' %}
 
       <!-- State nursery doing NPQEYL -->
-      {% elseif (data['nurserysetting'] == "state") and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+      {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class that’s part of a school")) and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+        {% include 'includes/answers/ey-state-nursery.html' %}
+
+      <!-- Private nursery - not OFSTED -->
+      {% elseif (data['whichsetting'] == "Early years or childcare" and data['nurserysetting'] == "Private nursery") %}
         {% include 'includes/answers/ey-no-ofsted.html' %}
 
       <!-- Early years NOT doing NPQEYL -->
@@ -46,12 +50,13 @@
         {% include 'includes/answers/other.html' %}
 
       {% else %}
-      <p>nothing</p>
+        {% include 'includes/answers/school-funded.html' %}
 
       {% endif %}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Confirm",
+          href: "confirmation"
         }) }}
 
 {% endblock %}

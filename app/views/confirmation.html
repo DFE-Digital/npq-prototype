@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Your initial registration is complete
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set html %}
+      <div class="govuk-!-font-size-19">
+        You've registered for an <strong>{{ data['choosenpq'] }}</strong> with <strong>{{ data['provider'] }}</strong>
+      </div>
+
+      {% endset %}
+
+      {{ govukPanel({
+        titleText: "Your initial registration is complete",
+        html: html
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        {{ data['provider']}} will contact you to complete your registration.
+      </p>
+      <p class="govuk-body">
+        They will provide details of timings, costs and deadlines.
+      </p>
+
+      <div class="govuk-inset-text">
+        <a href="#">Tell us about your experience</a> for the possibility to be called for further research and earn £40.
+      </div>
+    </div>
+  </div>
+{% endblock %}
