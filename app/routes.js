@@ -23,6 +23,33 @@ router.post('/email', function (req, res) {
 
 })
 
+router.post('/gai/gai-nino', function(req, res){
+  var haveninot = req.session.data['havenino']
+  if(haveninot == 'no'){
+    res.redirect('/gai/gai-trn')
+  }else{
+    res.redirect('/gai/gai-nino')
+  }
+})
+
+router.post('/gai/gai-how-qts', function(req, res){
+  var haveqtst = req.session.data['haveqts']
+  if (haveqtst == 'No') {
+    res.redirect('/gai/gai-answers')
+  }else {
+    res.redirect('/gai/gai-how-qts')
+  }
+})
+
+router.post('/where-do-you-work', function(req, res){
+  var choosenpqprovidert = req.session.data['choosenpqprovider']
+  if (choosenpqprovidert == 'no') {
+    res.redirect('/choose-an-npq-and-provider')
+  }else{
+    res.redirect('/where-do-you-work')
+  }
+})
+
 //Does the user work in England and a state funded school?
 router.post('/where-school', function (req, res) {
 
@@ -122,15 +149,15 @@ router.post('/check-data/_funding-check', function(req, res){
       if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
         res.redirect('/funding/funding-vague')
       }
-      if(hasurnt == 'yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
+      if(hasurnt == 'Yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
       res.redirect('/funding/funding-vague')
     }
-    //Private nursery, with URN != NPQEYL
-    else if(hasurnt == 'yes' && npqt != 'NPQ for Early Years Leadership (NPQEYL)'){
+    //Private nursery, with URN not NPQEYL
+    else if(hasurnt == 'Yes' && npqt != 'NPQ for Early Years Leadership (NPQEYL)'){
       res.redirect('/funding/funding-not-available')
     }
     //Private nursery, no URN
-    else if(hasurnt == 'no'){
+    else if(hasurnt == 'No'){
       res.redirect('/funding/funding-not-available')
     }
   }

@@ -16,7 +16,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="what-setting" method="post">
+
+      {% set countryHtml %}
+
+        {{ govukInput({
+          name: "country",
+          id: "country",
+          classes: "govuk-!-width-half",
+          label: {
+            text: "Which country do you work in?"
+          }
+        }) }}
+
+        {% endset -%}
+
       {{ govukRadios({
+        id: "wheredoyouwork",
         name: "wheredoyouwork",
         fieldset: {
           legend: {
@@ -43,11 +58,18 @@
             text: "Northern Ireland"
           },
           {
+            value: "Jersey, Guernsey or the Isle of Man",
+            text: "Jersey, Guernsey or the Isle of Man"
+          },
+          {
             divider: "or"
           },
           {
-            value: "Another country",
-            text: "Another country"
+            value: "Other",
+            text: "Another country",
+            conditional: {
+              html: countryHtml
+            }
           }
         ]
       }) }}

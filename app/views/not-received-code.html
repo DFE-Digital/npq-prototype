@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  If you did not get an email
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">If you did not get an email</h1>
+    <ol class="govuk-list govuk-list--number">
+      <li>Check your spam or junk folder.</li>
+      <li>Try entering your email address again, making sure it does not include any spaces.</li>
+    </ol>
+
+    <form class="form" action="/email-confirmation" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          isPageTitle: false
+        },
+        id: "email",
+        name: "email"
+      })
+    }}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <a class="govuk-link" href="#">Cancel</a>
+    </div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

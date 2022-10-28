@@ -48,6 +48,12 @@
 
 
         {% set previousNameHtml %}
+        <div class="<p class="govuk-body">
+          <h2 class="govuk-heading-m">What was your previous name?</h2>
+          <p>You do not have to tell us your previous name, but it will help us identify you.</p>
+          <p>If we cannot match your current name against our records, we’ll try to match your previous name.</p>
+          <p>If you've changed your name more than once, tell us your most recent previous name.</p>
+        </div>
           {{ govukInput({
             id: "previous-first-name",
             name: "previous-first-name",
@@ -78,16 +84,17 @@
               }
             },
             items: [
+
+              {
+                value: "no",
+                text: "No"
+              },
               {
                 value: "yes",
                 text: "Yes",
                 conditional: {
                   html: previousNameHtml
                 }
-              },
-              {
-                value: "no",
-                text: "No"
               },
               {
                 value: "not-say",
