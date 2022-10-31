@@ -26,7 +26,7 @@
         {% include 'includes/answers/ey-funded.html' %}
 
       <!-- State nursery doing NPQEYL -->
-      {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class that’s part of a school")) and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+      {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class that’s part of a school")) %}
         {% include 'includes/answers/ey-state-nursery.html' %}
 
       <!-- Private nursery - not OFSTED -->

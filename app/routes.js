@@ -129,20 +129,36 @@ router.post('/check-data/_funding-check', function(req, res){
       else if (whichschoolt == 'private' || whichschoolt =='Private') {
         res.redirect('/funding/funding-not-available')
       }
-      //EHCO
-      if(npqt == 'The Early Headship Coaching Offer'){
-        res.redirect('/ehco/ehco-intro')
+    //EHCO
+    }else if(npqt == 'The Early Headship Coaching Offer'){
+    res.redirect('/ehco/ehco-intro')
+
+    //Other
+    }else if(settingt == 'Other'){
+      //Is a mentor?
+      if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+        if(npqt == 'NPQ for Leading Teacher Development (NPQLTD)'){
+          res.redirect('/funding/funding-vague')
+
+        // A mentor NOT doing NPQLTD
+        }else if (npqt =! 'NPQ for Leading Teacher Development (NPQLTD)') {
+          res.redirect('/funding/funding-not-available')
+        }
       }
 
-  }else if(settingt == 'Other'){
-    // Is a mentor doing NPQLTD?
-    if(mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider' && npqt == 'NPQ for Leading Teacher Development (NPQLTD)'){
-      res.redirect('funding/funding-vague')
-    }
-    //Other
-    else if(settingt == 'Other' && mentort != 'As a lead mentor for an accredited initial teacher training (ITT) provider'){
-      res.redirect('/choose-provider')
-    }
+      //State-funded
+      else if (mentort == 'In a virtual school (local authority run organisations that support the education of children in care)' || mentort == 'In a hospital school' || mentort == 'In a young offender institution' || mentort == 'As a supply teacher employed by a local authority' && npqt != 'The Early Headship Coaching Offer') {
+        res.redirect('/funding/funding-vague')
+
+      //Other - Other
+      }else if(mentort == 'Other'){
+        res.redirect('/choose-provider')
+      }
+
+      //No selection
+      else {
+        res.redirect('/choose-provider')
+      }
   }
     //Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
@@ -175,7 +191,7 @@ router.post('/check-data/_funding-check', function(req, res){
 //Applying for EHCO + completing NPQH
 router.post('/ehco/ehco-headteacher', function (req, res){
   var completednpqht = req.session.data['completednpqh']
-  if (completednpqht == 'no') {
+  if (completednpqht == 'None of the above') {
     res.redirect('/ehco/ehco-cannot-register')
   }else{
     res.redirect('/ehco/ehco-headteacher')
@@ -185,7 +201,7 @@ router.post('/ehco/ehco-headteacher', function (req, res){
 //Applying for EHCO + not a headteacher
 router.post('/ehco/ehco-early-headship', function(req, res){
   var headteachert = req.session.data['headteachers']
-  if(headteachert == 'no'){
+  if(headteachert == 'No'){
     res.redirect('/funding/echo-not-funded')
   }else{
     res.redirect('/ehco/ehco-early-headship')
@@ -195,7 +211,7 @@ router.post('/ehco/ehco-early-headship', function(req, res){
 //Applying for EHCO + not early headship
 router.post('/funding/ehco-funded', function(req, res){
   var earlyheadshipt = req.session.data['earlyheadship']
-  if(earlyheadshipt == 'no'){
+  if(earlyheadshipt == 'No'){
     res.redirect('/funding/echo-not-funded')
   }else{
     res.redirect('/funding/ehco-funded')
