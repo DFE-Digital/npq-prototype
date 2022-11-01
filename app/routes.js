@@ -20,7 +20,52 @@ router.post('/email', function (req, res) {
   } else {
     res.redirect('/email')
   }
+})
 
+router.post('/ask-questions', function (req, res){
+  var emailt = req.session.data['email']
+  if(emailt == 'email@example.com'){
+    res.redirect('/gai/gai-confirm-details')
+  }else{
+    res.redirect('/ask-questions')
+  }
+})
+
+router.post('/gai/gai-nino', function(req, res){
+  var haveninot = req.session.data['havenino']
+  if(haveninot == 'no'){
+    res.redirect('/gai/gai-trn')
+  }else{
+    res.redirect('/gai/gai-nino')
+  }
+})
+
+router.post('/gai/gai-how-qts', function(req, res){
+  var haveqtst = req.session.data['haveqts']
+  if (haveqtst == 'No') {
+    res.redirect('/gai/gai-answers')
+  }else {
+    res.redirect('/gai/gai-how-qts')
+  }
+})
+
+router.post('gai/finish-gai', function(req, res){
+  var changedetailst = req.session.data['changedetails']
+  if(changedetailst == 'yes'){
+    res.redirect('/gai/gai-name')
+  }else{
+    res.redirect('/gai/finish-gai')
+  }
+})
+
+
+router.post('/where-do-you-work', function(req, res){
+  var choosenpqprovidert = req.session.data['choosenpqprovider']
+  if (choosenpqprovidert == 'no') {
+    res.redirect('/choose-an-npq-and-provider')
+  }else{
+    res.redirect('/where-do-you-work')
+  }
 })
 
 //Does the user work in England and a state funded school?
@@ -102,35 +147,51 @@ router.post('/check-data/_funding-check', function(req, res){
       else if (whichschoolt == 'private' || whichschoolt =='Private') {
         res.redirect('/funding/funding-not-available')
       }
-      //EHCO
-      if(npqt == 'The Early Headship Coaching Offer'){
-        res.redirect('/ehco/ehco-intro')
+    //EHCO
+    }else if(npqt == 'The Early Headship Coaching Offer'){
+    res.redirect('/ehco/ehco-intro')
+
+    //Other
+    }else if(settingt == 'Other'){
+      //Is a mentor?
+      if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+        if(npqt == 'NPQ for Leading Teacher Development (NPQLTD)'){
+          res.redirect('/funding/funding-vague')
+
+        // A mentor NOT doing NPQLTD
+        }else if (npqt =! 'NPQ for Leading Teacher Development (NPQLTD)') {
+          res.redirect('/funding/funding-not-available')
+        }
       }
 
-  }else if(settingt == 'Other'){
-    // Is a mentor doing NPQLTD?
-    if(mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider' && npqt == 'NPQ for Leading Teacher Development (NPQLTD)'){
-      res.redirect('funding/funding-vague')
-    }
-    //Other
-    else if(settingt == 'Other' && mentort != 'As a lead mentor for an accredited initial teacher training (ITT) provider'){
-      res.redirect('/choose-provider')
-    }
+      //State-funded
+      else if (mentort == 'In a virtual school (local authority run organisations that support the education of children in care)' || mentort == 'In a hospital school' || mentort == 'In a young offender institution' || mentort == 'As a supply teacher employed by a local authority' && npqt != 'The Early Headship Coaching Offer') {
+        res.redirect('/funding/funding-vague')
+
+      //Other - Other
+      }else if(mentort == 'Other'){
+        res.redirect('/choose-provider')
+      }
+
+      //No selection
+      else {
+        res.redirect('/choose-provider')
+      }
   }
     //Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
       if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
         res.redirect('/funding/funding-vague')
       }
-      if(hasurnt == 'yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
+      if(hasurnt == 'Yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
       res.redirect('/funding/funding-vague')
     }
-    //Private nursery, with URN != NPQEYL
-    else if(hasurnt == 'yes' && npqt != 'NPQ for Early Years Leadership (NPQEYL)'){
+    //Private nursery, with URN not NPQEYL
+    else if(hasurnt == 'Yes' && npqt != 'NPQ for Early Years Leadership (NPQEYL)'){
       res.redirect('/funding/funding-not-available')
     }
     //Private nursery, no URN
-    else if(hasurnt == 'no'){
+    else if(hasurnt == 'No'){
       res.redirect('/funding/funding-not-available')
     }
   }
@@ -148,7 +209,7 @@ router.post('/check-data/_funding-check', function(req, res){
 //Applying for EHCO + completing NPQH
 router.post('/ehco/ehco-headteacher', function (req, res){
   var completednpqht = req.session.data['completednpqh']
-  if (completednpqht == 'no') {
+  if (completednpqht == 'None of the above') {
     res.redirect('/ehco/ehco-cannot-register')
   }else{
     res.redirect('/ehco/ehco-headteacher')
@@ -158,7 +219,7 @@ router.post('/ehco/ehco-headteacher', function (req, res){
 //Applying for EHCO + not a headteacher
 router.post('/ehco/ehco-early-headship', function(req, res){
   var headteachert = req.session.data['headteachers']
-  if(headteachert == 'no'){
+  if(headteachert == 'No'){
     res.redirect('/funding/echo-not-funded')
   }else{
     res.redirect('/ehco/ehco-early-headship')
@@ -168,7 +229,7 @@ router.post('/ehco/ehco-early-headship', function(req, res){
 //Applying for EHCO + not early headship
 router.post('/funding/ehco-funded', function(req, res){
   var earlyheadshipt = req.session.data['earlyheadship']
-  if(earlyheadshipt == 'no'){
+  if(earlyheadshipt == 'No'){
     res.redirect('/funding/echo-not-funded')
   }else{
     res.redirect('/funding/ehco-funded')

@@ -17,6 +17,24 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/gai/gai-answers" method="post">
+        {% set howqtsHtml %}
+
+          {{ govukInput({
+            id: "howqts",
+            name: "howqts",
+            classes: "govuk-!-width-full-width",
+            isPageHeading: false,
+            label: {
+              text: "Where did you get your QTS?",
+              classes: "govuk-body govuk-!-font-weight-bold"
+            },
+            hint:{
+              text: "Your university, SCITT, school or other training provider"
+            }
+          }) }}
+
+          {% endset -%}
+
         {{ govukRadios({
           name: "how-qts",
           fieldset: {
@@ -28,8 +46,10 @@
           },
           items: [
             {
-              value: "University, SCITT or school",
-              text: "Yes"
+              text: "Yes",
+              conditional: {
+                html: howqtsHtml
+              }
             },
             {
               value: "Other",

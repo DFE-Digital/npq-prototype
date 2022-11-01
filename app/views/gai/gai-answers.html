@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers template
+  Check your answers and confirm
 {% endblock %}
 
 {% block pageNavigation %}
@@ -27,7 +27,7 @@
               {{ data['email']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/email">
                 Change<span class="govuk-visually-hidden"> email address</span>
               </a>
             </dd>
@@ -41,7 +41,7 @@
               {{ data['first-name']}} {{ data['last-name']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/gai/gai-name">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
@@ -52,7 +52,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['dob']}}
+              {{ data['dateob']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/gai/gai-dob">
@@ -69,7 +69,7 @@
               {{ data['nino']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/gai/gai-nino">
                 Change<span class="govuk-visually-hidden"> national insurance number</span>
               </a>
             </dd>
@@ -83,7 +83,7 @@
               {{ data['trn']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/gai/gai-trn">
                 Change<span class="govuk-visually-hidden"> teacher reference number (trn)</span>
               </a>
             </dd>
@@ -94,10 +94,10 @@
               Have you been awarded QTS?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['have-qts']}}
+              {{ data['haveqts']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/gai/gai-have-qts">
                 Change<span class="govuk-visually-hidden"> have you been awarded QTS?</span>
               </a>
             </dd>
@@ -108,11 +108,11 @@
               Where did you get your QTS?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['how-qts']}}
+              {{ data['howqts']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> here did you get your QTS?</span>
+              <a class="govuk-link" href="/gai/gai-how-qts">
+                Change<span class="govuk-visually-hidden"> where did you get your QTS?</span>
               </a>
             </dd>
           </div>
