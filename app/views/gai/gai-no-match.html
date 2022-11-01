@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  We could not find your record
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">We could not find your record</h1>
+
+      <p>This could be because you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          abbreviated your first name, for example Rob/Robert
+        </li>
+        <li>
+          used a different name to the one held on the Teaching Regulation Agency records
+        </li>
+        <li>
+          mistyped or entered some incorrect information
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Check your answers</h2>
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['email'] or "nomatch@example.com"}}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['first-name'] + data['last-name'] or "Jane Doe"}}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dateob'] or "27 3 1987"}}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['nino'] or "Not given"}}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Teacher reference number (TRN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['trn'] or "I don't know my TRN"}}
+            </dd>
+          </div>
+        </dl>
+
+        <form class="form" action="/gai/finish-gai" method="post">
+          {{ govukRadios({
+            name: "changedetails",
+            fieldset: {
+              legend: {
+                text: "Do you want to change something and try again?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes, I have different details I can try"
+              },
+              {
+                value: "no",
+                text: "No, use these details, they are correct"
+              }
+            ]
+          }) }}
+
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Update your details
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Update your details</h1>
+
+        <h2 class="govuk-heading-m">Update your name</h2>
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list">
+                <li>Jane Doe</li>
+                <li class="govuk-body-s" style = "color:#505a5f">used for certificates</li>
+              </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/email">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <p>To update the name that will appear on your certificates, <a href="https://www.gov.uk/guidance/teacher-self-service-portal">access the Teacher self-service portal</a>.</p>
+        <p>You can also update your date of birth and National Insurance number there.</p>
+        <h2 class="govuk-heading-m">Update your preferred name or email</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list">
+                <li>JD</li>
+                <li class="govuk-body-s" style = "color:#505a5f">used for email correspondence</li>
+              </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/email">
+                Change<span class="govuk-visually-hidden"> preferred name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              email@example.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/email">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+          {{ govukButton({
+            text: "Back to details confirmation",
+            classes: "govuk-button--secondary",
+            href: "/gai/gai-confirm-details"
+          }) }}
+
+
+
+    </div>
+  </div>
+{% endblock %}

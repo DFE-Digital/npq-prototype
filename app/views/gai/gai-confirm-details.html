@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm your details
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Confirm your details</h1>
+
+      <form class='form' action="/gai/finish-gai" method="post">
+        <dl class="govuk-summary-list">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list">
+                <li>Jane Doe</li>
+                <li class="govuk-body-s" style = "color:#505a5f">used for certificates</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list">
+                <li>JD</li>
+                <li class="govuk-body-s" style = "color:#505a5f">used for email correspondence</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              email@example.com
+            </dd>
+          </div>
+
+
+        </dl>
+
+        <div class="govuk-button-group">
+
+          {{ govukButton({
+            text: "Confirm and continue",
+            href: "/gai/finish-gai"
+          }) }}
+
+          {{ govukButton({
+            text: "Update details",
+            classes: "govuk-button--secondary",
+            href: "/gai/gai-edit-details"
+          }) }}
+
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

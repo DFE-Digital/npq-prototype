@@ -20,7 +20,15 @@ router.post('/email', function (req, res) {
   } else {
     res.redirect('/email')
   }
+})
 
+router.post('/ask-questions', function (req, res){
+  var emailt = req.session.data['email']
+  if(emailt == 'email@example.com'){
+    res.redirect('/gai/gai-confirm-details')
+  }else{
+    res.redirect('/ask-questions')
+  }
 })
 
 router.post('/gai/gai-nino', function(req, res){
@@ -40,6 +48,16 @@ router.post('/gai/gai-how-qts', function(req, res){
     res.redirect('/gai/gai-how-qts')
   }
 })
+
+router.post('gai/finish-gai', function(req, res){
+  var changedetailst = req.session.data['changedetails']
+  if(changedetailst == 'yes'){
+    res.redirect('/gai/gai-name')
+  }else{
+    res.redirect('/gai/finish-gai')
+  }
+})
+
 
 router.post('/where-do-you-work', function(req, res){
   var choosenpqprovidert = req.session.data['choosenpqprovider']
