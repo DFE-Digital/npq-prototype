@@ -195,10 +195,6 @@ router.post('/check-data/_funding-check', function(req, res){
       res.redirect('/funding/funding-not-available')
     }
   }
-
-
-
-
   }
 //Outside of England
   else{
@@ -230,9 +226,20 @@ router.post('/ehco/ehco-early-headship', function(req, res){
 router.post('/funding/ehco-funded', function(req, res){
   var earlyheadshipt = req.session.data['earlyheadship']
   if(earlyheadshipt == 'No'){
-    res.redirect('/funding/echo-not-funded')
+    res.redirect('/funding/ehco-not-funded')
   }else{
-    res.redirect('/funding/ehco-funded')
+    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      res.redirect('/funding/ehco-funded')
+    }else if(settingt == 'Early years or childcare'){
+      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
+        res.redirect('/funding/ehco-funded')
+      }
+    }else if(settingt == 'Other'){
+      res.redirect('/funding/how-pay')
+    }
+    else{
+      res.redirect('/funding/ehco-not-funded')
+    }
   }
 })
 
