@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
   Continue to register for an NPQ
@@ -17,18 +16,27 @@
 <div class="govuk-panel app-panel--interruption">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/chosen" method="post">
+
+      {% if (data['email'] != "nomatch@example.com") and (data['changedetails'] != "yes") %}
+
         <h1 class="govuk-heading-xl">Continue to register for an NPQ</h1>
 
         <p>Thank you, we’ve finished checking our records.</p>
 
         <p>We’ll only need your email address (<strong>{{ data['email'] or "email@example.com" }}</strong>) to find your details in the future.</p>
 
-        <button class="govuk-button app-button--inverse govuk-!-margin-bottom-0" data-module="govuk-button">
+      {% else %}
+        <h1 class="govuk-heading-xl">You can continue</h1>
+        <p>You can continue anyway and we’ll try to find your record. Someone may be in touch to ask for more information.</p>
+        <p>If you need to come back to this service later, use your email address <strong>(nomatch@example.com)</strong> when prompted and you will not have to answer these questions again.</p>
+
+      {% endif %}
+      <form class="form" action="/chosen" method="post">
+        <button class="govuk-button app-button--inverse" data-module="govuk-button">
           Continue
         </button>
-
       </form>
+
 
     </div>
   </div>
