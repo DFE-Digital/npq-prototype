@@ -184,7 +184,7 @@ router.post('/check-data/_funding-check', function(req, res){
           res.redirect('/funding/funding-vague')
 
         // A mentor NOT doing NPQLTD
-        }else if (npqt =! 'NPQ for Leading Teacher Development (NPQLTD)') {
+        }else{
           res.redirect('/funding/funding-not-available')
         }
       }
@@ -241,7 +241,7 @@ router.post('/ehco/ehco-headteacher', function (req, res){
 router.post('/ehco/ehco-early-headship', function(req, res){
   var headteachert = req.session.data['headteachers']
   if(headteachert == 'No'){
-    res.redirect('/funding/echo-not-funded')
+    res.redirect('/funding/ehco-not-funded')
   }else{
     res.redirect('/ehco/ehco-early-headship')
   }
