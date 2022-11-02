@@ -262,7 +262,11 @@ router.post('/funding/ehco-funded', function(req, res){
         res.redirect('/funding/ehco-not-funded')
       }
     }else if(settingt == 'Other'){
-      res.redirect('/funding/how-pay')
+      if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
+        res.redirect('/funding/ehco-not-funded')
+      }else{
+        res.redirect('/choose-provider')
+      }
     }
     else{
       res.redirect('/funding/ehco-not-funded')
