@@ -4,7 +4,10 @@ $app-button-inverse-foreground-colour: govuk-colour("blue");
 $app-button-inverse-shadow-colour: govuk-shade($app-button-inverse-foreground-colour, 30%);
 $app-button-inverse-hover-background-colour: govuk-tint($app-button-inverse-foreground-colour, 90%);
 
-.app-button--inverse,
+.app-button--inverse{
+  color: $app-button-inverse-foreground-colour;
+  background-color: $app-button-inverse-background-colour;
+}
 .app-button--inverse:link,
 .app-button--inverse:visited {
   color: $app-button-inverse-foreground-colour;

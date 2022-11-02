@@ -10,6 +10,7 @@ var mentort = "Other"
 var npqt = "NPQLBC"
 var hasurnt = "no"
 var workinnurseryt = "yes"
+var emailt
 
 // Does the user have a TRN?
 router.post('/email', function (req, res) {
@@ -23,7 +24,7 @@ router.post('/email', function (req, res) {
 })
 
 router.post('/ask-questions', function (req, res){
-  var emailt = req.session.data['email']
+  emailt = req.session.data['email']
   if(emailt == 'email@example.com'){
     res.redirect('/gai/gai-confirm-details')
   }else{
@@ -49,11 +50,32 @@ router.post('/gai/gai-how-qts', function(req, res){
   }
 })
 
-router.post('gai/finish-gai', function(req, res){
+
+router.post('/check-data/_gai-check', function(req, res){
   var changedetailst = req.session.data['changedetails']
   if(changedetailst == 'yes'){
     res.redirect('/gai/gai-name')
   }else{
+      res.redirect('/gai/finish-gai')
+  }
+})
+
+
+// Confirm or update details for existing user
+router.post('/gai/finish-gai', function(req, res){
+  if(emailt == 'nomatch@example.com'){
+    res.redirect('/gai/gai-no-match')
+  }else {
+      res.redirect('/gai/finish-gai')
+    }
+})
+
+//A user whose details don't match and chooses to proceed or update details
+router.post('/check-data/_gai-no-match', function(req, res){
+  var changedetailst = req.session.data['changedetails']
+  if(changedetailst == "yes"){
+    res.redirect('/gai/gai-answers')
+  }else {
     res.redirect('/gai/finish-gai')
   }
 })
@@ -143,6 +165,9 @@ router.post('/check-data/_funding-check', function(req, res){
       if(npqt != 'The Early Headship Coaching Offer' && whichschoolt != 'private'){
         res.redirect('/funding/funding-vague')
       }
+      else if(npqt == 'The Early Headship Coaching Offer'){
+      res.redirect('/ehco/ehco-intro')
+      }
       //Private school
       else if (whichschoolt == 'private' || whichschoolt =='Private') {
         res.redirect('/funding/funding-not-available')
@@ -231,8 +256,10 @@ router.post('/funding/ehco-funded', function(req, res){
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
       res.redirect('/funding/ehco-funded')
     }else if(settingt == 'Early years or childcare'){
-      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
+      if(nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
         res.redirect('/funding/ehco-funded')
+      }else{
+        res.redirect('/funding/ehco-not-funded')
       }
     }else if(settingt == 'Other'){
       res.redirect('/funding/how-pay')
