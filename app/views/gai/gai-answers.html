@@ -47,6 +47,38 @@
             </dd>
           </div>
 
+          {% if data['previousname'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Previous name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['previous-first-name']}} {{ data['previous-last-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/gai/gai-name">
+                Change<span class="govuk-visually-hidden"> previous name</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['preferredName'] == "no" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Preferred name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['preferred-first-name']}} {{ data['preferred-last-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/gai/gai-name">
+                Change<span class="govuk-visually-hidden"> preferred name</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date of birth
@@ -61,6 +93,7 @@
             </dd>
           </div>
 
+          {% if data['havenino'] == "yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               National Insurance number
@@ -74,7 +107,9 @@
               </a>
             </dd>
           </div>
+          {% endif %}
 
+          {% if data['knowtrn'] == "yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Teacher reference number (TRN)
@@ -88,6 +123,7 @@
               </a>
             </dd>
           </div>
+          {% endif %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -103,6 +139,7 @@
             </dd>
           </div>
 
+          {% if data['haveqts'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Where did you get your QTS?
@@ -116,6 +153,7 @@
               </a>
             </dd>
           </div>
+          {% endif %}
 
         </dl>
 
