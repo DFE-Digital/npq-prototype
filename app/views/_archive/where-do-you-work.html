@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
-
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
-  Do you work in England?
+  Where do you work?
 {% endblock %}
 
 {% block pageNavigation %}
@@ -35,7 +35,7 @@
         name: "wheredoyouwork",
         fieldset: {
           legend: {
-            text: "Do you work in England?",
+            text: "Where do you work?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -43,12 +43,30 @@
         items: [
           {
             value: "England",
-            text: "Yes"
+            text: "England"
           },
-
+          {
+            value: "Scotland",
+            text: "Scotland"
+          },
+          {
+            value: "Wales",
+            text: "Wales"
+          },
+          {
+            value: "Northern Ireland",
+            text: "Northern Ireland"
+          },
+          {
+            value: "Jersey, Guernsey or the Isle of Man",
+            text: "Jersey, Guernsey or the Isle of Man"
+          },
+          {
+            divider: "or"
+          },
           {
             value: "Other",
-            text: "No",
+            text: "Another country",
             conditional: {
               html: countryHtml
             }
