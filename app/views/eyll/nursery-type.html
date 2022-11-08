@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-  What kind of nursery do you work in?
+  What kind of early years setting do you work in?
 {% endblock %}
 
 {% block pageNavigation %}
@@ -24,7 +24,7 @@
         id: "nurserysetting",
         fieldset: {
           legend: {
-            text: "What kind of nursery do you work in?",
+            text: "What kind of early years setting do you work in?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -35,12 +35,19 @@
             text: "Local authority-maintained nursery"
           },
           {
-            value: "Pre-school class that’s part of a school",
-            text: "Pre-school class that’s part of a school"
+            value: "Pre-school class or nursery of a school (maintained or independent)",
+            text: "Pre-school class or nursery that’s part of a school (maintained or independent)"
           },
           {
             value: "Private nursery",
             text: "Private nursery"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Another early years setting",
+            text: "Another early years setting"
           }
         ]
       }) }}
@@ -49,8 +56,6 @@
         text: "Continue"
       }) }}
     </form>
-
-
 
   </div>
 </div>

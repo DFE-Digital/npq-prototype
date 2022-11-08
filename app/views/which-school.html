@@ -16,11 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data['whichsetting'] == "Early years or childcare" %}
-      <h1 class="govuk-heading-xl">What's the name of your nursery?</h1>
-    {% else %}
-      <h1 class="govuk-heading-xl">What's the name of your workplace?</h1>
-    {% endif %}
+    <h1 class="govuk-heading-xl">What's the name of your workplace?</h1>
 
     <form class="form" action="choose-npq" method="post">
       {{ govukInput({

@@ -98,7 +98,7 @@ router.post('/where-school', function (req, res) {
 
   if (locationt == "England"){
     if (settingt == "Early years or childcare") {
-      res.redirect('/eyll/nursery')
+      res.redirect('/eyll/nursery-type')
     }else if (settingt =='Other'){
       res.redirect('/other/employment')
     }
@@ -112,6 +112,7 @@ router.post('/where-school', function (req, res) {
 })
 
 //User not in a nursery - do they have a URN?
+/*
 router.post('/eyll/nursery-type', function (req, res){
   workinnurseryt = req.session.data['workinnursery']
   if(workinnurseryt == 'Yes'){
@@ -120,16 +121,15 @@ router.post('/eyll/nursery-type', function (req, res){
   }else{
     res.redirect('/eyll/do-you-have-urn')
   }
-})
+})*/
 
 //Does the user work in a state or provate childcare setting?
 router.post('/check-data/_nursery-check', function (req, res){
   nurserysettingt = req.session.data['nurserysetting']
 
-  if (nurserysettingt == 'Pre-school class that’s part of a school' || nurserysettingt == 'Local authority-maintained nursery') {
+  if (nurserysettingt == 'Pre-school class or nursery of a school (maintained or independent)' || nurserysettingt == 'Local authority-maintained nursery') {
     res.redirect('/where-school')
-    hasurnt = 'Yes'
-  }else if (nurserysettingt == 'Private nursery') {
+  }else if (nurserysettingt == 'Private nursery' || nurserysettingt == 'Another early years setting') {
     res.redirect('/eyll/do-you-have-urn')
   }
 })
@@ -205,7 +205,7 @@ router.post('/check-data/_funding-check', function(req, res){
   }
     //Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
-      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
+      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery of a school (maintained or independent)') {
         res.redirect('/funding/funding-vague')
       }
       if(hasurnt == 'Yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
@@ -256,7 +256,7 @@ router.post('/funding/ehco-funded', function(req, res){
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
       res.redirect('/funding/ehco-funded')
     }else if(settingt == 'Early years or childcare'){
-      if(nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class that’s part of a school') {
+      if(nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery of a school (maintained or independent)') {
         res.redirect('/funding/ehco-funded')
       }else{
         res.redirect('/funding/ehco-not-funded')

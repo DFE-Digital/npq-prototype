@@ -25,12 +25,20 @@
       {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
         {% include 'includes/answers/ey-funded.html' %}
 
-      <!-- State nursery doing NPQEYL -->
-      {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class that’s part of a school")) %}
+      <!-- Not a nursery with URN -->
+      {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+        {% include 'includes/answers/ey-funded.html' %}
+
+      <!-- State nursery  -->
+      {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class or nursery of a school (maintained or independent)")) %}
         {% include 'includes/answers/ey-state-nursery.html' %}
 
       <!-- Private nursery - not OFSTED -->
       {% elseif (data['whichsetting'] == "Early years or childcare" and data['nurserysetting'] == "Private nursery") %}
+        {% include 'includes/answers/ey-no-ofsted.html' %}
+
+      <!-- Not a nursery - not OFSTED -->
+      {% elseif (data['whichsetting'] == "Early years or childcare" and data['nurserysetting'] == "Another early years setting") %}
         {% include 'includes/answers/ey-no-ofsted.html' %}
 
       <!-- Early years NOT doing NPQEYL -->

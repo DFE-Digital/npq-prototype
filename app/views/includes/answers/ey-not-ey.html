@@ -37,7 +37,7 @@
               </a>
             </dd>
           </div>
-
+          <!--
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Do you work in a nursery?
@@ -50,11 +50,16 @@
                 Change<span class="govuk-visually-hidden"> do you work in a nursery?</span>
               </a>
             </dd>
-          </div>
+          </div> -->
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              {% if (data['nurserysetting'] == "Another early years setting")%}
+              Type of workplace
+              {% else %}
               Type of nursery
+              {% endif %}
+
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['nurserysetting']}}
