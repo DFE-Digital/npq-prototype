@@ -16,11 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data['whichsetting'] == "Early years or childcare" %}
-      <h1 class="govuk-heading-xl">Where is your nursery located?</h1>
-    {% else %}
-      <h1 class="govuk-heading-xl">Where is your workplace located?</h1>
-    {% endif %}
+    <h1 class="govuk-heading-xl">Where is your workplace located?</h1>
 
     <form class="form" action="which-school" method="post">
       {{ govukInput({
