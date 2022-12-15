@@ -1,5 +1,9 @@
 
-{% extends "layout-pdtl.html" %}
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
 
 {% block pageTitle %}
   Early headship coaching offer
@@ -22,6 +26,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <div class="">
+        <h3 class="govuk-heading-m">Content</h3>
+        <p><a href="#eligibility">Eligibility</a></p>
+
+      </div>
+
+
+
       <p class="govuk-!-font-size-24" style="color:#505a5f; padding-bottom: 1px">National professional qualification</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
         Early headship coaching offer
@@ -42,7 +54,7 @@
       </p>
 
 
-      <h2 class="govuk-heading-l">Eligibility</h2>
+      <h2 class="govuk-heading-l" id="eligibility">Eligibility</h2>
 
       <p>
         You’re eligible for this support if you meet the following criteria:
