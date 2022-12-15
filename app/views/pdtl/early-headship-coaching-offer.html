@@ -26,13 +26,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <div class="">
-        <h3 class="govuk-heading-m">Content</h3>
-        <p><a href="#eligibility">Eligibility</a></p>
-
-      </div>
-
-
 
       <p class="govuk-!-font-size-24" style="color:#505a5f; padding-bottom: 1px">National professional qualification</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
@@ -86,27 +79,11 @@
       </ul>
 
 
-      <h2 class="govuk-heading-l">Apply</h2>
-      <p>Speak to your line manager or contact the above providers to express your interest. Your school may be able to help you choose a provider.</p>
-      <p>Register with us so we can confirm you’re eligible for the early headship coaching offer.</p>
-      <p>We’ll give your details to your chosen provider once you have registered. They’ll then send you an application form.</p>
+        {% include 'includes/pdtl/apply.html' %}
 
     </div>
   </div>
 
-  <div class="govuk-panel app-panel--interruption">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-
-        <h2 class="govuk-heading-m">
-          We'd love your feedback
-        </h2>
-        <p>
-          Use this <a href="#">SmartSurvey form</a> to tell us how we can make our NPQs content better.
-        </p>
-      </div>
-
-    </div>
-  </div>
+  {% include 'includes/pdtl/survey.html' %}
 
 {% endblock %}
