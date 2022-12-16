@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find your local TSH
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find your local Teaching School Hub (TSH)</h1>
+
+      <p>Teaching school hubs provide high-quality professional development to teachers at all stages of their careers and play a significant role in delivering NPQs</p>
+      <p>Each Hub serves a designated area of the country, ensuring every school has easy access to support, bridging the gap between local needs and national policy.</p>
+
+      <form class="form" action="results" method="post">
+        {{ govukInput({
+          label: {
+            text: "Where do you live?",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Enter the town, city or the first part of the postcode. For example Chester or CH1."
+          },
+          id: "tshlocation",
+          name: "tshlocation"
+        }) }}
+
+        {{ govukButton({
+          text: "Find your TSH"
+        }) }}
+      </form>
+
+
+    </div>
+  </div>
+
+
+  <div class="govuk-panel app-panel--interruption">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m">
+          We'd love your feedback
+        </h2>
+        <p>
+          Use this <a href="#">SmartSurvey form</a> to tell us how we can make our NPQs content better.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

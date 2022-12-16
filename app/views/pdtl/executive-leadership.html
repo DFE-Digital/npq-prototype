@@ -32,8 +32,9 @@
         Executive leadership
       </h1>
 
+      {% include 'includes/pdtl/navigation-lnpq.html' %}
 
-      <h2 class="govuk-heading-l">Summary</h2>
+      <h2 class="govuk-heading-l" id="summary" style="padding-top: 20px">Summary</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -77,7 +78,7 @@
               text: "Assessment type"
             },
             value: {
-              text: "Reflection based on case study (2,500 words)"
+              text: "Reflection based on case study (up to 2,500 words)"
             }
           },
           {
@@ -91,7 +92,7 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-l">Course overview</h2>
+      <h2 class="govuk-heading-l" id="overview">Course overview</h2>
 
       <p>This 18-month course will help staff gain confidence and develop skills in:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -107,7 +108,7 @@
       </ul>
 
 
-      <h2 class="govuk-heading-l">Who this course is for</h2>
+      <h2 class="govuk-heading-l" id="who">Who this course is for</h2>
 
       <p>
         This course is for school leaders who are, or want to be a:
@@ -122,7 +123,7 @@
       </ul>
 
 
-      <h2 class="govuk-heading-l">What you’ll learn</h2>
+      <h2 class="govuk-heading-l" id="learn">What you’ll learn</h2>
 
       <p>
         This course covers themes including:
@@ -167,7 +168,7 @@
       </ul>
 
 
-      <h2 class="govuk-heading-l">How you and your school could benefit</h2>
+      <h2 class="govuk-heading-l" id="benefits">How you and your school could benefit</h2>
 
       <h3 class="govuk-heading-m">
         Excel as an executive leader
@@ -202,13 +203,13 @@
 
 
 
-      <h2 class="govuk-heading-l">Course structure</h2>
+      <h2 class="govuk-heading-l" id="structure">Course structure</h2>
       <p>The DfE-approved providers offering this NPQ have designed their course content around an evidence-based framework.</p>
       <p>The course covers 10 topics, with a mix of self-study and group coaching sessions, as well as face-to-face sessions with other participants.</p>
       <p>On average you’ll need to spend between 1 and 2 hours per week working towards completing this NPQ. Where possible, you should do this during dedicated career development time in school hours.</p>
 
 
-      <h2 class="govuk-heading-l">Providers</h2>
+      <h2 class="govuk-heading-l" id="providers">Providers</h2>
       <p>You can train with one of the following providers:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="https://www.ambition.org.uk/">Ambition Institute</a></li>
@@ -223,53 +224,15 @@
       </ul>
       <p>They work with delivery partners, such as teaching school hubs, to provide training.</p>
 
-      <h2 class="govuk-heading-l">How this NPQ is assessed</h2>
+      {% include 'includes/pdtl/assessment-lnpq.html' %}
 
-      <p>To get your NPQ accreditation you’ll need to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>complete the course</li>
-        <li>pass a written assessment (2,500 words) at the end</li>
-      </ul>
-      <p>Your course provider will be able to give you more details about how the assessment works.</p>
+      {% include 'includes/pdtl/funding.html' %}
 
-      <h2 class="govuk-heading-l">Course funding</h2>
-
-      <p>Full DfE funding, with no cost to the participant, is available to staff from:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>state-funded schools in England</li>
-        <li>state-funded organisations that offer 16 to 19 places in England</li>
-      </ul>
-      <p>You can do more than one NPQ, but will only be eligible for funding for each NPQ once. If you withdraw or fail your course you cannot get funded again for the same NPQ.</p>
-
-      <h2 class="govuk-heading-l">Apply</h2>
-
-      <h3 class="govuk-heading-m">Step 1</h3>
-      <p>Speak to your line manager to get support for you doing this NPQ.</p>
-
-      <h3 class="govuk-heading-m">Step 2</h3>
-      <p>Once you have your school’s approval, they’ll be able to help you choose a training provider.</p>
-
-      <h3 class="govuk-heading-m">Step 3</h3>
-      <p>Register with us so we can confirm you’re eligible to take this course for free.</p>
-
-      <p>We’ll give your details to your chosen provider once you have registered. They’ll then send you an application form.</p>
+      {% include 'includes/pdtl/apply.html' %}
 
     </div>
   </div>
 
-  <div class="govuk-panel app-panel--interruption">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-
-        <h2 class="govuk-heading-m">
-          We'd love your feedback
-        </h2>
-        <p>
-          Use this <a href="#">SmartSurvey form</a> to tell us how we can make our NPQs content better.
-        </p>
-      </div>
-
-    </div>
-  </div>
+  {% include 'includes/pdtl/survey.html' %}
 
 {% endblock %}

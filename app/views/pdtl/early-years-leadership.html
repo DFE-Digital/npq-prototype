@@ -30,8 +30,68 @@
         Early years leadership
       </h1>
 
+      <aside class="app-mainstream-guide-contents-list" role="complementary">
+        <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="app-contents-list__title">
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#summary">
+                Summary
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#overview">
+                Course overview
+              </a>
+            </li>
+            <li aria-current="true" class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#who">
+                Who this course is for
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#learn">
+                What you'll learn
+              </a>
+            </li>
 
-      <h2 class="govuk-heading-l">Summary</h2>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#benefits">
+                How you and your school could benefit
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#structure">
+                Course structure
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#assessment-lnpq">
+                How this NPQ is assessed
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#funding">
+                Course funding
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#apply">
+                Apply
+              </a>
+            </li>
+
+          </ol>
+        </nav>
+      </aside>
+
+      <h2 class="govuk-heading-l" id="summary" style="padding-top: 20px">Summary</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -89,7 +149,7 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-l">Course overview</h2>
+      <h2 class="govuk-heading-l" id="overview">Course overview</h2>
 
       <p>This one-year course will help you gain confidence and develop skills in:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -114,7 +174,7 @@
       <p>Early years professionals helped us design this course to fit around busy schedules so it does not add to your workload.</p>
 
 
-      <h2 class="govuk-heading-l">Who this course is for</h2>
+      <h2 class="govuk-heading-l" id="who">Who this course is for</h2>
 
       <p>This course is for leaders qualified to at least level 3 with a full and relevant qualification who are, or want to be:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -130,7 +190,7 @@
       </ul>
 
 
-      <h2 class="govuk-heading-l">What you’ll learn</h2>
+      <h2 class="govuk-heading-l" id="learn">What you’ll learn</h2>
 
       <p>You’ll learn how to:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -165,7 +225,7 @@
 
 
 
-      <h2 class="govuk-heading-l">How you and your school could benefit</h2>
+      <h2 class="govuk-heading-l" id="benefits">How you and your school could benefit</h2>
 
       <h3 class="govuk-heading-m">
         Ensuring all children experience success
@@ -206,24 +266,16 @@
 
 
 
-      <h2 class="govuk-heading-l">Course structure</h2>
+      <h2 class="govuk-heading-l" id="structure">Course structure</h2>
       <p>The DfE-approved providers offering this NPQ have designed their course content around an evidence-based framework.</p>
       <p>The course covers 7 topics, with a mix of self-study and group coaching sessions, as well as face-to-face sessions with other participants.</p>
       <p>On average you’ll need to spend between 1 and 2 hours per week working towards completing this NPQ. Where possible, you should do this during dedicated career development time in school hours.</p>
 
 
-      <h2 class="govuk-heading-l">How this NPQ is assessed</h2>
-
-      <p>To get your NPQ accreditation you’ll need to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>complete the course</li>
-        <li>pass a written assessment (up to 2,500 words) at the end</li>
-      </ul>
-      <p>Your course provider will be able to give you more details about how the assessment works.</p>
+      {% include 'includes/pdtl/assessment-lnpq.html' %}
 
 
-
-      <h2 class="govuk-heading-l">Course funding</h2>
+      <h2 class="govuk-heading-l" id="funding">Course funding</h2>
 
       <p>Full DfE funding, with no cost to the participant, is available to leaders employed:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -246,7 +298,7 @@
       <p>Depending on your type of setting, you may be able to get funding for more than one NPQ. You will only be eligible for funding for each NPQ once though. If you withdraw or fail your course you cannot get funded again for the same NPQ.</p>
 
 
-      <h2 class="govuk-heading-l">Apply</h2>
+      <h2 class="govuk-heading-l" id="apply">Apply</h2>
 
       <h3 class="govuk-heading-m">Step 1</h3>
       <p>If you have a line manager or work in a setting with a head teacher, speak to them to get their support to do this NPQ. Otherwise, progress straight to Step 2.</p>
@@ -274,19 +326,6 @@
     </div>
   </div>
 
-  <div class="govuk-panel app-panel--interruption">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-
-        <h2 class="govuk-heading-m">
-          We'd love your feedback
-        </h2>
-        <p>
-          Use this <a href="#">SmartSurvey form</a> to tell us how we can make our NPQs content better.
-        </p>
-      </div>
-
-    </div>
-  </div>
+  {% include 'includes/pdtl/survey.html' %}
 
 {% endblock %}

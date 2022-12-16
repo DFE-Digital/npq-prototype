@@ -1,6 +1,7 @@
 
 {% extends "layout.html" %}
 
+
 {% set serviceName %}
   Professional development for teachers and leaders
 {% endset %}
@@ -41,58 +42,58 @@
           </h2>
           <ol class="app-contents-list__list">
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-0">
+              <a href="#summary">
                 Summary
               </a>
             </li>
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-1">
+              <a href="#overview">
                 Course overview
               </a>
             </li>
             <li aria-current="true" class="app-contents-list__list-item app-contents-list__list-item--dashed">
-              <a href="#content-2">
+              <a href="#who">
                 Who this course is for
               </a>
             </li>
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
-              <a href="#content-3">
+              <a href="#learn">
                 What you'll learn
               </a>
             </li>
 
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-4">
+              <a href="#benefits">
                 How you and your school could benefit
               </a>
             </li>
 
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-5">
+              <a href="#structure">
                 Course structure
               </a>
             </li>
 
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-6">
+              <a href="#providers">
                 Providers
               </a>
             </li>
 
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-7">
+              <a href="#assessment-lnpq">
                 How this NPQ is assessed
               </a>
             </li>
 
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-8">
+              <a href="#funding">
                 Course funding
               </a>
             </li>
 
             <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#content-9">
+              <a href="#apply">
                 Apply
               </a>
             </li>
@@ -321,35 +322,11 @@
       </ul>
       <p>You can do more than one NPQ, but will only be eligible for funding for each NPQ once. If you withdraw or fail your course you cannot get funded again for the same NPQ.</p>
 
-      <h2 class="govuk-heading-l" id="content-9">Apply</h2>
-
-      <h3 class="govuk-heading-m">Step 1</h3>
-      <p>Speak to your line manager to get support for you doing this NPQ.</p>
-
-      <h3 class="govuk-heading-m">Step 2</h3>
-      <p>Once you have your school’s approval, they’ll be able to help you choose a training provider.</p>
-
-      <h3 class="govuk-heading-m">Step 3</h3>
-      <p>Register with us so we can confirm you’re eligible to take this course for free.</p>
-
-      <p>We’ll give your details to your chosen provider once you have registered. They’ll then send you an application form.</p>
+      {% include 'includes/pdtl/apply.html' %}
 
     </div>
   </div>
 
-  <div class="govuk-panel app-panel--interruption">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters">
-
-        <h2 class="govuk-heading-m">
-          We'd love your feedback
-        </h2>
-        <p>
-          Use this <a href="#">SmartSurvey form</a> to tell us how we can make our NPQs content better.
-        </p>
-      </div>
-
-    </div>
-  </div>
+  {% include 'includes/pdtl/survey.html' %}
 
 {% endblock %}
