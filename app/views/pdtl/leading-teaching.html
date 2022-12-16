@@ -32,8 +32,74 @@
         Leading teaching
       </h1>
 
+      <aside class="app-mainstream-guide-contents-list" role="complementary">
+        <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="app-contents-list__title">
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#summary">
+                Summary
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#overview">
+                Course overview
+              </a>
+            </li>
+            <li aria-current="true" class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#who">
+                Who this course is for
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#learn">
+                What you'll learn
+              </a>
+            </li>
 
-      <h2 class="govuk-heading-l">Summary</h2>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#benefits">
+                How you and your school could benefit
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#structure">
+                Course structure
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#providers">
+                Providers
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#assessment-snpq">
+                How this NPQ is assessed
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#funding">
+                Course funding
+              </a>
+            </li>
+
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#apply">
+                Apply
+              </a>
+            </li>
+
+          </ol>
+        </nav>
+      </aside>
+
+      <h2 class="govuk-heading-l" style="padding-top: 20px" id="summary">Summary</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -91,7 +157,7 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-l">Course overview</h2>
+      <h2 class="govuk-heading-l" id="overview">Course overview</h2>
 
       <p>This one-year course will help you gain confidence and develop skills in:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -100,14 +166,14 @@
         <li>contributing to effective professional development linked to teaching, curriculum and assessment</li>
       </ul>
 
-      <h2 class="govuk-heading-l">Who this course is for</h2>
+      <h2 class="govuk-heading-l" id="who">Who this course is for</h2>
 
       <p>This course is for teachers and middle leaders who have, or want to have:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>responsibilities for leading teaching in a subject, year group, key stage or phase</li>
       </ul>
 
-      <h2 class="govuk-heading-l">What you’ll learn</h2>
+      <h2 class="govuk-heading-l" id="learn">What you’ll learn</h2>
 
       <p>This course covers themes including:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -119,7 +185,7 @@
         <li>aligning your professional development with wider school improvement priorities</li>
       </ul>
 
-      <h2 class="govuk-heading-l">How you and your school could benefit</h2>
+      <h2 class="govuk-heading-l" id="benefits">How you and your school could benefit</h2>
 
       <h3 class="govuk-heading-m">Develop as a specialist in your role</h3>
       <p>You’ll gain an understanding of the core principles behind the science of learning, get practical tools and guidance to sequence your curriculum and plan for assessment in your specific subject and context.</p>
@@ -134,12 +200,12 @@
       <h3 class="govuk-heading-m">Learn with people from different education settings</h3>
       <p>Take advantage of training alongside a diverse group of fellow educators with lots of different perspectives. You’ll be able to learn from each other’s experiences and bounce ideas off each other during group sessions and collaborative practical tasks.</p>
 
-      <h2 class="govuk-heading-l">Course structure</h2>
+      <h2 class="govuk-heading-l" id="structure">Course structure</h2>
       <p>The DfE-approved providers offering this NPQ have designed their course content around an evidence-based framework.</p>
       <p>The course covers 9 topics, with a mix of self-study and group coaching sessions, as well as face-to-face sessions with other participants.</p>
       <p>On average you’ll need to spend between 1 and 2 hours per week working towards completing this NPQ. Where possible, you should do this during dedicated career development time in school hours.</p>
 
-      <h2 class="govuk-heading-l">Providers</h2>
+      <h2 class="govuk-heading-l" id="providers">Providers</h2>
       <p>You can train with one of the following providers:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="https://www.ambition.org.uk/">Ambition Institute</a></li>
@@ -157,7 +223,7 @@
       {% include 'includes/pdtl/assessment-snpq.html' %}
 
       {% include 'includes/pdtl/funding.html' %}
-      
+
       {% include 'includes/pdtl/apply.html' %}
 
     </div>
