@@ -16,15 +16,20 @@
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row" style="border-bottom: 1px solid #b1b4b6">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Results for TSH in {{ data['tshlocation'] or "London" }}</h1>
+        <h1 class="govuk-heading-xl">Results for TSH in {{ data['tshlocation'] or "London" }} for {{ data['npqcourse'] or "NPQs"}}</h1>
 
       </div>
     </div>
     <div class="govuk-grid-row" style="padding-top: 40px">
       <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">Location</h3>
+
 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <h3 class="govuk-heading-s">Location</h3>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
               {{ data['tshlocation'] or "London" }}
@@ -33,6 +38,26 @@
 
                 <a class="govuk-link" href="location">
                   Change<span class="govuk-visually-hidden"> location</span>
+                </a>
+
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <h3 class="govuk-heading-s">NPQ</h3>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              {{ data['npqcourse'] or "All NPQs" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link" href="select-npq">
+                  Change<span class="govuk-visually-hidden"> NPQ</span>
                 </a>
 
             </dd>
