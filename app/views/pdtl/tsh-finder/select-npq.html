@@ -1,0 +1,100 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Which NPQ do you want to do?
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="results-1" method="post">
+        {{ govukRadios({
+          name: "npqcourse",
+          fieldset: {
+            legend:{
+              text: "Which NPQ do you want to do?",
+              classes: "govuk-fieldset__legend--xl",
+              isPageHeading: true
+            }
+          },
+
+          items: [
+            {
+              value: "Leading Behaviour and Culture",
+              text: "Leading Behaviour and Culture"
+            },
+            {
+              value: "Leading Literacy",
+              text: "Leading Literacy"
+            },
+            {
+              value: "Leading Teaching",
+              text: "Leading Teaching"
+            },
+            {
+              value: "Leading Teacher Development",
+              text: "Leading Teacher Development"
+            },
+            {
+              value: "Senior Leadership",
+              text: "Senior Leadership"
+            },
+            {
+              value: "Headship",
+              text: "Headship"
+            },
+            {
+              value: "Executive Leadership",
+              text: "Executive Leadership"
+            },
+            {
+              value: "Early Years Leadership",
+              text: "Early Years Leadership"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Early Headship Coaching Offer",
+              text: "Early Headship Coaching Offer",
+              hint: {
+                text: "A package of structured face-to-face support for new headteachers."
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Find your TSH"
+        }) }}
+      </form>
+
+
+    </div>
+  </div>
+
+
+  <div class="govuk-panel app-panel--interruption">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m">
+          We'd love your feedback
+        </h2>
+        <p>
+          Use this <a href="#">SmartSurvey form</a> to tell us how we can make our NPQs content better.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
