@@ -14,48 +14,168 @@
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
+    <div class="govuk-grid-row" style="border-bottom: 1px solid #b1b4b6">
       <div class="govuk-grid-column-two-thirds">
-
         <h1 class="govuk-heading-xl">Teaching school hubs in {{ data['tshlocation'] or "London" }}</h1>
-
 
       </div>
     </div>
-    <div class="govuk-grid-row">
+    <div class="govuk-grid-row" style="padding-top: 40px">
       <div class="govuk-grid-column-one-third">
 
-        <p><a href="location">Change location</a></p>
 
-      </div>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <h3 class="govuk-heading-s">Location</h3>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              {{ data['tshlocation'] or "London" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link" href="location">
+                  Change<span class="govuk-visually-hidden"> location</span>
+                </a>
+
+            </dd>
+          </div>
+        </dl>
+
+
+        {{ govukCheckboxes({
+          name: "selectnpq",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "NPQ",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Leading behaviour and culture",
+              text: "Leading behaviour and culture"
+            },
+            {
+              value: "Leading literacy",
+              text: "Leading literacy"
+            },
+            {
+              value: "Leading teaching",
+              text: "Leading teaching"
+            },
+            {
+              value: "Leading teacher development",
+              text: "Leading teacher development"
+            },
+            {
+              value: "Senior leadership",
+              text: "Senior leadership"
+            },
+            {
+              value: "Headship",
+              text: "Headship"
+            },
+            {
+              value: "Executive leadership",
+              text: "Executive leadership"
+            },
+            {
+              value: "Early years leadership",
+              text: "Early years leadership"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Early headship coaching offer",
+              text: "Early headship coaching offer",
+              hint: {
+                text: "A package of structured face-to-face support for new headteachers."
+              }
+            }
+          ]
+        })
+      }}
+
+        {{ govukCheckboxes({
+          name: "tshproviders",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Lead provider",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Ambition Institute",
+              text: "Ambition Institute"
+            },
+            {
+              value: "Best Practice Network (home of Outstanding Leaders Partnership)",
+              text: "Best Practice Network (home of Outstanding Leaders Partnership)"
+            },
+            {
+              value: "Church of England",
+              text: "Church of England"
+            },
+            {
+              value: "Education Development Trust",
+              text: "Education Development Trust"
+            },
+            {
+              value: "LLSE",
+              text: "LLSE"
+            },
+            {
+              value: "National Institute of Teaching",
+              text: "National Institute of Teaching"
+            },
+            {
+              value: "Teacher Development Trust",
+              text: "Teacher Development Trust"
+            },
+            {
+              value: "Teach First",
+              text: "Teach First"
+            },
+            {
+              value: "UCL Institute of Education",
+              text: "UCL Institute of Education"
+            }
+          ]
+        }) }}
       </div>
 
-      <div class="govuk-grid-row">
+
       <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="border-bottom: 1px solid #b1b4b6">
           <div>
             <h3 class="govuk-heading-m">
               <a href="https://albantsh.co.uk/national-professional-qualifications/">Alban Teaching School Hub</a>
             </h3>
-            <p>Email: <a href="mailto:enquiries@albantsh.co.uk">enquiries@albantsh.co.uk</a></p>
-            <p>Phone: 01727 799560</p>
-            <p><strong>4 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
-          </div>
-        </div>
-
-        <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-          <div>
-            <h3 class="govuk-heading-m">
-              <a href="https://centrallondontsh.org.uk/programmes/npqs">Central London Teaching School Hub</a>
-            </h3>
-            <p>Email: <a href="mailto:centrallondontsh@centrallondontsh.org.uk">centrallondontsh@centrallondontsh.org.uk</a></p>
+            <p class="govuk-!-margin-bottom-1">Applications open for Spring 2023</p>
             <p><strong>10 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
           </div>
         </div>
 
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="https://centrallondontsh.org.uk/programmes/npqs">Central London Teaching School Hub</a>
+            </h3>
+            <p class="govuk-!-margin-bottom-1">Applications open for Spring 2023</p>
+            <p><strong>4 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
+          </div>
+        </div>
+
       </div>
-    </div>
     </div>
   </main>
 </div>

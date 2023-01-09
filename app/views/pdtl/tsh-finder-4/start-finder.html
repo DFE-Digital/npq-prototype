@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find a teaching school hub near you
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find an NPQ delivery partner near you</h1>
+
+      <p>Find an NPQ delivery partner near you and we'll show you their partner provider</p>
+
+      <p>You can then apply for your NPQ with the relevant provider</p>
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "location"
+      }) }}
+
+
+
+    </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}
