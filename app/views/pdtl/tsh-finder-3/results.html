@@ -16,17 +16,20 @@
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row" style="border-bottom: 1px solid #b1b4b6">
       <div class="govuk-grid-column-two-thirds">
-
-        <h1 class="govuk-heading-xl">Teaching school hubs in {{ data['tshlocation'] or "London" }} for {{ data['npqcourse'] or "NPQL"}}</h1>
-
+        <h1 class="govuk-heading-xl">Teaching school hubs in {{ data['tshlocation'] or "London" }} - {{ data['npqcourse'] or "All"}} NPQ</h1>
 
       </div>
     </div>
     <div class="govuk-grid-row" style="padding-top: 40px">
       <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">Location</h3>
+
 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <h3 class="govuk-heading-s">Location</h3>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
               {{ data['tshlocation'] or "London" }}
@@ -41,8 +44,28 @@
           </div>
         </dl>
 
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <h3 class="govuk-heading-s">NPQ</h3>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              {{ data['npqcourse'] or "All NPQs" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link" href="select-npq">
+                  Change<span class="govuk-visually-hidden"> NPQ</span>
+                </a>
+
+            </dd>
+          </div>
+        </dl>
+
         {{ govukCheckboxes({
-          name: "tshdeliverypartners",
+          name: "tshproviders",
           classes: "govuk-checkboxes--small",
           fieldset: {
             legend: {

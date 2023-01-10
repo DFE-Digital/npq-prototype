@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find a teaching school hub near you
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find a teaching school hub for your NPQ</h1>
+
+      <p>Find a teaching school hub near you to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>see if they offer your chosen NPQ</li>
+        <li>see which ‘lead provider’ they partner with to offer NPQs - you’ll need to know this when you <a href="https://register-national-professional-qualifications.education.gov.uk/">register for an NPQ</a></li>
+        <li>access their website and contact details</li>
+      </ul>
+
+      <p>Even if they do not offer your chosen NPQ, you can still contact them for advice on choosing another provider.</p>
+
+      <h2 class="govuk-heading-s">Choose an NPQ</h2>
+
+      <p><a href="https://professional-development-for-teachers-leaders.education.gov.uk/">Choose an NPQ</a> before you start as we’ll ask you which NPQ you want to do.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "location"
+      }) }}
+
+
+
+    </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}

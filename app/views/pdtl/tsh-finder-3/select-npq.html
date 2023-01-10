@@ -1,0 +1,90 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Which NPQ do you want to do?
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="results" method="post">
+        {{ govukRadios({
+          name: "npqcourse",
+          fieldset: {
+            legend:{
+              text: "Which NPQ do you want to do?",
+              classes: "govuk-fieldset__legend--xl",
+              isPageHeading: true
+            }
+          },
+          hint: {
+            text: "Select an NPQ to find teaching school hubs offering that NPQ. You can change your selection later."
+          },
+
+          items: [
+            {
+              value: "Leading behaviour and culture",
+              text: "Leading behaviour and culture"
+            },
+            {
+              value: "Leading literacy",
+              text: "Leading literacy"
+            },
+            {
+              value: "Leading teaching",
+              text: "Leading teaching"
+            },
+            {
+              value: "Leading teacher development",
+              text: "Leading teacher development"
+            },
+            {
+              value: "Senior leadership",
+              text: "Senior leadership"
+            },
+            {
+              value: "Headship",
+              text: "Headship"
+            },
+            {
+              value: "Executive leadership",
+              text: "Executive leadership"
+            },
+            {
+              value: "Early years leadership",
+              text: "Early years leadership"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Early headship coaching offer",
+              text: "Early headship coaching offer",
+              hint: {
+                text: "A package of structured face-to-face support for new headteachers."
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Find a teaching school hub"
+        }) }}
+      </form>
+
+
+    </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}
