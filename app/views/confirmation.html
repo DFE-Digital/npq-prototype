@@ -15,7 +15,7 @@
 
       {% set html %}
       <div class="govuk-!-font-size-19">
-        You've registered for an <strong>{{ data['choosenpq'] }}</strong> with <strong>{{ data['provider'] }}</strong>
+        You've registered for <strong>{{ data['choosenpq'] }}</strong> with <strong>{{ data['provider'] }}</strong>
       </div>
 
       {% endset %}
@@ -25,13 +25,13 @@
         html: html
       }) }}
 
-      <h2 class="govuk-heading-m">What happens next</h2>
+      <h2 class="govuk-heading-m">Apply through your provider</h2>
 
       <p class="govuk-body">
-        {{ data['provider']}} will contact you to complete your registration.
+        You still need to apply for your NPQ through {{ data['provider']}}.
       </p>
       <p class="govuk-body">
-        They will provide details of timings, costs and deadlines.
+        They’ll contact you to outline the next steps, including how to apply.
       </p>
 
       {% if (data['choosenpq'] == "NPQ for Headship (NPQH)") %}
@@ -42,7 +42,7 @@
       {% endif %}
 
       <div class="govuk-inset-text">
-        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScAD7XvFlHl8LzfSyxstYErWMiFPXGamrA_qBhBJTGXuP9efw/viewform?usp=sf_link">Tell us about your experience</a> for the possibility to be called for further research and earn £40.
+        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScAD7XvFlHl8LzfSyxstYErWMiFPXGamrA_qBhBJTGXuP9efw/viewform?usp=sf_link">Tell us about your experience</a> of registering for an NPQ. Your views help us improve this service.
       </div>
 
       <p class="govuk-!-font-size-14"><a href="email-complete">For prototype reference: Confirmation email</a></p>
