@@ -1,0 +1,72 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Professional development for teachers and leaders
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">
+        Professional development for teachers and leaders
+      </h1>
+      <p class="govuk-!-font-size-24">
+        Choose a professional development option to improve your skills, increase your confidence or help you progress to a more senior role.
+      </p>
+      </div>
+    </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h2 class="govuk-heading-l">Broaden your expertise</h2>
+      <p> Ideal for teachers looking to improve their classroom skills. Take a specialist national professional qualification (NPQ) to enhance and develop your existing skills and knowledge both inside and outside of the classroom.</p>
+      <p>Here you'll find information about these NPQs:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Leading teaching</li>
+        <li>Leading behaviour and culture</li>
+        <li>Leading literacy</li>
+        <li>Leading teacher development</li>
+      </ul>
+
+      {{ govukButton({
+        text: "View all specialist NPQs"
+      }) }}
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h2 class="govuk-heading-l">Develop your leadership skills</h2>
+      <p>Take a leadership-focused NPQ to help boost your knowledge and confidence as you progress into more senior roles.</p>
+      <p>Here you'll find information about these NPQs:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Senior leadership</li>
+        <li>Headship</li>
+        <li>Executive leadership</li>
+        <li>Early years leadership</li>
+        <li>Early headship coaching offer</li>
+      </ul>
+      {{ govukButton({
+        text: "View all leadership NPQs"
+      }) }}
+    </div>
+  </div>
+
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}
