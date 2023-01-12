@@ -1,0 +1,115 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Professional development for teachers and leaders
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBreadcrumbs({
+  items: [
+  {
+    text: "Home",
+    href: "professional-development-for-teachers-and-leaders-2"
+  }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h1 class="govuk-heading-xl">Specialist NPQs</h1>
+      <p>Take a specialist national professional qualification (NPQ) to develop your existing skills and knowledge.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading teaching NPQ</h2>
+      <p>Learn how to lead the teaching and learning of a subject, year group or phase.</p>
+      <p>This one-year course will help you gain confidence and develop skills in:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>helping create a culture of high expectations</li>
+        <li>supporting colleagues with all aspects of their teaching</li>
+        <li>contributing to effective professional development linked to teaching, curriculum and assessment</li>
+      </ul>
+      {{ govukButton({
+        text: "More about leading teaching NPQ",
+        classes: "govuk-button--secondary",
+        href: "leading-teaching"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading behaviour and culture NPQ</h2>
+      <p>Learn how to create a culture of good behaviour and high expectations in which staff and pupils can thrive.</p>
+      <p>This course will help you develop skills and gain the confidence to enact changes in:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>setting a culture of high expectations and learning in your school</li>
+        <li>enabling conditions for good behaviour for pupils and ensuring colleagues are supported in their classroom-level approaches</li>
+        <li>supporting pupil wellbeing and understanding the impact this has on behaviour</li>
+      </ul>
+      {{ govukButton({
+        text: "More about leading behaviour and culture NPQ",
+        classes: "govuk-button--secondary",
+        href: "leading-behaviour-and-culture"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading literacy NPQ</h2>
+      <p>Learn how to create a culture of good behaviour and high expectations in which staff and pupils can thrive.</p>
+      <p>This one-year course will help you gain confidence and develop skills in:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>running literacy improvement strategies</li>
+        <li>supporting colleagues who want to develop their pupils’ reading</li>
+      </ul>
+      {{ govukButton({
+        text: "More about leading literacy NPQ",
+        classes: "govuk-button--secondary",
+        href: "leading-literacy"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading teacher development NPQ</h2>
+      <p>Learn how to become a teacher educator and successfully support teachers in your school to expand their skills.</p>
+      <p>This one-year course will help you gain confidence and develop skills in:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          implementing evidence-based professional development programmes focused on improving classroom teaching
+        </li>
+        <li>
+          promoting a strong professional development culture across their school
+        </li>
+      </ul>
+      {{ govukButton({
+        text: "More about leading teacher development NPQ",
+        classes: "govuk-button--secondary",
+        href: "leading-teacher-development"
+      }) }}
+    </div>
+  </div>
+
+
+
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}
