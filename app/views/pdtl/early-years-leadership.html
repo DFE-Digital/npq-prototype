@@ -8,17 +8,22 @@
   Early years leadership NPQ
 {% endblock %}
 
+
+
 {% block pageNavigation %}
+  {{ govukBreadcrumbs({
+    items: [
+    {
+      text: "Home",
+      href: "professional-development-for-teachers-and-leaders-2"
+    },
+    {
+      text: "Leadership NPQs",
+      href: "lnpqs"
+    }
 
-{{ govukBreadcrumbs({
-  items: [
-  {
-    text: "Home",
-    href: "professional-development-for-teachers-and-leaders"
-  }
-
-  ]
-}) }}
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
