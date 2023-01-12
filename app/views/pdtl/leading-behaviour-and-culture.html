@@ -11,21 +11,19 @@
 {% endblock %}
 
 {% block pageNavigation %}
+  {{ govukBreadcrumbs({
+    items: [
+    {
+      text: "Home",
+      href: "professional-development-for-teachers-and-leaders-2"
+    },
+    {
+      text: "Specialist NPQs",
+      href: "snpqs"
+    }
 
-
-{{ govukBreadcrumbs({
-  items: [
-  {
-    text: "Home",
-    href: "professional-development-for-teachers-and-leaders-2"
-  },
-  {
-    text: "Specialist NPQs",
-    href: "snpqs"
-  }
-
-  ]
-}) }}
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
