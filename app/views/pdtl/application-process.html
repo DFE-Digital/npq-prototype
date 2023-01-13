@@ -117,7 +117,7 @@
 
               <p class="app-step-nav__paragraph">If you’re employed, ask your employer or line manager if they have a recommended provider for your training.</p>
 
-              <p class="app-step-nav__paragraph">You can also see who provides each NPQ on course pages:</p>
+              <p class="app-step-nav__paragraph">Visit course pages to see who provides each NPQ and for advice on how to choose between providers:</p>
 
               <ul class="govuk-list govuk-list--bullet">
                 <li><a href="/pdtl/leading-teaching">Leading teaching</a></li>
@@ -131,16 +131,12 @@
                 <li><a href="/pdtl/early-headship-coaching-offer">Early headship coaching offer</a></li>
               </ul>
 
-              <h1 class="govuk-heading-s">If your workplace cannot recommend a provider</h1>
-
-              <p class="app-step-nav__paragraph">You can get advice from a teaching school hub. They partner with providers to offer NPQs and can tell you:
+              <p class="app-step-nav__paragraph">Alternatively, <a href="/pdtl/tsh-finder-1/start-finder">find a teaching school hub near you</a>. They partner with providers to offer NPQs and can tell you:
 
                 <ul class="govuk-list govuk-list--bullet">
                   <li>whether they offer your chosen NPQ</li>
                   <li>who the provider is - you’ll need to know this when you register (next step)</li>
                 </ul>
-
-              <p><a href="/pdtl/tsh-finder-1/start-finder">Find a teaching school hub near you</a> for advice.</p>
 
               </li>
             </ol>
@@ -166,11 +162,16 @@
           </div>
 
           <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
-            <p class="app-step-nav__paragraph">You need to <a href="/start">register for your NPQ or the early headship coaching offer</a> with the Department for Education (DfE).</p>
+            <p class="app-step-nav__paragraph">You need to register for your NPQ or the early headship coaching offer with the Department for Education (DfE).</p>
 
             <p class="app-step-nav__paragraph">This is so that DfE can check and allocate any <a href="/pdtl/professional-development-for-teachers-and-leaders-2#funding">funding</a> you’re entitled to, understand who is doing an NPQ, and issue your certificate if you pass your course.</p>
 
-            <p class="app-step-nav__paragraph">Even if you’re not funded by DfE, you still need to <a href="/start">register</a>.</p>
+            <p class="app-step-nav__paragraph">Even if you’re not funded by DfE, you still need to register.</p>
+
+            {{ govukButton({
+              text: "Register for an NPQ",
+              href: "/start"
+            }) }}
 
 
           </div>
@@ -201,7 +202,7 @@
 
           <p class="app-step-nav__paragraph">They’ll contact you by email once you’ve registered to outline how to apply.</p>
 
-          <p class="app-step-nav__paragraph">Your provider will also keep you up to date on course details, such as start dates.</p>
+          <p class="app-step-nav__paragraph">Your provider will also keep you up to date about the course details, such as start dates.</p>
 
             </ol>
           </div>
