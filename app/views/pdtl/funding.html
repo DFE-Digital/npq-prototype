@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Professional development for teachers and leaders - funding
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBreadcrumbs({
+  items: [
+  {
+    text: "Home",
+    href: "professional-development-for-teachers-and-leaders-2"
+  }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h1 class="govuk-heading-xl">Funding</h1>
+
+      <p>NPQs are currently fully funded by the Department for Education (DfE) if you work in a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>state-funded school in England</li>
+        <li>state-funded organisation that offers 16 to 19 places in England</li>
+      </ul>
+      <p>If you work in early years you may also be eligible. Check your funding eligibility for the <a href="early-years-leadership">Early years leadership NPQ</a>.</p>
+
+      <div class="govuk-inset-text">
+        Funding is currently available for the 2022 to 2023 and 2023 to 2024 academic years.
+      </div>
+
+      <p>You can do more than one NPQ, but will only be eligible for funding for each NPQ once. If you withdraw or fail your course you cannot get funded again for the same NPQ.</p>
+
+      <h3 class="govuk-heading-m">Extra funding for smaller settings</h3>
+      <p>
+        State-funded schools and 16 to 19 educational settings
+        in England with up to 600 pupils can get an extra £200 for each teacher or leader taking an NPQ.
+      </p>
+
+      <p class="govuk-body govuk-!-margin-bottom-5"><a href="https://www.gov.uk/government/publications/national-professional-qualifications-npqs-reforms/national-professional-qualifications-npqs-reforms#targeted-support-funding">Learn about targeted support funding</a>.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h2 class="govuk-heading-l">Apply for an NPQ</h2>
+      <p>Five steps to start your NPQ or the early headship coaching offer.</p>
+      {{ govukButton({
+        text: "Steps to apply",
+        classes: "govuk-button--secondary",
+        href: "application-process"
+      }) }}
+    </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}
