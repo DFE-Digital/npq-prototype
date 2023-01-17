@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Professional development for teachers and leaders
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">
+        Choose an NPQ
+      </h1>
+      <p class="govuk-!-font-size-24" style="margin-top: -10px; margin-bottom: 40px">
+        Below are the NPQs available.
+      </p>
+
+      </div>
+
+    </div>
+
+
+  <div class="govuk-grid-row govuk-!-padding-top-1">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+      <div style="background-color:#F3F2F1; padding: 20px;">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Broaden your expertise
+        </h3>
+        <p class="govuk-!-margin-bottom-2">Take a specialist national professional qualification (NPQ) to develop your existing skills and knowledge.</p>
+        <p>Discover the following specialist NPQs:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Leading teaching</li>
+          <li>Leading behaviour and culture</li>
+          <li>Leading literacy</li>
+          <li>Leading teacher development</li>
+        </ul>
+        {{ govukButton({
+          text: "View specialist NPQs",
+          href: "snpqs"
+        }) }}
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="govuk-grid-row govuk-!-padding-top-1">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-4">
+      <div style="background-color:#F3F2F1; padding: 20px;">
+        <h3 class="govuk-heading-l govuk-!-margin-bottom-3">
+          Develop your leadership skills
+        </h3>
+        <p class="govuk-!-margin-bottom-2">Take a leadership NPQ to boost your knowledge and confidence as you progress into more senior roles.</p>
+        <p>Discover the following leadership NPQs:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Senior leadership</li>
+          <li>Headship</li>
+          <li>Executive leadership</li>
+          <li>Early years leadership</li>
+        </ul>
+
+        <p>Or get extra support as a new head teacher through the early headship coaching offer.</p>
+        {{ govukButton({
+          text: "View leadership NPQs",
+          href: "lnpqs"
+        }) }}
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}
