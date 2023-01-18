@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find a teaching school hub near you
+{% endblock %}
+
+{% block pageNavigation %}
+  {{ govukBreadcrumbs({
+    items: [
+    {
+      text: "Home",
+      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
+    }
+
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find a teaching school hub for your NPQ</h1>
+
+      <p>Find a teaching school hub near you to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>see which NPQs they offer</li>
+        <li>access their website and contact details</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">Even if they do not offer your chosen NPQ, you can still contact them for advice on choosing another provider.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "location"
+      }) }}
+
+    </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}

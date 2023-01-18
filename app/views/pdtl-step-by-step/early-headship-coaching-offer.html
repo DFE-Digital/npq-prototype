@@ -11,20 +11,8 @@
 
 
 
-{% block pageNavigation %}
-  {{ govukBreadcrumbs({
-    items: [
-    {
-      text: "Home",
-      href: "professional-development-for-teachers-and-leaders-2"
-    },
-    {
-      text: "Leadership NPQs",
-      href: "lnpqs"
-    }
-
-    ]
-  }) }}
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
 {% endblock %}
 
 {% block content %}

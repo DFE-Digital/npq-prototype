@@ -1,26 +1,13 @@
-{% extends "layout.html" %}
 
-{% block pageTitle %}
-  Application process
-{% endblock %}
+{% extends "layout.html" %}
 
 {% set serviceName %}
   Professional development for teachers and leaders
 {% endset %}
 
 
-
-{% block pageNavigation %}
-
-{{ govukBreadcrumbs({
-  items: [
-  {
-    text: "Home",
-    href: "professional-development-for-teachers-and-leaders-2"
-  }
-
-  ]
-}) }}
+{% block pageTitle %}
+  Professional development for teachers and leaders
 {% endblock %}
 
 {% block pageScripts %}
@@ -30,24 +17,21 @@
   </script>
 {% endblock %}
 
-
 {% block content %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">
-      Apply for an NPQ
-    </h1>
-
-    <p>
-      Find out how to apply for a national professional qualification (NPQ) or the early headship coaching offer.
+    <h1 class="govuk-heading-xl">Steps to start a national professional qualification (NPQ)</h1>
+    <p class="govuk-!-font-size-24" style="margin-top: -10px; margin-bottom: 40px">
+      Follow 5 steps to start an NPQ or the early headship coaching offer.
     </p>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
 
     <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--active app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps" data-gemstepnav-module-started="true">
       <ol class="app-step-nav__steps">
@@ -72,20 +56,7 @@
 
             <ol class="app-step-nav__list " data-length="3">
 
-            <p class="app-step-nav__paragraph"><a href="/pdtl/professional-development-for-teachers-and-leaders-2">Choose from 8 NPQs or the early headship coaching offer</a>.</p>
-
-            <!-- <p class="app-step-nav__paragraph">Choose from the following NPQs:</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/leading-teaching">Leading teaching</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/leading-behaviour-and-culture">Leading behaviour and culture</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/leading-literacy">Leading literacy</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/leading-teacher-development">Leading teacher development</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/senior-leadership">Senior leadership</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/headship">Headship</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/executive-leadership">Executive leadership</a></li>
-              <li><a href="https://professional-development-for-teachers-leaders.education.gov.uk/early-years-leadership">Early years leadership</a></li>
-            </ul> -->
+            <p class="app-step-nav__paragraph"><a href="/pdtl/npq-list">Choose from 8 NPQs or the early headship coaching offer</a>.</p>
 
             <p class="app-step-nav__paragraph">If you’re employed, ask your employer or line manager for advice on choosing an NPQ that’s suitable for you. You’ll need your workplace’s approval to do an NPQ.</p>
 
@@ -117,7 +88,7 @@
 
               <p class="app-step-nav__paragraph">If you’re employed, ask your employer or line manager if they have a recommended provider for your training.</p>
 
-              <p class="app-step-nav__paragraph">Visit course pages to see who provides each NPQ and for advice on how to choose between providers:</p>
+              <p class="app-step-nav__paragraph">Visit the course pages to see who provides each NPQ and for advice on how to choose between providers.</p>
 
               <ul class="govuk-list govuk-list--bullet">
                 <li><a href="/pdtl/leading-teaching">Leading teaching</a></li>
@@ -246,6 +217,51 @@
   </div>
 </div>
 
-{% include 'includes/pdtl/survey.html' %}
+
+  <div class="govuk-grid-row" style="margin-top: 20px">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" id="funding">Funding</h2>
+
+      <p>NPQs are currently fully funded by the Department for Education (DfE) for eligible participants.</p>
+
+      <p><a href="/pdtl/funding">Learn about funding</a>.</p>
+
+    </div>
+  </div>
+
+
+
+<!-- YOUTUBE VIDEOS -->
+<!-- Needs to be reviewed against GDS guidelines as these state that promotional videos shouldn't be
+  added to information pages -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h2 class="govuk-heading-l">What participants say about NPQs</h2>
+      <p>Hear from previous NPQ participants in the videos below.</p>
+      <div style="padding-top: 20px; padding-bottom: 20px">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/U2YIdJ954BQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div style="padding-bottom: 40px">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/m-LxCfs2VIE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-padding-top-5">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-4">
+      <div style="background-color:#F3F2F1; padding: 40px;">
+      <h2 class="govuk-heading-m govuk-!-padding-top-1">
+        If you coordinate professional development
+      </h2>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="https://professional-development-for-teachers-leaders.education.gov.uk/public/files/npq-campaign.pdf">Download or print an NPQ prospectus</a> to share with colleagues in your organisation.</p>
+    </div>
+  </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
 
 {% endblock %}
