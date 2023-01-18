@@ -11,16 +11,8 @@
 {% endblock %}
 
 
-{% block pageNavigation %}
-  {{ govukBreadcrumbs({
-    items: [
-    {
-      text: "Home",
-      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
-    }
-
-    ]
-  }) }}
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
 {% endblock %}
 
 {% block content %}

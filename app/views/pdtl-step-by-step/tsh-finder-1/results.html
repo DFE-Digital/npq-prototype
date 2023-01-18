@@ -10,25 +10,8 @@
   Find your local TSH
 {% endblock %}
 
-{% block pageNavigation %}
-  {{ govukBreadcrumbs({
-    items: [
-    {
-      text: "Home",
-      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
-    },
-    {
-      text: "Find a teaching school hub",
-      href: "start-finder"
-    },
-
-    {
-      text: "Select your location",
-      href: "location"
-    }
-
-    ]
-  }) }}
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
 {% endblock %}
 
 {% block content %}
