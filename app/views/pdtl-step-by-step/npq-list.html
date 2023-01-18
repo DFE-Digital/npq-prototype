@@ -10,6 +10,9 @@
   Professional development for teachers and leaders
 {% endblock %}
 
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
+{% endblock %}
 
 {% block content %}
 
@@ -43,7 +46,7 @@
           <li>Leading teacher development</li>
         </ul>
 
-        <p class="govuk-!-margin-bottom-6"><a href="/pdtl/snpqs">View specialist NPQs</a>.</p>
+        <p class="govuk-!-margin-bottom-6"><a href="snpqs">View specialist NPQs</a>.</p>
       </div>
     </div>
 
@@ -62,7 +65,7 @@
           <li>Early years leadership</li>
         </ul>
 
-      <p class="govuk-!-margin-bottom-6"><a href="/pdtl/lnpqs">View leadership NPQs</a>.</p>
+      <p class="govuk-!-margin-bottom-6"><a href="lnpqs">View leadership NPQs</a>.</p>
 
       </div>
     </div>

@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Professional development for teachers and leaders
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h1 class="govuk-heading-xl">Leadership NPQs</h1>
+
+      <p class="govuk-!-font-size-24" style="margin-top: -10px; margin-bottom: 40px">
+        Take a leadership NPQ to boost your knowledge and confidence as you progress into more senior roles.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-inset-text govuk-grid-column-two-thirds">
+    <p class="govuk-body govuk-!-margin-bottom-0">If you’re in your first 5 years of headship, you can also get support such as coaching and networking opportunities through the <a href="/pdtl/early-headship-coaching-offer">early headship coaching offer</a>.</p>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Senior leadership</h2>
+        <p>Develop your leadership knowledge and expertise to improve outcomes for teachers and pupils in your school.</p>
+        <p>Find out more about the <a href="senior-leadership">Senior leadership NPQ</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Headship</h2>
+      <p>Develop the knowledge that underpins expert school leadership and apply it to become an outstanding headteacher.</p>
+      <p>Find out more about the <a href="headship">Headship NPQ</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Executive leadership</h2>
+        <p>Become an outstanding executive leader, leading change and improvement across your group of schools or multi-academy trust.</p>
+        <p>Find out more about the <a href="executive-leadership">Executive leadership NPQ</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Early years leadership</h2>
+        <p>Lead high-quality early years education and care and effectively manage your organisation and staff.</p>
+        <p class="govuk-body govuk-!-margin-bottom-9">Find out more about the <a href="early-years-leadership">Early years leadership NPQ</a>.</p>
+    </div>
+  </div>
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}

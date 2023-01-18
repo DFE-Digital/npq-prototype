@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find your local TSH
+{% endblock %}
+
+{% block pageNavigation %}
+  {{ govukBreadcrumbs({
+    items: [
+    {
+      text: "Home",
+      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
+    },
+    {
+      text: "Find a teaching school hub",
+      href: "start-finder"
+    },
+
+    {
+      text: "Select your location",
+      href: "location"
+    }
+
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Teaching school hubs in {{ data['tshlocation'] or "London" }}</h1>
+
+
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+
+        <p><a href="location">Change location</a></p>
+
+      </div>
+      </div>
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="https://albantsh.co.uk/national-professional-qualifications/">Alban Teaching School Hub</a>
+            </h3>
+            <p>Email: <a href="mailto:enquiries@albantsh.co.uk">enquiries@albantsh.co.uk</a></p>
+            <p>Phone: 01727 799560</p>
+            <p><strong>4 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="https://centrallondontsh.org.uk/programmes/npqs">Central London Teaching School Hub</a>
+            </h3>
+            <p>Email: <a href="mailto:centrallondontsh@centrallondontsh.org.uk">centrallondontsh@centrallondontsh.org.uk</a></p>
+            <p><strong>10 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </main>
+</div>
+
+
+
+
+{% endblock %}
