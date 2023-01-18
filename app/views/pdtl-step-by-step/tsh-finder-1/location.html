@@ -10,20 +10,8 @@
   Find a teaching school hub near you
 {% endblock %}
 
-{% block pageNavigation %}
-  {{ govukBreadcrumbs({
-    items: [
-    {
-      text: "Home",
-      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
-    },
-    {
-      text: "Find a teaching school hub",
-      href: "start-finder"
-    }
-
-    ]
-  }) }}
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
 {% endblock %}
 
 {% block content %}
