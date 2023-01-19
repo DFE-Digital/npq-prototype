@@ -141,24 +141,11 @@
 
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="border-bottom: 1px solid #b1b4b6">
-          <div>
-            <h3 class="govuk-heading-m">
-              <a href="https://albantsh.co.uk/national-professional-qualifications/">Alban Teaching School Hub</a>
-            </h3>
-            <p>Email: <a href="mailto:enquiries@albantsh.co.uk">enquiries@albantsh.co.uk</a></p>
-            <p>Phone: 01727 799560</p>
-            <p><strong>4 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
-          </div>
+          {% include 'includes/pdtl/tsh-1.html' %}
         </div>
 
         <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-          <div>
-            <h3 class="govuk-heading-m">
-              <a href="https://centrallondontsh.org.uk/programmes/npqs">Central London Teaching School Hub</a>
-            </h3>
-            <p>Email: <a href="mailto:centrallondontsh@centrallondontsh.org.uk">centrallondontsh@centrallondontsh.org.uk</a></p>
-            <p><strong>10 miles</strong> from {{ data['tshlocation'] or "London" }}</p>
-          </div>
+          {% include 'includes/pdtl/tsh-2.html' %}
         </div>
 
       </div>
