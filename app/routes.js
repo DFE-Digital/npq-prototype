@@ -7,7 +7,7 @@ var settingt = "A school"
 var whichschoolt = "public"
 var nurserysettingt = "Local authority-maintained nursery"
 var mentort = "Other"
-var npqt = "NPQLBC"
+var npqt = "Headship"
 var hasurnt = "no"
 var workinnurseryt = "yes"
 var emailt
@@ -162,10 +162,10 @@ router.post('/check-data/_funding-check', function(req, res){
   if(locationt == 'England'){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      if(npqt != 'The Early Headship Coaching Offer' && whichschoolt != 'private'){
+      if(npqt != 'Early Headship Coaching Offer' && whichschoolt != 'private'){
         res.redirect('/funding/funding-vague')
       }
-      else if(npqt == 'The Early Headship Coaching Offer'){
+      else if(npqt == 'Early Headship Coaching Offer'){
       res.redirect('/ehco/ehco-intro')
       }
       //Private school
@@ -173,14 +173,14 @@ router.post('/check-data/_funding-check', function(req, res){
         res.redirect('/funding/funding-not-available')
       }
     //EHCO
-    }else if(npqt == 'The Early Headship Coaching Offer'){
+    }else if(npqt == 'Early headship coaching offer'){
     res.redirect('/ehco/ehco-intro')
 
     //Other
     }else if(settingt == 'Other'){
       //Is a mentor?
       if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
-        if(npqt == 'NPQ for Leading Teacher Development (NPQLTD)'){
+        if(npqt == 'Leading teacher development'){
           res.redirect('/funding/funding-vague')
 
         // A mentor NOT doing NPQLTD
@@ -208,11 +208,11 @@ router.post('/check-data/_funding-check', function(req, res){
       if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
         res.redirect('/funding/funding-vague')
       }
-      if(hasurnt == 'Yes' && npqt == 'NPQ for Early Years Leadership (NPQEYL)'){
+      if(hasurnt == 'Yes' && npqt == 'Early years leadership'){
       res.redirect('/funding/funding-vague')
     }
     //Private nursery, with URN not NPQEYL
-    else if(hasurnt == 'Yes' && npqt != 'NPQ for Early Years Leadership (NPQEYL)'){
+    else if(hasurnt == 'Yes' && npqt != 'Early years leadership'){
       res.redirect('/funding/funding-not-available')
     }
     //Private nursery, no URN
