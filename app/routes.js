@@ -19,7 +19,7 @@ router.post('/email', function (req, res) {
   if (trnregistered == "no"){
     res.redirect('/get-a-trn')
   } else {
-    res.redirect('/email')
+    res.redirect('https://find-a-lost-trn-prototype.herokuapp.com/user-research/scenario-1')
   }
 })
 
