@@ -162,10 +162,10 @@ router.post('/check-data/_funding-check', function(req, res){
   if(locationt == 'England'){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      if(npqt != 'Early Headship Coaching Offer' && whichschoolt != 'private'){
+      if(npqt != 'Early headship coaching offer' && whichschoolt != 'private'){
         res.redirect('/funding/funding-vague')
       }
-      else if(npqt == 'Early Headship Coaching Offer'){
+      else if(npqt == 'Early headship coaching offer'){
       res.redirect('/ehco/ehco-intro')
       }
       //Private school
