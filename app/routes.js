@@ -223,7 +223,13 @@ router.post('/check-data/_funding-check', function(req, res){
   }
 //Outside of England
   else{
-    res.redirect('/funding/funding-not-available')
+    if (npqt == 'Early headship coaching offer') {
+      res.redirect('/ehco/ehco-completed-npqh')
+
+    }else{
+      res.redirect('/funding/funding-not-available')
+    }
+
   }
 })
 
@@ -250,27 +256,31 @@ router.post('/ehco/ehco-early-headship', function(req, res){
 //Applying for EHCO + not early headship
 router.post('/funding/ehco-funded', function(req, res){
   var earlyheadshipt = req.session.data['earlyheadship']
-  if(earlyheadshipt == 'No'){
-    res.redirect('/funding/ehco-not-funded')
-  }else{
-    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      res.redirect('/funding/ehco-funded')
-    }else if(settingt == 'Early years or childcare'){
-      if(nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
-        res.redirect('/funding/ehco-funded')
-      }else{
-        res.redirect('/funding/ehco-not-funded')
-      }
-    }else if(settingt == 'Other'){
-      if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
-        res.redirect('/funding/ehco-not-funded')
-      }else{
-        res.redirect('/choose-provider')
-      }
-    }
-    else{
+  if (locationt == 'England') {
+    if(earlyheadshipt == 'No'){
       res.redirect('/funding/ehco-not-funded')
+    }else{
+      if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+        res.redirect('/funding/ehco-funded')
+      }else if(settingt == 'Early years or childcare'){
+        if(nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
+          res.redirect('/funding/ehco-funded')
+        }else{
+          res.redirect('/funding/ehco-not-funded')
+        }
+      }else if(settingt == 'Other'){
+        if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
+          res.redirect('/funding/ehco-not-funded')
+        }else{
+          res.redirect('/choose-provider')
+        }
+      }
+      else{
+        res.redirect('/funding/ehco-not-funded')
+      }
     }
+  }else{
+    res.redirect('/funding/ehco-not-funded')
   }
 })
 
