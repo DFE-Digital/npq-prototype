@@ -166,7 +166,7 @@ router.post('/check-data/_funding-check', function(req, res){
         res.redirect('/funding/funding-vague')
       }
       else if(npqt == 'Early headship coaching offer'){
-      res.redirect('/ehco/ehco-intro')
+      res.redirect('/ehco/ehco-completed-npqh')
       }
       //Private school
       else if (whichschoolt == 'private' || whichschoolt =='Private') {
@@ -174,7 +174,7 @@ router.post('/check-data/_funding-check', function(req, res){
       }
     //EHCO
     }else if(npqt == 'Early headship coaching offer'){
-    res.redirect('/ehco/ehco-intro')
+    res.redirect('/ehco/ehco-completed-npqh')
 
     //Other
     }else if(settingt == 'Other'){
