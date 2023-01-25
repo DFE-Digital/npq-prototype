@@ -1,0 +1,51 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find your local TSH
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Teaching school hubs in {{ data['tshlocation'] or "London" }}</h1>
+
+
+      </div>
+    </div>
+    
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+          {% include 'includes/pdtl/tsh-1.html' %}
+      </div>
+
+      <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          {% include 'includes/pdtl/tsh-2.html' %}
+      </div>
+
+    </div>
+  </div>
+
+  </main>
+</div>
+
+
+
+
+{% endblock %}
