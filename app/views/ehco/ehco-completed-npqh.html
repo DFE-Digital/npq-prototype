@@ -15,32 +15,34 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="ehco-headteacher" method="post">
+    <form class="form" action="ehco-completed-npqh" method="post">
+
+<h1 class="govuk-heading-xl">Headship NPQ</h1>
+
+<p class="govuk-body govuk-!-margin-bottom-7">To be eligibile for the early headship coaching offer you need to do the headship NPQ (if you have not do so already).</p>
+
       {{ govukRadios({
-        name: "completednpqh",
-        id: "completednpqh",
+        name: "npqh_status",
+        id: "npqh_status",
         fieldset: {
           legend: {
-            text: "Are you studying for, or have you completed an NPQ for Headship (NPQH)?",
+            text: "What stage are you at with the headship NPQ?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
           {
             value: "I have completed an NPQH",
-            text: "I have completed an NPQH"
+            text: "I’ve completed it"
           },
           {
             value: "I am still studying for an NPQH",
-            text: "I am still studying for an NPQH"
+          text: "I’m doing it"
           },
           {
             value: "I am about to start an NPQH",
-            text: "I am about to start an NPQH"
-          },
-          {
-            divider: "or"
+            text: "I’m starting it soon"
           },
           {
             value: "None of the above",
