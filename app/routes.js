@@ -234,20 +234,20 @@ router.post('/check-data/_funding-check', function(req, res){
 })
 
 //Applying for EHCO + completing NPQH
-router.post('/ehco/ehco-early-headship', function (req, res){
-  var earlyheadship = req.session.data['earlyheadship']
-  if (earlyheadship == 'No') {
-    res.redirect('/funding/ehco-not-funded')
+router.post('/ehco/ehco-headteacher', function (req, res){
+  var earlyheadship = req.session.data['completednpqh']
+  if (earlyheadship == 'None of the above') {
+    res.redirect('/ehco/ehco-cannot-register')
   }else{
-    res.redirect('/funding/ehco-funded')
+    res.redirect('/ehco/ehco-headteacher')
   }
 })
 
 //Applying for EHCO + not a headteacher
-router.post('/ehco/ehco-completed-npqh', function(req, res){
-  var headteachert = req.session.data['npqh_status']
-  if(headteachert == 'None of the above'){
-    res.redirect('/ehco/ehco-cannot-register')
+router.post('/ehco/ehco-early-headship', function(req, res){
+  var headteachert = req.session.data['headteachers']
+  if(headteachert == 'No'){
+    res.redirect('/funding/ehco-not-funded')
   }else{
     res.redirect('/ehco/ehco-early-headship')
   }
