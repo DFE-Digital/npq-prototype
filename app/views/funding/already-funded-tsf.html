@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  DfE scholarship funding is not available
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        DfE scholarship funding is not available
+      </h1>
+      <p>Our records show that you are already registered to study <strong>{{ data['choosenpq'] }}</strong> with <strong>[Provider X]</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>You can only receive scholarship funding to study this NPQ with one provider. If you do not wish to proceed with [Provider] you will need to contact them.</li>
+        <li>If you’ve previously failed or withdrawn from this course, then you’re not eligible for scholarship funding. If you do not believe you’ve failed or withdrawn from this course please email <a class="govuk-link" href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a></li>
+      </ul>
+
+      <p>PLACEHOLDER COPY: DfE targeted support funding is available for your school. Your school will
+      receive £600 to help cover the costs that may emerge from the time you need to do an NPQ.</p>
+
+      <p>You can still register for the {{ data['choosenpq'] }} but you’ll need to pay for it another way. Contact your course provider to discuss your funding options.</p>
+
+      <p><a href="funding-vague">For prototype ref: Return to funded journey</a></p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "how-pay"
+      }) }}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
