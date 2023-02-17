@@ -1,0 +1,66 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Professional development for teachers and leaders
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'includes/pdtl/step-by-step-nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <br>
+      <h1 class="govuk-heading-xl">Specialist NPQs</h1>
+      <p class="govuk-!-font-size-24" style="margin-top: -10px; margin-bottom: 40px">
+        Take a specialist national professional qualification (NPQ) to develop your existing skills and knowledge.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading teaching</h2>
+      <p>Effectively lead the teaching and learning of a subject, year group or phase.</p>
+      <p>Find out more about the <a href="leading-teaching">Leading teaching NPQ</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading behaviour and culture</h2>
+        <p>Create a culture of good behaviour and high expectations in which staff and pupils can thrive.</p>
+        <p>Find out more about the <a href="leading-behaviour-and-culture">Leading behaviour and culture NPQ</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading literacy</h2>
+        <p>Effectively teach and promote literacy across the whole school, year group, key stage or phase.</p>
+        <p>Find out more about the <a href="leading-literacy">Leading literacy NPQ</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 40px">Leading teacher development</h2>
+        <p>Learn how to become a teacher educator and successfully support teachers in your school to expand their skills.</p>
+        <p class="govuk-body govuk-!-margin-bottom-9">Find out more about the <a href="leading-teacher-development">Leading teacher development NPQ</a>.</p>
+    </div>
+  </div>
+
+
+
+  {% include 'includes/pdtl/survey.html' %}
+
+{% endblock %}

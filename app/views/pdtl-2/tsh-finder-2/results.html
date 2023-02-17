@@ -1,0 +1,146 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+
+{% block pageTitle %}
+  Find your local TSH
+{% endblock %}
+
+{% block pageNavigation %}
+  {{ govukBreadcrumbs({
+    items: [
+    {
+      text: "Home",
+      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
+    },
+    {
+      text: "Find a teaching school hub",
+      href: "start-finder"
+    },
+
+    {
+      text: "Select your location",
+      href: "location"
+    }
+
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row" style="border-bottom: 1px solid #b1b4b6">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Teaching school hubs in {{ data['tshlocation'] or "London" }}</h1>
+
+      </div>
+    </div>
+    <div class="govuk-grid-row" style="padding-top: 40px">
+      <div class="govuk-grid-column-one-third">
+
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <h3 class="govuk-heading-s">Location</h3>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              {{ data['tshlocation'] or "London" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+                <a class="govuk-link" href="location">
+                  Change<span class="govuk-visually-hidden"> location</span>
+                </a>
+
+            </dd>
+          </div>
+        </dl>
+
+
+        {{ govukCheckboxes({
+          name: "selectnpq",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "NPQ",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Leading behaviour and culture",
+              text: "Leading behaviour and culture"
+            },
+            {
+              value: "Leading literacy",
+              text: "Leading literacy"
+            },
+            {
+              value: "Leading teaching",
+              text: "Leading teaching"
+            },
+            {
+              value: "Leading teacher development",
+              text: "Leading teacher development"
+            },
+            {
+              value: "Senior leadership",
+              text: "Senior leadership"
+            },
+            {
+              value: "Headship",
+              text: "Headship"
+            },
+            {
+              value: "Executive leadership",
+              text: "Executive leadership"
+            },
+            {
+              value: "Early years leadership",
+              text: "Early years leadership"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Early headship coaching offer",
+              text: "Early headship coaching offer",
+              hint: {
+                text: "A package of structured face-to-face support for new headteachers."
+              }
+            }
+          ]
+        })
+      }}
+
+      </div>
+
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="border-bottom: 1px solid #b1b4b6">
+            {% include 'includes/pdtl/tsh-1.html' %}
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+            {% include 'includes/pdtl/tsh-2.html' %}
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+
+{% endblock %}
