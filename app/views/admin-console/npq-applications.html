@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Manage training for early career teachers"
+  }) }}
+
+  {{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Schools',
+      href: '#1'
+    },
+    {
+      text: 'Participants',
+      href: '#2'
+    },
+    {
+      text: 'Suppliers',
+      href: '#3'
+    },
+    {
+      text: 'Admin users',
+      href: '#3'
+    },
+    {
+      text: 'NPQ applications',
+      href: '/admin-console/npq-applications',
+      active: true
+    },
+    {
+      text: 'Delivery partners',
+      href: '#3'
+    },
+    {
+      text: 'Appropriate bodies',
+      href: '#3'
+    }
+  ]
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">NPQ applications</h1>
+
+      {{ mojSubNavigation({
+        label: 'Sub navigation',
+        items: [{
+          text: 'Application exports',
+          href: 'npq-applications',
+          active: true
+        }, {
+          text: 'Eligibility imports',
+          href: '#2'
+        }, {
+          text: 'Edge cases',
+          href: '#3'
+        }]
+      }) }}
+
+      {{ govukButton({
+        text: "Schedule import"
+      }) }}
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Filename</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Scheduled at</th>
+            <th scope="col" class="govuk-table__header">Processed at</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">eligibility_import_15_2_2023_2.csv</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">15 February 2023, 4:50 PM</td>
+            <td class="govuk-table__cell">15 February 2023, 4:50 PM</td>
+            <td class="govuk-table__cell"><a href="#">View results</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
