@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Manage training for early career teachers"
+  }) }}
+
+  {{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Schools',
+      href: '#1'
+    },
+    {
+      text: 'Participants',
+      href: '#2'
+    },
+    {
+      text: 'Suppliers',
+      href: '#3'
+    },
+    {
+      text: 'Admin users',
+      href: '#3'
+    },
+    {
+      text: 'NPQ applications',
+      href: '/admin-console/npq-applications',
+      active: true
+    },
+    {
+      text: 'Delivery partners',
+      href: '#3'
+    },
+    {
+      text: 'Appropriate bodies',
+      href: '#3'
+    }
+  ]
+}) }}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">NPQ applications</h1>
+
+      {{ mojSubNavigation({
+        label: 'Sub navigation',
+        items: [{
+          text: 'Application exports',
+          href: 'npq-applications'
+        }, {
+          text: 'Eligibility imports',
+          href: 'npq-applications-imports'
+        }, {
+          text: 'Edge cases',
+          href: 'npq-applications-edge',
+          active: true
+        }]
+      }) }}
+
+
+      <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Eligible for funding</th>
+            <th scope="col" class="govuk-table__header">Funding eligibility status</th>
+            <th scope="col" class="govuk-table__header">Employment type</th>
+            <th scope="col" class="govuk-table__header">Employer name</th>
+            <th scope="col" class="govuk-table__header">Role</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Created at</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">Annamaria Green</a></td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "NO",
+                classes: "govuk-tag--red"
+              })}}
+            </td>
+            <td class="govuk-table__cell">No institution</td>
+            <td class="govuk-table__cell">Permanent</td>
+            <td class="govuk-table__cell">Bailey, Kuhic and Kshlerin</td>
+            <td class="govuk-table__cell">Advocate</td>
+            <td class="govuk-table__cell">10 February 2023, 2:30 PM</td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
