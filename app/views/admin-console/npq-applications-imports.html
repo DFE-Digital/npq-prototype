@@ -7,41 +7,7 @@
     serviceName: "Manage training for early career teachers"
   }) }}
 
-  {{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Schools',
-      href: '#1'
-    },
-    {
-      text: 'Participants',
-      href: '#2'
-    },
-    {
-      text: 'Suppliers',
-      href: '#3'
-    },
-    {
-      text: 'Admin users',
-      href: '#3'
-    },
-    {
-      text: 'NPQ applications',
-      href: '/admin-console/npq-applications',
-      active: true
-    },
-    {
-      text: 'Delivery partners',
-      href: '#3'
-    },
-    {
-      text: 'Appropriate bodies',
-      href: '#3'
-    }
-  ]
-}) }}
-
+  {% include 'includes/admin-console/primary-navigation.html' %}
 
 {% endblock %}
 
