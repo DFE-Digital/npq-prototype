@@ -7,40 +7,7 @@
     serviceName: "Manage training for early career teachers"
   }) }}
 
-  {{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Schools',
-      href: '#1'
-    },
-    {
-      text: 'Participants',
-      href: '#2'
-    },
-    {
-      text: 'Suppliers',
-      href: '#3'
-    },
-    {
-      text: 'Admin users',
-      href: '#3'
-    },
-    {
-      text: 'NPQ applications',
-      href: '/admin-console/npq-applications',
-      active: true
-    },
-    {
-      text: 'Delivery partners',
-      href: '#3'
-    },
-    {
-      text: 'Appropriate bodies',
-      href: '#3'
-    }
-  ]
-}) }}
+  {% include 'includes/admin-console/primary-navigation.html' %}
 
 
 {% endblock %}
@@ -73,7 +40,7 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Name</th>
             <th scope="col" class="govuk-table__header">Eligible for funding</th>
-            <th scope="col" class="govuk-table__header">Funding eligibility status</th>
+            <th scope="col" class="govuk-table__header">Funding eligibility status code</th>
             <th scope="col" class="govuk-table__header">Employment type</th>
             <th scope="col" class="govuk-table__header">Employer name</th>
             <th scope="col" class="govuk-table__header">Role</th>
@@ -83,7 +50,7 @@
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell"><a href="#">Annamaria Green</a></td>
+            <td scope="row" class="govuk-table__cell"><a href="applicant-1">Annamaria Green</a></td>
             <td class="govuk-table__cell">
               {{govukTag({
                 text: "NO",
@@ -91,9 +58,9 @@
               })}}
             </td>
             <td class="govuk-table__cell">No institution</td>
-            <td class="govuk-table__cell">Permanent</td>
+            <td class="govuk-table__cell">???</td>
             <td class="govuk-table__cell">Bailey, Kuhic and Kshlerin</td>
-            <td class="govuk-table__cell">Advocate</td>
+            <td class="govuk-table__cell">Lawyer</td>
             <td class="govuk-table__cell">10 February 2023, 2:30 PM</td>
           </tr>
 
