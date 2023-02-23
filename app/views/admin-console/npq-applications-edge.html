@@ -50,12 +50,22 @@
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell"><a href="applicant-1">Annamaria Green</a></td>
+            <td scope="row" class="govuk-table__cell"><a href="applicant-1/applicant">Annamaria Green</a></td>
             <td class="govuk-table__cell">
-              {{govukTag({
-                text: "NO",
-                classes: "govuk-tag--red"
-              })}}
+              {% if (data['adminfunding1'] == "Yes") %}
+                {{govukTag({
+                  text: "YES",
+                  classes: "govuk-tag--green"
+                })}}
+
+                {% else %}
+
+                {{govukTag({
+                  text: "NO",
+                  classes: "govuk-tag--red"
+                })}}
+
+              {% endif %}
             </td>
             <td class="govuk-table__cell">No institution</td>
             <td class="govuk-table__cell">Other</td>
@@ -65,12 +75,23 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell"><a href="applicant-2">Lynne Howe</a></td>
+            <td scope="row" class="govuk-table__cell"><a href="applicant-2/applicant">Lynne Howe</a></td>
             <td class="govuk-table__cell">
-              {{govukTag({
-                text: "NO",
-                classes: "govuk-tag--red"
-              })}}
+
+              {% if (data['adminfunding2'] == "Yes") %}
+                {{govukTag({
+                  text: "YES",
+                  classes: "govuk-tag--green"
+                })}}
+
+                {% else %}
+
+                {{govukTag({
+                  text: "NO",
+                  classes: "govuk-tag--red"
+                })}}
+
+              {% endif %}
             </td>
             <td class="govuk-table__cell">No institution</td>
             <td class="govuk-table__cell">Hospital school</td>
@@ -80,12 +101,22 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell"><a href="applicant-3">Carlton Shanahan JD</a></td>
+            <td scope="row" class="govuk-table__cell"><a href="applicant-3/applicant">Carlton Shanahan JD</a></td>
             <td class="govuk-table__cell">
-              {{govukTag({
-                text: "NO",
-                classes: "govuk-tag--red"
-              })}}
+              {% if (data['adminfunding3'] == "Yes") %}
+                {{govukTag({
+                  text: "YES",
+                  classes: "govuk-tag--green"
+                })}}
+
+                {% else %}
+
+                {{govukTag({
+                  text: "NO",
+                  classes: "govuk-tag--red"
+                })}}
+
+              {% endif %}
             </td>
             <td class="govuk-table__cell">No institution</td>
             <td class="govuk-table__cell">Young offender institute</td>
