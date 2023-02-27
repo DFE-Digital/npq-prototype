@@ -2,10 +2,7 @@
 
 
 {% block header %}
-  {{ govukHeader({
-    homepageUrl: "#",
-    serviceName: "Manage training for early career teachers"
-  }) }}
+  {% include 'includes/admin-console/header.html' %}
 
   {% include 'includes/admin-console/primary-navigation.html' %}
 
@@ -14,7 +11,7 @@
 {% block pageNavigation %}
 {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "/admin-console/npq-applications-edge)"
 }) }}
 {% endblock %}
 
@@ -89,7 +86,7 @@
             Funding eligibility status code
           </dt>
           <dd class="govuk-summary-list__value">
-            	No institution
+            	Awaiting more info
           </dd>
         </div>
 
