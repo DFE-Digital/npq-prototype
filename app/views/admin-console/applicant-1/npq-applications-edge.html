@@ -2,11 +2,7 @@
 
 
 {% block header %}
-  {{ govukHeader({
-    homepageUrl: "#",
-    serviceName: "Manage training for early career teachers"
-  }) }}
-
+  {% include 'includes/admin-console/header.html' %}
   {% include 'includes/admin-console/primary-navigation.html' %}
 
 
