@@ -30,12 +30,22 @@
 
       <p>You can still register for the {{ data['choosenpq'] }} but you’ll need to pay for it another way. Contact your course provider to discuss your funding options.</p>
 
-      <p><a href="funding-vague">For prototype ref: Return to funded journey</a></p>
-
       {{ govukButton({
         text: "Continue",
         href: "how-pay"
       }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            For prototype reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p><a href="funding-vague">Return to funded journey</a></p>
+          <p><a href="funding-tsf">User is not eligible for targeted support funding</a></p>
+        </div>
+      </details>
 
     </div>
   </div>
