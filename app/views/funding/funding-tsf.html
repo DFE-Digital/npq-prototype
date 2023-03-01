@@ -24,17 +24,27 @@
 
       <p>PLACEHOLDER COPY: DfE targeted support funding is available for your school. Your school will
       receive £600 to help cover the costs that may emerge from the time you need to do an NPQ.</p>
-      
+
       <p>You’ll only be eligible for DfE funding for each NPQ once. If you start an NPQ,
         and then withdraw or fail, you will not be funded again for the same course.</p>
-
-      <p><a class="govuk-link" href="already-funded-tsf">For prototype reference: Go to not funded message</a></p>
 
 
       {{ govukButton({
         text: "Continue",
         href: "/choose-provider"
       }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            For prototype reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p><a href="already-funded">User has already been funded</a></p>
+          <p><a href="funding-vague">User is not eligible for targeted support funding</a></p>
+        </div>
+      </details>
 
     </div>
   </div>

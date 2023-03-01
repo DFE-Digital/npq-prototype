@@ -22,6 +22,11 @@
       <h2 class="govuk-heading-s">From the information you have provided, DfE scholarship funding should be available.</h2>
       <p>You’ll only be eligible for DfE funding for each NPQ once. If you start an NPQ, and then withdraw or fail, you will not be funded again for the same course.</p>
 
+      {{ govukButton({
+        text: "Continue",
+        href: "/choose-provider"
+      }) }}
+
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -29,15 +34,10 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p><a class="govuk-link" href="already-funded">Go to not funded message</a></p>
-          <p><a class="govuk-link" href="funding-tsf">Go to funded message with targeted support funding</a></p>
+          <p><a href="already-funded">User has already been funded</a></p>
+          <p><a href="funding-vague-tsf">User is eligible for targeted support funding</a></p>
         </div>
       </details>
-
-      {{ govukButton({
-        text: "Continue",
-        href: "/choose-provider"
-      }) }}
 
     </div>
   </div>
