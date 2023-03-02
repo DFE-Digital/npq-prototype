@@ -17,6 +17,14 @@
 
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {{ govukNotificationBanner({
+      text: "Lynne Howe's details have been updated successfully.",
+      type: 'success'
+    }) }}
 
-  {% include 'includes/admin-console/applicant1.html' %}
+    {% include 'includes/admin-console/applicant2.html' %}
+  </div>
+</div>
 {% endblock %}

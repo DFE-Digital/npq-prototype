@@ -18,5 +18,17 @@
 
 {% block content %}
 
-  {% include 'includes/admin-console/applicant1.html' %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukNotificationBanner({
+        text: "Annamaria Green's details have been updated successfully.",
+        type: 'success'
+      }) }}
+      {% include 'includes/admin-console/applicant1.html' %}
+    </div>
+  </div>
+
+
+
 {% endblock %}
