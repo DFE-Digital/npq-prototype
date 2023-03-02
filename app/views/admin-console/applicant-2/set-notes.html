@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include 'includes/admin-console/header.html' %}
+
+  {% include 'includes/admin-console/primary-navigation.html' %}
+
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Lynne Howe</h1>
+
+      <form class="form" action="update" method="post">
+
+        {{ govukTextarea({
+          name: "notes2",
+          id: "notes2",
+          value: "This would show previous comments made about this participant",
+          label: {
+            text: "Notes",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm changes"
+          }) }}
+
+          <a class="govuk-link" href="update">Cancel</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

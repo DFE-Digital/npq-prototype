@@ -235,8 +235,8 @@ router.post('/check-data/_funding-check', function(req, res){
 
 //Applying for EHCO + completing NPQH
 router.post('/ehco/ehco-headteacher', function (req, res){
-  var completednpqht = req.session.data['completednpqh']
-  if (completednpqht == 'None of the above') {
+  var earlyheadship = req.session.data['completednpqh']
+  if (earlyheadship == 'None of the above') {
     res.redirect('/ehco/ehco-cannot-register')
   }else{
     res.redirect('/ehco/ehco-headteacher')
@@ -283,6 +283,10 @@ router.post('/funding/ehco-funded', function(req, res){
     res.redirect('/funding/ehco-not-funded')
   }
 })
+
+// ADMIN CONSOLE
+
+
 
 
 module.exports = router

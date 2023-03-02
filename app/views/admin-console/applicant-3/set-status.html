@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include 'includes/admin-console/header.html' %}
+
+  {% include 'includes/admin-console/primary-navigation.html' %}
+
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Annamaria Green</h1>
+
+      <form class="form" action="npq-applications-edge" method="post">
+
+        {{ govukRadios({
+          name: "adminfunding3",
+          fieldset: {
+            legend: {
+              text: "Is eligible for funding?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

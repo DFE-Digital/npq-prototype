@@ -1,0 +1,140 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Lynne Howe</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Participant ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          fc8de4e2-88d2-40ec-b8f5-db2e1ac4fcfa
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ???
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NPQ course name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NPQ Leading Teaching (3aefa0781bf4)
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Lead provider
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Teach First
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligible for funding
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if (data['adminfunding2'] == "Yes") %}
+            {{govukTag({
+              text: "YES",
+              classes: "govuk-tag--green"
+            })}}
+
+            {% else %}
+
+            {{govukTag({
+              text: "NO",
+              classes: "govuk-tag--red"
+            })}}
+
+          {% endif %}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Funding eligibility status code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if (data['adminfunding2'] == "Yes") %}
+            Eligible for funding
+          {% else %}
+            {{ data['admincode2'] or "No institution" }}
+          {% endif %}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employment type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Hospital school
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employer name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Renner-Ziemann
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employment role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Hairdresser
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Created at
+        </dt>
+        <dd class="govuk-summary-list__value">
+          08 February 2023, 3:45 PM
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Updated at
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 February 2023, 13:18 PM
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Notes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['notes2'] }}
+        </dd>
+      </div>
+
+      </dl>
+
+    {{ govukButton({
+      text: "Update details",
+      classes: "govuk-button--secondary",
+      href: 'update'
+    }) }}
+
+  </div>
+</div>
