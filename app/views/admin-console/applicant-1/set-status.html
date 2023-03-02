@@ -22,7 +22,7 @@
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">Annamaria Green</h1>
 
-      <form class="form" action="npq-applications-edge" method="post">
+      <form class="form" action="applicant-success" method="post">
 
         {{ govukRadios({
           name: "adminfunding1",
@@ -45,9 +45,13 @@
           ]
           }) }}
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Confirm changes"
+            }) }}
+
+            <a class="govuk-link" href="applicant">Cancel</a>
+          </div>
 
       </form>
 

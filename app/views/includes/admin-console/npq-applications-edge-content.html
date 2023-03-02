@@ -48,7 +48,13 @@
 
         {% endif %}
       </td>
-      <td class="govuk-table__cell">Awaiting more info</td>
+      <td class="govuk-table__cell">
+        {% if (data['adminfunding1'] == "Yes") %}
+          Eligible for funding
+        {% else %}
+          {{ data['admincode1'] or "No institution"}}
+        {% endif %}
+      </td>
       <td class="govuk-table__cell">Other</td>
       <td class="govuk-table__cell">Bailey, Kuhic and Kshlerin</td>
       <td class="govuk-table__cell">Lawyer</td>
@@ -74,7 +80,13 @@
 
         {% endif %}
       </td>
-      <td class="govuk-table__cell">Awaiting more info</td>
+      <td class="govuk-table__cell">
+        {% if (data['adminfunding2'] == "Yes") %}
+          Eligible for funding
+        {% else %}
+          {{ data['admincode2'] or "No institution" }}
+        {% endif %}
+      </td>
       <td class="govuk-table__cell">Hospital school</td>
       <td class="govuk-table__cell">Renner-Ziemann</td>
       <td class="govuk-table__cell">Hairdresser</td>
@@ -99,7 +111,7 @@
 
         {% endif %}
       </td>
-      <td class="govuk-table__cell">Needs to re-register</td>
+      <td class="govuk-table__cell">{{ data['admincode3'] or "No institution" }}</td>
       <td class="govuk-table__cell">Young offender institute</td>
       <td class="govuk-table__cell">Schneider LLC</td>
       <td class="govuk-table__cell">Soldier</td>
