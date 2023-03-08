@@ -138,6 +138,8 @@
         }) }}
       </div>
       <div class="govuk-grid-column-two-thirds">
+
+      {% set localResultsHtml %}
       <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
         <div>
           <h3 class="govuk-heading-m">
@@ -198,6 +200,106 @@
             <p>Tower Hamlets London Borough Council</p>
           </div>
         </div>
+      {% endset -%}
+
+      {% set nationalResultsHtml%}
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <p>PLACEHOLDER COPY: Most lead providers offer national cohorts for teachers who prefer it or have limited access to local delivery partners</p>
+          <p>You must select the national cohort when you apply with the lead provider</p>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="https://www.ambition.org.uk/-/the-NPQs/">Ambition Institute</a>
+            </h3>
+            <p>Delivers national and regional cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="https://www.bestpracticenet.co.uk/">Best Practice Network</a>
+            </h3>
+            <p>Delivers national cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="">Church of England</a>
+            </h3>
+            <p>Delivers national and regional cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="">Education Development Trust</a>
+            </h3>
+            <p>Delivers national cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="">LLSE</a>
+            </h3>
+            <p>Delivers national cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="">Teacher Development Trust</a>
+            </h3>
+            <p>Delivers national cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="">Teach First</a>
+            </h3>
+            <p>Delivers national cohorts.</p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column govuk-!-margin-bottom-4 govuk-!-margin-left-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+          <div>
+            <h3 class="govuk-heading-m">
+              <a href="">UCL Institute of Education</a>
+            </h3>
+            <p>Delivers national cohorts.</p>
+          </div>
+        </div>
+
+      {% endset -%}
+
+      {{ govukTabs({
+        items: [
+          {
+            label: "Local results",
+            id: "local-results",
+            panel: {
+              html: localResultsHtml
+            }
+          },
+          {
+            label: "National results",
+            id: "national-results",
+            panel: {
+              html: nationalResultsHtml
+            }
+          }
+        ]
+      }) }}
 
 
 
