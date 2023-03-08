@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Your registration</h1>
+
+      <table class="govuk-table" style="margin-top:50px">
+        <caption class="govuk-table__caption govuk-table__caption--m">NPQ details</caption>
+
+
+        <tbody class="govuk-table__body">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            </tr>
+          </thead>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">NPQ course</th>
+            <td class="govuk-table__cell">Leading teaching</td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><a href="#">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DfE registration</th>
+            <td class="govuk-table__cell">
+              {{ govukTag({
+                text: "submitted",
+                classes: "govuk-tag"
+              }) }}
+            </td>
+            <td class="govuk-table__cell">
+
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DfE funding</th>
+            <td class="govuk-table__cell">
+              {{ govukTag({
+                text: "funded",
+                classes: "govuk-tag--green"
+              }) }}
+            </td>
+            <td class="govuk-table__cell">
+
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Targeted support funding eligibility</th>
+            <td class="govuk-table__cell">
+              {{ govukTag({
+                text: "funded",
+                classes: "govuk-tag--green"
+              }) }}
+            </td>
+            <td class="govuk-table__cell">
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table" style="margin-top:50px">
+        <caption class="govuk-table__caption govuk-table__caption--m">Lead provider</caption>
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Lead provider</th>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><a href="interim-page">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Application status</th>
+            <td class="govuk-table__cell">
+              {{ govukTag({
+                text: "submitted",
+                classes: "govuk-tag"
+              }) }}
+            </td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="govuk-inset-text" style="margin-top:50px">
+        If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
