@@ -22,12 +22,9 @@
 
       <!-- Not in England + Early years -->
       {% if (data['wheredoyouwork'] != "England") and (data['whichsetting'] == "Early years or childcare")  %}
-        <p>To be eligible for scholarship funding for the <strong>{{ data['choosenpq']}}</strong> you must:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Work in England</li>
-          <li>Be registered with Ofsted on the Early Years Register or the Childcare Register, or be registered with a Childminder Agency (CMA)</li>
-        </ul>
-        <p>You can still register for NPQ Early Years Leadership but you need to pay for it another way. Contact your course provider to discuss your funding options.</p>
+        <p>You’re not eligible for scholarship funding for {{ data['choosenpq']}} NPQ because you do not work in England.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-7">You can still register for this NPQ, but you would need to pay for the course another way.</p>
 
         <!-- Not in England-->
         {% elseif data['wheredoyouwork'] != "England" %}
@@ -38,7 +35,7 @@
         <!-- Private school -->
         {% elseif data['whichschool'] == "private" %}
 
-        <p>To be eligible for scholarship funding for the <strong>{{ data['choosenpq'] }}</strong> you must work in one of these settings in England:
+        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ. To be eligible, you would need to work in one of these settings in England:
         </p>
 
         <ul class="govuk-list govuk-list--bullet">
@@ -51,23 +48,22 @@
 
         </ul>
 
-        <p>You can still register for {{ data['choosenpq'] }}, but you need to pay for it another way. Contact your course provider to discuss your funding options.</p>
+        <p class="govuk-body govuk-!-margin-bottom-7">You can still register for this NPQ, but you need to pay for the course another way.</p>
 
         <!-- Early years + no OFSTED-->
         {% elseif data['haveurn'] == "No" %}
-        <p>To be eligible for scholarship funding for the <strong>NPQ Early Years Leadership</strong> you must:</p>
+        <p>You’re not eligible for scholarship funding for the early years leadership NPQ.</p>
 
-         <ul class="govuk-list govuk-list--bullet">
-           <li>Work in England</li>
-           <li>Be registered with Ofsted on the Early Years Register or the Childcare Register, or be registered with a Childminder Agency (CMA)</li>
-         </ul>
+        <p>To be eligible, you would need to be registered with Ofsted on the Early Years Register or the Childcare Register, or be registered with a childminder agency (CMA). </p>
 
-         <p>You can still register for {{ data['choosenpq'] }} but you need to pay for it another way. Contact your course provider to discuss your funding options. </p>
+        <p class="govuk-body govuk-!-margin-bottom-7">You can still register for this NPQ, but you would need to pay for the course another way.</p>
 
          <!-- Early years + not NPQEYL -->
          {% elseif (data['haveurn'] == "Yes") and (data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)") %}
 
-        <p>To be eligible for scholarship funding for the <strong>{{ data['choosenpq'] }}</strong> you must work in one of these settings in England: </p>
+        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ.</p>
+
+        <p>To be eligible, you would need to work in one of the following settings in England:</p>
 
           <ul class="govuk-list govuk-list--bullet">
             <li>state-funded schools</li>
@@ -78,8 +74,10 @@
             <li>young offender institutions</li>
           </ul>
 
+          <p>You can still register for this NPQ, but you would need to pay for the course another way.</p>
+
           <div class="govuk-inset-text">
-            From the answers you have given us you should be eligible for scholarship funding for the NPQ Early Years Leadership (NPQEYL). You can <a href="/choose-npq.html">go back and select the NPQEYL</a> or continue with your registration for {{ data['choosenpq'] }}.
+            You’re eligible for scholarship funding for the early years leadership NPQ. You can <a href="/choose-npq.html">go back and select the early years leadership NPQ</a> instead.
           </div>
 
         {% elseif (data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider") and (data['choosenpq'] != "NPQ for Leading Teacher Development (NPQLTD)") %}
