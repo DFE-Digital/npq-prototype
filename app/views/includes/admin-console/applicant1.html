@@ -77,7 +77,10 @@
 
         </dd>
         <dd class="govuk-summary-list__value govuk-!-text-align-right govuk-!-padding-right-5">
-          <p><a href="set-code">Edit</a></p>
+          {% if (data['adminfunding1'] == "Yes") %}
+          {% else %}
+            <p><a href="set-code">Edit</a></p>
+          {% endif %}
         </dd>
       </div>
 
@@ -134,7 +137,7 @@
             <p id="notes-display1">{{ data['notes1'] or ''}}</p>
         </dd>
         <dd class="govuk-summary-list__value govuk-!-text-align-right govuk-!-padding-right-5">
-          <p><a href="set-notes">Edit</a></p>
+          <p><a href="set-notes">Add notes</a></p>
         </dd>
       </div>
       </dl>
