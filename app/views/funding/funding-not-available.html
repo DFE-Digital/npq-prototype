@@ -82,7 +82,9 @@
 
         {% elseif (data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider") and (data['choosenpq'] != "NPQ for Leading Teacher Development (NPQLTD)") %}
 
-        <p>To be eligible for scholarship funding for the <strong>{{ data['choosenpq'] }}</strong> you must work in one of these settings in England: </p>
+        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ.</p>
+
+        <p>To be eligible, you would need to work in one of the following settings:</p>
 
           <ul class="govuk-list govuk-list--bullet">
             <li>state-funded schools</li>
@@ -93,8 +95,10 @@
             <li>young offender institutions</li>
           </ul>
 
+        <p>You can still register for this NPQ, but you would need to pay for the course another way.</p>
+
           <div class="govuk-inset-text">
-            From the answers you have given us you should be eligible for scholarship funding for the NPQ for Leading Teacher Development (NPQLTD). You can <a href="/choose-npq.html">go back and select the NPQLTD</a> or continue with your registration for {{ data['choosenpq'] }}.
+            You’re eligible for scholarship funding for the leading teacher development NPQ. You can <a href="/choose-npq.html">go back and select the leading teacher development NPQ</a> instead.
           </div>
 
         {% else %}
