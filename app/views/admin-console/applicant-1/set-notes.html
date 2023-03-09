@@ -24,9 +24,10 @@
 
       <form class="form" action="applicant-success" method="post">
 
-        {{ govukTextarea({
+        {{ govukCharacterCount({
           name: "notes1",
           id: "notes1",
+          maxlength: 1000,
           value: "This would show previous comments made about this participant",
           label: {
             text: "Notes",
