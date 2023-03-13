@@ -19,6 +19,46 @@
 
       <h1 class="govuk-heading-xl">Your registration</h1>
 
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: "University of Gloucestershire"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Delete choice",
+          visuallyHiddenText: "of University of Gloucestershire"
+        },
+        {
+          href: "#",
+          text: "Withdraw",
+          visuallyHiddenText: "from University of Gloucestershire"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Course"
+      },
+      value: {
+        html: "English (3DMD)<br>PGCE with QTS full time"
+      }
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        html: "School name<br>Road, City, SW1 1AA"
+      }
+    }
+  ]
+}) }}
+
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--m">Personal details</caption>
 
@@ -34,16 +74,24 @@
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Name</th>
             <td class="govuk-table__cell">Mary Smith</td>
-            <td class="govuk-table__cell govuk-!-text-align-right"><a href="#">Change</a></td>
+            <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Email address</th>
             <td class="govuk-table__cell">mary@smith.com</td>
-            <td class="govuk-table__cell govuk-!-text-align-right"><a href="#">Change</a></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date of birth</th>
+            <td class="govuk-table__cell">18 February 1987</td>
+            <td class="govuk-table__cell"></td>
           </tr>
 
         </tbody>
       </table>
+      {{ govukButton({
+        text: "Update details"
+      }) }}
 
       <table class="govuk-table" style="margin-top:50px">
         <caption class="govuk-table__caption govuk-table__caption--m">NPQ details</caption>
