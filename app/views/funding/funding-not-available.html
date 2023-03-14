@@ -35,20 +35,9 @@
         <!-- Private school -->
         {% elseif data['whichschool'] == "private" %}
 
-        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ.</p>
+        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ as you do not work in one of the eligible settings, such as state-funded schools.</p>
 
-        <p>To be eligible, you would need to work in one of the following settings in England:</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>state-funded schools</li>
-            <li>state-funded 16 to 19 organisations</li>
-            <li>independent special schools</li>
-            <li>virtual schools</li>
-            <li>hospital schools</li>
-            <li>young offender institutions</li>
-          </ul>
-
-        <p class="govuk-body govuk-!-margin-bottom-7">You can still register for this NPQ, but you would need to pay for the course another way.</p>
+        <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
 
         <!-- Early years + no OFSTED-->
         {% elseif data['haveurn'] == "No" %}
