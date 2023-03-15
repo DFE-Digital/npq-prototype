@@ -13,8 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
       {% set html %}
-        You’ve registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      You’ve registered for the Early headship coaching offer with {{ data['provider'] }}
+      {% else %}
+      You’ve registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
+      {% endif %}
       {% endset %}
 
       {{ govukPanel({
@@ -23,9 +28,12 @@
 
       <h2 class="govuk-heading-m">Apply through your provider</h2>
 
-      <p class="govuk-body">
-        You still need to apply for the {{ data['choosenpq'] }} NPQ through {{ data['provider']}}, if you have not done so already.
-      </p>
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      <p class="govuk-body">You still need to apply for the Early headship coaching offer through {{ data['provider']}}, if you have not done so already.</p>
+      {% else %}
+      <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] }} NPQ through {{ data['provider']}}, if you have not done so already.</p>
+      {% endif %}
+
       <p class="govuk-body">
         They’ll contact you by email to outline the next steps, including how to apply.
       </p>
