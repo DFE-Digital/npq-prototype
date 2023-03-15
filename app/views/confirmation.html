@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% set html %}
-        You've registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
+        You’ve registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
       {% endset %}
 
       {{ govukPanel({
@@ -24,10 +24,13 @@
       <h2 class="govuk-heading-m">Apply through your provider</h2>
 
       <p class="govuk-body">
-        You still need to apply for your NPQ through {{ data['provider']}}.
+        You still need to apply for your NPQ through {{ data['provider']}}, if you have not done so already.
       </p>
       <p class="govuk-body">
-        They’ll contact you to outline the next steps, including how to apply.
+        They’ll contact you by email to outline the next steps, including how to apply.
+      </p>
+      <p class="govuk-body">
+      There might be a delay in your provider contacting you while they prepare to open applications for October 2023.
       </p>
 
       {% if (data['choosenpq'] == "NPQ for Headship (NPQH)") %}
