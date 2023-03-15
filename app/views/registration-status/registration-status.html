@@ -15,208 +15,154 @@
 
 {% block content %}
 
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">University of Gloucestershire</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Delete choice<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
-        </a>
-      </li>
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Withdraw<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="govuk-summary-list__value">
-          English (3DMD)<br>PGCE with QTS full time
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Location
-        </dt>
-        <dd class="govuk-summary-list__value">
-          School name<br>Road, City, SW1 1AA
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">University of Bristol</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Delete choice<span class="govuk-visually-hidden"> of University of Bristol</span>
-        </a>
-      </li>
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-          Withdraw<span class="govuk-visually-hidden"> from University of Bristol</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Course
-        </dt>
-        <dd class="govuk-summary-list__value">
-          English (Q3X1)<br>PGCE with QTS full time
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Location
-        </dt>
-        <dd class="govuk-summary-list__value">
-          School name<br>Road, City, SW2 1AA
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
+  <h1 class="govuk-heading-xl">Your registration</h1>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change identity details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Name",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Mary Smith"
+        }
+      },
+      {
+        key: {
+          text: "Email"
+        },
+        value: {
+          html: "mary.smith@email.com"
+        }
+      },
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          html: "27 March 1987"
+        }
+      }
+    ]
+  }) }}
 
-      <h1 class="govuk-heading-xl">Your registration</h1>
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "NPQ details"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change course"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "NPQ course",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Leading teaching"
+        }
+      },
+      {
+        key: {
+          text: "DfE registration"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag">
+              submitted
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "DfE funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              funded
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Targeted support funding eligibility"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              funded
+            </strong>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Lead provider details"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change lead provider"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Lead provider",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Ambition institute"
+        }
+      },
+      {
+        key: {
+          text: "DfE registration"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag">
+              submitted
+            </strong>'
+        }
+      }
+    ]
+  }) }}
 
 
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Personal details</caption>
 
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-          </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">Mary Smith</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Email address</th>
-            <td class="govuk-table__cell">mary@smith.com</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Date of birth</th>
-            <td class="govuk-table__cell">18 February 1987</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
-
-        </tbody>
-      </table>
-      {{ govukButton({
-        text: "Update details"
-      }) }}
-
-      <table class="govuk-table" style="margin-top:50px">
-        <caption class="govuk-table__caption govuk-table__caption--m">NPQ details</caption>
-
-
-        <tbody class="govuk-table__body">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            </tr>
-          </thead>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">NPQ course</th>
-            <td class="govuk-table__cell">Leading teaching</td>
-            <td class="govuk-table__cell govuk-!-text-align-right"><a href="#">Change</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">DfE registration</th>
-            <td class="govuk-table__cell">
-              {{ govukTag({
-                text: "submitted",
-                classes: "govuk-tag"
-              }) }}
-            </td>
-            <td class="govuk-table__cell">
-
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">DfE funding</th>
-            <td class="govuk-table__cell">
-              {{ govukTag({
-                text: "funded",
-                classes: "govuk-tag--green"
-              }) }}
-            </td>
-            <td class="govuk-table__cell">
-
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Targeted support funding eligibility</th>
-            <td class="govuk-table__cell">
-              {{ govukTag({
-                text: "funded",
-                classes: "govuk-tag--green"
-              }) }}
-            </td>
-            <td class="govuk-table__cell">
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table class="govuk-table" style="margin-top:50px">
-        <caption class="govuk-table__caption govuk-table__caption--m">Lead provider</caption>
-
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
-          </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Lead provider</th>
-            <td class="govuk-table__cell">Ambition Institute</td>
-            <td class="govuk-table__cell govuk-!-text-align-right"><a href="interim-page">Change</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Application status</th>
-            <td class="govuk-table__cell">
-              {{ govukTag({
-                text: "submitted",
-                classes: "govuk-tag"
-              }) }}
-            </td>
-            <td class="govuk-table__cell"></td>
-          </tr>
-
-        </tbody>
-      </table>
 
       <div class="govuk-inset-text" style="margin-top:50px">
         If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.
       </div>
 
-    </div>
-  </div>
 {% endblock %}
