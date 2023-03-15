@@ -3,7 +3,7 @@
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block pageTitle %}
-  Your initial registration is complete
+  Your registration is complete
 {% endblock %}
 
 
@@ -14,15 +14,11 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% set html %}
-      <div class="govuk-!-font-size-19">
-        You've registered for <strong>{{ data['choosenpq'] }}</strong> with <strong>{{ data['provider'] }}</strong>
-      </div>
-
+        You've registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
       {% endset %}
 
       {{ govukPanel({
-        titleText: "Your initial registration is complete",
-        html: html
+        titleHtml: html
       }) }}
 
       <h2 class="govuk-heading-m">Apply through your provider</h2>
