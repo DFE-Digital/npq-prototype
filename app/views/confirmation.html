@@ -16,7 +16,7 @@
 
       {% set html %}
       {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      You’ve registered for the early headship coaching offer with {{ data['provider'] }}
+      You’ve registered for the Early headship coaching offer with {{ data['provider'] }}
       {% else %}
       You’ve registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
       {% endif %}
@@ -29,7 +29,7 @@
       <h2 class="govuk-heading-m">Apply through your provider</h2>
 
       {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      <p class="govuk-body">You still need to apply for the early headship coaching offer through {{ data['provider']}}, if you have not done so already.</p>
+      <p class="govuk-body">You still need to apply for the Early headship coaching offer through {{ data['provider']}}, if you have not done so already.</p>
       {% else %}
       <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] }} NPQ through {{ data['provider']}}, if you have not done so already.</p>
       {% endif %}
@@ -41,12 +41,12 @@
       There might be a delay in your provider contacting you while they prepare to open applications for October 2023.
       </p>
 
-
       {% if (data['choosenpq'] == "Headship") %}
         <h2 class="govuk-heading-m">Early Headship Coaching Offer</h2>
 
         <p>You can also  <a href="https://register-national-professional-qualifications.education.gov.uk">register the early headship coaching offer</a>, a one-year support package for new headteachers.</p>
         <p><a href="https://www.gov.uk/government/publications/national-professional-qualifications-npqs-reforms/national-professional-qualifications-npqs-reforms#additional-support-offer-for-the-npq-in-headship">Find out more about the early headship coaching offer</a>.</p>
+
       {% else %}
       {% endif %}
 
