@@ -5,19 +5,35 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <br>
-    <h2 class="govuk-heading-m">You’ve registered for an NPQ – you still need to apply</h2>
+
+      <h2 class="govuk-heading-m">
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      You’ve registered for the Early headship coaching offer - next steps
+      {% else %}
+      You’ve registered for the {{ data['choosenpq'] }} NPQ - next steps
+      {% endif %}
+      </h2>
+
     <p>Department for Education Teacher CPD</p>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <div class="govuk-body">
-      <p>Dear {{ data['first-name'] }} {{ data['last-name'] }}</p>
+      <p>Dear {{ data['first-name'] }}</p>
 
-      <p>You’ve registered for an NPQ.</p>
+      <p>
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      You’ve registered for the Early headship coaching offer with {{ data['provider'] }}.
+      {% else %}
+      You’ve registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}.
+      {% endif %}
+      </p>
 
       <h1 class="govuk-heading-m">Apply through your provider</h1>
 
-      <p>You still need to apply through {{ data['provider'] }}.</p>
+      <p>You still need to apply through {{ data['provider'] }}, if you have not done so already.</p>
 
-      <p>They’ll contact you to outline the next steps, including how to apply.</p>
+      <p>They’ll contact you by email to outline the next steps, including how to apply.</p>
+
+      <p>There might be a delay in your provider contacting you while they prepare to open applications for October 2023.</p>
 
       <h1 class="govuk-heading-m">Get help</h1>
 
