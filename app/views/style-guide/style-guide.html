@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+{% block pageTitle %}
+  Style guide
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Style guide
+    </h1>
+
+  <p class="govuk-body govuk-!-margin-bottom-6">The terms we refer to, and how we use them.</p>
+
+  <h2 class="govuk-heading-m">National professional qualifications (NPQs)</h2>
+
+  <p class="govuk-body">We refer to the following NPQs:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Leading behaviour and culture</li>
+    <li>Leading literacy</li>
+    <li>Leading teaching</li>
+    <li>Leading behaviour and culture</li>
+    <li>Leading teacher development</li>
+    <li>Senior leadership</li>
+    <li>Headship</li>
+    <li>Executive leadership</li>
+    <li>Early years leadership</li>
+  </ul>
+
+  <p class="govuk-body">When they‘re in a list, as above, you do not need to repeat ‘NPQ’. Just make sure you introduce them as NPQs.</p>
+
+  <p><a href="https://www.gov.uk/government/publications/national-professional-qualifications-npqs-reforms/national-professional-qualifications-npqs-reforms#npqs-available">Example of a list of NPQs on GOV.UK</a>.</p>
+
+  <p><a href="/choose-npq">Example of a list of NPQs as radio buttons</a>.</p>
+
+  <p>However, when in a sentence, you should add ‘NPQ’ at the end.</p>
+
+  <p>For example:</p>
+
+  <div class="govuk-inset-text">
+  Register for the Headship NPQ.
+  </div>
+
+  <p>Spell out NPQ on first mention, in lower case.</p>
+
+  <p>For example:</p>
+
+  <div class="govuk-inset-text">
+  National professional qualifications (NPQs) support the professional development of teachers and leaders.
+  </div>
+
+  <p class="govuk-body govuk-!-margin-bottom-6">Do not use the NPQ acronyms such as ‘NPQEYL’.</p>
+
+  <h2 class="govuk-heading-m">Early headship coaching offer</h2>
+
+  <p class="govuk-body">The Early headship coaching offer offers structured support and networking opportunities for headteachers in their first 5 years of headship.
+  </p>
+
+  <p class="govuk-body govuk-!-margin-bottom-6"><a href="/choose-npq">Example of how we refer to the Early headship coaching offer</a>.</p>
+
+  <h2 class="govuk-heading-m">Scholarship funding</h2>
+
+  <p>Scholarship funding is provided by the Department for Education (DfE). If someone is eligible for scholarship funding, it means they do not have to pay for their NPQ.</p>
+
+  <p><a href="/funding/funding-vague">Example of how we refer to scholarship funding</a>.</p>
+
+  <p class="govuk-body govuk-!-margin-bottom-6">Do not refer to scholarship funding as ‘DfE funding’, because ‘DfE funding’ could also mean targeted support funding (see below). However, you can specify that it’s provided by DfE. </p>
+
+  <h2 class="govuk-heading-m">Targeted support funding</h2>
+
+  <p>Targeted support funding is provided by DfE. If someone is eligible for targeted support funding, it means their workplace recieves money to help enable their participation.</p>
+
+  <p><a href="/funding/funding-tsf">Example of how we refer to targeted support funding</a>.</p>
+
+  <p>Do not refer to targeted support funding as ‘DfE funding’, because ‘DfE funding’ could also mean scholarship funding. However, you can specify that it’s provided by DfE. </p>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
