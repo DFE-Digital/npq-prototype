@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% block pageNavigation %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Your registration</h1>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Name",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Mary Smith"
+        }
+      },
+      {
+        key: {
+          text: "Email"
+        },
+        value: {
+          html: "mary.smith@email.com"
+        }
+      },
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          html: "27 March 1987"
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Headship NPQ"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "View details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Date submitted",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "16 March 2023"
+        }
+      },
+      {
+        key: {
+          text: "DfE registration"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag">
+              submitted
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              funded
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Lead provider",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Ambition institute"
+        }
+      }
+    ]
+  }) }}
+
+
+
+
+      <div class="govuk-inset-text" style="margin-top:50px">
+        If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.
+      </div>
+
+{% endblock %}
