@@ -17,7 +17,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="sharing-data" method="post">
       <h1 class="govuk-heading-xl">Select your provider</h1>
-      <p>These are the training providers who provide <strong>{{ data['choosenpq'] or "NPQLBC for Leading Behaviour and Culture (NPQLBC)"}}</strong>. Providers may have different entry requirements.</p>
+
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      <p class="govuk-body">The following providers offer the Early headship coaching offer.</p>
+      {% else %}
+      <p class="govuk-body">The following providers offer the {{ data['choosenpq'] }} NPQ.</p>
+      {% endif %}
 
       {% if (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") or (data['choosenpq'] == "NPQLL NPQ for Leading Literacy (NPQLL)")%}
 
