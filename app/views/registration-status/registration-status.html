@@ -6,7 +6,7 @@
   Registration status
 {% endblock %}
 
-{% block pageNavigation %}
+{% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -158,11 +158,19 @@
     ]
   }) }}
 
-
-
-
       <div class="govuk-inset-text" style="margin-top:50px">
         If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.
       </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          For prototype reference
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <a href="multiple-registrations-1">Example of a user with multiple registrations</a>
+      </div>
+    </details>
 
 {% endblock %}
