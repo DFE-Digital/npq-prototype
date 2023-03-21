@@ -6,7 +6,7 @@
   Registration status
 {% endblock %}
 
-{% block pageNavigation %}
+{% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -68,7 +68,7 @@
       actions: {
         items: [
           {
-            href: "#",
+            href: "npqh-registration",
             text: "View details"
           }
         ]
@@ -118,8 +118,170 @@
     ]
   }) }}
 
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Headship NPQ"
+      },
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Date submitted",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "16 March 2023"
+        }
+      },
+      {
+        key: {
+          text: "DfE registration"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag">
+              submitted
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              funded
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Lead provider",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Church of England"
+        }
+      }
+    ]
+  }) }}
 
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Headship NPQ"
+      },
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Date submitted",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "15 March 2023"
+        }
+      },
+      {
+        key: {
+          text: "DfE registration"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag">
+              submitted
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              funded
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Lead provider",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Teach First"
+        }
+      }
+    ]
+  }) }}
 
+  <h2 class="govuk-heading-l">Past registrations</h2>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Leading teaching NPQ"
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "View details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Date submitted",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "1 February 2021"
+        }
+      },
+      {
+        key: {
+          text: "Status"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag">
+              completed
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Lead provider",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "UCL Institute of Education"
+        }
+      }
+    ]
+  }) }}
 
       <div class="govuk-inset-text" style="margin-top:50px">
         If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.

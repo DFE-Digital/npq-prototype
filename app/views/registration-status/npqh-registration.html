@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Headship NPQ registration details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+      <h1 class="govuk-heading-xl">
+        Headship NPQ registration details
+      </h1>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Course details"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change course"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Course",
+              classes: 'govuk-!-width-one-half'
+            },
+            value: {
+              html: "Headship NPQ"
+            }
+          },
+          {
+            key: {
+              text: "Registration"
+            },
+            value: {
+              html:
+                '<strong class="govuk-tag">
+                  submitted
+                </strong>'
+            }
+          },
+          {
+            key: {
+              text: "Scholarship funding"
+            },
+            value: {
+              html:
+                '<strong class="govuk-tag govuk-tag--green">
+                  funded
+                </strong>'
+            }
+          },
+          {
+            key: {
+              text: "Targeted support funding"
+            },
+            value: {
+              html:
+                '<strong class="govuk-tag govuk-tag--green">
+                  funded
+                </strong>'
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Provider details"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change provider"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Provider",
+              classes: 'govuk-!-width-one-half'
+            },
+            value: {
+              html: "Ambition Institute"
+            }
+          },
+          {
+            key: {
+              text: "Provider application"
+            },
+            value: {
+              html:
+                '<strong class="govuk-tag">
+                  submitted
+                </strong>'
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+
+{% endblock %}

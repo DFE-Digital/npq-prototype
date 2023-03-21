@@ -6,7 +6,7 @@
   Registration status
 {% endblock %}
 
-{% block pageNavigation %}
+{% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -60,26 +60,27 @@
     ]
   }) }}
 
-<div class="govuk-rows" style="margin-top: 60px">
-
-</div>
+<div class="govuk-rows" style="margin-top: 60px"></div>
 
   {{ govukTable({
-    caption: "Registrations for Headship NPQ",
+    caption: "Headship NPQ",
     captionClasses: "govuk-table__caption--m",
     firstCellIsHeader: false,
     head: [
       {
-        text: "Date"
+        text: "Created at",
+        classes: "govuk-!-width-one-quarter"
       },
       {
-        text: "Scholarship funding"
+        text: "Status"
       },
       {
-        text: "Lead provider"
+        text: "Lead provider",
+        classes: "govuk-!-width-one-quarter"
       },
       {
-        text: ""
+        text: "",
+        classes: "govuk-!-width-one-quarter"
       }
     ],
     rows: [
@@ -89,15 +90,15 @@
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--green">
-            funded
+          '<strong class="govuk-tag">
+            submitted
           </strong>'
         },
         {
           text: "Ambition Institute"
         },
         {
-          html: '<a href="#">More details</a>'
+          html: '<a href="npqh-registration">More details</a>'
         }
       ],
       [
@@ -106,8 +107,8 @@
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--green">
-            funded
+          '<strong class="govuk-tag">
+            submitted
           </strong>'
         },
         {
@@ -123,8 +124,8 @@
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--green">
-            funded
+          '<strong class="govuk-tag">
+            submitted
           </strong>'
         },
         {
@@ -136,6 +137,51 @@
       ]
     ]
   }) }}
+
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
+    {{ govukTable({
+      caption: "Leading teaching NPQ",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Created at",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Status",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Lead provider",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "",
+          classes: "govuk-!-width-one-quarter"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "1 February 2021"
+          },
+          {
+            html:
+            '<strong class="govuk-tag">
+              passed
+            </strong>'
+          },
+          {
+            text: "UCL Institute of Education"
+          },
+          {
+            html: '<a href="#">More details</a>'
+          }
+        ]
+      ]
+    }) }}
 
 
       <div class="govuk-inset-text" style="margin-top:50px">

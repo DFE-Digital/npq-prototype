@@ -6,7 +6,7 @@
   Registration status
 {% endblock %}
 
-{% block pageNavigation %}
+{% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -103,7 +103,7 @@
           text: "Ambition Institute"
         },
         {
-          html: '<a href="#">More details</a>'
+          html: '<a href="npqh-registration">More details</a>'
         }
       ],
       [
@@ -149,9 +149,87 @@
     ]
   }) }}
 
+  <div class="govuk-rows" style="margin-top: 60px">
+
+  {{ govukTable({
+    caption: "2021-2022 registrations",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "Date"
+      },
+      {
+        text: "Course"
+      },
+      {
+        text: "Status"
+      },
+      {
+        text: "Lead provider"
+      },
+      {
+        text: ""
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "13 July 2021"
+        },
+        {
+          text: "Leading teaching NPQ"
+        },
+        {
+          html:
+          '<strong class="govuk-tag">
+            completed
+          </strong>'
+        },
+        {
+          text: "UCL Institute of Education"
+        },
+        {
+          html: '<a href="#">More details</a>'
+        }
+      ],
+      [
+        {
+          text: "24 June 2021"
+        },
+        {
+          text: "Leading Teaching NPQ"
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--grey">
+            withdrawn
+          </strong>'
+        },
+        {
+          text: "Church of England"
+        },
+        {
+          html: '<a href="#">More details</a>'
+        }
+      ]
+    ]
+  }) }}
+
 
       <div class="govuk-inset-text" style="margin-top:50px">
         If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.
       </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            For prototype reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <a href="registration-status">Example of a user with a single registration</a>
+        </div>
+      </details>
 
 {% endblock %}
