@@ -18,17 +18,14 @@
     <form class="form" action="sharing-data" method="post">
       <h1 class="govuk-heading-xl">Select your provider</h1>
 
-      {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      <p class="govuk-body">The following providers offer the Early headship coaching offer.</p>
-      {% else %}
-      <p class="govuk-body">The following providers offer the {{ data['choosenpq'] }} NPQ.</p>
-      {% endif %}
-
-      {% if (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") or (data['choosenpq'] == "NPQLL NPQ for Leading Literacy (NPQLL)")%}
+      {% if (data['choosenpq'] == "Early years leadership") or (data['choosenpq'] == "Leading literacy")%}
 
       {{ govukRadios({
         name: "provider",
         id: "provider",
+        hint: {
+          text: "Select one of the providers offering your chosen course."
+        },
         items: [
           {
             value: "Ambition Institute",
@@ -59,12 +56,15 @@
 
       }) }}
 
-      {% elseif data['choosenpq'] == "NPQ for Executive Leadership (NPQEL)" %}
+      {% elseif data['choosenpq'] == "Executive leadership" %}
 
       {{ govukRadios({
         name: "provider",
         id: "provider",
         fieldset: {
+        },
+        hint: {
+          text: "Select one of the providers offering your chosen course."
         },
         items: [
           {
@@ -114,6 +114,9 @@
         name: "provider",
         id: "provider",
         fieldset: {
+        },
+        hint: {
+          text: "Select one of the providers offering your chosen course."
         },
         items: [
           {
