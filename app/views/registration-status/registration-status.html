@@ -17,6 +17,11 @@
 
   <h1 class="govuk-heading-xl">Your registration</h1>
 
+  <p>Here you'll find the details of all the NPQ registrations you have submitted with the DfE.</p>
+  <p>If you need to help with your registration please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
+
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
   {{ govukSummaryList({
     card: {
       title: {
@@ -158,10 +163,15 @@
     ]
   }) }}
 
+  <div class="govuk-rows" style="margin-top: 60px">
+    <h2 class="govuk-heading-l">Continue to register for an NPQ</h2>
+    <p>Use this service to submit a new registration</p>
 
-      <div class="govuk-inset-text" style="margin-top:50px">
-        If you need to help with your application please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.
-      </div>
+    {{ govukButton({
+      text: "Register for an NPQ",
+      href: "/chosen"
+    }) }}
+  </div>
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
