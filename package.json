@@ -6,7 +6,9 @@
   },
   "name": "govuk-prototype-kit",
   "dependencies": {
+    "@govuk-prototype-kit/common-templates": "^1.0.0",
     "@govuk-prototype-kit/step-by-step": "^2.1.0",
+    "@govuk-prototype-kit/task-list": "^1.0.0",
     "@ministryofjustice/frontend": "^1.6.5",
     "govuk-frontend": "^4.5.0",
     "govuk-prototype-kit": "^13.4.0",
