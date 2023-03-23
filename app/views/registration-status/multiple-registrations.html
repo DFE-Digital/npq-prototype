@@ -16,8 +16,6 @@
 {% block content %}
 
   <h1 class="govuk-heading-xl">Your registration</h1>
-  <p>Here you'll find the details of all the NPQ registrations you have submitted with the DfE.</p>
-  <p>If you need to help with your registration please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
 
   <div class="govuk-rows" style="margin-top: 60px"></div>
 
@@ -67,7 +65,7 @@
 <div class="govuk-rows" style="margin-top: 60px"></div>
 
   {{ govukTable({
-    caption: "Headship NPQ",
+    caption: "Headship NPQ registrations",
     captionClasses: "govuk-table__caption--m",
     firstCellIsHeader: false,
     head: [
@@ -145,7 +143,7 @@
   <div class="govuk-rows" style="margin-top: 60px"></div>
 
     {{ govukTable({
-      caption: "Leading teaching NPQ",
+      caption: "Leading teaching NPQ registrations",
       captionClasses: "govuk-table__caption--m",
       firstCellIsHeader: false,
       head: [
@@ -169,7 +167,7 @@
       rows: [
         [
           {
-            text: "1 February 2021"
+            text: "1 February 2022"
           },
           {
             html:
@@ -189,7 +187,7 @@
 
 
  <div class="govuk-rows" style="margin-top: 60px">
-   <h2 class="govuk-heading-l">Continue to register for an NPQ</h2>
+   <h2 class="govuk-heading-l">Register for an NPQ</h2>
    <p>Use this service to submit a new registration</p>
 
    {{ govukButton({
@@ -206,7 +204,8 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p><a href="registration-status">Example of a user with multiple registrations</a></p>
+          <p><a href="multiple-registrations-accordion">Example of a user with multiple registrations with accordion</a></p>
+          <p><a href="registration-status">Example of a user with a single registration</a></p>
           <p><a href="#">Example of a user with a registration for an NPQ that already started</a></p>
         </div>
       </details>

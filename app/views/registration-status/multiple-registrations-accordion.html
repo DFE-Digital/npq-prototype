@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Your registration</h1>
+  <p>Here you'll find the details of all the NPQ registrations you have submitted with the DfE.</p>
+  <p>If you need to help with your registration please contact <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
+
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Name",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "Mary Smith"
+        }
+      },
+      {
+        key: {
+          text: "Email"
+        },
+        value: {
+          html: "mary.smith@email.com"
+        }
+      },
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          html: "27 March 1987"
+        }
+      }
+    ]
+  }) }}
+
+<div class="govuk-rows" style="margin-top: 60px"></div>
+
+
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+            Headship NPQ registrations
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Created at",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Status"
+            },
+            {
+              text: "Lead provider",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "16 March 2023"
+              },
+              {
+                html:
+                '<strong class="govuk-tag govuk-tag--blue">
+                  submitted
+                </strong>'
+              },
+              {
+                text: "Ambition Institute"
+              },
+              {
+                html: '<a href="npqh-registration">More details</a>'
+              }
+            ],
+            [
+              {
+                text: "16 March 2023"
+              },
+              {
+                html:
+                '<strong class="govuk-tag govuk-tag--blue">
+                  submitted
+                </strong>'
+              },
+              {
+                text: "Church of England"
+              },
+              {
+                html: '<a href="#">More details</a>'
+              }
+            ],
+            [
+              {
+                text: "15 March 2023"
+              },
+              {
+                html:
+                '<strong class="govuk-tag govuk-tag--blue">
+                  submitted
+                </strong>'
+              },
+              {
+                text: "Teach First"
+              },
+              {
+                html: '<a href="#">More details</a>'
+              }
+            ]
+          ]
+        }) }}
+      </div>
+    </div>
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+            Leading teaching NPQ registrations
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+        {{ govukTable({
+          caption: "Leading teaching NPQ",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Created at",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Status",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Lead provider",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "",
+              classes: "govuk-!-width-one-quarter"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "1 February 2021"
+              },
+              {
+                html:
+                '<strong class="govuk-tag govuk-tag--green">
+                  passed
+                </strong>'
+              },
+              {
+                text: "UCL Institute of Education"
+              },
+              {
+                html: '<a href="#">More details</a>'
+              }
+            ]
+          ]
+        }) }}
+      </div>
+    </div>
+    </div>
+
+
+ <div class="govuk-rows" style="margin-top: 60px">
+   <h2 class="govuk-heading-l">Register for an NPQ</h2>
+   <p>Use this service to submit a new registration</p>
+
+   {{ govukButton({
+     text: "Register for an NPQ",
+     href: "/chosen"
+   }) }}
+ </div>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            For prototype reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p><a href="multiple-registrations">Example of a user with multiple registrations without accordion</a></p>
+          <p><a href="registration-status">Example of a user with a single registration</a></p>
+          <p><a href="#">Example of a user with a registration for an NPQ that already started</a></p>
+        </div>
+      </details>
+
+{% endblock %}
