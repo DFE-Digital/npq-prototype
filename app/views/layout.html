@@ -5,15 +5,6 @@
     
     {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
     
-    {% set accountLink %}
-    
-      {%- if account == 'true' -%}
-            /account/account-details?alert=hide
-         {%- else -%}
-           /account/interstitial
-      {%- endif -%}
-    {% endset -%}
-    
     
     
     {% block pageTitle %}
@@ -27,7 +18,7 @@
         serviceUrl: '/',
         navigation: [
           {
-            href: accountLink,
+            href: 'https://get-an-identity-prototype.herokuapp.com/user-research/npq/account',
             html: data['dia'],
             active: true if account == 'true'
           },      
