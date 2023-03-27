@@ -1,15 +1,20 @@
 {% extends "layout.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
 
 {% block pageTitle %}
   Have you already chosen an NPQ and provider?
 {% endblock %}
 
 {% block beforeContent %}
+
+{%- if not data['signedIn'] -%}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+{%- endif -%}
+
 {% endblock %}
 
 {% block content %}
