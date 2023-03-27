@@ -16,6 +16,8 @@
 {% block content %}
 
   <h1 class="govuk-heading-xl">Your registration</h1>
+  <p>Our records show that you've already started your NPQ. If you need to make any changes to your registrations
+  please get in touch via email: <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
 
   <div class="govuk-rows" style="margin-top: 60px"></div>
 
@@ -66,14 +68,6 @@
     card: {
       title: {
         text: "Course details"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change course"
-          }
-        ]
       }
     },
     rows: [
@@ -126,14 +120,6 @@
     card: {
       title: {
         text: "Provider details"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change provider"
-          }
-        ]
       }
     },
     rows: [
@@ -152,8 +138,8 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--blue">
-              submitted
+            '<strong class="govuk-tag govuk-tag--turquoise">
+              started
             </strong>'
         }
       }
@@ -178,7 +164,7 @@
       </summary>
       <div class="govuk-details__text">
         <p><a href="multiple-registrations">Example of a user with multiple registrations</a></p>
-        <p><a href="started">Example of a user with a registration for an NPQ that already started</a></p>
+        <p><a href="registration-status">Example of a user with a single registration</a></p>
       </div>
     </details>
 
