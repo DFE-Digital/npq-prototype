@@ -6,10 +6,14 @@
 {% endblock %}
 
 {% block beforeContent %}
+
+{%- if not data['signedIn'] -%}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+{%- endif -%}
+
 {% endblock %}
 
 {% block content %}
