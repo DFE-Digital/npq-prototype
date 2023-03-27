@@ -15,7 +15,7 @@ module.exports = router => {
    router.get('/user-research/npq/existing-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    res.redirect('/chosen')
+    res.redirect('/registration-status/registration-status')
   })
 
 
