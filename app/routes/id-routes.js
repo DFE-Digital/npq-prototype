@@ -12,7 +12,7 @@ module.exports = router => {
 
 
    // NPQ create account
-   router.get('/user-research/npq/registration-status/registration-status', (req, res) => {
+   router.get('/user-research/npq/existing-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
     res.redirect('/chosen')
