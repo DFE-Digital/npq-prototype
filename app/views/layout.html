@@ -2,35 +2,35 @@
     For guidance on how to use layouts see:
     https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     #}
-    
+
     {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-    
-    
-    
+
+
+
     {% block pageTitle %}
         {{serviceName}} – GOV.UK
     {% endblock %}
-    
+
     {% block header %}
       {{ govukHeader({
-        homepageUrl: "#",
+        homepageUrl: "index",
         serviceName: serviceName,
-        serviceUrl: '/',
+        serviceUrl: 'start-id',
         navigation: [
           {
             href: 'https://get-an-identity-prototype.herokuapp.com/user-research/npq/account',
             html: data['dia'],
             active: true if account == 'true'
-          },      
+          },
           {
             href: "https://get-an-identity-prototype.herokuapp.com/user-research/npq/sign-out",
             text: "Sign out"
           }
         ] if signedIn == 'true'
       }) }}
-    
+
     {% endblock %}
-    
+
     {% block footer %}
       {{ govukFooter({
         meta: {
@@ -54,7 +54,7 @@
           ]
         }
       }) }}
-      
+
     {{ data | log }}
-    
+
     {% endblock %}

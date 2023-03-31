@@ -203,12 +203,12 @@ router.post('/check-data/_funding-check', function(req, res){
 
       //Other - Other
       }else if(mentort == 'Other'){
-        res.redirect('/choose-provider')
+        res.redirect('/funding/edge-case')
       }
 
       //No selection
       else {
-        res.redirect('/choose-provider')
+        res.redirect('/funding/edge-case')
       }
   }
     //Private nursery, with URN + NPQEYL
