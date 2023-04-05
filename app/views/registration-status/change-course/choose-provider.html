@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Select your provider
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="sharing-data" method="post">
+      <h1 class="govuk-heading-xl">Select your provider</h1>
+
+
+
+      {{ govukRadios({
+        name: "provider",
+        id: "provider",
+        hint: {
+          text: "Select one of the providers offering your chosen course."
+        },
+        items: [
+          {
+            value: "Ambition Institute",
+            text: "Ambition Institute"
+          },
+          {
+            value: "Education Development Trust",
+            text: "Education Development Trust"
+          },
+          {
+            value: "National Institute of Teaching",
+            text: "National Institute of Teaching"
+          },
+          {
+            value: "Teacher Development Trust",
+            text: "Teacher Development Trust"
+          },
+          {
+            value: "Teach First",
+            text: "Teach First"
+          },
+          {
+            value: "UCL Institute of Education",
+            text: "UCL Institute of Education"
+          }
+
+        ]
+
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
