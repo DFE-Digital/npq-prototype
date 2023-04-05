@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
+{% set signedIn = 'true' %}
 
 {% block pageTitle %}
   Registration status
@@ -92,8 +92,8 @@
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--blue">
-            submitted
+          '<strong class="govuk-tag govuk-tag--green">
+            accepted
           </strong>'
         },
         {
@@ -109,8 +109,8 @@
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--blue">
-            submitted
+          '<strong class="govuk-tag govuk-tag--yellow">
+            pending
           </strong>'
         },
         {
@@ -126,8 +126,8 @@
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--blue">
-            submitted
+          '<strong class="govuk-tag govuk-tag--red">
+            rejected
           </strong>'
         },
         {

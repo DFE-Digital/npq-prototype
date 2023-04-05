@@ -15,11 +15,11 @@
 {% block content %}
 
       <!-- EHCO funded -->
-      {% if (data['choosenpq'] == "The Early Headship Coaching Offer") and (data['earlyheadship'] != 'no')%}
+      {% if (data['choosenpq'] == "Early headship coaching offer") and (data['earlyheadship'] != 'no')%}
         {% include 'includes/answers/ehco-funded.html' %}
 
       <!-- EHCO not funded -->
-      {% elseif (data['choosenpq'] == "The Early Headship Coaching Offer") and ((data['earlyheadship'] == 'no') or (data['headteachers'] == 'no')) %}
+      {% elseif (data['choosenpq'] == "Early headship coaching offer") and ((data['earlyheadship'] == 'no') or (data['headteachers'] == 'no')) %}
           {% include 'includes/answers/ehco-not-funded.html' %}
 
       <!-- Private nursery with URN doing NPQEYL -->
