@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+
+{% block pageTitle %}
+  Your registration is complete
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% set html %}
+      Your registration for {{ data ['chosenpq'] or "Leading teaching" }}
+      NPQ with {{ data['provider'] or "Ambition Institute" }} has been updated.
+      {% endset %}
+
+      {{ govukPanel({
+        titleHtml: html
+      }) }}
+
+      <h2 class="govuk-heading-m">Apply through your provider</h2>
+      <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] or "Leading teaching" }} NPQ
+        through {{ data['provider'] or "Ambition Institute"}}, if you have not done so already.</p>
+      <p class="govuk-body">
+        They’ll contact you by email to outline the next steps, including how to apply.
+      </p>
+      <p class="govuk-body">
+      There might be a delay in your provider contacting you while they prepare to open applications for October 2023.
+      </p>
+
+      <div class="govuk-inset-text">
+        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScAD7XvFlHl8LzfSyxstYErWMiFPXGamrA_qBhBJTGXuP9efw/viewform?usp=sf_link">Tell us about your experience</a> of registering for an NPQ. Your views help us improve this service.
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
