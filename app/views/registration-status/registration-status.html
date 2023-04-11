@@ -66,6 +66,63 @@
   {{ govukSummaryList({
     card: {
       title: {
+        text: "Work details"
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "Change details"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Where do you work?",
+          classes: 'govuk-!-width-one-half'
+        },
+        value: {
+          html: "England"
+        }
+      },
+      {
+        key: {
+          text: "Work setting"
+        },
+        value: {
+          html: "School"
+        }
+      },
+      {
+        key: {
+          text: "Employer"
+        },
+        value: {
+          html:
+            '
+            <dd class="govuk-summary-list__value">{{ data['employer'] or 'St Thomas More School'}}</dd>
+            '
+        }
+      },
+      {
+        key: {
+          text: "Targeted support funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              funded
+            </strong>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
         text: "Course details"
       },
       actions: {
