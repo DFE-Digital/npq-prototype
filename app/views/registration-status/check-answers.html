@@ -23,10 +23,10 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Where do you work?
+              Do you work in England?
             </dt>
             <dd class="govuk-summary-list__value">
-              England
+              {{ data['wheredoyouwork'] or "Yes" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
@@ -40,7 +40,7 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              School
+              {{ data['whichsetting'] or "A school"}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
@@ -54,7 +54,7 @@
               Workplace
             </dt>
             <dd class="govuk-summary-list__value">
-              St Thomas More School
+              {{ data['whichschool'] or "St Thomas More School" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="which-school">
@@ -68,7 +68,7 @@
               Course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['choosenpq']}}
+              {{ data['choosenpq'] or "Leading literacy"}} NPQ
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-npq">
