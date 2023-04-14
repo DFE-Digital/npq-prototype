@@ -13,8 +13,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% set html %}
-      Your registration for {{ data ['chosenpq'] or "Leading teaching" }}
-      NPQ with {{ data['provider'] or "Ambition Institute" }} has been updated.
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      You’ve updated your registration for the Early headship coaching offer with {{ data['provider'] }}
+      {% else %}
+      You’ve updated your registration for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
+      {% endif %}
       {% endset %}
 
       {{ govukPanel({
@@ -26,9 +29,6 @@
         through {{ data['provider'] or "Ambition Institute"}}, if you have not done so already.</p>
       <p class="govuk-body">
         They’ll contact you by email to outline the next steps, including how to apply.
-      </p>
-      <p class="govuk-body">
-      There might be a delay in your provider contacting you while they prepare to open applications for October 2023.
       </p>
 
       <div class="govuk-inset-text">
