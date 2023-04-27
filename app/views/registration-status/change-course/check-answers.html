@@ -1,7 +1,19 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
 
+{% block pageTitle %}
+  Check your answers and confirm
+{% endblock %}
 
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
-{% block page %}
+{% block content %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
@@ -14,11 +26,11 @@
               Do you work in England?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['wheredoyouwork'] or "Yes"}}
+              {{ data['wheredoyouwork'] or "Yes" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
-                Change<span class="govuk-visually-hidden"> where do you work</span>
+
               </a>
             </dd>
           </div>
@@ -28,11 +40,11 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting'] or "A school" }}
+              {{ data['whichsetting'] or "A school"}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
-                Change<span class="govuk-visually-hidden"> work setting</span>
+
               </a>
             </dd>
           </div>
@@ -46,7 +58,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="which-school">
-                Change<span class="govuk-visually-hidden"> workplace</span>
+
               </a>
             </dd>
           </div>
@@ -56,10 +68,10 @@
               Course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['choosenpq'] or "Leading literacy" }}
+              {{ data['choosenpq'] or "Leading literacy"}} NPQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="choose-npq">
+              <a class="govuk-link" href="/registration-status/change-course/choose-npq">
                 Change<span class="govuk-visually-hidden"> course</span>
               </a>
             </dd>
@@ -70,11 +82,11 @@
               Lead provider
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['provider'] or "Ambition Institute" }}
+              {{ data['provider'] or "Ambition Institute"}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="choose-provider">
-                Change<span class="govuk-visually-hidden"> lead provider</span>
+              <a class="govuk-link" href="#">
+
               </a>
             </dd>
           </div>
@@ -85,4 +97,10 @@
 
     </div>
   </div>
+
+        {{ govukButton({
+          text: "Confirm",
+          href: "/registration-status/confirmation"
+        }) }}
+
 {% endblock %}

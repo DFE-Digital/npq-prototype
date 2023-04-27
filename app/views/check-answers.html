@@ -23,11 +23,11 @@
           {% include 'includes/answers/ehco-not-funded.html' %}
 
       <!-- Private nursery with URN doing NPQEYL -->
-      {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+      {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "Early Years Leadership") %}
         {% include 'includes/answers/ey-funded.html' %}
 
       <!-- Not a nursery with URN -->
-      {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "NPQ for Early Years Leadership (NPQEYL)") %}
+      {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') and (data['choosenpq'] == "Early Years Leadership") %}
         {% include 'includes/answers/ey-funded.html' %}
 
       <!-- State nursery  -->
@@ -47,7 +47,7 @@
         {% include 'includes/answers/ey-not-ey.html' %}
 
       <!-- User not working in England -->
-      {% elseif data['wheredoyouwork'] != "England" %}
+      {% elseif data['wheredoyouwork'] == "Other" %}
         {% include 'includes/answers/not-eng.html' %}
 
       <!-- User works in a private school -->
