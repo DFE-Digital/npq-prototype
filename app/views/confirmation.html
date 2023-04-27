@@ -19,7 +19,7 @@
       {% if (data['choosenpq'] == "Early headship coaching offer") %}
       You’ve registered for the Early headship coaching offer with {{ data['provider'] }}
       {% else %}
-      You’ve registered for the {{ data['choosenpq'] }} NPQ with {{ data['provider'] }}
+      You’ve registered for the {{ data['choosenpq'] or "Leading literacy"}} NPQ with {{ data['provider'] or "Ambition Institute" }}
       {% endif %}
       {% endset %}
 
@@ -32,7 +32,7 @@
       {% if (data['choosenpq'] == "Early headship coaching offer") %}
       <p class="govuk-body">You still need to apply for the Early headship coaching offer through {{ data['provider']}}, if you have not done so already.</p>
       {% else %}
-      <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] }} NPQ through {{ data['provider']}}, if you have not done so already.</p>
+      <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] or "Leading literacy"}} NPQ through {{ data['provider'] or "Ambition Institute"}}, if you have not done so already.</p>
       {% endif %}
 
       <p class="govuk-body">
