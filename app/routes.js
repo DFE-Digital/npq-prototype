@@ -20,74 +20,6 @@ var hasurnt = "no"
 var workinnurseryt = "yes"
 var emailt
 
-// Does the user have a TRN?
-router.post('/email', function (req, res) {
-  var trnregistered = req.session.data['has-trn']
-
-  if (trnregistered == "no"){
-    res.redirect('/get-a-trn')
-  } else {
-    res.redirect('https://find-a-lost-trn-prototype.herokuapp.com/user-research/scenario-1')
-  }
-})
-
-router.post('/ask-questions', function (req, res){
-  emailt = req.session.data['email']
-  if(emailt == 'email@example.com'){
-    res.redirect('/gai/gai-confirm-details')
-  }else{
-    res.redirect('/ask-questions')
-  }
-})
-
-router.post('/gai/gai-nino', function(req, res){
-  var haveninot = req.session.data['havenino']
-  if(haveninot == 'no'){
-    res.redirect('/gai/gai-trn')
-  }else{
-    res.redirect('/gai/gai-nino')
-  }
-})
-
-router.post('/gai/gai-how-qts', function(req, res){
-  var haveqtst = req.session.data['haveqts']
-  if (haveqtst == 'No') {
-    res.redirect('/gai/gai-answers')
-  }else {
-    res.redirect('/gai/gai-how-qts')
-  }
-})
-
-
-router.post('/check-data/_gai-check', function(req, res){
-  var changedetailst = req.session.data['changedetails']
-  if(changedetailst == 'yes'){
-    res.redirect('/gai/gai-name')
-  }else{
-      res.redirect('/gai/finish-gai')
-  }
-})
-
-
-// Confirm or update details for existing user
-router.post('/gai/finish-gai', function(req, res){
-  if(emailt == 'nomatch@example.com'){
-    res.redirect('/gai/gai-no-match')
-  }else {
-      res.redirect('/gai/finish-gai')
-    }
-})
-
-//A user whose details don't match and chooses to proceed or update details
-router.post('/check-data/_gai-no-match', function(req, res){
-  var changedetailst = req.session.data['changedetails']
-  if(changedetailst == "yes"){
-    res.redirect('/gai/gai-answers')
-  }else {
-    res.redirect('/gai/finish-gai')
-  }
-})
-
 
 router.post('/where-do-you-work', function(req, res){
   var choosenpqprovidert = req.session.data['choosenpqprovider']
@@ -292,9 +224,76 @@ router.post('/funding/ehco-funded', function(req, res){
   }
 })
 
-// ADMIN CONSOLE
+/* Since the integration with the GAI prototype,
+we don't need this logic anymore
+
+// Does the user have a TRN?
+router.post('/email', function (req, res) {
+  var trnregistered = req.session.data['has-trn']
+
+  if (trnregistered == "no"){
+    res.redirect('/get-a-trn')
+  } else {
+    res.redirect('https://find-a-lost-trn-prototype.herokuapp.com/user-research/scenario-1')
+  }
+})
+
+router.post('/ask-questions', function (req, res){
+  emailt = req.session.data['email']
+  if(emailt == 'email@example.com'){
+    res.redirect('/gai/gai-confirm-details')
+  }else{
+    res.redirect('/ask-questions')
+  }
+})
+
+router.post('/gai/gai-nino', function(req, res){
+  var haveninot = req.session.data['havenino']
+  if(haveninot == 'no'){
+    res.redirect('/gai/gai-trn')
+  }else{
+    res.redirect('/gai/gai-nino')
+  }
+})
+
+router.post('/gai/gai-how-qts', function(req, res){
+  var haveqtst = req.session.data['haveqts']
+  if (haveqtst == 'No') {
+    res.redirect('/gai/gai-answers')
+  }else {
+    res.redirect('/gai/gai-how-qts')
+  }
+})
 
 
+router.post('/check-data/_gai-check', function(req, res){
+  var changedetailst = req.session.data['changedetails']
+  if(changedetailst == 'yes'){
+    res.redirect('/gai/gai-name')
+  }else{
+      res.redirect('/gai/finish-gai')
+  }
+})
 
+
+// Confirm or update details for existing user
+router.post('/gai/finish-gai', function(req, res){
+  if(emailt == 'nomatch@example.com'){
+    res.redirect('/gai/gai-no-match')
+  }else {
+      res.redirect('/gai/finish-gai')
+    }
+})
+
+//A user whose details don't match and chooses to proceed or update details
+router.post('/check-data/_gai-no-match', function(req, res){
+  var changedetailst = req.session.data['changedetails']
+  if(changedetailst == "yes"){
+    res.redirect('/gai/gai-answers')
+  }else {
+    res.redirect('/gai/finish-gai')
+  }
+})
+*/
 
 module.exports = router
