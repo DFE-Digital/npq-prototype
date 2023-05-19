@@ -163,6 +163,51 @@
     ]
   }) }}
 
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
+    {{ govukTable({
+      caption: "Leading teaching NPQ registrations",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Created at",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Status",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "Lead provider",
+          classes: "govuk-!-width-one-quarter"
+        },
+        {
+          text: "",
+          classes: "govuk-!-width-one-quarter"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "1 February 2022"
+          },
+          {
+            html:
+            '<strong class="govuk-tag govuk-tag--green">
+              passed
+            </strong>'
+          },
+          {
+            text: "UCL Institute of Education"
+          },
+          {
+            html: '<a href="#">More details</a>'
+          }
+        ]
+      ]
+    }) }}
+
   <div class="govuk-rows" style="margin-top: 60px">
     <h2 class="govuk-heading-l">Register for an NPQ</h2>
     <p>Use this service to submit a new registration</p>

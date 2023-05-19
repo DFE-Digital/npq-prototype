@@ -63,7 +63,7 @@ router.post('/eyll/nursery-type', function (req, res){
   }
 })*/
 
-//Does the user work in a state or provate childcare setting?
+//Does the user work in a state or private childcare setting?
 router.post('/check-data/_nursery-check', function (req, res){
   nurserysettingt = req.session.data['nurserysetting']
 
