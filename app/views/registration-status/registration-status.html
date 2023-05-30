@@ -14,6 +14,16 @@
 }) }}
 {% endblock %}
 
+{% set scholarshipfundingHtml %}
+  Scholarship funding
+  <p class="govuk-body-s govuk-!-margin-bottom-0">Funding to cover the course fees</p>
+{% endset %}
+
+{% set targetedfundingHtml %}
+  Targeted support funding
+  <p class="govuk-body-s govuk-!-margin-bottom-0">Funding directly to your school</p>
+{% endset %}
+
 {% block content %}
 
   <h1 class="govuk-heading-xl">Your registration</h1>
@@ -102,7 +112,7 @@
       },
       {
         key: {
-          text: "Scholarship funding"
+          html: scholarshipfundingHtml
         },
         value: {
           html:
@@ -113,7 +123,7 @@
       },
       {
         key: {
-          text: "Targeted support funding"
+          html: targetedfundingHtml
         },
         value: {
           html:
