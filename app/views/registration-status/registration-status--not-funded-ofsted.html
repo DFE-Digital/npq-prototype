@@ -14,6 +14,14 @@
 }) }}
 {% endblock %}
 
+{% set scholarshipfundingHtml %}
+  <strong class="govuk-tag govuk-tag--red">
+    Not eligible
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England.</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+{% endset %}
+
 {% block content %}
 
   <h1 class="govuk-heading-xl">Your registration</h1>
@@ -103,23 +111,7 @@
           text: "Scholarship funding"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
-        }
-      },
-      {
-        key: {
-          text: "Targeted support funding"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
+          html: scholarshipfundingHtml
         }
       }
     ]
