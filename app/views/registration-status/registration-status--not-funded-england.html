@@ -76,15 +76,7 @@
     card: {
       title: {
         text: "Course details"
-      },
-      actions: {
-        items: [
-          {
-            href: "change-course/choose-npq",
-            text: "Change course"
-          }
-        ]
-      }
+      }      
     },
     rows: [
       {
@@ -93,6 +85,30 @@
         },
         value: {
           html: "Leading teaching NPQ"
+        },
+        actions: {
+          items: [
+            {
+              href: "change-course/choose-npq",
+              text: "Change course"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html: "Ambition Institute"
+        },
+        actions: {
+          items: [
+            {
+              href: "change-provider/choose-provider",
+              text: "Change provider"
+            }
+          ]
         }
       },
       {
@@ -103,7 +119,8 @@
           html:
             '<strong class="govuk-tag govuk-tag--blue">
               submitted
-            </strong>'
+            </strong>
+            <p class="govuk-!-margin-top-2">You also need to apply separately with your training provider, if you have not done so already.</p>'
         }
       },
       {
@@ -112,43 +129,6 @@
         },
         value: {
           html: scholarshipfundingHtml
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Provider details"
-      },
-      actions: {
-        items: [
-          {
-            href: "change-provider/choose-provider",
-            text: "Change provider"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Provider"
-        },
-        value: {
-          html: "Ambition Institute"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--yellow">
-              pending
-            </strong>'
         }
       }
     ]

@@ -61,8 +61,7 @@
     ]
   }) }}
 
-
-<div class="govuk-rows" style="margin-top: 60px"></div>
+  <div class="govuk-rows" style="margin-top: 60px"></div>
 
   {{ govukTable({
     caption: "Headship NPQ registrations",
@@ -70,19 +69,16 @@
     firstCellIsHeader: false,
     head: [
       {
-        text: "Created at",
-        classes: "govuk-!-width-one-quarter"
+        text: "Created",
+        classes: "govuk-!-width-one-third"
       },
       {
-        text: "Status"
-      },
-      {
-        text: "Lead provider",
-        classes: "govuk-!-width-one-quarter"
+        text: "Provider",
+        classes: "govuk-!-width-one-third"
       },
       {
         text: "",
-        classes: "govuk-!-width-one-quarter"
+        classes: "govuk-!-width-one-third govuk-!-text-align-right"
       }
     ],
     rows: [
@@ -91,16 +87,11 @@
           text: "16 March 2023"
         },
         {
-          html:
-          '<strong class="govuk-tag govuk-tag--green">
-            accepted
-          </strong>'
-        },
-        {
           text: "Ambition Institute"
         },
         {
-          html: '<a href="npqh-registration">More details</a>'
+          html: '<a href="npqh-registration">More details</a>',
+          classes: "govuk-!-text-align-right"
         }
       ],
       [
@@ -108,16 +99,11 @@
           text: "16 March 2023"
         },
         {
-          html:
-          '<strong class="govuk-tag govuk-tag--yellow">
-            pending
-          </strong>'
-        },
-        {
           text: "Church of England"
         },
         {
-          html: '<a href="#">More details</a>'
+          html: '<a href="#">More details</a>',
+          classes: "govuk-!-text-align-right"
         }
       ],
       [
@@ -125,16 +111,11 @@
           text: "15 March 2023"
         },
         {
-          html:
-          '<strong class="govuk-tag govuk-tag--red">
-            rejected
-          </strong>'
-        },
-        {
           text: "Teach First"
         },
         {
-          html: '<a href="#">More details</a>'
+          html: '<a href="#">More details</a>',
+          classes: "govuk-!-text-align-right"
         }
       ]
     ]
@@ -142,84 +123,73 @@
 
   <div class="govuk-rows" style="margin-top: 60px"></div>
 
-    {{ govukTable({
-      caption: "Leading teaching NPQ registrations",
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: false,
-      head: [
+  {{ govukTable({
+    caption: "Leading teaching NPQ registrations",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "Created",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "Provider",
+        classes: "govuk-!-width-one-third"
+      },
+      {
+        text: "",
+        classes: "govuk-!-width-one-third"
+      }
+    ],
+    rows: [
+      [
         {
-          text: "Created at",
-          classes: "govuk-!-width-one-quarter"
+          text: "1 February 2022"
         },
         {
-          text: "Status",
-          classes: "govuk-!-width-one-quarter"
+          text: "UCL Institute of Education"
         },
         {
-          text: "Lead provider",
-          classes: "govuk-!-width-one-quarter"
-        },
-        {
-          text: "",
-          classes: "govuk-!-width-one-quarter"
+          html: '<a href="#">More details</a>',
+          classes: "govuk-!-text-align-right"
         }
-      ],
-      rows: [
-        [
-          {
-            text: "1 February 2022"
-          },
-          {
-            html:
-            '<strong class="govuk-tag govuk-tag--green">
-              passed
-            </strong>'
-          },
-          {
-            text: "UCL Institute of Education"
-          },
-          {
-            html: '<a href="#">More details</a>'
-          }
-        ]
       ]
+    ]
+  }) }}
+
+  <div class="govuk-rows" style="margin-top: 60px">
+    <h2 class="govuk-heading-l">Register for an NPQ</h2>
+    <p>Use this service to submit a new registration</p>
+
+    {{ govukButton({
+      text: "Register for an NPQ",
+      href: "/chosen"
     }) }}
+  </div>
 
-
- <div class="govuk-rows" style="margin-top: 60px">
-   <h2 class="govuk-heading-l">Register for an NPQ</h2>
-   <p>Use this service to submit a new registration</p>
-
-   {{ govukButton({
-     text: "Register for an NPQ",
-     href: "/chosen"
-   }) }}
- </div>
-
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            For prototype reference
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <h3 class="govuk-heading-s">Landing page showing different funding statuses </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/registration-status/registration-status">Eligible for Scholarship and Targeted support funding </a></li>
-            <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
-            <li><a href="/registration-status/registration-status--targeted-only">Eligible for Targeted support funding only </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
-            <li><a href="/registration-status/registration-status--scholarship-review">Not eligible for funding – in review </a></li>
-          </ul>
-          <h3 class="govuk-heading-s">Other landing page scenarios </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/registration-status/multiple-registrations">User with multiple registrations</a></li>
-            <li><a href="/registration-status/started">User with a registration for an NPQ that already started</a></li>
-          </ul>
-        </div>
-      </details>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        For prototype reference
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <h3 class="govuk-heading-s">Landing page showing different funding statuses </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/registration-status/registration-status">Eligible for Scholarship and Targeted support funding </a></li>
+        <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
+        <li><a href="/registration-status/registration-status--targeted-only">Eligible for Targeted support funding only </a></li>
+        <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
+        <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
+        <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
+        <li><a href="/registration-status/registration-status--scholarship-review">Not eligible for funding – in review </a></li>
+      </ul>
+      <h3 class="govuk-heading-s">Other landing page scenarios </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/registration-status/multiple-registrations">User with multiple registrations</a></li>
+        <li><a href="/registration-status/started">User with a registration for an NPQ that already started</a></li>
+      </ul>
+    </div>
+  </details>
 
 {% endblock %}
