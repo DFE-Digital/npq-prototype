@@ -78,30 +78,6 @@
         },
         value: {
           html: "Leading teaching NPQ"
-        },
-        actions: {
-          items: [
-            {
-              href: "change-course/choose-npq",
-              text: "Change course"
-            }
-          ]
-        }
-      },
-      {
-        key: {
-          text: "Provider"
-        },
-        value: {
-          html: "Ambition Institute"
-        },
-        actions: {
-          items: [
-            {
-              href: "change-provider/choose-provider",
-              text: "Change provider"
-            }
-          ]
         }
       },
       {
@@ -112,8 +88,7 @@
           html:
             '<strong class="govuk-tag govuk-tag--blue">
               submitted
-            </strong>
-            <p class="govuk-!-margin-top-2">You also need to apply separately with your training provider, if you have not done so already.</p>'
+            </strong>'
         }
       },
       {
@@ -138,6 +113,35 @@
               Eligible
             </strong>
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Provider details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html: "Ambition Institute"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--turquoise">
+              started
+            </strong>'
         }
       }
     ]
