@@ -70,18 +70,23 @@
     head: [
       {
         text: "Submitted",
-        classes: "govuk-!-width-one-quarter"
+        classes: "govuk-width-one-fifth"
       },
       {
-        text: "Status"
+        text: "Provider application",
+        classes: "govuk-width-one-fifth"
+      },
+      {
+        text: "Course outcome",
+        classes: "govuk-width-one-fifth"
       },
       {
         text: "Provider",
-        classes: "govuk-!-width-one-quarter"
+        classes: "govuk-width-one-fifth"
       },
       {
         text: "",
-        classes: "govuk-!-width-one-quarter govuk-!-text-align-right"
+        classes: "govuk-width-one-fifth govuk-!-text-align-right"
       }
     ],
     rows: [
@@ -93,6 +98,12 @@
           html:
           '<strong class="govuk-tag govuk-tag--green">
             accepted
+          </strong>'
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--blue">
+            Started
           </strong>'
         },
         {
@@ -110,7 +121,13 @@
         {
           html:
           '<strong class="govuk-tag govuk-tag--yellow">
-            pending
+            Apply with provider
+          </strong>'
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--grey">
+            Not started
           </strong>'
         },
         {
@@ -120,19 +137,103 @@
           html: '<a href="#">More details</a>',
           classes: "govuk-!-text-align-right"
         }
-      ],
+      ]
+    ]
+  }) }}
+
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
+  {{ govukTable({
+    caption: "Leading literacy NPQ registrations",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "Submitted",
+        classes: "govuk-width-one-fifth"
+      },
+      {
+        text: "Provider application",
+        classes: "govuk-width-one-fifth"
+      },
+      {
+        text: "Course outcome",
+        classes: "govuk-width-one-fifth"
+      },
+      {
+        text: "Provider",
+        classes: "govuk-width-one-fifth"
+      },
+      {
+        text: "",
+        classes: "govuk-width-one-fifth"
+      }
+    ],
+    rows: [
       [
         {
-          text: "15 March 2023"
+          text: "1 March 2023"
         },
         {
           html:
-          '<strong class="govuk-tag govuk-tag--red">
-            rejected
+          '<strong class="govuk-tag govuk-tag--green">
+            Accepted
+          </strong>'
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--yellow">
+            Deferred
           </strong>'
         },
         {
           text: "Teach First"
+        },
+        {
+          html: '<a href="#">More details</a>',
+          classes: "govuk-!-text-align-right"
+        }
+      ],
+      [
+        {
+          text: "22 February 2023"
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--red">
+            Rejected
+          </strong>'
+        },
+        {
+          html:
+          ''
+        },
+        {
+          text: "Teacher Development Trust"
+        },
+        {
+          html: '<a href="#">More details</a>',
+          classes: "govuk-!-text-align-right"
+        }
+      ],
+      [
+        {
+          text: "1 February 2021"
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--green">
+            Accepted
+          </strong>'
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--red">
+            failed
+          </strong>'
+        },
+        {
+          text: "Teacher Development Trust"
         },
         {
           html: '<a href="#">More details</a>',
@@ -151,25 +252,35 @@
     head: [
       {
         text: "Submitted",
-        classes: "govuk-!-width-one-quarter"
+        classes: "govuk-width-one-fifth"
       },
       {
-        text: "Status",
-        classes: "govuk-!-width-one-quarter"
+        text: "Provider application",
+        classes: "govuk-width-one-fifth"
+      },
+      {
+        text: "Course outcome",
+        classes: "govuk-width-one-fifth"
       },
       {
         text: "Provider",
-        classes: "govuk-!-width-one-quarter"
+        classes: "govuk-width-one-fifth"
       },
       {
         text: "",
-        classes: "govuk-!-width-one-quarter"
+        classes: "govuk-width-one-fifth"
       }
     ],
     rows: [
       [
         {
           text: "1 February 2022"
+        },
+        {
+          html:
+          '<strong class="govuk-tag govuk-tag--green">
+            Accepted
+          </strong>'
         },
         {
           html:

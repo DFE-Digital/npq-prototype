@@ -21,15 +21,15 @@
       {% set countryHtml %}
 
         {{ govukInput({
-          name: "country",
-          id: "country",
+          id: "othercountry",
+          name: "othercountry",
           classes: "govuk-!-width-half",
           label: {
             text: "Which country do you work in?"
           }
         }) }}
 
-        {% endset -%}
+      {% endset %}
 
       {{ govukRadios({
         id: "wheredoyouwork",
@@ -43,12 +43,12 @@
         },
         items: [
           {
-            value: "England",
+            value: "Yes",
             text: "Yes"
           },
 
           {
-            value: "Other",
+            value: "No",
             text: "No",
             conditional: {
               html: countryHtml

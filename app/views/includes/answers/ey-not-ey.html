@@ -10,12 +10,15 @@
       <form class='form' action="" method="post">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
-
             <dt class="govuk-summary-list__key">
-              Where do you work?
+              Do you work in England? 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['wheredoyouwork']}}
+              {% if (data['wheredoyouwork'] == "Yes") %}
+                Yes
+              {% else %}
+                No – {{ data['othercountry']}}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">

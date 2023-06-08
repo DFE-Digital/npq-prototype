@@ -22,13 +22,13 @@
       </h1>
 
       <!-- Not in England + Early years -->
-      {% if (data['wheredoyouwork'] != "England") and (data['whichsetting'] == "Early years or childcare")  %}
+      {% if (data['wheredoyouwork'] != "Yes") and (data['whichsetting'] == "Early years or childcare")  %}
         <p>You’re not eligible for scholarship funding for {{ data['choosenpq']}} NPQ because you do not work in England.</p>
 
         <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
 
         <!-- Not in England-->
-        {% elseif data['wheredoyouwork'] != "England" %}
+        {% elseif data['wheredoyouwork'] != "Yes" %}
         <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ because you do not work in England.</p>
 
         <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>

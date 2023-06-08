@@ -17,6 +17,11 @@
     Headship NPQ registration details
   </h1>
 
+  <p>Our records show that you've already started your NPQ. If you need to make any changes to your registrations
+    please get in touch via email: <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
+
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
   {% include 'includes/registration-status/work-details.html' %}
 
   {{ govukSummaryList({
@@ -32,14 +37,6 @@
         },
         value: {
           html: "Headship NPQ"
-        },
-        actions: {
-          items: [
-            {
-              href: "change-course/choose-npq",
-              text: "Change course"
-            }
-          ]
         }
       },
       {
@@ -48,16 +45,40 @@
         },
         value: {
           html: "Ambition Institute"
-        },
-        actions: {
-          items: [
-            {
-              href: "change-provider/choose-provider",
-              text: "Change provider"
-            }
-          ]
         }
       },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Accepted
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--blue">
+              Started
+            </strong>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
       {
         key: {
           text: "Scholarship funding"
@@ -80,29 +101,6 @@
               Eligible
             </strong>
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
-        }
-      },
-      {
-        key: {
-          text: "DfE registration status"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--blue">
-              submitted
-            </strong>
-            <p class="govuk-!-margin-top-2">You also need to apply separately with your training provider, if you have not done so already.</p>'
-        }
-      },
-      {
-        key: {
-          text: "Provider application status"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              accepted
-            </strong>'
         }
       }
     ]
