@@ -23,51 +23,16 @@
 
 {% block content %}
 
-  <h1 class="govuk-heading-xl">Your registration</h1>
+  <span class="govuk-caption-l">Ambition Institute</span>
+  <h1 class="govuk-heading-xl">
+    Leading teaching NPQ registration details
+  </h1>
 
-  <div class="govuk-rows" style="margin-top: 60px"></div>
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      },
-      actions: {
-        items: [
-          {
-            href: "https://get-an-identity-prototype.herokuapp.com/account/interstitial",
-            text: "Change personal details"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Name"
-        },
-        value: {
-          html: "Mary Smith"
-        }
-      },
-      {
-        key: {
-          text: "Email"
-        },
-        value: {
-          html: "mary.smith@email.com"
-        }
-      },
-      {
-        key: {
-          text: "Date of birth"
-        },
-        value: {
-          html: "27 March 1987"
-        }
-      }
-    ]
+  {{ govukInsetText({
+    html: '<a href="">Visit your DfE Identity account</a> to check or change your personal details.'
   }) }}
+
+  <div class="govuk-rows" style="margin-top: 40px"></div>
 
   {% include 'includes/registration-status/work-details.html' %}
 
