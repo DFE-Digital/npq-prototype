@@ -15,20 +15,26 @@
 
 {% block content %}
 
-  <h1 class="govuk-heading-xl">Your registrations</h1>
+  <h1 class="govuk-heading-xl">Your NPQ registrations</h1>
 
-  <div class="govuk-rows" style="margin-top: 60px"></div>
+  {{ govukInsetText({
+    html: '<a href="">Visit your DfE Identity account</a> to check or change your personal details.'
+  }) }}
+
+  <div class="govuk-rows" style="margin-top: 40px"></div>
 
   {{ govukSummaryList({
     card: {
       title: {
-        text: "Personal details"
+        html: 'Headship NPQ
+        <p class="govuk-!-margin-bottom-0">Ambition Institute</p>'
       },
       actions: {
         items: [
           {
-            href: "https://get-an-identity-prototype.herokuapp.com/account/interstitial",
-            text: "Change details"
+            href: "npqh-registration",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
           }
         ]
       }
@@ -36,266 +42,274 @@
     rows: [
       {
         key: {
-          text: "Name"
+          text: "Registration submitted"
         },
         value: {
-          html: "Mary Smith"
+          html: "16 March 2023"
         }
       },
       {
         key: {
-          text: "Email"
+          text: "Provider application"
         },
         value: {
-          html: "mary.smith@email.com"
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
         }
       },
       {
         key: {
-          text: "Date of birth"
+          text: "Course outcome"
         },
         value: {
-          html: "27 March 1987"
+          html:
+            '<strong class="govuk-tag govuk-tag--blue">
+              Started
+            </strong>'
         }
       }
     ]
   }) }}
 
-  <div class="govuk-rows" style="margin-top: 60px"></div>
-
-  {{ govukTable({
-    caption: "Headship NPQ registrations",
-    captionClasses: "govuk-table__caption--m",
-    firstCellIsHeader: false,
-    head: [
-      {
-        text: "Submitted",
-        classes: "govuk-width-one-fifth"
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Headship NPQ
+        <p class="govuk-!-margin-bottom-0">Church of England</p>'
       },
-      {
-        text: "Provider application",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "Course outcome",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "Provider",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "",
-        classes: "govuk-width-one-fifth govuk-!-text-align-right"
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
+          }
+        ]
       }
-    ],
+    },
     rows: [
-      [
-        {
-          text: "16 March 2023"
+      {
+        key: {
+          text: "Registration submitted"
         },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--green">
-            accepted
-          </strong>'
-        },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--blue">
-            Started
-          </strong>'
-        },
-        {
-          text: "Ambition Institute"
-        },
-        {
-          html: '<a href="npqh-registration">More details</a>',
-          classes: "govuk-!-text-align-right"
+        value: {
+          html: "16 March 2023"
         }
-      ],
-      [
-        {
-          text: "16 March 2023"
+      },
+      {
+        key: {
+          text: "Provider application"
         },
-        {
+        value: {
           html:
-          '<strong class="govuk-tag govuk-tag--yellow">
-            Apply with provider
-          </strong>'
-        },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--grey">
-            Not started
-          </strong>'
-        },
-        {
-          text: "Church of England"
-        },
-        {
-          html: '<a href="#">More details</a>',
-          classes: "govuk-!-text-align-right"
+            '<strong class="govuk-tag govuk-tag--yellow">
+              Apply with provider
+            </strong>
+            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already. </p>'
         }
-      ]
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--grey">
+              Not started
+            </strong>'
+        }
+      }
     ]
   }) }}
 
-  <div class="govuk-rows" style="margin-top: 60px"></div>
-
-  {{ govukTable({
-    caption: "Leading literacy NPQ registrations",
-    captionClasses: "govuk-table__caption--m",
-    firstCellIsHeader: false,
-    head: [
-      {
-        text: "Submitted",
-        classes: "govuk-width-one-fifth"
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Headship NPQ
+        <p class="govuk-!-margin-bottom-0">UCL Institute of Education</p>'
       },
-      {
-        text: "Provider application",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "Course outcome",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "Provider",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "",
-        classes: "govuk-width-one-fifth"
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
+          }
+        ]
       }
-    ],
+    },
     rows: [
-      [
-        {
-          text: "1 March 2023"
+      {
+        key: {
+          text: "Registration submitted"
         },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--green">
-            Accepted
-          </strong>'
-        },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--yellow">
-            Deferred
-          </strong>'
-        },
-        {
-          text: "Teach First"
-        },
-        {
-          html: '<a href="#">More details</a>',
-          classes: "govuk-!-text-align-right"
+        value: {
+          html: "21 February 2023"
         }
-      ],
-      [
-        {
-          text: "22 February 2023"
+      },
+      {
+        key: {
+          text: "Provider application"
         },
-        {
+        value: {
           html:
-          '<strong class="govuk-tag govuk-tag--red">
-            Rejected
-          </strong>'
-        },
-        {
-          html:
-          ''
-        },
-        {
-          text: "Teacher Development Trust"
-        },
-        {
-          html: '<a href="#">More details</a>',
-          classes: "govuk-!-text-align-right"
+            '<strong class="govuk-tag govuk-tag--red">
+              Unsuccessful
+            </strong>'
         }
-      ],
-      [
-        {
-          text: "1 February 2021"
-        },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--green">
-            Accepted
-          </strong>'
-        },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--red">
-            failed
-          </strong>'
-        },
-        {
-          text: "Teacher Development Trust"
-        },
-        {
-          html: '<a href="#">More details</a>',
-          classes: "govuk-!-text-align-right"
-        }
-      ]
+      }
     ]
   }) }}
 
-  <div class="govuk-rows" style="margin-top: 60px"></div>
-
-  {{ govukTable({
-    caption: "Leading teaching NPQ registrations",
-    captionClasses: "govuk-table__caption--m",
-    firstCellIsHeader: false,
-    head: [
-      {
-        text: "Submitted",
-        classes: "govuk-width-one-fifth"
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading literacy NPQ
+        <p class="govuk-!-margin-bottom-0">Teach First</p>'
       },
-      {
-        text: "Provider application",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "Course outcome",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "Provider",
-        classes: "govuk-width-one-fifth"
-      },
-      {
-        text: "",
-        classes: "govuk-width-one-fifth"
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
+          }
+        ]
       }
-    ],
+    },
     rows: [
-      [
-        {
-          text: "1 February 2022"
+      {
+        key: {
+          text: "Registration submitted"
         },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--green">
-            Accepted
-          </strong>'
-        },
-        {
-          html:
-          '<strong class="govuk-tag govuk-tag--green">
-            passed
-          </strong>'
-        },
-        {
-          text: "UCL Institute of Education"
-        },
-        {
-          html: '<a href="#">More details</a>',
-          classes: "govuk-!-text-align-right"
+        value: {
+          html: "2 January 2022"
         }
-      ]
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--yellow">
+              Deferred
+            </strong>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Senior leadership NPQ
+        <p class="govuk-!-margin-bottom-0">Teach First</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "10 April 2021"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Passed
+            </strong>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading literacy NPQ
+        <p class="govuk-!-margin-bottom-0">Teach First</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "npqh-registration",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "17 March 2021"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--red">
+              Failed
+            </strong>'
+        }
+      }
     ]
   }) }}
 
