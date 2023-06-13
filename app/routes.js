@@ -10,7 +10,7 @@ require('./routes/id-routes')(router)
 // Add your routes here
 
 var funded = "yes"
-var locationt = "England"
+var locationt = "Yes"
 var settingt = "A school"
 var whichschoolt = "public"
 var nurserysettingt = "Local authority-maintained nursery"
@@ -36,7 +36,7 @@ router.post('/where-school', function (req, res) {
   locationt = req.session.data['wheredoyouwork']
   settingt = req.session.data['whichsetting']
 
-  if (locationt == "England"){
+  if (locationt == "Yes"){
     if (settingt == "Early years or childcare") {
       res.redirect('/eyll/nursery-type')
     }else if (settingt =='Other'){
@@ -99,7 +99,7 @@ router.post('/check-data/_funding-check', function(req, res){
   npqt = req.session.data['choosenpq']
   whichschoolt = req.session.data['whichschool']
 
-  if(locationt == 'England'){
+  if(locationt == 'Yes'){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
       if(npqt != 'Early headship coaching offer' && whichschoolt != 'private'){
@@ -196,7 +196,7 @@ router.post('/ehco/ehco-early-headship', function(req, res){
 //Applying for EHCO + not early headship
 router.post('/funding/ehco-funded', function(req, res){
   var earlyheadshipt = req.session.data['earlyheadship']
-  if (locationt == 'England') {
+  if (locationt == 'Yes') {
     if(earlyheadshipt == 'No'){
       res.redirect('/funding/ehco-not-funded')
     }else{

@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Headship NPQ registration details
@@ -13,112 +14,98 @@
 {% endblock %}
 
 {% block content %}
-      <h1 class="govuk-heading-xl">
-        Headship NPQ registration details
-      </h1>
+  <span class="govuk-caption-l">Ambition Institute</span>
+  <h1 class="govuk-heading-xl">
+    Headship NPQ registration details
+  </h1>
 
-      {% include 'includes/registration-status/work-details.html' %}
+  <p>Our records show that you've already started your NPQ. If you need to make any changes to your registrations
+    please get in touch via email: <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Course details"
-          },
-          actions: {
-            items: [
-              {
-                href: "change-course/choose-npq",
-                text: "Change course"
-              }
-            ]
-          }
+  <div class="govuk-rows" style="margin-top: 60px"></div>
+
+  {% include 'includes/registration-status/work-details.html' %}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
         },
-        rows: [
-          {
-            key: {
-              text: "Course"
-            },
-            value: {
-              html: "Headship NPQ"
-            }
-          },
-          {
-            key: {
-              text: "Registration"
-            },
-            value: {
-              html:
-                '<strong class="govuk-tag govuk-tag--blue">
-                  submitted
-                </strong>'
-            }
-          },
-          {
-            key: {
-              text: "Scholarship funding"
-            },
-            value: {
-              html:
-                '<strong class="govuk-tag govuk-tag--green">
-                  Eligible
-                </strong>
-                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
-            }
-          },
-          {
-            key: {
-              text: "Targeted support funding"
-            },
-            value: {
-              html:
-                '<strong class="govuk-tag govuk-tag--green">
-                  Eligible
-                </strong>
-                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
-            }
-          }
-        ]
-      }) }}
-
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Provider details"
-          },
-          actions: {
-            items: [
-              {
-                href: "/registration-status/change-provider/choose-provider",
-                text: "Change provider"
-              }
-            ]
-          }
+        value: {
+          html: "Headship NPQ"
+        }
+      },
+      {
+        key: {
+          text: "Provider"
         },
-        rows: [
-          {
-            key: {
-              text: "Provider"
-            },
-            value: {
-              html: "Ambition Institute"
-            }
-          },
-          {
-            key: {
-              text: "Provider application"
-            },
-            value: {
-              html:
-                '<strong class="govuk-tag govuk-tag--green">
-                  accepted
-                </strong>'
-            }
-          }
-        ]
-      }) }}
+        value: {
+          html: "Ambition Institute"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--blue">
+              Started
+            </strong>'
+        }
+      }
+    ]
+  }) }}
 
-
-
-
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Eligible
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
+        }
+      },
+      {
+        key: {
+          text: "Targeted support funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Eligible
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
+        }
+      }
+    ]
+  }) }}
 
 {% endblock %}
