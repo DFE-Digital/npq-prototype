@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Registration status
@@ -19,6 +20,9 @@
   <h1 class="govuk-heading-xl">
     Leading teaching NPQ registration details
   </h1>
+
+  <p>Our records show that you've already started your NPQ. If you need to make any changes to your registrations
+    please get in touch via email: <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
 
   {{ govukInsetText({
     html: '<a href="">Visit your DfE Identity account</a> to check or change your personal details.'
@@ -144,6 +148,5 @@
         </ul>
       </div>
     </details>
-
 
 {% endblock %}
