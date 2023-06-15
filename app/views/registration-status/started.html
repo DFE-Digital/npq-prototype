@@ -18,14 +18,11 @@
 
   <span class="govuk-caption-l">Ambition Institute</span>
   <h1 class="govuk-heading-xl">
-    Leading teaching NPQ registration details
+    Leading teaching NPQ registration
   </h1>
 
-  <p>Our records show that you've already started your NPQ. If you need to make any changes to your registrations
-    please get in touch via email: <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>
-
   {{ govukInsetText({
-    html: '<a href="">Visit your DfE Identity account</a> to check or change your personal details.'
+    html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/interstitial">Visit your DfE Identity account</a> to check or change your personal details.'
   }) }}
 
   <div class="govuk-rows" style="margin-top: 40px"></div>
@@ -74,7 +71,8 @@
           html:
             '<strong class="govuk-tag govuk-tag--blue">
               started
-            </strong>'
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk ">continuing-professional-development@digital.education.gov.uk</a>.</p>'
         }
       }
     ]
