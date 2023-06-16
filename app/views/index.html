@@ -65,50 +65,100 @@
         </div>
       </details>
 
+<!-- LINKS TO PARTS OF THE PROTOTYPE STARTS HERE -->
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+      <h2 class="govuk-heading-l">Links to parts of the NPQ prototype</h2>
 
-      <h2 class="govuk-heading-m">Users who have already registered</h2>
-      <h3 class="govuk-heading-s">Landing page showing different funding statuses </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/registration-status/registration-status">Eligible for Scholarship and Targeted support funding </a></li>
-        <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
-        <li><a href="/registration-status/registration-status--targeted-only">Eligible for Targeted support funding only </a></li>
-        <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
-        <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
-        <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
-        <li><a href="/registration-status/registration-status--scholarship-review">Not eligible for funding – in review </a></li>
-      </ul>
-      <h3 class="govuk-heading-s">Other landing page scenarios </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/registration-status/multiple-registrations">User with multiple registrations</a></li>
-        <li><a href="/registration-status/started">User with a registration for an NPQ that already started</a></li>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+        <li><a href="/start-id">Start page </a></li>
+        <li><a href="/check-answers">Check your answers page </a></li>
+        <li><a href="/confirmation">Confirmation page </a></li>
       </ul>
 
-      <h2 class="govuk-heading-m">Teaching School Hub (TSH) finder</h2>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Skip create DfE Identity account (GAI)
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://get-an-identity-prototype.herokuapp.com/auth/finish">Last page of GAI, linking back to NPQ service </a></li>
+            <li><a href="/chosen">First page after GAI, if not previously registered </a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Funding outcomes (within registration flow)
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/funding/funding-vague">Eligible for scholarship funding</a></li>
+            <li><a href="/funding/funding-tsf">Eligible for scholarship and TSF funding</a></li>
+            <li><a href="/funding/already-funded">Already funded</a></li>
+            <li><a href="/funding/already-funded-tsf">Already funded but eligible for TSF</a></li>
+            <li><a href="/funding/funding-not-available">Not eligible for scholarship - not in England </a></li>
+            <li><a href="/funding/edge-case">Eligibility in review</a></li>
+            <li><a href="/funding/ehco-funded">EHCO funded</a></li>
+            <li><a href="/funding/ehco-not-funded">EHCO not funded</a></li>
+            <li><a href="/funding/ehco-already-funded">EHCO already funded</a></li>
+            <li><a href="/funding/how-pay">Question on how they will pay if scholarship funding not available</a></li>
+          </ul>
+        </div>
+      </details>
+      
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Users who have already registered
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Registration pages showing different funding statuses </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/registration-status/registration-status--scholarship-review">Funding – in review </a></li>
+            <li><a href="/registration-status/registration-status">Eligible for Scholarship and Targeted support funding </a></li>
+            <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
+            <li><a href="/registration-status/registration-status--targeted-only">Eligible for Targeted support funding only </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Registration pages showing provider application and course statuses </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/registration-status/multiple-registrations">Multiple registrations</a>  (showing all provider application and course statuses)</li>
+            <li><a href="/registration-status/registration-status--scholarship-review">Apply with provider</a></li>
+            <li><a href="/registration-status/registration-status--scholarship-only">Course started</a></li>
+            <li><a href="/registration-status/registration-status--not-funded-england">Successful application</a></li>
+            <li><a href="/registration-status/registration-status--targeted-only">Unsuccessful application</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+      <h2 class="govuk-heading-l">Other prototypes</h2>
+      <h3 class="govuk-heading-m">Teaching School Hub (TSH) finder</h3>
       <p>The TSH finder allows users to find their local TSH where they can get information about
       providers and delivery partners for the NPQ.</p>
-
       <p><a href="/tsh-finder/start-finder">Find a teaching school hub</a> by location.</p>
 
-
-      <h2 class="govuk-heading-m">Admin console</h2>
+      <h3 class="govuk-heading-m">Admin console</h3>
       <p><a href="/admin-console/npq-applications">Prototype for the NPQ side of the admin console</a>.</p>
 
-
 <!-- ARCHIVE STARTS HERE -->
-
-      <hr style="margin-top: 80px; margin-bottom: 80px">
+      <hr style="margin-top: 40px; margin-bottom: 40px">
       <h2 class="govuk-heading-l">Archive</h2>
       <p>Explorations and older versions of different parts of the journey.</p>
 
-
-      <h2 class="govuk-heading-l">Professional development for teachers and leaders (PDTL)</h2>
-
+      <h2 class="govuk-heading-m">Professional development for teachers and leaders (PDTL)</h2>
       <p><a href="/_archive/pdtl/professional-development-for-teachers-and-leaders">Version one of the PDTL prototype</a>.</p>
-
       <p><a href="/_archive/pdtl-step-by-step/professional-development-for-teachers-and-leaders">Step by step version of the PDTL prototype</a>.</p>
 
-
-      <h2 class="govuk-heading-l">Provider finder</h2>
+      <h2 class="govuk-heading-m">Provider finder</h2>
       <p>The following 4 versions of the provider finder show different stages of the MVP.</p>
 
       <details class="govuk-details" data-module="govuk-details">
