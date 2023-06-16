@@ -24,9 +24,9 @@
 
 {% block content %}
 
-  <span class="govuk-caption-l">Ambition Institute</span>
+  <span class="govuk-caption-l">Teach First</span>
   <h1 class="govuk-heading-xl">
-    Leading teaching NPQ registration
+    Leading literacy NPQ registration
   </h1>
 
   {{ govukInsetText({
@@ -49,7 +49,7 @@
           text: "Course"
         },
         value: {
-          html: "Leading teaching NPQ"
+          html: "Leading literacy NPQ"
         },
         actions: {
           items: [
@@ -65,7 +65,7 @@
           text: "Provider"
         },
         value: {
-          html: "Ambition Institute"
+          html: "Teach First"
         },
         actions: {
           items: [
@@ -82,10 +82,9 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--yellow">
-              Apply with provider
-            </strong>
-            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already. </p>'
+            '<strong class="govuk-tag govuk-tag--green">
+              successful
+            </strong>'
         }
       },
       {
@@ -94,8 +93,8 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--grey">
-              Not started
+            '<strong class="govuk-tag govuk-tag--yellow">
+              Deferred
             </strong>'
         }
       }
@@ -105,7 +104,7 @@
   {{ govukSummaryList({
     card: {
       title: {
-        text: "Course details"
+        text: "Funding details"
       }
     },
     rows: [
@@ -137,20 +136,23 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <h3 class="govuk-heading-s">Landing page showing different funding statuses </h3>
+        <h3 class="govuk-heading-s">Registration pages showing different funding statuses </h3>
         <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/registration-status/registration-status--scholarship-review">Funding – in review </a></li>
           <li><a href="/registration-status/registration-status">Eligible for Scholarship and Targeted support funding </a></li>
           <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
           <li><a href="/registration-status/registration-status--targeted-only">Eligible for Targeted support funding only </a></li>
+          <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
           <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
           <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
-          <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
-          <li><a href="/registration-status/registration-status--scholarship-review">Not eligible for funding – in review </a></li>
         </ul>
-        <h3 class="govuk-heading-s">Other landing page scenarios </h3>
+        <h3 class="govuk-heading-s">Registration pages showing provider application and course statuses </h3>
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/registration-status/multiple-registrations">User with multiple registrations</a></li>
-          <li><a href="/registration-status/started">User with a registration for an NPQ that already started</a></li>
+          <li><a href="/registration-status/multiple-registrations">Multiple registrations</a>  (showing all provider application and course statuses)</li>
+          <li><a href="/registration-status/registration-status--scholarship-review">Apply with provider</a></li>
+          <li><a href="/registration-status/registration-status--scholarship-only">Course started</a></li>
+          <li><a href="/registration-status/registration-status--not-funded-england">Successful application</a></li>
+          <li><a href="/registration-status/registration-status--targeted-only">Unsuccessful application</a></li>
         </ul>
       </div>
     </details>
