@@ -22,6 +22,21 @@
 {% endset %}
 
 {% block content %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Registration successfully submitted
+    </h3>
+    {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      <p class="govuk-body">You still need to apply for the Early headship coaching offer through {{ data['provider']}}, if you have not done so already. They’ll contact you by email to outline the next steps, including how to apply.</p>
+      {% else %}
+        <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] or "Executive leadership"}} NPQ through {{ data['provider'] or "LLSE (Leadership Learning Securing Excellence)"}}, if you have not done so already. They’ll contact you by email to outline the next steps, including how to apply.</p>
+    {% endif %}
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
 
   <span class="govuk-caption-l">LLSE (Leadership Learning Securing Excellence)</span>
   <h1 class="govuk-heading-xl">

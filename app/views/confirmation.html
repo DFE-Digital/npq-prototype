@@ -7,53 +7,94 @@
   Your registration is complete
 {% endblock %}
 
-
-
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-
       {% set html %}
-      {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      You’ve registered for the Early headship coaching offer with {{ data['provider'] }}
-      {% else %}
-      You’ve registered for the {{ data['choosenpq'] or "Leading literacy"}} NPQ with {{ data['provider'] or "Ambition Institute" }}
-      {% endif %}
+        {% if (data['choosenpq'] == "Early headship coaching offer") %}
+          You’ve registered for the Early headship coaching offer with {{ data['provider'] }}
+          {% else %}
+            You’ve registered for the {{ data['choosenpq'] or "Leading literacy"}} NPQ with {{ data['provider'] or "Ambition Institute" }}
+        {% endif %}
       {% endset %}
 
       {{ govukPanel({
         titleHtml: html
       }) }}
 
-      <h2 class="govuk-heading-m">Apply through your provider</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Apply through your provider</h2>
 
       {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      <p class="govuk-body">You still need to apply for the Early headship coaching offer through {{ data['provider']}}, if you have not done so already.</p>
-      {% else %}
-      <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] or "Leading literacy"}} NPQ through {{ data['provider'] or "Ambition Institute"}}, if you have not done so already.</p>
+        <p class="govuk-body">You still need to apply for the Early headship coaching offer through {{ data['provider']}}, if you have not done so already.</p>
+        {% else %}
+          <p class="govuk-body">You still need to apply for the {{ data['choosenpq'] or "Leading literacy"}} NPQ through {{ data['provider'] or "Ambition Institute"}}, if you have not done so already.</p>
       {% endif %}
 
       <p class="govuk-body">
         They’ll contact you by email to outline the next steps, including how to apply.
       </p>
 
-
       {% if (data['choosenpq'] == "Headship") %}
         <h2 class="govuk-heading-m">Early headship coaching offer</h2>
-
         <p>You can also  <a href="https://register-national-professional-qualifications.education.gov.uk">register the Early headship coaching offer</a>, a one-year support package for new headteachers.</p>
         <p><a href="https://www.gov.uk/government/publications/national-professional-qualifications-npqs-reforms/national-professional-qualifications-npqs-reforms#additional-support-offer-for-the-npq-in-headship">Find out more about the early headship coaching offer</a>.</p>
-
       {% else %}
       {% endif %}
 
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Review your registration</h2>
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: 'Executive leadership NPQ
+            <p class="govuk-!-margin-bottom-0">	LLSE (Leadership Learning Securing Excellence)</p>'
+          },
+          actions: {
+            items: [
+              {
+                href: "registration-status--scholarship-review",
+                text: "View details",
+                classes: "govuk-!-font-weight-regular"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Registration submitted"
+            },
+            value: {
+              html: "16 June 2023"
+            }
+          },
+          {
+            key: {
+              text: "Provider application"
+            },
+            value: {
+              html:
+                '<strong class="govuk-tag govuk-tag--yellow">
+                  Apply with provider
+                </strong>
+                <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already. </p>'
+            }
+          },
+          {
+            key: {
+              text: "Course status"
+            },
+            value: {
+              html:
+                '<strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>'
+            }
+          }
+        ]
+      }) }}
 
-            <h2 class="govuk-heading-m">Review your registration</h2>
-            <p>You can <a href="/registration-status/registration-status">check the details of your registration</a>.</p>
-
-      <div class="govuk-inset-text">
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Feedback on your experience</h2>
+      <div class="govuk-inset-text govuk-!-margin-top-0">
         <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScAD7XvFlHl8LzfSyxstYErWMiFPXGamrA_qBhBJTGXuP9efw/viewform?usp=sf_link">Tell us about your experience</a> of registering for an NPQ. Your views help us improve this service.
       </div>
 
