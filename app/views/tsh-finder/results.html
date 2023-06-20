@@ -5,7 +5,6 @@
   Professional development for teachers and leaders
 {% endset %}
 
-
 {% block pageTitle %}
   Find your local TSH
 {% endblock %}
@@ -13,61 +12,100 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     items: [
-    {
-      text: "Home",
-      href: "/pdtl/professional-development-for-teachers-and-leaders-2"
-    },
-    {
-      text: "Find a teaching school hub",
-      href: "start-finder"
-    },
-
-    {
-      text: "Select your location",
-      href: "location"
-    }
-
+      {
+        text: "Home",
+        href: "/pdtl/professional-development-for-teachers-and-leaders-2"
+      },
+      {
+        text: "Find a teaching school hub",
+        href: "start-finder"
+      },
+      {
+        text: "Select your location",
+        href: "location"
+      }
     ]
   }) }}
 {% endblock %}
 
 {% block content %}
-
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <h1 class="govuk-heading-xl">Teaching school hubs near {{ data['tshlocation'] or "Newcastle" }}</h1>
-
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-
-        <p><a href="location">Change location</a></p>
-
-      </div>
-      </div>
-
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
-            {% include 'includes/pdtl/tsh-1.html' %}
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Teaching school hubs near {{ data['tshlocation'] or "Newcastle" }}</h1>
         </div>
-
-        <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-            {% include 'includes/pdtl/tsh-2.html' %}
-        </div>
-
       </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <p><a href="location">Change location</a></p>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <!-- Show different results based on location -->
+          <!-- Newcastle -->
+          {% if (("ne" in data['tshlocation']) or ("NE" in data['tshlocation'])) %}
+            <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+              {% include 'includes/pdtl/tsh-newcastle1.html' %}
+            </div>
+            <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+              {% include 'includes/pdtl/tsh-newcastle2.html' %}
+            </div>
+            <!-- Bristol -->
+            {% elseif ((data['tshlocation'] == "bristol") or (data['tshlocation'] == "Bristol") or ("BS" in data['tshlocation']) or ("bs" in data['tshlocation']))  %}
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-bristol1.html' %}
+              </div>
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-bristol2.html' %}
+              </div>
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-bristol3.html' %}
+              </div>
+            <!-- London SW, SE, Sutton, Croydon -->
+            {% elseif (("SW" in data['tshlocation']) or ("sw" in data['tshlocation']) or ("SM" in data['tshlocation']) or ("sm" in data['tshlocation']) or ("SE" in data['tshlocation']) or ("se" in data['tshlocation']) or ("CR" in data['tshlocation']) or ("cr" in data['tshlocation']) or ("BR" in data['tshlocation']) or ("br" in data['tshlocation']) or ("Bromley" in data['tshlocation']) or ("Wimbledon" in data['tshlocation']) or ("Sutton" in data['tshlocation']) or ("Epsom" in data['tshlocation'])) %}
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-london-south.html' %}
+              </div>
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-london-croydon.html' %}
+              </div>
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-london-bromley.html' %}
+              </div>
+            <!-- if input anything else, then show central london results -->
+            {% else %}
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-london-central.html' %}
+              </div>
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-london-south.html' %}
+              </div>
+              <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
+                {% include 'includes/pdtl/tsh-london-west.html' %}
+              </div>
+          {% endif %}
+        </div>
+      </div>
+    </main>
+  </div>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        For prototype reference
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <h3 class="govuk-heading-s">The following locations can be used to get relevant results:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Newcastle (using "newcastle" "Newcastle" or any postcode containing "NE")</li>
+        <li>Bristol (using "bristol" "Bristol" or any postcode containing "BS")</li>
+        <li>South London (using "Bromley" "Croydon" "Wimbledon" "Sutton" "Epsom" or any postcode containing "BR" "CR" "SE" "SW")</li>
+        <li>Central London (using "London" "london" "Central London")</li>
+        <li>Using any other location will show the results for central London</li>
+      </ul>
+      <p>Please note: Results are not accurate. There is no location logic built into this prototype, it uses text strings to search and roughly create a realistic experience. Results may not show in order of nearest first. </p>
     </div>
-
-  </main>
-</div>
-
-
-
-
+  </details>
 {% endblock %}
