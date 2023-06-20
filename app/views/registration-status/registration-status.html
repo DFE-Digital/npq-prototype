@@ -8,26 +8,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back to your registrations",
+    href: "/registration-status/multiple-registrations"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
-  <span class="govuk-caption-l">Teacher Development Trust</span>
   <h1 class="govuk-heading-xl">
-    Leading teacher development NPQ registration
+    Your leading teacher development NPQ registration
   </h1>
-
-  {{ govukInsetText({
-    html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/interstitial">Visit your DfE Identity account</a> to check or change your personal details.'
-  }) }}
-
-  <div class="govuk-rows" style="margin-top: 40px"></div>
-
-  {% include 'includes/registration-status/work-details.html' %}
 
   {{ govukSummaryList({
     card: {
@@ -127,6 +118,8 @@
     ]
   }) }}
 
+  {% include 'includes/registration-status/work-details.html' %}
+
   <div class="govuk-rows" style="margin-top: 60px">
     <h2 class="govuk-heading-l">Register for an NPQ</h2>
     <p>Use this service to submit a new registration</p>
@@ -156,11 +149,18 @@
         </ul>
         <h3 class="govuk-heading-s">Registration pages showing provider application and course statuses </h3>
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/registration-status/multiple-registrations">Multiple registrations</a>  (showing all provider application and course statuses)</li>
+          <li><a href="/registration-status/registration-status--scholarship-review">User with one registration </a></li>
+          <li><a href="/registration-status/multiple-registrations">User with multiple registrations</a>  (showing all provider application and course statuses)</li>
+        </ul>
+        <ul class="govuk-list govuk-list--bullet">
           <li><a href="/registration-status/registration-status--scholarship-review">Apply with provider</a></li>
           <li><a href="/registration-status/registration-status--scholarship-only">Course started</a></li>
           <li><a href="/registration-status/registration-status--not-funded-england">Successful application</a></li>
           <li><a href="/registration-status/registration-status--targeted-only">Unsuccessful application</a></li>
+        </ul>
+        <h3 class="govuk-heading-s">Other </h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="email-complete">Confirmation email</a></li>
         </ul>
       </div>
     </details>
