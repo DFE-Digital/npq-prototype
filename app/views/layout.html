@@ -1,11 +1,9 @@
 {#
-    For guidance on how to use layouts see:
-    https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-    #}
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
 
     {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-
-
 
     {% block pageTitle %}
         {{serviceName}} – GOV.UK
@@ -28,8 +26,17 @@
           }
         ] if signedIn == 'true'
       }) }}
+      <div class="govuk-width-container">
+        {{ govukPhaseBanner({
+          tag: {
+            text: "Prototype"
+          },
+          html: 'This is a new service – <a class="govuk-link" href="#">give feedback or report a problem</a>'
+        }) }}
+     </div>
 
     {% endblock %}
+    
 
     {% block footer %}
       {{ govukFooter({
