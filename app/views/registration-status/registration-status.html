@@ -14,10 +14,122 @@
   }) }}
 {% endblock %}
 
-{% block content %}
+{% set courseHTML %}
+  {{ data['choosenpq'] or "Leading teacher development" }} NPQ
+{% endset %}
 
+{% set providerHTML %}
+  {{ data['provider'] or "Teacher Development Trust" }}
+{% endset %}
+
+{% set scholarshipFundingHTML %}
+  <!-- Not in England -->
+  {% if data['wheredoyouwork'] == "No" %}
+    <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England. </p>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+  <!-- Works in England -->
+  {% else %}
+    <!-- --------------------------------
+        School or a state-funded nursery 
+      ----------------------------------- -->
+    {% if ((data['whichsetting'] == "A school") or (data['whichsetting'] == "An academy trust") or (data['whichsetting'] == "A 16 to 19 educational setting")) %}
+      <!-- Does not pick Early headship and isn't private school -->
+      {% if ((data['choosenpq'] != "Early headship coaching offer") and (data['whichschool'] != "private") or (data['whichschool'] != "Private")) %}
+        <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
+        {% elseif data['choosenpq'] == "Early headship coaching offer" %}
+          {% if (data['headteachers'] == "No") or (data['earlyheadship'] == "No") %}
+            <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding for the Early headship coaching offer (EHCO). </p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
+          {% endif %}
+        <!-- Private school in England -->
+        {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
+          <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+          <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+          <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+      {% endif %}
+      <!-- -------------
+        Other setting 
+      ----------------- -->
+      {% elseif data['whichsetting'] == "Other" %}
+        <!-- Is a mentor? -->
+        {% if data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider" %}
+          {% if data['choosenpq'] == "Leading teacher development" %}
+            <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
+            <!-- A mentor NOT doing NPQLTD -->
+            {% else %}
+              <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+          {% endif %}
+          <!-- State-funded -->
+          {% elseif ((data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "In a hospital school") or (data['mentor'] == "In a young offender institution") or (data['mentor'] == "As a supply teacher employed by a local authority") and (data['choosenpq'] != "The Early Headship Coaching Offer")) %}
+            {% if data['choosenpq'] == "Early headship coaching offer" %}
+              {% if (data['headteachers'] == "No") or (data['earlyheadship'] == "No") %}
+                <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding for the Early headship coaching offer (EHCO). </p>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+              {% endif %}
+              {% else %}  
+                <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
+            {% endif %}
+          <!-- Other type of mention or no selection -->
+          {% else %}
+            {% if data['choosenpq'] == "Early headship coaching offer" %}
+              {% if (data['headteachers'] == "No") or (data['earlyheadship'] == "No") %}
+                <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding for the Early headship coaching offer (EHCO). </p>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+              {% endif %}
+              {% else %} 
+                <strong class="govuk-tag govuk-tag--yellow">Eligibility in review </strong>
+                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your registration will be reviewed to check if you're eligible. Please contact your provider to find out the outcome.</p>
+              {% endif %}
+            {% endif %}  
+      <!-- -------------
+        Private nursery 
+      ------------------ -->
+      {% elseif data['whichsetting'] == "Early years or childcare" %}
+        <!-- with URN + NPQEYL -->
+        {% if ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class or nursery that’s part of a school (maintained or independent)")) %}
+          {% if data['choosenpq'] == "Early headship coaching offer" %}
+            {% if (data['headteachers'] == "No") or (data['earlyheadship'] == "No") %}
+              <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding for the Early headship coaching offer (EHCO). </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+            {% endif %}  
+            {% else %}  
+              <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
+          {% endif %}  
+          {% elseif ((data['haveurn'] == "Yes") and (data['choosenpq'] == "Early years leadership")) %}
+            <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
+          <!-- with URN not NPQEYL -->
+          {% elseif ((data['haveurn'] == "Yes") and (data['choosenpq'] != "Early years leadership")) %}
+            <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+          <!-- no URN -->
+          {% elseif data['haveurn'] == "No" %}
+            <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you or your employer is not registered on the Ofsted Early Years Register or with a registered Childminder Agency. </p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+        {% endif %}
+    {% endif %}
+  {% endif %}
+{% endset %}   
+
+{% block content %}
   <h1 class="govuk-heading-xl">
-    Your leading teacher development NPQ registration
+    Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
   </h1>
 
   {{ govukSummaryList({
@@ -32,7 +144,7 @@
           text: "Course"
         },
         value: {
-          html: "Leading teacher development NPQ"
+          html: courseHTML
         },
         actions: {
           items: [
@@ -48,7 +160,7 @@
           text: "Provider"
         },
         value: {
-          html: "Teacher Development Trust"
+          html: providerHTML
         },
         actions: {
           items: [
@@ -65,9 +177,10 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
+          '<strong class="govuk-tag govuk-tag--yellow">
+            Apply with provider
+          </strong>
+          <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already. </p>'
         }
       },
       {
@@ -96,11 +209,7 @@
           text: "Scholarship funding"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
+          html: scholarshipFundingHTML
         }
       },
       {
@@ -130,40 +239,6 @@
     }) }}
   </div>
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          For prototype reference
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <h3 class="govuk-heading-s">Registration pages showing different funding statuses </h3>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/registration-status/registration-status--scholarship-review">Funding – in review </a></li>
-          <li><a href="/registration-status/registration-status">Eligible for Scholarship and Targeted support funding </a></li>
-          <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
-          <li><a href="/registration-status/registration-status--targeted-only">Eligible for Targeted support funding only </a></li>
-          <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
-          <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
-          <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
-        </ul>
-        <h3 class="govuk-heading-s">Registration pages showing provider application and course statuses </h3>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/registration-status/registration-status--scholarship-review">User with one registration </a></li>
-          <li><a href="/registration-status/multiple-registrations">User with multiple registrations</a>  (showing all provider application and course statuses)</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/registration-status/registration-status--scholarship-review">Apply with provider</a></li>
-          <li><a href="/registration-status/registration-status--scholarship-only">Course started</a></li>
-          <li><a href="/registration-status/registration-status--not-funded-england">Successful application</a></li>
-          <li><a href="/registration-status/registration-status--targeted-only">Unsuccessful application</a></li>
-        </ul>
-        <h3 class="govuk-heading-s">Other </h3>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="email-complete">Confirmation email</a></li>
-        </ul>
-      </div>
-    </details>
-
+  {% include 'includes/prototype-links.html' %}
 
 {% endblock %}
