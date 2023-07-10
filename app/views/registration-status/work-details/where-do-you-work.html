@@ -1,67 +1,46 @@
 {% extends "layout.html" %}
 {% set signedIn = 'true' %}
 
-
 {% block pageTitle %}
   Do you work in England?
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="what-setting" method="post">
-
-      {% set countryHtml %}
-
-        {{ govukInput({
-          id: "othercountry",
-          name: "othercountry",
-          classes: "govuk-!-width-half",
-          label: {
-            text: "Which country do you work in?"
-          }
-        }) }}
-
-      {% endset %}
-
-      {{ govukRadios({
-        id: "wheredoyouwork",
-        name: "wheredoyouwork",
-        fieldset: {
-          legend: {
-            text: "Do you work in England?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-
-          {
-            value: "No",
-            text: "No",
-            conditional: {
-              html: countryHtml
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="what-setting" method="post">
+        {{ govukRadios({
+          id: "wheredoyouwork",
+          name: "wheredoyouwork",
+          fieldset: {
+            legend: {
+              text: "Do you work in England?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
             }
-          }
-        ]
-      }) }}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
   </div>
-</div>
-
 {% endblock %}
