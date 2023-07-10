@@ -95,7 +95,7 @@ router.post('/check-data/_funding-check', function(req, res){
   if(locationt == 'Yes'){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      if(npqt != 'Early headship coaching offer' && whichschoolt != 'private'){
+      if(npqt != 'Early headship coaching offer' && (whichschoolt != 'private' || whichschoolt =='Private')){
         res.redirect('/funding/funding-vague')
       }
       else if(npqt == 'Early headship coaching offer'){
