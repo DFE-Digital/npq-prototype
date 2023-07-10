@@ -17,7 +17,7 @@
 {% block content %}
 
   <h1 class="govuk-heading-xl">
-    Your headship NPQ registration
+    Your leading teacher development NPQ registration
   </h1>
 
   {{ govukSummaryList({
@@ -32,7 +32,7 @@
           text: "Course"
         },
         value: {
-          html: "Headship NPQ"
+          html: "Leading teacher development NPQ"
         },
         actions: {
           items: [
@@ -48,7 +48,7 @@
           text: "Provider"
         },
         value: {
-          html: "UCL Institute of Education"
+          html: "Teacher Development Trust"
         },
         actions: {
           items: [
@@ -65,8 +65,19 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--red">
-              Unsuccessful
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course status"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--grey">
+              Not started
             </strong>'
         }
       }
@@ -86,12 +97,10 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--red">
-              Not eligible
+            '<strong class="govuk-tag govuk-tag--green">
+              Eligible
             </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You have already been allocated scholarship funding for the Leading teaching NPQ.</p>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
-            '
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
         }
       },
       {
@@ -103,7 +112,7 @@
             '<strong class="govuk-tag govuk-tag--green">
               Eligible
             </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £600 to support you to do this NPQ.</p>'
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
         }
       }
     ]
