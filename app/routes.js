@@ -90,25 +90,39 @@ router.post('/other/role', function (req, res){
 router.post('/check-data/_funding-check', function(req, res){
   npqt = req.session.data['choosenpq']
   whichschoolt = req.session.data['whichschool']
-
+  
+  // Selects Maths
+  if(npqt == 'Leading primary mathematics'){
+    // Not 'school' or 'other' setting 
+    if(settingt == 'Early years or childcare' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      res.redirect('/maths/maths-cannot-register')
+    }
+    else if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider'){
+      res.redirect('/maths/maths-cannot-register')
+    }
+    // Private school
+    else if (whichschoolt == 'private' || whichschoolt =='Private') {
+      res.redirect('/funding/funding-not-available')
+    }
+    else {
+      res.redirect('/maths/maths-mastery')
+    }
+  }
+  // Selects EHCO
+  else if(npqt == 'Early headship coaching offer'){
+    res.redirect('/ehco/ehco-completed-npqh')
+  } 
   // Works in England
-  if(locationt == 'Yes'){
+  else if(locationt == 'Yes'){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      if(npqt != 'Early headship coaching offer' && (whichschoolt != 'private' || whichschoolt =='Private')){
+      if((npqt != 'Early headship coaching offer' || npqt != 'Leading primary mathematics') && (whichschoolt != 'private' || whichschoolt !='Private')){
         res.redirect('/funding/funding-vague')
-      }
-      else if(npqt == 'Early headship coaching offer'){
-        res.redirect('/ehco/ehco-completed-npqh')
       }
       // Private school
       else if (whichschoolt == 'private' || whichschoolt =='Private') {
         res.redirect('/funding/funding-not-available')
       }
-    } 
-    // EHCO
-    else if(npqt == 'Early headship coaching offer'){
-      res.redirect('/ehco/ehco-completed-npqh')
     } 
     // Other
     else if(settingt == 'Other'){
@@ -135,7 +149,7 @@ router.post('/check-data/_funding-check', function(req, res){
         res.redirect('/funding/edge-case')
       }
     }
-    //Private nursery, with URN + NPQEYL
+    // Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
       if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
         res.redirect('/funding/funding-vague')
@@ -143,11 +157,11 @@ router.post('/check-data/_funding-check', function(req, res){
       else if(hasurnt == 'Yes' && npqt == 'Early years leadership'){
         res.redirect('/funding/funding-vague')
       }
-      //Private nursery, with URN not NPQEYL
+      // Private nursery, with URN not NPQEYL
       else if(hasurnt == 'Yes' && npqt != 'Early years leadership'){
         res.redirect('/funding/funding-not-available')
       }
-      //Private nursery, no URN
+      // Private nursery, no URN
       else if(hasurnt == 'No'){
         res.redirect('/funding/funding-not-available')
       }
@@ -155,11 +169,7 @@ router.post('/check-data/_funding-check', function(req, res){
   }
   // Outside of England
   else {
-    if (npqt == 'Early headship coaching offer') {
-      res.redirect('/ehco/ehco-completed-npqh')
-    } else {
-      res.redirect('/funding/funding-not-available')
-    }
+    res.redirect('/funding/funding-not-available')
   }
 })
 
@@ -214,6 +224,21 @@ router.post('/funding/ehco-funded', function(req, res){
     }
   } else {
     res.redirect('/funding/ehco-not-funded')
+  }
+})
+
+// Applying for Maths + not done mastery programme
+router.post('/maths-outcome', function(req, res){
+  var mathsmasteryt = req.session.data['mathsmastery']
+
+  if(mathsmasteryt == 'No'){
+    res.redirect('/maths/maths-cannot-register')
+  } 
+  else if (settingt == 'Other'){
+    res.redirect('/funding/edge-case')
+  }
+  else {
+    res.redirect('/funding/funding-vague')
   }
 })
 
