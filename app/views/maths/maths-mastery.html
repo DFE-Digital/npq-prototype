@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set masteryHtml %}
+  Yes, I've completed at least one year of the <a href="https://www.ncetm.org.uk/teaching-for-mastery/">Maths Teaching Mastery</a> programme
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="ehco-headteacher" method="post">
+        <h1 class="govuk-heading-xl">Eligibility for the Leading primary mathematics NPQ</h1>
+        <p class="govuk-body govuk-!-margin-bottom-7">To be eligible for the Leading primary mathematics NPQ you need to have a secure understanding of mastery approaches to teaching maths.</p>
+        {{ govukRadios({
+          name: "mathsmastery",
+          id: "mathsmastery",
+          fieldset: {
+            legend: {
+              text: "Have you studied mastery approaches to teaching maths?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes mastery",
+              html: masteryHtml
+            },
+            {
+              value: "Yes alternative",
+            text: "Yes, I've completed an alternative equivalent qualification to the Maths teaching Mastery programme"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

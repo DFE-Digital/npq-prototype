@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        You cannot register for the Leading primary mathematics NPQ
+      </h1>
+      <p>To be eligible for the Leading primary mathematics NPQ, you need to: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be a teacher or leader employed in a primary school</li>
+        <li>have a secure understanding of mastery approaches to teaching mathematics from the <a href="https://www.ncetm.org.uk/teaching-for-mastery/">Maths Teaching Mastery</a> programme, or equivalent programme</li>
+      </ul>
+      <p>Go back if you want to <a href="/choose-npq">register for a different NPQ</a>.</p>
+    </div>
+  </div>
+{% endblock %}
