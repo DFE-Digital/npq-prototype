@@ -93,20 +93,7 @@ router.post('/check-data/_funding-check', function(req, res){
   
   // Selects Maths
   if(npqt == 'Leading primary mathematics'){
-    // Not 'school' or 'other' setting 
-    if(settingt == 'Early years or childcare' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      res.redirect('/maths/maths-cannot-register')
-    }
-    else if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider'){
-      res.redirect('/maths/maths-cannot-register')
-    }
-    // Private school
-    else if (whichschoolt == 'private' || whichschoolt =='Private') {
-      res.redirect('/funding/funding-not-available')
-    }
-    else {
-      res.redirect('/maths/maths-mastery')
-    }
+    res.redirect('/maths/maths-mastery')
   }
   // Selects EHCO
   else if(npqt == 'Early headship coaching offer'){
@@ -116,12 +103,12 @@ router.post('/check-data/_funding-check', function(req, res){
   else if(locationt == 'Yes'){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
-      if((npqt != 'Early headship coaching offer' || npqt != 'Leading primary mathematics') && (whichschoolt != 'private' || whichschoolt !='Private')){
-        res.redirect('/funding/funding-vague')
+      if((whichschoolt != 'private' || whichschoolt !='Private')){
+        res.redirect('/funding/funding-eligible')
       }
       // Private school
-      else if (whichschoolt == 'private' || whichschoolt =='Private') {
-        res.redirect('/funding/funding-not-available')
+      else {
+        res.redirect('/funding/funding-not-available-setting')
       }
     } 
     // Other
@@ -129,22 +116,13 @@ router.post('/check-data/_funding-check', function(req, res){
       // Is a mentor?
       if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
         if(npqt == 'Leading teacher development'){
-          res.redirect('/funding/funding-vague')
+          res.redirect('/funding/funding-eligible')
         }
         // A mentor NOT doing NPQLTD
         else {
-          res.redirect('/funding/funding-not-available')
+          res.redirect('/funding/funding-not-available-lead-mentor')
         }
       }
-      // State-funded
-      else if (mentort == 'In a virtual school (local authority run organisations that support the education of children in care)' || mentort == 'In a hospital school' || mentort == 'In a young offender institution' || mentort == 'As a supply teacher employed by a local authority' && npqt != 'The Early Headship Coaching Offer') {
-        res.redirect('/funding/funding-vague')
-      }
-      // Other - Other
-      else if(mentort == 'Other'){
-        res.redirect('/funding/edge-case')
-      }
-      // No selection
       else {
         res.redirect('/funding/edge-case')
       }
@@ -152,24 +130,24 @@ router.post('/check-data/_funding-check', function(req, res){
     // Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
       if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
-        res.redirect('/funding/funding-vague')
+        res.redirect('/funding/funding-eligible')
       }
       else if(hasurnt == 'Yes' && npqt == 'Early years leadership'){
-        res.redirect('/funding/funding-vague')
+        res.redirect('/funding/funding-eligible')
       }
       // Private nursery, with URN not NPQEYL
       else if(hasurnt == 'Yes' && npqt != 'Early years leadership'){
-        res.redirect('/funding/funding-not-available')
+        res.redirect('/funding/funding-not-available-setting')
       }
       // Private nursery, no URN
       else if(hasurnt == 'No'){
-        res.redirect('/funding/funding-not-available')
+        res.redirect('/funding/funding-not-available-setting')
       }
     }
   }
   // Outside of England
   else {
-    res.redirect('/funding/funding-not-available')
+    res.redirect('/funding/funding-not-available-england')
   }
 })
 
@@ -223,7 +201,7 @@ router.post('/funding/ehco-funded', function(req, res){
       }
     }
   } else {
-    res.redirect('/funding/ehco-not-funded')
+    res.redirect('/funding/funding-not-available-england')
   }
 })
 
@@ -233,12 +211,43 @@ router.post('/maths-outcome', function(req, res){
 
   if(mathsmasteryt == 'No'){
     res.redirect('/maths/maths-cannot-register')
-  } 
-  else if (settingt == 'Other'){
-    res.redirect('/funding/edge-case')
   }
+  // Works in England
+  else if(locationt == 'Yes'){
+    // Works in a school setting or a state-funded nursery?
+    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      if((whichschoolt != 'private' || whichschoolt !='Private')){
+        res.redirect('/funding/funding-eligible')
+      }
+      // Private school
+      else {
+        res.redirect('/funding/funding-not-available-setting')
+      }
+    } 
+    // Other
+    else if(settingt == 'Other'){
+      // Is a mentor?
+      if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+        res.redirect('/funding/funding-not-available-lead-mentor')
+      }
+      else {
+        res.redirect('/funding/edge-case')
+      }
+    }
+    // Private nursery, with URN + NPQEYL
+    else if(settingt == 'Early years or childcare'){
+      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
+        res.redirect('/funding/funding-eligible')
+      }
+      // Private nursery
+      else {
+        res.redirect('/funding/funding-not-available-setting')
+      }
+    }
+  }
+  // Outside of England
   else {
-    res.redirect('/funding/funding-vague')
+    res.redirect('/funding/funding-not-available-england')
   }
 })
 
