@@ -14,6 +14,13 @@
   }) }}
 {% endblock %}
 
+{% set successHTML %}
+  <h3 class="govuk-notification-banner__heading">
+    Registration successfully submitted
+  </h3>
+  <p class="govuk-body">Check the details of your registration and see next steps below.</p>
+{% endset %}
+
 {% set courseHTML %}
   {{ data['choosenpq'] or "Leading teacher development" }} NPQ
 {% endset %}
@@ -121,6 +128,12 @@
 {% endset %}   
 
 {% block content %}
+
+  {{ govukNotificationBanner({
+    html: successHTML,
+    type: 'success'
+  }) }}
+
   <h1 class="govuk-heading-xl">
     Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
   </h1>
