@@ -27,17 +27,6 @@
 {% endset %}
 
 {% block content %}
-  {% set html %}
-    <h3 class="govuk-notification-banner__heading">
-      Registration successfully submitted
-    </h3>
-    <p class="govuk-body">Check the details of your registration and see next steps below.</p>
-  {% endset %}
-
-  {{ govukNotificationBanner({
-    html: html,
-    type: 'success'
-  }) }}
 
   <h1 class="govuk-heading-xl">
     {% if (data['choosenpq'] == "Early headship coaching offer") %}

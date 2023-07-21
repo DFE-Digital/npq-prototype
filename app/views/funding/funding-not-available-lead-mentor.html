@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  DfE scholarship funding is not available
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Funding eligibility</h1>
+      <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ because you do not work in one of the eligible settings, such as state-funded schools.</p>
+      <p>This means that you would need to pay for this course another way.</p>
+      <p>However, as a lead mentor for an accredited ITT provider, you’re eligible for scholarship funding for the Leading teacher development NPQ.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You can <a href="/choose-npq.html">go back and select the Leading teacher development NPQ</a> instead.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "how-pay"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
