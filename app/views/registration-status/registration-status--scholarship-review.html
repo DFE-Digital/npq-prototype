@@ -7,6 +7,13 @@
   Registration status
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to your registrations",
+    href: "/registration-status/multiple-registrations"
+  }) }}
+{% endblock %}
+
 {% set npqNameHTML %}
   {% if (data['choosenpq'] == "Early headship coaching offer") %}
     Early headship coaching offer
@@ -28,12 +35,10 @@
 
 {% block content %}
 
+  <span class="govuk-caption-m">Submitted 16 June 2023</span>
+
   <h1 class="govuk-heading-xl">
-    {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      Your registration
-    {% else %}
-      Your NPQ registration
-    {% endif %}
+    Your Executive leadership NPQ registration
   </h1>
 
   {{ govukSummaryList({
@@ -128,7 +133,7 @@
     rows: [
       {
         key: {
-          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/interstitial">Visit your DfE Identity account</a> to check or change your personal details.',
+          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.',
           classes: 'govuk-!-width-full govuk-!-font-weight-regular'
         }
       }

@@ -7,13 +7,6 @@
   Registration status
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back to your registrations",
-    href: "/registration-status/multiple-registrations"
-  }) }}
-{% endblock %}
-
 {% set successHTML %}
   <h3 class="govuk-notification-banner__heading">
     Registration successfully submitted
@@ -127,6 +120,13 @@
   {% endif %}
 {% endset %}   
 
+{% set successHTML %}
+  <h3 class="govuk-notification-banner__heading">
+    Registration successfully submitted
+  </h3>
+  <p class="govuk-body">Check the details of your registration and see next steps below.</p>
+{% endset %}
+
 {% block content %}
 
   {{ govukNotificationBanner({
@@ -134,8 +134,14 @@
     type: 'success'
   }) }}
 
+  <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
+
   <h1 class="govuk-heading-xl">
-    Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
+    {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      Your Early headship coaching offer registration
+    {% else %}
+      Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
+    {% endif %}
   </h1>
 
   {{ govukSummaryList({
