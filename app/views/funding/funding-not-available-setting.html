@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  DfE scholarship funding is not available
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Funding eligibility
+      </h1>
+
+      <!-- Private school -->
+      {% if data['whichschool'] == "private" %}
+        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ as you do not work in one of the eligible settings, such as state-funded schools.</p>
+        <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
+        
+        <!-- Early years + no OFSTED-->
+        {% elseif data['haveurn'] == "No" %}
+          <p>You’re not eligible for scholarship funding for the Early years leadership NPQ because you or your employer is not registered on the Ofsted Early Years Register or with a registered Childminder Agency.</p>
+          <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
+
+        <!-- Early years + not NPQEYL -->
+        {% elseif (data['haveurn'] == "Yes") and (data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)") %}
+          <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ because you do not work in one of the eligible settings, such as state-funded schools.</p>
+          <p>This means that you would need to pay for the course another way.</p>
+          <p>However, you are eligible for scholarship funding for the Early years leadership NPQ.</p>
+          <p class="govuk-body govuk-!-margin-bottom-7">You can <a href="/choose-npq.html">go back and select the Early years leadership NPQ</a> instead.</p>
+
+        {% else %}
+          <p>To be eligible for scholarship funding for the <strong>{{ data['choosenpq'] }}</strong> you must work in one of these settings in England:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>state-funded schools or trusts</li>
+            <li>state-funded 16 to 19 organisations</li>
+            <li>independent special schools</li>
+            <li>virtual schools</li>
+            <li>hospital schools</li>
+            <li>young offender institutions</li>
+          </ul>
+          <p>You can still register for {{ data['choosenpq'] }}, but you need to pay for it another way. Contact your course provider to discuss your funding options.</p>
+      {% endif %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "how-pay"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

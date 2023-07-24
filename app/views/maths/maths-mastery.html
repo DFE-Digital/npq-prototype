@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set masteryHtml %}
+  Yes
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/maths-outcome" method="post">
+        <h1 class="govuk-heading-xl">Eligibility for the Leading primary mathematics NPQ</h1>
+        <p class="govuk-body">Before you can take this NPQ you need to complete at least one year of the <a href="https://www.gov.uk/guidance/join-the-maths-teaching-for-mastery-programme">maths Teaching for Mastery programme</a> or equivalent programme.</p>
+
+        <p class="govuk-body">Equivalent programmes include:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>apples</li>
+  <li>oranges</li>
+  <li>pears</li>
+</ul>
+
+        {% set programmeHtml %}
+        {{ govukInput({
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Which programme did you do?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "mathsmastery",
+          id: "mathsmastery",
+          fieldset: {
+            legend: {
+              text: "Have you completed at least one year of the primary maths Teaching for Mastery programme or equivalent programme?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes mastery",
+              html: masteryHtml,
+              conditional: {
+                html: programmeHtml
+              }
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
