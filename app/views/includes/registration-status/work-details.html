@@ -7,7 +7,7 @@
 {% endset %}
 
 {% set employerHtml%}
-  {{ data['whichschool'] or 'St Thomas More School'}}
+  {{ data['whichschool'] or 'St Thomas More Catholic Comprehensive School'}}
 {% endset %}
 
 {{ govukSummaryList({
@@ -44,10 +44,18 @@
     },
     {
       key: {
-        text: "Employer"
+        text: "Employer name"
       },
       value: {
         html: employerHtml
+      }
+    },
+    {
+      key: {
+        text: "Employer unique reference number"
+      },
+      value: {
+        text: "141716"
       }
     }
   ]
