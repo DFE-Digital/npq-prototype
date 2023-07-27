@@ -93,7 +93,7 @@ router.post('/check-data/_funding-check', function(req, res){
   
   // Selects Maths
   if(npqt == 'Leading primary mathematics'){
-    res.redirect('/maths/maths-mastery')
+    res.redirect('/maths/maths-eligibility-teaching-for-mastery')
   }
   // Selects EHCO
   else if(npqt == 'Early headship coaching offer'){
@@ -205,11 +205,57 @@ router.post('/funding/ehco-funded', function(req, res){
   }
 })
 
-// Applying for Maths + not done mastery programme
-router.post('/maths-outcome', function(req, res){
+// Maths - mastery answer
+router.post('/maths-mastery-outcome', function(req, res){
   var mathsmasteryt = req.session.data['mathsmastery']
 
   if(mathsmasteryt == 'No'){
+    res.redirect('/maths/maths-eligibility-other')
+  }
+  // Works in England
+  else if(locationt == 'Yes'){
+    // Works in a school setting or a state-funded nursery?
+    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      if((whichschoolt != 'private' || whichschoolt !='Private')){
+        res.redirect('/funding/funding-eligible')
+      }
+      // Private school
+      else {
+        res.redirect('/funding/funding-not-available-setting')
+      }
+    } 
+    // Other
+    else if(settingt == 'Other'){
+      // Is a mentor?
+      if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+        res.redirect('/funding/funding-not-available-lead-mentor')
+      }
+      else {
+        res.redirect('/funding/edge-case')
+      }
+    }
+    // Private nursery, with URN + NPQEYL
+    else if(settingt == 'Early years or childcare'){
+      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
+        res.redirect('/funding/funding-eligible')
+      }
+      // Private nursery
+      else {
+        res.redirect('/funding/funding-not-available-setting')
+      }
+    }
+  }
+  // Outside of England
+  else {
+    res.redirect('/funding/funding-not-available-england')
+  }
+})
+
+// Maths - other mastery route
+router.post('/maths-other-outcome', function(req, res){
+  var mathsothert = req.session.data['mathsmasteryother']
+
+  if(mathsothert == 'No'){
     res.redirect('/maths/maths-cannot-register')
   }
   // Works in England
