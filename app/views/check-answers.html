@@ -13,9 +13,12 @@
 {% endblock %}
 
 {% block content %}
-
+      <!-- Maths NPQ -->
+      {% if data['choosenpq'] == "Leading primary mathematics" %}
+        {% include 'includes/answers/maths.html' %}
+      
       <!-- EHCO funded -->
-      {% if (data['choosenpq'] == "Early headship coaching offer") and (data['earlyheadship'] != 'no')%}
+      {% elseif (data['choosenpq'] == "Early headship coaching offer") and (data['earlyheadship'] != 'no')%}
         {% include 'includes/answers/ehco-funded.html' %}
 
       <!-- EHCO not funded -->
