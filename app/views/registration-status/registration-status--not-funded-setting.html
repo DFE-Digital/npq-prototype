@@ -14,6 +14,10 @@
   }) }}
 {% endblock %}
 
+{% set startedlinkHtml %}
+  If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
+{% endset %}
+
 {% set scholarshipfundingHtml %}
   <strong class="govuk-tag govuk-tag--red">
     Not eligible
@@ -27,6 +31,10 @@
   <h1 class="govuk-heading-xl">
     Your leading literacy NPQ registration
   </h1>
+
+  {{ govukInsetText({
+    html: startedlinkHtml
+  }) }}
 
   {{ govukSummaryList({
     card: {
@@ -75,17 +83,6 @@
           html:
             '<strong class="govuk-tag govuk-tag--green">
               successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course status"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--yellow">
-              Deferred
             </strong>'
         }
       }

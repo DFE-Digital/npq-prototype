@@ -7,6 +7,10 @@
   Registration status
 {% endblock %}
 
+{% set startedlinkHtml %}
+  If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
+{% endset %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to your registrations",
@@ -19,6 +23,10 @@
   <h1 class="govuk-heading-xl">
     Your leading teacher development NPQ registration
   </h1>
+
+  {{ govukInsetText({
+    html: startedlinkHtml
+  }) }}
 
   {{ govukSummaryList({
     card: {
@@ -67,17 +75,6 @@
           html:
             '<strong class="govuk-tag govuk-tag--green">
               Successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course status"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--grey">
-              Not started
             </strong>'
         }
       }
