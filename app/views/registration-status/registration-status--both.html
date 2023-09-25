@@ -117,15 +117,7 @@
 
   {% include 'includes/registration-status/work-details.html' %}
 
-  <div class="govuk-rows" style="margin-top: 60px">
-    <h2 class="govuk-heading-l">Register for an NPQ</h2>
-    <p>Use this service to submit a new registration</p>
-
-    {{ govukButton({
-      text: "Register for an NPQ",
-      href: "/chosen"
-    }) }}
-  </div>
+  {% include 'includes/registration-status/register-for-another-npq.html' %}
 
   {% include 'includes/prototype-links.html' %}
 
