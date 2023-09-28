@@ -13,168 +13,100 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="sharing-data" method="post">
+        <h1 class="govuk-heading-xl">Select your provider</h1>
 
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="sharing-data" method="post">
-      <h1 class="govuk-heading-xl">Select your provider</h1>
+        {% if (data['choosenpq'] == "Early years leadership") or (data['choosenpq'] == "Leading literacy")%}
+          {{ govukRadios({
+            name: "provider",
+            id: "provider",
+            hint: {
+              text: "Select one of the providers offering your chosen course."
+            },
+            items: [
+              {
+                value: "Ambition Institute",
+                text: "Ambition Institute"
+              },
+              {
+                value: "Education Development Trust",
+                text: "Education Development Trust"
+              },
+              {
+                value: "National Institute of Teaching",
+                text: "National Institute of Teaching"
+              },
+              {
+                value: "Teacher Development Trust",
+                text: "Teacher Development Trust"
+              },
+              {
+                value: "Teach First",
+                text: "Teach First"
+              },
+              {
+                value: "UCL Institute of Education",
+                text: "UCL Institute of Education"
+              }
+            ]
+          }) }}
+        {% else %}
+          {{ govukRadios({
+            name: "provider",
+            id: "provider",
+            fieldset: {
+            },
+            hint: {
+              text: "Select one of the providers offering your chosen course."
+            },
+            items: [
+              {
+                value: "Ambition Institute",
+                text: "Ambition Institute"
+              },
+              {
+                value: "Best Practice Network (home of Outstanding Leaders Partnership)",
+                text: "Best Practice Network (home of Outstanding Leaders Partnership)"
+              },
+              {
+                value: "Church of England",
+                text: "Church of England"
+              },
+              {
+                value: "Education Development Trust",
+                text: "Education Development Trust"
+              },
+              {
+                value: "LLSE",
+                text: "LLSE"
+              },
+              {
+                value: "National Institute of Teaching",
+                text: "National Institute of Teaching"
+              },
+              {
+                value: "Teacher Development Trust",
+                text: "Teacher Development Trust"
+              },
+              {
+                value: "Teach First",
+                text: "Teach First"
+              },
+              {
+                value: "UCL Institute of Education",
+                text: "UCL Institute of Education"
+              }
+            ]
+          }) }}
+        {% endif %}
 
-      {% if (data['choosenpq'] == "Early years leadership") or (data['choosenpq'] == "Leading literacy")%}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
-      {{ govukRadios({
-        name: "provider",
-        id: "provider",
-        hint: {
-          text: "Select one of the providers offering your chosen course."
-        },
-        items: [
-          {
-            value: "Ambition Institute",
-            text: "Ambition Institute"
-          },
-          {
-            value: "Education Development Trust",
-            text: "Education Development Trust"
-          },
-          {
-            value: "National Institute of Teaching",
-            text: "National Institute of Teaching"
-          },
-          {
-            value: "Teacher Development Trust",
-            text: "Teacher Development Trust"
-          },
-          {
-            value: "Teach First",
-            text: "Teach First"
-          },
-          {
-            value: "UCL Institute of Education",
-            text: "UCL Institute of Education"
-          }
-
-        ]
-
-      }) }}
-
-      {% elseif data['choosenpq'] == "Executive leadership" %}
-
-      {{ govukRadios({
-        name: "provider",
-        id: "provider",
-        fieldset: {
-        },
-        hint: {
-          text: "Select one of the providers offering your chosen course."
-        },
-        items: [
-          {
-            value: "Ambition Institute",
-            text: "Ambition Institute"
-          },
-          {
-            value: "Best Practice Network (home of Outstanding Leaders Partnership)",
-            text: "Best Practice Network (home of Outstanding Leaders Partnership)"
-          },
-          {
-            value: "Church of England",
-            text: "Church of England"
-          },
-          {
-            value: "Education Development Trust",
-            text: "Education Development Trust"
-          },
-          {
-            value: "LLSE",
-            text: "LLSE"
-          },
-          {
-            value: "National Institute of Teaching",
-            text: "National Institute of Teaching"
-          },
-          {
-            value: "Teacher Development Trust",
-            text: "Teacher Development Trust"
-          },
-          {
-            value: "Teach First",
-            text: "Teach First"
-          },
-          {
-            value: "UCL Institute of Education",
-            text: "UCL Institute of Education"
-          }
-
-        ]
-
-      }) }}
-
-      {% else %}
-
-      {{ govukRadios({
-        name: "provider",
-        id: "provider",
-        fieldset: {
-        },
-        hint: {
-          text: "Select one of the providers offering your chosen course."
-        },
-        items: [
-          {
-            value: "Ambition Institute",
-            text: "Ambition Institute"
-          },
-          {
-            value: "Best Practice Network (home of Outstanding Leaders Partnership)",
-            text: "Best Practice Network (home of Outstanding Leaders Partnership)"
-          },
-          {
-            value: "Church of England",
-            text: "Church of England"
-          },
-          {
-            value: "Education Development Trust",
-            text: "Education Development Trust"
-          },
-          {
-            value: "LLSE",
-            text: "LLSE"
-          },
-          {
-            value: "National Institute of Teaching",
-            text: "National Institute of Teaching"
-          },
-          {
-            value: "School-Led Network",
-            text: "School-Led Network"
-          },
-          {
-            value: "Teacher Development Trust",
-            text: "Teacher Development Trust"
-          },
-          {
-            value: "Teach First",
-            text: "Teach First"
-          },
-          {
-            value: "UCL Institute of Education",
-            text: "UCL Institute of Education"
-          }
-
-        ]
-
-      }) }}
-
-      {% endif %}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
-
-
-
+      </form>
+    </div>
   </div>
-</div>
-
 {% endblock %}

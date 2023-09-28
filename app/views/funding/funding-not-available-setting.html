@@ -20,7 +20,7 @@
       </h1>
 
       <!-- Private school -->
-      {% if data['whichschool'] == "private" %}
+      {% if (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
         <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ as you do not work in one of the eligible settings, such as state-funded schools.</p>
         <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
         
