@@ -5,13 +5,13 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers and confirm</h1>
+      <h1 class="govuk-heading-xl">Check your answers and confirm O</h1>
 
       <form class='form' action="" method="post">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Do you work in England? 
+              Workplace in England 
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['wheredoyouwork'] == "Yes") %}
@@ -22,7 +22,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
-                Change<span class="govuk-visually-hidden"> where do you work</span>
+                Change<span class="govuk-visually-hidden"> do you work in England</span>
               </a>
             </dd>
           </div>
@@ -40,28 +40,10 @@
               </a>
             </dd>
           </div>
-          <!--
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Do you work in a nursery?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['workinnursery']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/eyll/nursery">
-                Change<span class="govuk-visually-hidden"> do you work in a nursery?</span>
-              </a>
-            </dd>
-          </div> -->
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              {% if (data['nurserysetting'] == "Another early years setting")%}
-              Type of workplace
-              {% else %}
-              Type of nursery
-              {% endif %}
+              Early years setting
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['nurserysetting']}}
@@ -73,35 +55,23 @@
             </dd>
           </div>
 
-          {% if data['haveurn'] == "No" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Do you have a URN?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['haveurn']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/eyll/do-you-have-urn">
-                  Change<span class="govuk-visually-hidden"> do you have a URN</span>
-                </a>
-              </dd>
-            </div>
-          {% else %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Ofsted registration details
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['urn'] }} - Nursery name
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/eyll/find-early-years">
-                  Change<span class="govuk-visually-hidden"> do you have a URN</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ofsted unique reference number (URN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['haveurn'] == "No" %}
+                Not applicable
+                {% else %}
+                  {{ data['urn'] or "EY000000 - Lanterns Nursery School and Extended Services - Bereweeke Road, Winchester, Hampshire, SO22 6AJ" }} 
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/eyll/do-you-have-urn">
+                Change<span class="govuk-visually-hidden"> do you have a URN</span>
+              </a>
+            </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -120,14 +90,14 @@
           {% if (data['choosenpq'] != "Early years leadership") or (data['haveurn'] == "No") %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                How is your NPQ being paid for?
+                Course funding
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['payment']}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/funding/how-pay">
-                  Change<span class="govuk-visually-hidden"> how is your NPQ being paid for</span>
+                  Change<span class="govuk-visually-hidden"> course funding</span>
                 </a>
               </dd>
             </div>

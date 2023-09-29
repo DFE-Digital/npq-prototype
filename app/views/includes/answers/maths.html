@@ -8,7 +8,7 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row" text-transform: capitalise>
             <dt class="govuk-summary-list__key">
-              Do you work in England? 
+              Workplace in England 
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['wheredoyouwork'] == "Yes") %}
@@ -19,7 +19,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
-                Change<span class="govuk-visually-hidden"> where do you work</span>
+                Change<span class="govuk-visually-hidden"> do you work in England</span>
               </a>
             </dd>
           </div>
@@ -44,7 +44,7 @@
                 Workplace
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['whichschool'] or "St Thomas More School" }}
+                {{ data['whichschool'] or "The Westgate School - Cheriton Road, Winchester, Hampshire, SO22 5AZ" }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="which-school">
@@ -71,10 +71,16 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Have you taken at least one year of the primary maths Teaching for Mastery programme?
+              Completed one year of the primary maths Teaching for Mastery programme
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['mathsmastery']}}
+              {% if data['mathsmastery'] == "Yes" %}
+                {{ data['mathsmastery'] }} 
+                {% elseif data['mathsmasteryother'] == "I’ve taken a course similar to the primary maths Teaching for Mastery programme" %}
+                  {{ data['mathsmastery'] }} - but taken a similar course
+                {% else %}
+                  {{ data['mathsmastery'] }} - but can show understanding of mastery approaches another way
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/maths/maths-eligibility-teaching-for-mastery">
@@ -82,23 +88,6 @@
               </a>
             </dd>
           </div>
-
-          {% if data['mathsmastery'] == "No" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                How can you show your understanding of mastery approaches to teaching maths?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['mathsmasteryother']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/maths/maths-eligibility-other">
-                  Change<span class="govuk-visually-hidden"> how can you show your understanding of mastery approaches to teaching maths</span>
-                </a>
-              </dd>
-            </div>
-            {% else %}
-          {% endif %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
