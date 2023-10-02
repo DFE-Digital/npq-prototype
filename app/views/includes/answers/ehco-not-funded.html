@@ -1,17 +1,14 @@
-
-
-
 {% block page %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers and confirm</h1>
+      <h1 class="govuk-heading-xl">Check your answers and submit </h1>
 
       <form class='form' action="" method="post">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Do you work in England? 
+              Workplace in England 
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['wheredoyouwork'] == "Yes") %}
@@ -22,7 +19,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
-                Change<span class="govuk-visually-hidden"> where do you work</span>
+                Change<span class="govuk-visually-hidden"> do you work in England</span>
               </a>
             </dd>
           </div>
@@ -32,7 +29,7 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting']}}
+              {{ data['whichsetting'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
@@ -47,7 +44,7 @@
                 Workplace
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['whichschool'] or "St Thomas More School" }}
+                {{ data['whichschool'] or "The Westgate School - Cheriton Road, Winchester, Hampshire, SO22 5AZ" }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="which-school">
@@ -63,7 +60,7 @@
               Course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['choosenpq']}}
+              {{ data['choosenpq'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-npq">
@@ -74,78 +71,78 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Have you completed an NPQH?
+              Headship NPQ stage
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['completednpqh']}}
+              {{ data['completednpqh'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/ehco/ehco-completed-npqh">
-                Change<span class="govuk-visually-hidden"> have you completed an npqh</span>
+                Change<span class="govuk-visually-hidden"> headship NPQ stage</span>
               </a>
             </dd>
           </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Are you a head teacher?
+              Headteacher
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['headteachers']}}
+              {{ data['headteachers'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/ehco/ehco-headteacher">
-                Change<span class="govuk-visually-hidden"> are you a headteacher?</span>
+                Change<span class="govuk-visually-hidden"> headteacher</span>
               </a>
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Are you in your first 5 years of headship?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['earlyheadship']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/ehco/ehco-early-headship">
-                Change<span class="govuk-visually-hidden"> are you in your first 5 years of headship?</span>
-              </a>
-            </dd>
-          </div>
+          {% if data['headteachers'] != 'No' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                First 5 years of headship
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['earlyheadship'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/ehco/ehco-early-headship">
+                  Change<span class="govuk-visually-hidden"> first 5 years of headship</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              How is your NPQ being paid for?
+              Course funding
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['payment']}}
+              {{ data['payment'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/funding/how-pay">
-                Change<span class="govuk-visually-hidden"> how is your NPQ being paid for</span>
+                Change<span class="govuk-visually-hidden"> course funding</span>
               </a>
             </dd>
           </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Lead provider
+              Provider
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['provider']}}
+              {{ data['provider'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-provider">
-                Change<span class="govuk-visually-hidden"> lead provider</span>
+                Change<span class="govuk-visually-hidden"> provider</span>
               </a>
             </dd>
           </div>
 
         </dl>
-
       </form>
-
     </div>
   </div>
 {% endblock %}

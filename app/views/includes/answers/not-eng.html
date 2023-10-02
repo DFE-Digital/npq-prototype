@@ -5,13 +5,13 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers and confirm</h1>
+      <h1 class="govuk-heading-xl">Check your answers and submit</h1>
 
       <form class='form' action="" method="post">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Do you work in England? 
+              Workplace in England 
             </dt>
             <dd class="govuk-summary-list__value">
               {% if (data['wheredoyouwork'] == "Yes") %}
@@ -22,7 +22,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
-                Change<span class="govuk-visually-hidden"> where do you work</span>
+                Change<span class="govuk-visually-hidden"> do you work in England</span>
               </a>
             </dd>
           </div>
@@ -57,28 +57,28 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              How is your NPQ being paid for?
+              Course funding
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['payment']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/funding/how-pay">
-                Change<span class="govuk-visually-hidden"> how is your NPQ being paid for</span>
+                Change<span class="govuk-visually-hidden"> course funding</span>
               </a>
             </dd>
           </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Lead provider
+              Provider
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['provider']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-provider">
-                Change<span class="govuk-visually-hidden"> lead provider</span>
+                Change<span class="govuk-visually-hidden"> provider</span>
               </a>
             </dd>
           </div>
