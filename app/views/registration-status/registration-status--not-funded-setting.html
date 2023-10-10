@@ -26,6 +26,14 @@
   <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
 {% endset %}
 
+{% set courseFundingHtml %}
+  {% if data['whichsetting'] == "earlyyears" %}
+    {{ data['paymenteyll'] or 'I'm paying'}}
+  {% else %}
+    {{ data['payment'] or 'I'm paying'}}
+  {% endif %}
+{% endset %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted	2 January 2022</span>
   <h1 class="govuk-heading-xl">
@@ -102,6 +110,14 @@
         },
         value: {
           html: scholarshipfundingHtml 
+        }
+      },
+      {
+        key: {
+          text: "Course funding"
+        },
+        value: {
+          html: courseFundingHtml
         }
       }
     ]

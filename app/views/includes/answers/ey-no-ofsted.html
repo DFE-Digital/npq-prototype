@@ -60,11 +60,7 @@
               Ofsted unique reference number (URN)
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['haveurn'] == "No" %}
-                Not applicable
-                {% else %}
-                  {{ data['urn'] or "EY000000 - Lanterns Nursery School and Extended Services - Bereweeke Road, Winchester, Hampshire, SO22 6AJ" }} 
-              {% endif %}
+              Not applicable
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/eyll/do-you-have-urn">
@@ -83,6 +79,20 @@
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-npq">
                 Change<span class="govuk-visually-hidden"> course</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course funding
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['payment'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/funding/how-pay">
+                Change<span class="govuk-visually-hidden"> course funding</span>
               </a>
             </dd>
           </div>
