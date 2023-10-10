@@ -11,6 +11,14 @@
   If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
 {% endset %}
 
+{% set courseFundingHtml %}
+  {% if data['whichsetting'] == "earlyyears" %}
+    {{ data['paymenteyll'] or 'I'm paying'}}
+  {% else %}
+    {{ data['payment'] or 'I'm paying'}}
+  {% endif %}
+{% endset %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to your registrations",
@@ -100,6 +108,14 @@
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You have already been allocated scholarship funding for the Leading teaching NPQ.</p>
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
             '
+        }
+      },
+      {
+        key: {
+          text: "Course funding"
+        },
+        value: {
+          html: courseFundingHtml
         }
       },
       {
