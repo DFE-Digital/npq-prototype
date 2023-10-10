@@ -28,9 +28,9 @@
 
 {% set courseFundingHtml %}
   {% if data['whichsetting'] == "earlyyears" %}
-    {{ data['paymenteyll'] or 'I'm paying'}}
+    {{ data['paymenteyll'] or "I'm paying" }}
   {% else %}
-    {{ data['payment'] or 'I'm paying'}}
+    {{ data['payment'] or "I'm paying" }}
   {% endif %}
 {% endset %}
 
@@ -123,8 +123,8 @@
     ]
   }) }}
 
-  {% include 'includes/registration-status/work-details.html' %}
-
+  {% include 'includes/registration-status/work-details/private-school.html' %}
+  
   {% include 'includes/registration-status/register-for-another-npq.html' %}
 
   {% include 'includes/prototype-links.html' %}
