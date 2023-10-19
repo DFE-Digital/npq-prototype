@@ -197,6 +197,9 @@
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you or your employer is not registered on the Ofsted Early Years Register or with a registered Childminder Agency. </p>
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
         {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--green">Eligible </strong>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>
     {% endif %}
   {% endif %}
 {% endset %}   
@@ -305,19 +308,7 @@
         value: {
           html: courseFundingHtml
         }
-      } if (data['payment'] == "My workplace is covering the cost") or (data['payment'] == "I am paying") or (data['payment'] == "My NPQ is being paid for in another way") or (data['payment'] == "My trust is paying") or (data['paymenteyll'] == "My workplace is covering the cost") or (data['paymenteyll'] == "I am paying") or (data['paymenteyll'] == "My NPQ is being paid for in another way") or (data['paymenteyll'] == "My trust is paying"),
-      {
-        key: {
-          text: "Targeted support funding"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
-        }
-      }
+      } if (data['payment'] == "My workplace is covering the cost") or (data['payment'] == "I am paying") or (data['payment'] == "My NPQ is being paid for in another way") or (data['payment'] == "My trust is paying") or (data['paymenteyll'] == "My workplace is covering the cost") or (data['paymenteyll'] == "I am paying") or (data['paymenteyll'] == "My NPQ is being paid for in another way") or (data['paymenteyll'] == "My trust is paying")
     ]
   }) }}
 
