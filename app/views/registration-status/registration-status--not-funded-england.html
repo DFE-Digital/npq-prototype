@@ -15,6 +15,13 @@
   }) }}
 {% endblock %}
 
+{% set passedHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Passed
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You can access your certificate through the<a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications service </a></p>
+{% endset %}
+
 {% set scholarshipfundingHtml %}
   <strong class="govuk-tag govuk-tag--red">
     Not eligible
@@ -76,10 +83,7 @@
           text: "Course status"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Passed
-            </strong>'
+          html: passedHtml
         }
       }
     ]

@@ -6,6 +6,13 @@
   Registration status
 {% endblock %}
 
+{% set passedHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Passed
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You can access your certificate through the <a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications service </a></p>
+{% endset %}
+
 {% block content %}
   <h1 class="govuk-heading-xl">Your NPQ registrations</h1>
 
@@ -174,10 +181,7 @@
           text: "Course outcome"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Passed
-            </strong>'
+          html: passedHtml
         }
       }
     ]
@@ -228,7 +232,8 @@
           html:
             '<strong class="govuk-tag govuk-tag--red">
               Not passed
-            </strong>'
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you think this is a mistake or need to appeal this outcome, contact your training provider. </p>'
         }
       }
     ]
