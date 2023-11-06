@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Register at a later date
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Register at a later date</h1>
+    <p>You can currently only register for an NPQ if you are starting the course in the 2024/25 academic year. Please come back nearer the time if you'd like to start an NPQ in a future academic year. </p>
+  </div>
+</div>
+
+{% endblock %}

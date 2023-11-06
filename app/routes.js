@@ -18,6 +18,16 @@ var mentort = "Other"
 var npqt = "Headship"
 var hasurnt = "no"
 
+router.post('/chosen', function(req, res){
+  var startdatet = req.session.data['startdate']
+
+  if (startdatet == 'no') {
+    res.redirect('/apply-later')
+  } else {
+    res.redirect('/chosen')
+  }
+})
+
 router.post('/where-do-you-work', function(req, res){
   var choosenpqprovidert = req.session.data['choosenpqprovider']
 

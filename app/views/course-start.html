@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Will you start your NPQ in the academic year 2024/25?
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="chosen" method="post">
+      {{ govukRadios({
+        name: "startdate",
+        fieldset: {
+          legend: {
+            text: "Will you start your NPQ in the academic year 2024/25?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

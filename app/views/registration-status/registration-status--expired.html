@@ -2,15 +2,10 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% set signedIn = 'true' %}
-{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Registration status
 {% endblock %}
-
-{% set startedlinkHtml %}
-  If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
-{% endset %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -22,12 +17,8 @@
 {% block content %}
   <span class="govuk-caption-m">Submitted	11 April 2023</span>
   <h1 class="govuk-heading-xl">
-    Your leading teaching NPQ registration
+    Your leading literacy NPQ registration
   </h1>
-
-  {{ govukInsetText({
-    html: startedlinkHtml
-  }) }}
 
   {{ govukSummaryList({
     card: {
@@ -41,7 +32,7 @@
           text: "Course"
         },
         value: {
-          html: "Leading teaching NPQ"
+          html: "Leading literacy NPQ"
         }
       },
       {
@@ -49,7 +40,7 @@
           text: "Provider"
         },
         value: {
-          html: "Ambition Institute"
+          html: "Teach First"
         }
       },
       {
@@ -58,17 +49,10 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Registration valid for"
-        },
-        value: {
-          html: "Academic year 2024/25"
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will need to <a href="/course-start">submit a new registration</a> to take this course. </p>'
         }
       }
     ]
@@ -87,10 +71,9 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>'
         }
       }
     ]
