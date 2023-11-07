@@ -268,6 +268,22 @@
   {{ govukSummaryList({
     card: {
       title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.',
+          classes: 'govuk-!-width-full govuk-!-font-weight-regular'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
         text: "Funding details"
       }
     },
@@ -288,22 +304,6 @@
           html: courseFundingHtml
         }
       } if (data['payment'] == "My workplace is covering the cost") or (data['payment'] == "I am paying") or (data['payment'] == "My NPQ is being paid for in another way") or (data['payment'] == "My trust is paying") or (data['paymenteyll'] == "My workplace is covering the cost") or (data['paymenteyll'] == "I am paying") or (data['paymenteyll'] == "My NPQ is being paid for in another way") or (data['paymenteyll'] == "My trust is paying")
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.',
-          classes: 'govuk-!-width-full govuk-!-font-weight-regular'
-        }
-      }
     ]
   }) }}
 
