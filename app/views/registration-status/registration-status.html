@@ -7,10 +7,6 @@
   Registration status
 {% endblock %}
 
-{% set startedlinkHtml %}
-  If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
-{% endset %}
-
 {% set successHTML %}
   <h3 class="govuk-notification-banner__heading">
     Registration successfully submitted
@@ -21,13 +17,16 @@
 {% set courseHTML %}
   {% if (data['choosenpq'] == "Early headship coaching offer") %}
     Early headship coaching offer
+    <p class="govuk-body-s govuk-!-margin-top-2">To change your course, you need to <a href="/chosen">submit a new registration</a>.</p>
   {% else %}
     {{ data['choosenpq'] or "Leading teacher development" }} NPQ
+    <p class="govuk-body-s govuk-!-margin-top-2">To change your course, you need to <a href="/chosen">submit a new registration</a>.</p>
   {% endif %}
 {% endset %}
 
 {% set providerHTML %}
   {{ data['provider'] or "Teacher Development Trust" }}
+  <p class="govuk-body-s govuk-!-margin-top-2">To change your provider, you need to <a href="/chosen">submit a new registration</a>.</p>
 {% endset %}
 
 {% set courseFundingHtml %}
@@ -228,10 +227,6 @@
     {% endif %}
   </h1>
 
-  {{ govukInsetText({
-    html: startedlinkHtml
-  }) }}
-
   {{ govukSummaryList({
     card: {
       title: {
@@ -245,15 +240,6 @@
         },
         value: {
           html: courseHTML
-        },
-        actions: {
-          classes: 'govuk-visually-hidden',
-          items: [
-            {
-              href: "change-course/choose-npq",
-              text: "Change course"
-            } 
-          ]
         }
       },
       {
@@ -262,15 +248,6 @@
         },
         value: {
           html: providerHTML
-        },
-        actions: {
-          classes: 'govuk-visually-hidden',
-          items: [
-            {
-              href: "change-provider/choose-provider",
-              text: "Change provider"
-            }
-          ]
         }
       },
       {
@@ -299,6 +276,22 @@
   {{ govukSummaryList({
     card: {
       title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.',
+          classes: 'govuk-!-width-full govuk-!-font-weight-regular'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
         text: "Funding details"
       }
     },
@@ -319,22 +312,6 @@
           html: courseFundingHtml
         }
       } if (data['payment'] == "My workplace is covering the cost") or (data['payment'] == "I am paying") or (data['payment'] == "My NPQ is being paid for in another way") or (data['payment'] == "My trust is paying") or (data['paymenteyll'] == "My workplace is covering the cost") or (data['paymenteyll'] == "I am paying") or (data['paymenteyll'] == "My NPQ is being paid for in another way") or (data['paymenteyll'] == "My trust is paying")
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.',
-          classes: 'govuk-!-width-full govuk-!-font-weight-regular'
-        }
-      }
     ]
   }) }}
 

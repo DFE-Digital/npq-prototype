@@ -8,10 +8,6 @@
   Registration status
 {% endblock %}
 
-{% set startedlinkHtml %}
-  If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
-{% endset %}
-
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to your registrations",
@@ -25,10 +21,6 @@
     Your leading teaching NPQ registration
   </h1>
 
-  {{ govukInsetText({
-    html: startedlinkHtml
-  }) }}
-
   {{ govukSummaryList({
     card: {
       title: {
@@ -41,7 +33,9 @@
           text: "Course"
         },
         value: {
-          html: "Leading teaching NPQ"
+          html: 
+            'Leading teaching NPQ
+            <p class="govuk-body-s govuk-!-margin-top-2">To change your course, you need to <a href="/chosen">submit a new registration</a>.</p>'
         }
       },
       {
@@ -49,7 +43,9 @@
           text: "Provider"
         },
         value: {
-          html: "Ambition Institute"
+          html: 
+            'Ambition Institute
+            <p class="govuk-body-s govuk-!-margin-top-2">To change your provider, you need to <a href="/chosen">submit a new registration</a>.</p>'
         }
       },
       {
