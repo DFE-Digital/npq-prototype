@@ -17,7 +17,6 @@
 {% set npqNameHTML %}
   {% if (data['choosenpq'] == "Early headship coaching offer") %}
     Early headship coaching offer
-
     {% else %}
       {{ data['choosenpq'] or "Executive leadership" }} NPQ
   {% endif %}
@@ -52,6 +51,14 @@
         },
         value: {
           html: npqNameHTML
+        },
+        actions: {
+          items: [
+            {
+              href: "/change-details",
+              html: 'Change <span class="govuk-visually-hidden"> course</span>'
+            }
+          ]
         }
       },
       {
@@ -60,6 +67,14 @@
         },
         value: {
           html: providerHTML
+        },
+        actions: {
+          items: [
+            {
+              href: "/change-details",
+              html: 'Change <span class="govuk-visually-hidden"> provider</span>'
+            }
+          ]
         }
       },
       {
@@ -77,10 +92,10 @@
       },
       {
         key: {
-          text: "Course start"
+          text: "Registration valid for"
         },
         value: {
-          html: "Autumn 2025"
+          html: "Academic year 2024/25"
         }
       }
     ]

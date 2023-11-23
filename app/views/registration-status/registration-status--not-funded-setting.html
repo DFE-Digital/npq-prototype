@@ -48,17 +48,33 @@
           text: "Course"
         },
         value: {
-          html:
-            'Leading literacy NPQ'
-        }
+          html: 
+            'Leading literacy NPQ'        
+          },
+          actions: {
+            items: [
+              {
+                href: "/change-details",
+                html: 'Change <span class="govuk-visually-hidden"> course</span>'
+              }
+            ]
+          }
       },
       {
         key: {
           text: "Provider"
         },
         value: {
-          html:
+          html: 
             'Teach First'
+        },
+        actions: {
+          items: [
+            {
+              href: "/change-details",
+              html: 'Change <span class="govuk-visually-hidden"> provider</span>'
+            }
+          ]
         }
       },
       {

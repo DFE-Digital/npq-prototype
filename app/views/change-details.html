@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Change your course or provider
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Change your course or provider</h1>
+      <p>If you have not started your course, you can change your course or provider by submitting a new registration. </p>
+      <p>If you have already started your course, contact your provider to make any changes. </p>
+    </div>
+  </div>
+
+  {{ govukButton({
+    text: "Submit a new registration",
+    href: "/course-start"
+    }) 
+  }}
+
+{% endblock %}
+
