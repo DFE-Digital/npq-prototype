@@ -10,7 +10,7 @@
   <strong class="govuk-tag govuk-tag--green">
     Passed
   </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications</a> to get your certificate.</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications to get your certificate</a>.</p>
 {% endset %}
 
 {% block content %}
@@ -65,84 +65,6 @@
   {{ govukSummaryList({
     card: {
       title: {
-        html: 'Leading teaching NPQ
-        <p class="govuk-!-margin-bottom-0">Ambition Institute</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--scholarship-only",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "11 April 2023"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--not-funded-setting",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "2 January 2023"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--red">
-              Unsuccessful
-            </strong>'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
         html: 'Leading behaviour and culture NPQ
         <p class="govuk-!-margin-bottom-0">Church of England</p>'
       },
@@ -175,133 +97,6 @@
               Expired
             </strong>
             <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course.</p>'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--expired",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "17 March 2022"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--grey">
-              Expired
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course.</p>'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">LLSE</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--expired",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "24 July 2021"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--grey">
-              Expired
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course. </p>'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Senior leadership NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--not-funded-england",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "10 April 2021"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course outcome"
-        },
-        value: {
-          html: passedHtml
         }
       }
     ]
@@ -352,7 +147,7 @@
             '<strong class="govuk-tag govuk-tag--red">
               Not passed
             </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Contact your provider if you need to discuss this outcome.</p>'
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Talk to your provider if you need to discuss this outcome.</p>'
         }
       }
     ]

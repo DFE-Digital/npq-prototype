@@ -2,7 +2,6 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% set signedIn = 'true' %}
-{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Registration status
@@ -18,7 +17,7 @@
 {% block content %}
   <span class="govuk-caption-m">Submitted	11 April 2023</span>
   <h1 class="govuk-heading-xl">
-    Your leading teaching NPQ registration
+    Your leading literacy NPQ registration
   </h1>
 
   {{ govukSummaryList({
@@ -33,15 +32,7 @@
           text: "Course"
         },
         value: {
-          html: 
-            'Leading teaching NPQ'        },
-        actions: {
-          items: [
-            {
-              href: "/change-details",
-              html: 'Change <span class="govuk-visually-hidden"> course</span>'
-            }
-          ]
+          html: "Leading literacy NPQ"
         }
       },
       {
@@ -49,15 +40,7 @@
           text: "Provider"
         },
         value: {
-          html: 
-            'Ambition Institute'        },
-        actions: {
-          items: [
-            {
-              href: "/change-details",
-              html: 'Change <span class="govuk-visually-hidden"> provider</span>'
-            }
-          ]
+          html: "Teach First"
         }
       },
       {
@@ -66,29 +49,31 @@
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course.</p>'
         }
-      },
-      {
-        key: {
-          text: "Course start"
-        },
-        value: {
-          text: "Autumn 2024"
-        }
-      },
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
       {
         key: {
           text: "Scholarship funding"
         },
         value: {
           html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>'
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>'
         }
       }
     ]
