@@ -16,10 +16,39 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Register at a later date</h1>
-    <p>You cannot register unless you’re starting your NPQ between September 2024 and August 2025.</p>
-    <p>If you intend to start your course the following academic year, you can register from ((March 2024)). You’ll recieve an email when registration is open.</p>
+    <h1 class="govuk-heading-xl">You cannot register yet</h1>
+    <p>Register from March 2025 for courses starting in Autumn 2025 or Spring 2026.</p>
+
+
+    {{ govukRadios({
+      name: "startdate",
+      fieldset: {
+        legend: {
+          text: "Do you want to receive an email when registrations open?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+
   </div>
 </div>
+
+
 
 {% endblock %}

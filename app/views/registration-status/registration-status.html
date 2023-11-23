@@ -120,7 +120,7 @@
           <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
           {% else %}
             <strong class="govuk-tag govuk-tag--green">Eligible </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees if you start your course between September 2024 and August 2025.</p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>
         {% endif %}
         <!-- Private school in England -->
         {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
@@ -130,7 +130,7 @@
         <!-- State school in England -->
         {% else %}
         <strong class="govuk-tag govuk-tag--green">Eligible </strong>
-        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees if you start your course between September 2024 and August 2025.</p>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>
       {% endif %}
       <!-- -------------
         Other setting
@@ -140,11 +140,11 @@
         {% if data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider" %}
           {% if data['choosenpq'] == "Leading teacher development" %}
             <strong class="govuk-tag govuk-tag--green">Eligible </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees if you start your course between September 2024 and August 2025.</p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>
             <!-- A mentor NOT doing NPQLTD -->
             {% else %}
               <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
               <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
           {% endif %}
           <!-- Other type of setting or no selection -->
@@ -177,11 +177,11 @@
             {% endif %}
             {% else %}
               <strong class="govuk-tag govuk-tag--green">Eligible </strong>
-              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees if you start your course between September 2024 and August 2025.</p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>
           {% endif %}
           {% elseif ((data['haveurn'] == "Yes") and (data['choosenpq'] == "Early years leadership")) %}
             <strong class="govuk-tag govuk-tag--green">Eligible </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the Early headship coaching offer if you start it between September 2024 and August 2025.</p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the Early headship coaching offer.</p>
           <!-- Private nursery with URN not NPQEYL -->
           {% elseif ((data['haveurn'] == "Yes") and (data['choosenpq'] != "Early years leadership")) %}
             <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
@@ -195,7 +195,7 @@
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--green">Eligible </strong>
-        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees if you start your course between September 2024 and August 2025.</p>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>
     {% endif %}
   {% endif %}
 {% endset %}
@@ -223,6 +223,10 @@
       Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
     {% endif %}
   </h1>
+
+  {{ govukInsetText({
+    html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.'
+  }) }}
 
   {{ govukSummaryList({
     card: {
@@ -266,37 +270,9 @@
         value: {
           html:
           '</strong>
-          <p class="govuk-!-margin-top-2">Between September 2024 and August 2025. Your provider will contact you about the start date.</p>
-          </strong>
-          <p class="govuk-!-margin-top-2">If you start the following academic year, you’ll need to register again.</p>'
+          <p class="govuk-!-margin-top-2">Autumn 2024</p>'
         }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.',
-          classes: 'govuk-!-width-full govuk-!-font-weight-regular'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Funding details"
-      }
-    },
-    rows: [
+      },
       {
         key: {
           text: "Scholarship funding"

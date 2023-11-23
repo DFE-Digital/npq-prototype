@@ -10,7 +10,7 @@
   <strong class="govuk-tag govuk-tag--green">
     Passed
   </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You can access your certificate through the <a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications service </a></p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications</a> to get your certificate.</p>
 {% endset %}
 
 {% block content %}
@@ -56,7 +56,7 @@
             '<strong class="govuk-tag govuk-tag--yellow">
               Apply with provider
             </strong>
-            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already. </p>'
+            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already.</p>'
         }
       }
     ]
@@ -232,17 +232,14 @@
             '<strong class="govuk-tag govuk-tag--red">
               Not passed
             </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you think this is a mistake or need to appeal this outcome, contact your training provider. </p>'
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Contact your training provider if you need to discuss this outcome.</p>'
         }
       }
     ]
   }) }}
 
   <h3 class="govuk-heading-l govuk-!-margin-top-8">Expired registrations</h3>
-  {{ govukInsetText({
-    html: '<p>You will need to <a href="/course-start">submit a new registration</a> to take these course(s). </p>'
-  }) }}
-  
+
 
   {{ govukSummaryList({
     card: {
@@ -268,7 +265,8 @@
           html:
             '<strong class="govuk-tag govuk-tag--grey">
               Expired
-            </strong>'
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course.</p>'
         }
       }
     ]
@@ -298,7 +296,8 @@
           html:
             '<strong class="govuk-tag govuk-tag--grey">
               Expired
-            </strong>'
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course.</p>'
         }
       }
     ]
@@ -328,42 +327,13 @@
           html:
             '<strong class="govuk-tag govuk-tag--grey">
               Expired
-            </strong>'
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/course-start">Submit a new registration</a> if you still want to take this course.</p>'
         }
       }
     ]
   }) }}
 
-  {{ govukSummaryList({
-    card: {
-      classes: "govuk-!-margin-bottom-0",
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "9 February 2021"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--grey">
-              Expired
-            </strong>'
-        }
-      }
-    ]
-  }) }}
 
   {% include 'includes/registration-status/register-for-another-npq.html' %}
 
