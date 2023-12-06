@@ -23,23 +23,22 @@
         name: "startdate",
         fieldset: {
           legend: {
-            text: "When do you want to start your course?",
+            text: "Will you start your course in February 2024?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        hint: {
+          text: "This is the next available start date."
+        },
         items: [
           {
             value: "yes",
-            text: "Autumn 2024"
-          },
-          {
-            value: "yes",
-            text: "Spring 2025"
+            text: "Yes"
           },
           {
             value: "no",
-            text: "After this"
+            text: "No, I want to start later"
           }
         ]
       }) }}
