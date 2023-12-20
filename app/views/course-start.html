@@ -16,6 +16,13 @@
 {% endblock %}
 
 {% block content %}
+
+<h1 class="govuk-heading-xl">Course start</h1>
+
+<p>NPQ start dates vary by provider, but they usually start every February and October.</p>
+
+<p class="govuk-body govuk-!-margin-bottom-8">Registrations are currently open for courses starting in February 2024.</p>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="chosen" method="post">
@@ -23,18 +30,17 @@
         name: "startdate",
         fieldset: {
           legend: {
-            text: "Will you start your course in February 2024?",
+            text: "Do you want to start a course in February 2024?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
-        },
-        hint: {
-          text: "This is the next available start date."
         },
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            hint: {
+        text: "Includes if you already started an NPQ starting in February 2024"}
           },
           {
             value: "no",
