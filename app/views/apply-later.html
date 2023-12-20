@@ -17,34 +17,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">You cannot register yet</h1>
-    <p>The next available start date after February 2024 will be October 2024. You’ll be able to register for the October start date from June 2024.</p>
 
+    <p>The next start date after February 2024 is October 2024.</p>
 
-    {{ govukRadios({
-      name: "startdate",
-      fieldset: {
-        legend: {
-          text: "Do you want to receive an email when registrations open?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
+    <p class="govuk-body">Registrations for courses starting in October usually open around June.</p>
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-
+    <p class="govuk-body govuk-!-margin-bottom-7">You’ll receive an email when registrations open.</p>
 
   </div>
 </div>
