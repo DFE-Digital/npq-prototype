@@ -15,6 +15,11 @@
   }) }}
 {% endblock %}
 
+{% set coursedateHTML %}
+  <p>Before November 2024</p>
+  <p>If your provider doesn't confirm you've started the course before April 2024, your registration will expire. You can register again later, but your funding may change.</p>
+{% endset %}
+            
 {% block content %}
   <span class="govuk-caption-m">Submitted	11 April 2023</span>
   <h1 class="govuk-heading-xl">
@@ -76,11 +81,19 @@
           text: "Course start"
         },
         value: {
-          html:
-            '<p>February 2024</p>
-            <p>If you do not to join the February course, your registration will expire. You can register again later, but your funding may change.</p>'
+          html: coursedateHTML
         }
-      },
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
       {
         key: {
           text: "Scholarship funding"

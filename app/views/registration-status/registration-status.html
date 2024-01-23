@@ -26,6 +26,11 @@
   {{ data['provider'] or "Teacher Development Trust" }}
 {% endset %}
 
+{% set coursedateHTML %}
+  <p>Before November 2024</p>
+  <p>If your provider doesn't confirm you've started the course before April 2024, your registration will expire. You can register again later, but your funding may change.</p>
+{% endset %}
+
 {% set courseFundingHtml %}
   <!-- Not in England -->
   {% if data['wheredoyouwork'] == "No" %}
@@ -284,12 +289,19 @@
           text: "Course start"
         },
         value: {
-          html:
-          '</strong>
-          <p class="govuk-!-margin-top-2">February 2024</p>
-          <p class="govuk-!-margin-top-2">If you do not to join the February course, your registration will expire. You can register again later, but your funding may change.</p>'
+          html: coursedateHTML
         }
-      },
+      } 
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
       {
         key: {
           text: "Scholarship funding"
