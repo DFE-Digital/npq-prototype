@@ -2,11 +2,19 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% set signedIn = 'true' %}
-{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Registration status
 {% endblock %}
+
+{% set startedlinkHtml %}
+  If you need to change something about your NPQ, email <a href="mailto:continuing-professional-development@digital.education.gov.uk">continuing-professional-development@digital.education.gov.uk</a>.
+{% endset %}
+
+{% set coursedateHTML %}
+  <p>Before April 2024</p>
+  <p>If your provider doesn't confirm you've started the course before April 2024, your registration will expire. You can register again later, but your funding may change.</p>
+{% endset %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,16 +23,15 @@
   }) }}
 {% endblock %}
 
-{% set coursedateHTML %}
-  <p>Before November 2024</p>
-  <p>If your provider doesn't confirm you've started the course before November 2024, your registration will expire. You can register again later, but your funding may change.</p>
-{% endset %}
-            
 {% block content %}
-  <span class="govuk-caption-m">Submitted	11 July 2024</span>
+  <span class="govuk-caption-m">Submitted 4 March 2024</span>
   <h1 class="govuk-heading-xl">
-    Your leading teaching NPQ registration
+    Your leading teacher development NPQ registration
   </h1>
+
+  {{ govukInsetText({
+    html: startedlinkHtml
+  }) }}
 
   {{ govukSummaryList({
     card: {
@@ -38,13 +45,13 @@
           text: "Course"
         },
         value: {
-          html:
-            'Leading teaching NPQ'        },
+          html: "Leading teacher development NPQ"
+        },
         actions: {
           items: [
             {
-              href: "/change-details",
-              html: 'Change <span class="govuk-visually-hidden"> course</span>'
+              href: "change-course/choose-npq",
+              text: "Change"
             }
           ]
         }
@@ -54,13 +61,13 @@
           text: "Provider"
         },
         value: {
-          html:
-            'Ambition Institute'        },
+          html: "Teacher Development Trust"
+        },
         actions: {
           items: [
             {
-              href: "/change-details",
-              html: 'Change <span class="govuk-visually-hidden"> provider</span>'
+              href: "change-provider/choose-provider",
+              text: "Change"
             }
           ]
         }
@@ -103,13 +110,25 @@
             '<strong class="govuk-tag govuk-tag--green">
               Eligible
             </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>'
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you will not have to pay for the course fees.</p>'
+        }
+      },
+      {
+        key: {
+          text: "Targeted support funding"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Eligible
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your workplace will receive £200 to support you to do this NPQ.</p>'
         }
       }
     ]
   }) }}
 
-  {% include 'includes/registration-status/work-details/ey-state-nursery.html' %}
+  {% include 'includes/registration-status/work-details.html' %}
 
   {% include 'includes/registration-status/register-for-another-npq.html' %}
 
