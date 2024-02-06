@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Registration has closed temporarily
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Registration has closed temporarily</h1>
+
+    <p><a href="/closed/eoi-email">Sign up for an email</a> to be notified when registration opens. This is usually in the summer.</p>
+    <p>When registration opens use this service to register for an NPQ or the early headship coaching offer starting before November 2024. </p>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

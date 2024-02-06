@@ -16,7 +16,7 @@
 
       {{ govukButton({
         text: "View prototype",
-        href: "start-id"
+        href: "start-page"
       }) }}
 
       <h2 class="govuk-heading-m">
@@ -70,7 +70,7 @@
       <h2 class="govuk-heading-l">Links to parts of the NPQ prototype</h2>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
-        <li><a href="/start-id">Start page </a></li>
+        <li><a href="/start-page">Start page </a></li>
         <li><a href="/check-answers">Check your answers page </a></li>
         <li><a href="/registration-status/registration-status">Confirmation page </a></li>
       </ul>
@@ -146,7 +146,39 @@
           </ul>
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Other </h3>
           <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/submit">Registration straight after submitted</a></li>
             <li><a href="email-complete">Confirmation email</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Set data to take through prototype
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing different funding statuses </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/no-registrations">User with no registrations </a></li>
+            <li><a href="/one-registration">User with one registration </a></li>
+            <li><a href="/multiple-registrations">User with multiple registrations </a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Closed service 
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/closed-for-registations">Partial closure (closed for registrations, account access) </a></li>
+            <li><a href="/closed-fully">Full closure </a></li>
+            <li><a href="/start-page">Remove closed state</a></li>
           </ul>
         </div>
       </details>
