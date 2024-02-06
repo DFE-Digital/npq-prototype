@@ -3,6 +3,15 @@
 
 {% set signedIn = 'true' %}
 
+{% block beforeContent %}
+  {% if (data['numberOfRegistrations'] == "3") %}
+    {{ govukBackLink({
+      text: "Back to your registrations",
+      href: "/registration-status/multiple-registrations"
+    }) }}
+  {% endif %}
+{% endblock %}
+
 {% block pageTitle %}
   Registration status
 {% endblock %}
@@ -205,19 +214,13 @@
   {% endif %}
 {% endset %}
 
-{% set successHTML %}
-  <h3 class="govuk-notification-banner__heading">
-    Registration successfully submitted
-  </h3>
-  <p class="govuk-body">You should have received an email outlining the next steps.</p>
-{% endset %}
-
 {% block content %}
-
-  {{ govukNotificationBanner({
-    html: successHTML,
-    type: 'success'
-  }) }}
+  {% if (data['submittedNow'] == "True") %}
+    {{ govukNotificationBanner({
+      html: successHTML,
+      type: 'success'
+    }) }}
+  {% endif %}
 
   <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
 
