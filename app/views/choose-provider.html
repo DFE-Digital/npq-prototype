@@ -52,6 +52,42 @@
               }
             ]
           }) }}
+        {% elseif (data['choosenpq'] == "Special educational needs co-ordinator (SENCO)")%}
+          {{ govukRadios({
+            name: "provider",
+            id: "provider",
+            fieldset: {
+            },
+            hint: {
+              text: "Select one of the providers offering your chosen course."
+            },
+            items: [
+              {
+                value: "Ambition Institute",
+                text: "Ambition Institute"
+              },
+              {
+                value: "Best Practice Network",
+                text: "Best Practice Network"
+              },
+              {
+                value: "Church of England",
+                text: "Church of England"
+              },
+              {
+                value: "National Institute of Teaching",
+                text: "National Institute of Teaching"
+              },
+              {
+                value: "Teach First",
+                text: "Teach First"
+              },
+              {
+                value: "UCL Institute of Education",
+                text: "UCL Institute of Education"
+              }
+            ]
+          }) }}
         {% else %}
           {{ govukRadios({
             name: "provider",
@@ -67,8 +103,8 @@
                 text: "Ambition Institute"
               },
               {
-                value: "Best Practice Network (home of Outstanding Leaders Partnership)",
-                text: "Best Practice Network (home of Outstanding Leaders Partnership)"
+                value: "Best Practice Network",
+                text: "Best Practice Network"
               },
               {
                 value: "Church of England",
