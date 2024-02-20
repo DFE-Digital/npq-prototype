@@ -13,8 +13,12 @@
 {% endblock %}
 
 {% block content %}
+  <!-- SENCO NPQ -->
+  {% if data['choosenpq'] == "Special educational needs co-ordinator (SENCO)" %}
+    {% include 'includes/answers/senco.html' %}  
+
   <!-- Maths NPQ -->
-  {% if data['choosenpq'] == "Leading primary mathematics" %}
+  {% elseif data['choosenpq'] == "Leading primary mathematics" %}
     {% include 'includes/answers/maths.html' %}
 
   <!-- EHCO not funded -->

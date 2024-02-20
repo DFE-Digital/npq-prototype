@@ -101,8 +101,12 @@ router.post('/check-data/_funding-check', function(req, res){
   npqt = req.session.data['choosenpq']
   whichschoolt = req.session.data['whichschool']
   
+  // Selects SENCO
+  if(npqt == 'Special educational needs co-ordinator (SENCO)'){
+    res.redirect('/senco/senco-in-role')
+  }
   // Selects Maths
-  if(npqt == 'Leading primary mathematics'){
+  else if(npqt == 'Leading primary mathematics'){
     res.redirect('/maths/maths-eligibility-teaching-for-mastery')
   }
   // Selects EHCO
@@ -296,6 +300,100 @@ router.post('/maths-other-outcome', function(req, res){
         res.redirect('/funding/funding-eligible-maths')
       }
       // Private nursery
+      else {
+        res.redirect('/funding/funding-not-available-setting')
+      }
+    }
+  }
+  // Outside of England
+  else {
+    res.redirect('/funding/funding-not-available-england')
+  }
+})
+
+// Senco funding outcome - eligibility rules the same
+
+// SENCO in role - asks start date question
+router.post('/senco-role', function (req, res){
+  sencoinrole = req.session.data['sencoinrole']
+  npqt = req.session.data['choosenpq']
+  whichschoolt = req.session.data['whichschool']
+  
+  if (sencoinrole == 'Yes') {
+    res.redirect('/senco/senco-start-date')
+  } else {
+    // Works in England
+    if(locationt == 'Yes'){
+      // Works in a school setting or a state-funded nursery?
+      if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+        // Private school
+        if(whichschoolt == 'private' || whichschoolt =='Private'){
+          res.redirect('/funding/funding-not-available-setting')
+        }
+        else {
+          res.redirect('/funding/funding-eligible')
+        }
+      } 
+      // Other
+      else if(settingt == 'Other'){
+        // Is a mentor?
+        if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+          res.redirect('/funding/funding-not-available-lead-mentor')
+        }
+        else {
+          res.redirect('/funding/edge-case')
+        }
+      }
+      // Private nursery, with URN + NPQEYL
+      else if(settingt == 'Early years or childcare'){
+        if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
+          res.redirect('/funding/funding-eligible')
+        }
+        // Private nursery, no URN
+        else {
+          res.redirect('/funding/funding-not-available-setting')
+        }
+      }
+    }
+    // Outside of England
+    else {
+      res.redirect('/funding/funding-not-available-england')
+    }
+  }
+})
+
+router.post('/check-data/_senco-funding-check', function(req, res){
+  npqt = req.session.data['choosenpq']
+  whichschoolt = req.session.data['whichschool']
+  
+  // Works in England
+  if(locationt == 'Yes'){
+    // Works in a school setting or a state-funded nursery?
+    if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      // Private school
+      if(whichschoolt == 'private' || whichschoolt =='Private'){
+        res.redirect('/funding/funding-not-available-setting')
+      }
+      else {
+        res.redirect('/funding/funding-eligible')
+      }
+    } 
+    // Other
+    else if(settingt == 'Other'){
+      // Is a mentor?
+      if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+        res.redirect('/funding/funding-not-available-lead-mentor')
+      }
+      else {
+        res.redirect('/funding/edge-case')
+      }
+    }
+    // Private nursery, with URN + NPQEYL
+    else if(settingt == 'Early years or childcare'){
+      if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
+        res.redirect('/funding/funding-eligible')
+      }
+      // Private nursery, no URN
       else {
         res.redirect('/funding/funding-not-available-setting')
       }
