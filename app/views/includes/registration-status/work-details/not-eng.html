@@ -19,10 +19,8 @@
 {% set sencoHtml %}
   {% if data['sencoinrole'] == "Yes" %}
     {{ data['sencoinrole'] }} – since {{ data['sencostart-month'] | monthName }} {{ data['sencostart-year'] }}
-    {% elseif data['sencofuture'] == "Yes" %}
-      {{ data['sencoinrole'] }} – but intending to be in the next 18 months
     {% else %}
-      {{ data['sencoinrole'] }} – and not intending to be in the next 18 months
+      {{ data['sencoinrole'] }}
   {% endif %}
 {% endset %}
 
@@ -70,7 +68,7 @@
     } if data['choosenpq'] == "Leading primary mathematics",
     {
       key: {
-        text: "Currently a special educational needs co-ordinator (SENCO)"
+        text: "Special educational needs co-ordinator (SENCO)"
       },
       value: {
         html: sencoHtml

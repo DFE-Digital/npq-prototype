@@ -85,15 +85,13 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Currently a special educational needs co-ordinator (SENCO)
+              Special educational needs co-ordinator (SENCO)
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['sencoinrole'] == "Yes" %}
                 {{ data['sencoinrole'] }} – since {{ data['sencostart-month'] | monthName }} {{ data['sencostart-year'] }}
-                {% elseif data['sencofuture'] == "Yes" %}
-                  {{ data['sencoinrole'] }} – but intending to be in the next 18 months
                 {% else %}
-                  {{ data['sencoinrole'] }} – and not intending to be in the next 18 months
+                  {{ data['sencoinrole'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
