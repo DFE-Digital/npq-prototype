@@ -2,18 +2,33 @@ const _ = require('lodash')
 
 module.exports = router => {
 
-  // NPQ create account
+  // Redirect from Identity prototype - NPQ create account
    router.get('/user-research/npq/new-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    res.redirect('/course-start')
+    data.closedEoi = 'True'
+    data.closedSignin = 'True'
+
+    if (closedEoi === 'True') {
+      res.redirect('/registration-status/registration-opening-email-confirmation')
+    } else if (closedSignin === 'True') {
+      res.redirect('/registration-status')
+    } else {
+      res.redirect('/course-start')
+    }  
   })
 
-  // NPQ create account
+  // Redirect from Identity prototype - NPQ show account
    router.get('/user-research/npq/existing-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    res.redirect('/registration-status/registration-status')
+    data.closedEoi = 'True'
+
+    if (closedEoi === 'True') {
+      res.redirect('/registration-status/registration-opening-email-confirmation')
+    } else {
+      res.redirect('/registration-status')
+    }
   })
 
   router.get('/auth/return-to-service', (req, res) => {
@@ -27,8 +42,9 @@ module.exports = router => {
     res.redirect('/registration-status/registration-status')
   })
 
+
   // -----------------
-  //  Closed states 
+  //  Set closed states 
   // -----------------
 
   // Closed state - partial
@@ -68,7 +84,7 @@ module.exports = router => {
   router.get('/closed-eoi', (req, res) => {
     const data = req.session.data
     data.closedEoi = 'True'
-    res.redirect('/closed/signed-in-dfe-identity')
+    res.redirect('https://get-an-identity-prototype.herokuapp.com/user-research/npq/id')
   })
 
   // Closed state - sign in  
@@ -76,19 +92,7 @@ module.exports = router => {
     const data = req.session.data
     data.closedSignin = 'True'
     data.closedEoi = ''
-    res.redirect('/closed/signed-in-dfe-identity')
-  })
-
-  // DfE account redirect to NPQ 
-  router.get('/identity-redirect-npq', function (req, res) {
-
-    let closedEoi = req.session.data.closedEoi
-  
-    if (closedEoi === 'True') {
-        res.redirect('/registration-status/registration-opening-email-confirmation')
-      } else {
-        res.redirect('/registration-status')
-    }
+    res.redirect('https://get-an-identity-prototype.herokuapp.com/user-research/npq/id')
   })
 
   // -----------------
