@@ -6,29 +6,32 @@ module.exports = router => {
    router.get('/user-research/npq/new-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    data.closedEoi = 'True'
-    data.closedSignin = 'True'
-
-    if (closedEoi === 'True') {
-      res.redirect('/registration-status/registration-opening-email-confirmation')
-    } else if (closedSignin === 'True') {
-      res.redirect('/registration-status')
-    } else {
-      res.redirect('/course-start')
-    }  
+    res.redirect('/course-start') 
   })
 
   // Redirect from Identity prototype - NPQ show account
    router.get('/user-research/npq/existing-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    data.closedEoi = 'True'
+    res.redirect('/registration-status/registration-status')
+  })
 
-    if (closedEoi === 'True') {
-      res.redirect('/registration-status/registration-opening-email-confirmation')
-    } else {
-      res.redirect('/registration-status')
-    }
+  // Redirect from Identity prototype - Closed state - sign up to email  
+  router.get('/user-research/npq/closed-eoi', (req, res) => {
+    const data = req.session.data
+    data.signedIn = 'true'
+    data.closedState = 'Partial'
+    data.closedEoi = 'True'
+    res.redirect('/registration-status/registration-opening-email-confirmation')
+  })
+
+  // Redirect from Identity prototype - Closed state - sign in  
+  router.get('/user-research/npq/closed-signin', (req, res) => {
+    const data = req.session.data
+    data.signedIn = 'true'
+    data.closedState = 'Partial'
+    data.closedSignin = 'True'
+    res.redirect('/registration-status/registration-status')
   })
 
   router.get('/auth/return-to-service', (req, res) => {
@@ -78,21 +81,6 @@ module.exports = router => {
       } else {
         res.redirect('/registrations-closed')
     }
-  })
-
-  // Closed state - sign up to email  
-  router.get('/closed-eoi', (req, res) => {
-    const data = req.session.data
-    data.closedEoi = 'True'
-    res.redirect('https://get-an-identity-prototype.herokuapp.com/user-research/npq/id')
-  })
-
-  // Closed state - sign in  
-  router.get('/closed-signin', (req, res) => {
-    const data = req.session.data
-    data.closedSignin = 'True'
-    data.closedEoi = ''
-    res.redirect('https://get-an-identity-prototype.herokuapp.com/user-research/npq/id')
   })
 
   // -----------------
