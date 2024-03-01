@@ -22,7 +22,7 @@ module.exports = router => {
     data.signedIn = 'true'
     data.closedState = 'Partial'
     data.closedEoi = 'True'
-    res.redirect('/registration-status/registration-opening-email-confirmation')
+    res.redirect('/closed/eoi-senco-interest')
   })
 
   // Redirect from Identity prototype - Closed state - sign in  
