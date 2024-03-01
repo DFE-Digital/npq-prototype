@@ -20,13 +20,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Request an email to tell you when registration reopens</h1>
-    <p class="govuk-body govuk-!-margin-bottom-8">Registration usually reopens in the summer. When registration reopens, use this service to register for a NPQ or the early headship coaching offer starting before November 2024. </p>
+
     <form class="form" action="/registration-status/registration-opening-email-confirmation" method="post">
       {{ govukRadios({
         name: "eoi-senco",
         fieldset: {
           legend: {
-            text: "Do you want to do the Special educational needs co-ordinator (SENCO) NPQ?",
+            text: "Do you want to complete the special educational needs co-ordinator (SENCO) NPQ when registration reopens?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -44,7 +44,7 @@
       }) }}
 
       {{ govukButton({
-        text: "Create email alert"
+        text: "Request email"
       }) }}
     </form>
 
