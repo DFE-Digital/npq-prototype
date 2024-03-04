@@ -16,8 +16,9 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sharing your registration information</h1>
-    <p>The information you have shared through this registration form will be shared with your provider. Your provider needs this information to enable you to apply. </p>
+    <h1 class="govuk-heading-xl">Sharing your NPQ information</h1>
+    <p>All the information you enter for your NPQ application will be shared with your training provider - this lets your provider register the details to start your course. </p>
+    <p>If you do not share this, you cannot progress with your NPQ.</p>
     <form class="form" action="check-answers" method="post">
       {{ govukCheckboxes({
         name: "sharedata",
@@ -26,7 +27,7 @@
         items: [
           {
             value: "yes",
-            text: "My registration information can be shared with my provider"
+            text: "Yes, I agree my information can be shared"
           }
         ]
       }) }}
