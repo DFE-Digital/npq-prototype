@@ -20,13 +20,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Request an email to tell you when registration reopens</h1>
-
+    
+    {{ govukInsetText({
+      html: 'We may also contact you to provide further details about NPQ courses.'
+    }) }}
+    
     <form class="form" action="/registration-status/registration-opening-email-confirmation" method="post">
       {{ govukRadios({
         name: "eoi-senco",
         fieldset: {
           legend: {
-            text: "Do you want to complete the special educational needs co-ordinator (SENCO) NPQ when registration reopens?",
+            text: "Do you want to register for the special educational needs co-ordinator (SENCO) NPQ when registration reopens?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -38,7 +42,7 @@
           },
           {
             value: "no",
-            text: "No"
+            text: "No, I want to do a different NPQ"
           }
         ]
       }) }}
