@@ -19,14 +19,14 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Request an email to tell you when registration reopens</h1>
-
+    <h1 class="govuk-heading-xl">Request email updates about registration reopening</h1>
+    
     <form class="form" action="/registration-status/registration-opening-email-confirmation" method="post">
       {{ govukRadios({
         name: "eoi-senco",
         fieldset: {
           legend: {
-            text: "Do you want to complete the special educational needs co-ordinator (SENCO) NPQ when registration reopens?",
+            text: "Do you want to register for the special educational needs co-ordinator (SENCO) NPQ when registration reopens?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -38,13 +38,15 @@
           },
           {
             value: "no",
-            text: "No"
+            text: "No, I want to do a different NPQ"
           }
         ]
       }) }}
 
+      <p>By requesting email updates, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers#NPQ">privacy notice</a>.</p>
+
       {{ govukButton({
-        text: "Request email"
+        text: "Request email updates"
       }) }}
     </form>
 
