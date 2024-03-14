@@ -231,7 +231,7 @@ router.post('/maths-mastery-outcome', function(req, res){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
       if((whichschoolt != 'private' || whichschoolt !='Private')){
-        res.redirect('/funding/funding-eligible-maths')
+        res.redirect('/funding/funding-eligible')
       }
       // Private school
       else {
@@ -277,7 +277,7 @@ router.post('/maths-other-outcome', function(req, res){
     // Works in a school setting or a state-funded nursery?
     if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
       if((whichschoolt != 'private' || whichschoolt !='Private')){
-        res.redirect('/funding/funding-eligible-maths')
+        res.redirect('/funding/funding-eligible')
       }
       // Private school
       else {
@@ -297,7 +297,7 @@ router.post('/maths-other-outcome', function(req, res){
     // Private nursery, with URN + NPQEYL
     else if(settingt == 'Early years or childcare'){
       if (nurserysettingt == "Local authority-maintained nursery" || nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)') {
-        res.redirect('/funding/funding-eligible-maths')
+        res.redirect('/funding/funding-eligible')
       }
       // Private nursery
       else {

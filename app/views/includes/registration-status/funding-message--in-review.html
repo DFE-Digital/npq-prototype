@@ -1,0 +1,37 @@
+{% if (data['choosenpq'] != "Early headship coaching offer") %}
+  <p>Contact {{ data['provider'] or "Teacher Development Trust" }} to check if you're eligible for scholarship funding and that they can offer you a scholarship funded space, if you have not done so already.</p>
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What if no funded spaces are available with my chosen provider?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-!-margin-bottom-0">You can:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>register with this provider again at a later date (courses are run twice a year)</li>
+      <li>register with a different provider</li>
+      <li>explore other payment options, including paying for the course yourself or checking if your workplace or trust can cover the cost</li>
+    </ul>
+    </div>
+  </details>
+  {% else %}
+    <p>Contact {{ data['provider'] or "Teacher Development Trust" }} to check if you're eligible for scholarship funding and that they can offer you a scholarship funded space, if you have not done so already.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What if no funded spaces are available with my chosen provider?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-!-margin-bottom-0">You can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>register with this provider again at a later date (the Early headship coaching offer is available year-round)</li>
+        <li>register with a different provider</li>
+        <li>explore other payment options, including paying for the course yourself or checking if your workplace or trust can cover the cost</li>
+      </ul>
+      </div>
+    </details>
+  {% endif %}

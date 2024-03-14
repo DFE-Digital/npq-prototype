@@ -19,7 +19,31 @@
   <p>Before November 2024</p>
   <p>If your provider does not confirm you've started the course before November 2024, your registration will expire. You can register again later, but your funding may change.</p>
 {% endset %}
-            
+
+{% set fundingHTML %}
+  <strong class="govuk-tag govuk-tag--green">
+    Eligible
+  </strong>
+  <p class="govuk-!-margin-top-2">This means that if Ambition Institute confirms that you have a scholarship funded space, you will not need to pay for the course fees.</p>
+  <p>Contact Ambition Institute to check if they can offer you a scholarship funded space, if you have not done so already.</p>
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What if no funded spaces are available with my chosen provider?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-!-margin-bottom-0">You can:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>register with this provider again at a later date (courses are run twice a year, except for the Early headship coaching offer which varies by provider and is available year-round)</li>
+      <li>register with a different provider</li>
+      <li>explore other payment options, including paying for the course yourself or checking if your workplace or trust can cover the cost</li>
+    </ul>
+    </div>
+  </details>
+{% endset %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted	11 July 2024</span>
   <h1 class="govuk-heading-xl">
@@ -99,11 +123,7 @@
           text: "Scholarship funding"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Eligible
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You will not have to pay for the course fees.</p>'
+          html: fundingHTML
         }
       }
     ]
