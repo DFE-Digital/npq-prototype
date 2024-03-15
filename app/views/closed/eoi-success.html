@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% set panelHTML %}
-  <p><span class="govuk-colour-white">We'll send an email to <strong>{{ data['eoi-email'] }}</strong> when registration opens.</span></p>
+  <p><span class="govuk-colour-white">We'll send email updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> about registration opening.</p>
 {% endset %}
 
 {% block content %}

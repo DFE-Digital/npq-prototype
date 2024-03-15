@@ -2,8 +2,6 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% set signedIn = 'true' %}
 
-
-
 {% block pageTitle %}
   Do you or your employer have an Ofsted unique reference number (URN)?
 {% endblock %}
@@ -15,18 +13,26 @@
 }) }}
 {% endblock %}
 
+{% set urnhelpHTML %}
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        I need help with this
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>You can <a href="https://reports.ofsted.gov.uk/childcare">search the public Ofsted register (opens in a new tab)</a> to find a URN.</p>
+      <p>If your employer is registered with Ofsted or you're registered with a childminder agency (CMA), you can use their URN.</p>
+      <p>If you are a nanny or a childminder you may not be listed on the public Ofsted register. You will need to check your email or registration certificate to find your URN.</p>
+      <p>If you or your employer have not registered with Ofsted then you will not have a URN.</p>
+    </div>
+  </details>
+{% endset %}
+
 {% block content %}
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Ofsted unique reference number</h1>
-
-    <p>We need to know whether you or your employer has an Ofsted unique reference number, as this affects your funding eligibility.</p>
-
-    <p><a href="https://reports.ofsted.gov.uk/childcare">Check if your workplace is registered with Ofsted and get their unique reference number</a>.</p>
-
-    <p class="govuk-body govuk-!-margin-bottom-7">If you’re a nanny or a childminder, check your registration certificate to see if you have an Ofsted unique reference number.</p>
-
 
     <form class="form" action="find-early-years" method="post">
       {{ govukRadios({
@@ -34,10 +40,13 @@
         id: "haveurn",
         fieldset: {
           legend: {
-            text: "Do you or your employer have an Ofsted unique reference number?",
+            text: "Do you or your employer have an Ofsted unique reference number (URN)?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl"
           }
+        },
+        hint: {
+          html: urnhelpHTML
         },
         items: [
           {
