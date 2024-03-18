@@ -17,8 +17,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Sharing your NPQ information</h1>
-    <p>All the information you enter for your NPQ application will be shared with your training provider - this lets your provider register the details to start your course. </p>
-    <p>If you do not share this, you cannot progress with your NPQ.</p>
+    <p>All the information you enter for your NPQ registration will be shared with external organisations including auditors, evaluators, relevant bodies and training providers – this allows your provider to register you onto their course. </p>
+    <p>For more information about who we share your data with read our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers#NPQ">privacy notice</a>. </p>
+    <p>If you do not agree to share your information you will not be able to progress with your NPQ.</p>
     <form class="form" action="check-answers" method="post">
       {{ govukCheckboxes({
         name: "sharedata",
@@ -27,7 +28,7 @@
         items: [
           {
             value: "yes",
-            text: "Yes, I agree my information can be shared"
+            text: "Yes, I agree to share my information"
           }
         ]
       }) }}
