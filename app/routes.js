@@ -46,8 +46,10 @@ router.post('/where-school', function (req, res) {
   if (locationt == "Yes"){
     if (settingt == "Early years or childcare") {
       res.redirect('/eyll/nursery-type')
-    } else if (settingt =='Other'){
+    } else if (settingt == "Other"){
       res.redirect('/other/employment')
+    } else if (settingt == "Returning to teaching"){
+      res.redirect('/return-to-teach-advisory-service')
     }
     else{
       res.redirect('/where-school')
@@ -137,6 +139,12 @@ router.post('/check-data/_funding-check', function(req, res){
           res.redirect('/funding/funding-not-available-lead-mentor')
         }
       }
+      else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
+        res.redirect('/funding/funding-eligible')
+      }
+      else if (mentort == 'Other'){
+        res.redirect('/funding/funding-not-available-setting')
+      }
       else {
         res.redirect('/funding/edge-case')
       }
@@ -206,8 +214,15 @@ router.post('/funding/ehco-funded', function(req, res){
       } else if(settingt == 'Other'){
         if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
           res.redirect('/funding/ehco-not-funded')
-        } else {
-          res.redirect('/choose-provider')
+        } 
+        else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
+          res.redirect('/funding/funding-eligible')
+        }
+        else if (mentort == 'Other'){
+          res.redirect('/funding/ehco-not-funded')
+        }
+        else {
+          res.redirect('/funding/edge-case')
         }
       }
       else {
@@ -243,6 +258,12 @@ router.post('/maths-mastery-outcome', function(req, res){
       // Is a mentor?
       if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
         res.redirect('/funding/funding-not-available-lead-mentor')
+      }
+      else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
+        res.redirect('/funding/funding-eligible')
+      }
+      else if (mentort == 'Other'){
+        res.redirect('/funding/funding-not-available-setting')
       }
       else {
         res.redirect('/funding/edge-case')
@@ -289,6 +310,12 @@ router.post('/maths-other-outcome', function(req, res){
       // Is a mentor?
       if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
         res.redirect('/funding/funding-not-available-lead-mentor')
+      }
+      else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
+        res.redirect('/funding/funding-eligible')
+      }
+      else if (mentort == 'Other'){
+        res.redirect('/funding/funding-not-available-setting')
       }
       else {
         res.redirect('/funding/edge-case')
@@ -340,6 +367,12 @@ router.post('/senco-role', function (req, res){
         if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
           res.redirect('/funding/funding-not-available-lead-mentor')
         }
+        else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
+          res.redirect('/funding/funding-eligible')
+        }
+        else if (mentort == 'Other'){
+          res.redirect('/funding/funding-not-available-setting')
+        }
         else {
           res.redirect('/funding/edge-case')
         }
@@ -383,6 +416,12 @@ router.post('/check-data/_senco-funding-check', function(req, res){
       // Is a mentor?
       if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
         res.redirect('/funding/funding-not-available-lead-mentor')
+      }
+      else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
+        res.redirect('/funding/funding-eligible')
+      }
+      else if (mentort == 'Other'){
+        res.redirect('/funding/funding-not-available-setting')
       }
       else {
         res.redirect('/funding/edge-case')
