@@ -22,7 +22,7 @@
 
 {% set sencoHtml %}
   {% if data['sencoinrole'] == "Yes" %}
-    {{ data['sencoinrole'] }} – since {{ data['sencostart-month'] | monthName }} {{ data['sencostart-year'] }}
+  {{ data['sencoinrole'] }} – since {{ data['sencostart-month'] | monthName or 'December'}} {{ data['sencostart-year'] or '2023'}}
     {% else %}
       {{ data['sencoinrole'] }}
   {% endif %}
@@ -46,6 +46,14 @@
     } if courseOutcome != "Started"
   },
   rows: [
+    {
+      key: {
+        text: "Referred by return to teaching adviser"
+      },
+      value: {
+        text: data['teachadvisory'] or 'No'
+      }
+    },
     {
       key: {
         text: "Workplace in England"

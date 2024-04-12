@@ -18,7 +18,7 @@
   {% if (data['choosenpq'] == "Early headship coaching offer") %}
     Early headship coaching offer
     {% else %}
-      {{ data['choosenpq'] or "Executive leadership" }} NPQ
+      {{ data['choosenpq'] or "Headship" }} NPQ
   {% endif %}
 {% endset %}
 
@@ -140,7 +140,7 @@
     ]
   }) }}
 
-  {% include 'includes/registration-status/work-details/other.html' %}
+  {% include 'includes/registration-status/work-details/other-local-authority.html' %}
 
   {% include 'includes/registration-status/register-for-another-npq.html' %}
 

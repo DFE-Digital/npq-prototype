@@ -1,9 +1,9 @@
 {% set englandHtml %}
-  {{ data['wheredoyouwork'] or 'No' }}
+  {{ data['wheredoyouwork'] or 'Yes' }}
 {% endset %}
 
-{% set workSettingHtml %}
-  {{ data['whichsetting'] or 'A school' }}
+{% set returnTeacherHtml %}
+  {{ data['teachadvisory'] or 'Yes' }}
 {% endset %}
 
 {% set mathsHtml %}
@@ -47,7 +47,7 @@
         text: "Referred by return to teaching adviser"
       },
       value: {
-        text: data['teachadvisory'] or 'No'
+        html: returnTeacherHtml
       }
     },
     {
@@ -58,14 +58,6 @@
         html: englandHtml
       }
     },
-    {
-      key: {
-        text: "Work setting"
-      },
-      value: {
-        html: workSettingHtml
-      } 
-    } if data['teachadvisory'] == "No",
     {
       key: {
         text: "Completed one year of the primary maths Teaching for Mastery programme"
