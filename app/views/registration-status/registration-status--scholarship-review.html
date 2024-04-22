@@ -31,6 +31,10 @@
   <p>If your provider does not confirm you've started the course before November 2024, your registration will expire. You can register again later, but your funding may change.</p>
 {% endset %}
 
+{% set personaldetailsHTML %}
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+{% endset %}
+
 {% set scholarshipfundingHtml %}
   <p>Contact LLSE to check if you're eligible for scholarship funding and that they can offer you a scholarship funded space, if you have not done so already.</p>
 
@@ -135,6 +139,25 @@
         },
         value: {
           html: scholarshipfundingHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          classes: "display-none"
+        },
+        value: {
+          html: personaldetailsHTML,
+          classes: "govuk-!-width-full-width"
         }
       }
     ]

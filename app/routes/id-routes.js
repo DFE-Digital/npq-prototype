@@ -76,10 +76,12 @@ module.exports = router => {
 
     let closedState = req.session.data.closedState
   
-    if (closedState === '') {
-        res.redirect('/course-start')
-      } else {
+    if (closedState === 'full') {
+        res.redirect('/start-id')
+      } else if (closedState === 'partial'){
         res.redirect('/registrations-closed')
+      } else {
+      res.redirect('/course-start')
     }
   })
 

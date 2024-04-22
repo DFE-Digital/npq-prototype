@@ -38,6 +38,10 @@
   {% endif %}
 {% endset %}
 
+{% set personaldetailsHTML %}
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+{% endset %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted	10 April 2021</span>
   <h1 class="govuk-heading-xl">
@@ -110,6 +114,25 @@
         },
         value: {
           html: courseFundingHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          classes: "display-none"
+        },
+        value: {
+          html: personaldetailsHTML,
+          classes: "govuk-!-width-full-width"
         }
       }
     ]
