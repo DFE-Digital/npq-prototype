@@ -59,7 +59,7 @@ router.post('/where-school', function (req, res) {
   }
 })
 
-// Have you been referred to this service by a return to teaching adviser?
+// Did a return to teaching adviser refer you to this service?
 router.post('/route-what-setting', function(req, res){
   var teachadvisoryt = req.session.data['teachadvisory']
 
@@ -272,7 +272,7 @@ router.post('/funding/ehco-funded', function(req, res){
         else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
           res.redirect('/funding/funding-eligible')
         }
-        else if (mentort == 'In a virtual school (local authority run organisations that support the education of children in care)' || mentort == 'As a supply teacher employed by a local authority'){
+        else if (mentort == 'In a virtual school (local authority run organisations that support the education of children in care)' || mentort == 'As a teacher employed by a local authority to teach in more than one school'){
           res.redirect('/funding/edge-case')
         }
         else if (mentort == 'Other'){
@@ -329,7 +329,7 @@ router.post('/maths-mastery-outcome', function(req, res){
       else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
         res.redirect('/funding/funding-eligible')
       }
-      else if (mentort == "In a virtual school (local authority run organisations that support the education of children in care)" || mentort == "As a supply teacher employed by a local authority"){
+      else if (mentort == "In a virtual school (local authority run organisations that support the education of children in care)" || mentort == "As a teacher employed by a local authority to teach in more than one school"){
         res.redirect('/funding/edge-case')
       }
       else if (mentort == 'Other'){

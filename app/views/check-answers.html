@@ -57,7 +57,7 @@
   <!-- Other setting AND virtual school OR supply teacher -->
     <!-- Goes to review. Funded for Maths, SENCO, Headship, EHCO -->
     <!-- EHCO not funded if -->
-  {% elseif (data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a supply teacher employed by a local authority") %}
+  {% elseif (data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a teacher employed by a local authority to teach in more than one school") %}
     {% include 'includes/answers/other-local-authority.html' %}
 
   <!-- Other setting AND hospital school OR young offender institution -->
