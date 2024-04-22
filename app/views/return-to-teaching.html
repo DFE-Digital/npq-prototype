@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Did a return to teaching adviser refer you to this service? 
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set returnteachingHTML %}
+  <details class="govuk-details govuk-!-margin-top-4">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What is a return to teaching adviser?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>This is a one-to-one service where an adviser supports you with:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>finding and applying for teaching vacancies</li>
+        <li>accessing courses to enhance your subject knowledge or teaching practice</li>
+      </ul>
+    </div>
+  </details>
+{% endset %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="where-do-you-work" method="post">
+      {{ govukRadios({
+        name: "teachadvisory",
+        id: "teachadvisory",
+        fieldset: {
+          legend: {
+            text: "Did a return to teaching adviser refer you to this service?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: returnteachingHTML
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

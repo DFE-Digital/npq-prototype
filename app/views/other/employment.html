@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set signedIn = 'true' %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
@@ -41,8 +42,8 @@
             text: "In a young offender institution"
           },
           {
-            value: "As a supply teacher employed by a local authority",
-            text: "As a supply teacher employed by a local authority"
+            value: "As a teacher employed by a local authority to teach in more than one school",
+            text: "As a teacher employed by a local authority to teach in more than one school"
           },
           {
             value: "As a lead mentor for an accredited initial teacher training (ITT) provider",

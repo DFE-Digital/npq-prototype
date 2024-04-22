@@ -18,14 +18,8 @@
       <h1 class="govuk-heading-xl">
         Funding 
       </h1>
-
-      <!-- Private school -->
-      {% if (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
-        <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ as you do not work in one of the eligible settings, such as state-funded schools.</p>
-        <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
-        
-        <!-- Early years + no OFSTED-->
-        {% elseif data['haveurn'] == "No" %}
+      <!-- Early years + no OFSTED-->
+      {% if data['haveurn'] == "No" %}
           <p>You’re not eligible for scholarship funding for the Early years leadership NPQ because you or your employer is not registered on the Ofsted Early Years Register or with a registered Childminder Agency.</p>
           <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
 
@@ -37,21 +31,13 @@
           <p class="govuk-body govuk-!-margin-bottom-7">You can <a href="/choose-npq.html">go back and select the Early years leadership NPQ</a> instead.</p>
 
         {% else %}
-          <p>To be eligible for scholarship funding for the <strong>{{ data['choosenpq'] or 'Leading literacy NPQ' }}</strong> you must work in one of these settings in England:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>state-funded schools or trusts</li>
-            <li>state-funded 16 to 19 organisations</li>
-            <li>independent special schools</li>
-            <li>virtual schools</li>
-            <li>hospital schools</li>
-            <li>young offender institutions</li>
-          </ul>
-          <p>You can still register for {{ data['choosenpq'] or 'Leading literacy NPQ' }}, but you need to pay for it another way. Contact your course provider to discuss your funding options.</p>
+          <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ as you do not work in one of the eligible settings, such as state-funded schools.</p>
+          <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
       {% endif %}
 
       {{ govukButton({
         text: "Continue",
-        href: "how-pay"
+        href: "how-pay?referrer=not-funded"
       }) }}
     </div>
   </div>

@@ -177,20 +177,38 @@
             </div>
           {% endif %}
 
-          <!-- not funded for any -->
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Course funding
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['payment']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/funding/how-pay">
-                Change<span class="govuk-visually-hidden"> course funding</span>
-              </a>
-            </dd>
-          </div>
+          <!-- Not funded if not doing maths, SENCO, Headship or EHCO -->
+          {% if ((data['choosenpq'] != "Leading primary mathematics") and (data['choosenpq'] != "Headship") and (data['choosenpq'] != "Special educational needs co-ordinator (SENCO)") and (data['choosenpq'] != "Early headship coaching offer")) %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course funding
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['payment']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/funding/how-pay">
+                  Change<span class="govuk-visually-hidden"> course funding</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+          <!-- EHCO not funded if -->
+          {% if ((data['choosenpq'] == "Early headship coaching offer") and (data['headteachers'] == 'No')) or ((data['choosenpq'] == "Early headship coaching offer") and (data['earlyheadship'] == 'No')) %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course funding
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['payment'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/funding/how-pay">
+                  Change<span class="govuk-visually-hidden"> course funding</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">

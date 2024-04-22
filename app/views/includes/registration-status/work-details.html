@@ -1,6 +1,10 @@
 
+  <!-- Return to teaching -->
+  {% if (data['teachadvisory'] == "Yes") %}
+    {% include 'includes/registration-status/work-details/return-teaching-adviser.html' %}
+
   <!-- Private nursery with URN -->
-  {% if (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
+  {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
     {% include 'includes/registration-status/work-details/ey-funded.html' %}
 
   <!-- Not a nursery with URN -->

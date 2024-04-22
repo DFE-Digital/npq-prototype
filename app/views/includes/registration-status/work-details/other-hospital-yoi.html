@@ -1,9 +1,21 @@
 {% set englandHtml %}
-  {{ data['wheredoyouwork'] or 'No' }}
+  {{ data['wheredoyouwork'] or 'Yes' }}
 {% endset %}
 
 {% set workSettingHtml %}
-  {{ data['whichsetting'] or 'A school' }}
+  {{ data['whichsetting'] or 'Other' }}
+{% endset %}
+
+{% set employmentHtml%}
+  {{ data['mentor'] or 'In a hospital school' }}
+{% endset %}
+
+{% set roleHtml%}
+  {{ data['role'] or 'Administrator' }}
+{% endset %}
+
+{% set employerHtml%}
+  {{ data['employer'] or 'Essex County Council' }}
 {% endset %}
 
 {% set mathsHtml %}
@@ -65,7 +77,31 @@
       value: {
         html: workSettingHtml
       } 
-    } if data['teachadvisory'] == "No",
+    },
+    {
+      key: {
+        text: "Employment type"
+      },
+      value: {
+        html: employmentHtml
+      }
+    },
+    {
+      key: {
+        text: "Role"
+      },
+      value: {
+        html: roleHtml
+      }
+    },
+    {
+      key: {
+        text: "Employer"
+      },
+      value: {
+        html: employerHtml
+      }
+    },
     {
       key: {
         text: "Completed one year of the primary maths Teaching for Mastery programme"
