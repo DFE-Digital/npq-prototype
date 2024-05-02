@@ -80,6 +80,33 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['role'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/other/role">
+                Change<span class="govuk-visually-hidden"> role</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['employer'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/other/employer">Change<span class="govuk-visually-hidden"> workplace</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Course
             </dt>
             <dd class="govuk-summary-list__value">
