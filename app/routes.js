@@ -27,11 +27,21 @@ router.post('/chosen', function(req, res){
   }
 })
 
-router.post('/route-return-to-teaching', function(req, res){
+router.post('/route-where-do-you-work', function(req, res){
   var choosenpqprovidert = req.session.data['choosenpqprovider']
 
   if (choosenpqprovidert == 'no') {
     res.redirect('/choose-an-npq-and-provider')
+  } else {
+    res.redirect('/where-do-you-work')
+  }
+})
+
+router.post('/route-return-to-teaching', function(req, res){
+  var locationt = req.session.data['wheredoyouwork']
+
+  if (locationt == 'No') {
+    res.redirect('/what-setting')
   } else {
     res.redirect('/return-to-teaching')
   }

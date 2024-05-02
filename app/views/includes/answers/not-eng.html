@@ -22,20 +22,6 @@
               </a>
             </dd>
           </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Referred by return to teaching adviser
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['teachadvisory']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="return-to-teaching">
-                Change<span class="govuk-visually-hidden"> referral</span>
-              </a>
-            </dd>
-          </div>
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -50,6 +36,22 @@
               </a>
             </dd>
           </div>
+
+          {% if (data['wheredoyouwork'] == "Yes") %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Referred by return to teaching adviser
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['teachadvisory']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="return-to-teaching">
+                  Change<span class="govuk-visually-hidden"> referral</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
           {% if (data['teachadvisory'] == "No") %}
             <div class="govuk-summary-list__row">
