@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include 'admin-console/v1/includes/header.html' %}
+
+  {% include 'admin-console/v1/includes/primary-navigation.html' %}
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Lynne Howe</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Eligible for funding
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if (data['adminfunding2'] == "Yes") %}
+              {{govukTag({
+                text: "YES",
+                classes: "govuk-tag--green"
+              })}}
+
+              {% else %}
+
+              {{govukTag({
+                text: "NO",
+                classes: "govuk-tag--red"
+              })}}
+
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-text-align-right govuk-!-padding-right-5">
+            <p><a href="set-status">Edit</a></p>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Funding eligibility status code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['admincode2'] or "Awaiting more info"}}
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-text-align-right govuk-!-padding-right-5">
+            <p><a href="set-code">Edit</a></p>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Notes
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <p id="notes-display1">{{ data['notes2'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-text-align-right govuk-!-padding-right-5">
+            <p><a href="set-notes">Edit</a></p>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save changes",
+          href: 'applicant-success'
+        }) }}
+
+        <a class="govuk-link" href="applicant">Cancel</a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

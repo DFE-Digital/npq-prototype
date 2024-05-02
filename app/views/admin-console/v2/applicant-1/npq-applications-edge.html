@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include 'admin-console/v2/includes/header.html' %}
+  {% include 'admin-console/v2/includes/primary-navigation.html' %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukNotificationBanner({
+        text: "Annamaria Green's funding status has been updated successfully.",
+        type: 'success'
+      }) }}
+
+      {% include 'admin-console/v2/includes/npq-applications-edge-content.html' %}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

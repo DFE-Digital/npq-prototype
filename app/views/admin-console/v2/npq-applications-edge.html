@@ -1,0 +1,322 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'admin-console/v2/includes/header.html' %}
+  {% include 'admin-console/v2/includes/primary-navigation.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- {{ govukNotificationBanner({
+        text: "Carlton Shanahan JD's funding status has been updated successfully.",
+        type: 'success'
+      }) }} -->
+      <h1 class="govuk-heading-xl">NPQ registrations</h1>
+      {% include 'admin-console/v2/includes/secondary-navigation.html' %}
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-l">Search registrations with funding in review</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+          <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s">Enter the Participant ID, Name, Email, Employer name, or Application ID</label><input id="query-field" class="govuk-input" type="text" name="query"></div>
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity-status-code-field" class="govuk-label govuk-label--s">Review status</label><select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                <option value="funded">funded</option>
+                <option value="no_institution">no institution</option>
+                <option value="ineligible_establishment_type">ineligible establishment type</option>
+                <option value="ineligible_institution_type">ineligible institution type</option>
+                <option value="previously_funded">previously funded</option>
+                <option value="not_new_headteacher_requesting_ehco">not new headteacher requesting ehco</option>
+                <option value="school_outside_catchment">school outside catchment</option>
+                <option value="early_years_outside_catchment">early years outside catchment</option>
+                <option value="not_on_early_years_register">not on early years register</option>
+                <option value="early_years_invalid_npq">early years invalid npq</option>
+                <option value="marked_funded_by_policy">marked funded by policy</option>
+                <option value="marked_ineligible_by_policy">marked ineligible by policy</option></select>
+              </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Employment type</label><select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                <option value="hospital_school">Hospital school</option>
+                <option value="other">Other</option>
+                <option value="local_authority_virtual_school">Local authority virtual school</option>
+                <option value="young_offender_institution">Young offender institution</option>
+                <option value="local_authority_supply_teacher">Local authority supply teacher</option></select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+            <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Eligible for funding</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option></select>
+              </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Year of registration</label><select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                <option value="hospital_school">2024-25</option>
+                <option value="other">2023-24</option>
+                <option value="local_authority_virtual_school">2022-23</option>
+                <option value="young_offender_institution">Pre-2022</option></select>
+              </div>
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-top: 15px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+
+<table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Participant</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Review status</th>
+      
+      <th scope="col" class="govuk-table__header">Eligible for funding</th>
+      <th scope="col" class="govuk-table__header">Provider approval status</th>
+      <th scope="col" class="govuk-table__header">Notes</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Registration submitted date</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="/admin-console/v2/applicant-1/applicant">Annamaria Green</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Kent Council</p>
+      </td>
+      <td class="govuk-table__cell">
+        {% if (data['admincode1'] == "Funding outcome decided") %}
+          {{govukTag({
+            text: "Decision made",
+            classes: "govuk-tag--grey"
+          })}}
+        {% elseif (data['admincode1'] == "Needs to re-register") %}
+          {{govukTag({
+            text: "Re-register",
+            classes: "govuk-tag--grey"
+          })}}
+        {% elseif (data['admincode1'] == "In progress") %}
+          {{govukTag({
+            text: "In progress",
+            classes: "govuk-tag--light-blue"
+          })}}
+        {% elseif (data['admincode1'] == "Awaiting info") %}
+          {{govukTag({
+            text: "Awaiting info",
+            classes: "govuk-tag--yellow"
+          })}}
+        {% else %}
+          {{govukTag({
+            text: "New",
+            classes: "govuk-tag--green"
+          })}}
+        {% endif %}
+      </td>
+      
+      <td class="govuk-table__cell">
+        {% if (data['adminfunding1'] == "Yes") %}
+          {{govukTag({
+            text: "Yes",
+            classes: "govuk-tag--green"
+          })}}
+
+          {% elseif (data['adminfunding1'] == "No") %}
+
+          {{govukTag({
+            text: "No",
+            classes: "govuk-tag--red"
+          })}}
+          
+          {% else %}
+            –
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">–</td>
+      <td class="govuk-table__cell">21 Apr 2024<br> 2:30pm</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="/admin-console/v2/applicant-2/applicant">Lynne Howe</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">A1 school</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Awaiting information",
+          classes: "govuk-tag--yellow"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        {% if (data['adminfunding2'] == "Yes") %}
+          {{govukTag({
+            text: "Yes",
+            classes: "govuk-tag--green"
+          })}}
+
+          {% elseif (data['adminfunding2'] == "No") %}
+
+          {{govukTag({
+            text: "No",
+            classes: "govuk-tag--red"
+          })}}
+          
+          {% else %}
+            –
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">10/04: JD Requested more info on place of work and location... </td>
+      <td class="govuk-table__cell">8 Apr 2024<br> 3:45pm</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Colin Winter</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Deer River Institute</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "New",
+          classes: "govuk-tag--green"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        –
+      </td>
+      <td class="govuk-table__cell">Rejected</td>
+      <td class="govuk-table__cell">–</td>
+      <td class="govuk-table__cell">5 Apr 2024<br> 2:51pm</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="/admin-console/v2/applicant-3/applicant">Carlton Shanahan JD</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Decision made",
+          classes: "govuk-tag--grey"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "No",
+          classes: "govuk-tag--red"
+        })}}
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">15/04: NG sent email sent to user to confirm non-eligibility...</td>
+      <td class="govuk-table__cell">4 Apr 2024<br> 11:28am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="/admin-console/v2/applicant-3/applicant">Fareed Eilert</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "In progress",
+          classes: "govuk-tag--blue"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        –
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">05/04: BC Looks eligible. Meadows Ridge Academy is a virtual school.</td>
+      <td class="govuk-table__cell">3 Apr 2024<br> 2:32pm</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Aiga Villum</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "In progress",
+          classes: "govuk-tag--blue"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        –
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">05/04: AB Looks ineligible - in advisory role.</td>
+      <td class="govuk-table__cell">3 Apr 2024<br> 11:19am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Colin Winter</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Re-register",
+          classes: "govuk-tag--grey"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        –
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">05/04: RD: Reregister email sent (Digital #00000)...</td>
+      <td class="govuk-table__cell">3 Apr 2024<br> 10:02am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Shahira Donald</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Darwin School</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Awaiting information",
+          classes: "govuk-tag--yellow"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        –
+      </td>
+      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">–</td>
+      <td class="govuk-table__cell">2 Apr 2024<br> 1:21pm</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Bobby Small</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Decision made",
+          classes: "govuk-tag--grey"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+          {{govukTag({
+            text: "Yes",
+            classes: "govuk-tag--green"
+          })}}
+      </td>
+      <td class="govuk-table__cell">Approved</td>
+      <td class="govuk-table__cell">01/04: LP agree...</td>
+      <td class="govuk-table__cell">29 Mar 2024<br> 4:14pm</td>
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}
