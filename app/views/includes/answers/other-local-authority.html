@@ -19,20 +19,6 @@
               </a>
             </dd>
           </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Referred by return to teaching adviser
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['teachadvisory']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="return-to-teaching">
-                Change<span class="govuk-visually-hidden"> referral</span>
-              </a>
-            </dd>
-          </div>
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -47,6 +33,22 @@
               </a>
             </dd>
           </div>
+
+          {% if (data['wheredoyouwork'] == "Yes") %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Referred by return to teaching adviser
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['teachadvisory']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="return-to-teaching">
+                  Change<span class="govuk-visually-hidden"> referral</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -72,6 +74,33 @@
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/other/employment">
                 Change<span class="govuk-visually-hidden"> employment type</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['role'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/other/role">
+                Change<span class="govuk-visually-hidden"> role</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['employer'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/other/employer">Change<span class="govuk-visually-hidden"> workplace</span>
               </a>
             </dd>
           </div>

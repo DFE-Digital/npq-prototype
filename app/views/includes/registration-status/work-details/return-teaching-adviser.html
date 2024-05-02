@@ -39,17 +39,9 @@
           classes: "govuk-!-font-weight-regular"
         }
       ]
-    } if courseOutcome != "Started"
+    } if data['courseOutcome'] != "Started"
   },
   rows: [
-    {
-      key: {
-        text: "Referred by return to teaching adviser"
-      },
-      value: {
-        html: returnTeacherHtml
-      }
-    },
     {
       key: {
         text: "Workplace in England"
@@ -58,6 +50,14 @@
         html: englandHtml
       }
     },
+    {
+      key: {
+        text: "Referred by return to teaching adviser"
+      },
+      value: {
+        text: data['teachadvisory'] or 'No'
+      }
+    } if data['wheredoyouwork'] == "Yes",
     {
       key: {
         text: "Completed one year of the primary maths Teaching for Mastery programme"
