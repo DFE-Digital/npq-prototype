@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include 'admin-console/v2/includes/header.html' %}
+
+  {% include 'admin-console/v2/includes/primary-navigation.html' %}
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Lynne Howe</h1>
+
+      <form class="form" action="/review-status" method="post">
+
+        {{ govukRadios({
+          name: "adminreviewstatus",
+          fieldset: {
+            legend: {
+              text: "What is review status for this registration?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "New",
+              text: "New"
+            },  
+            {
+              value: "In progress",
+              text: "In progress"
+            },
+            {
+              value: "Awaiting information",
+              text: "Awaiting information"
+            },
+            {
+              value: "Re-register",
+              text: "Re-register"
+            },
+            {
+              value: "Decision made",
+              text: "Decision made"
+            }
+          ]
+          }) }}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Update review status"
+            }) }}
+
+            <a class="govuk-link" href="applicant">Cancel</a>
+          </div>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

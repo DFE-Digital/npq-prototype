@@ -16,7 +16,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Lynne Howe</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Lynne Howe</h1>
+    <p class="govuk-caption-m govuk-!-margin-bottom-6">l.howe@mail.com</p>
 
     {{ govukSummaryList({
       card: {
@@ -35,7 +36,7 @@
           actions: {
             items: [
               {
-                href: "#",
+                href: "/admin-console/v2/applicant-2/set-status",
                 text: "Change",
                 visuallyHiddenText: "review status"
               }
@@ -201,59 +202,6 @@
               {
                 href: "#",
                 text: "View change log"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Email address"
-          },
-          value: {
-            html: "l.howe@mail.com"
-          }
-        }
-      ]
-    }) }}
-        
-    {{ govukSummaryList({
-      card: {
-        title: {
-          html: 'Duplicate check
-          <p class="govuk-!-margin-bottom-0">Other registrations with the same participant ID. This will not show duplicates if a different account was used.</p>'
-        }
-      },
-      rows: [
-        {
-          key: {
-            text: "Leading literacy NPQ"
-          },
-          value: {
-            html: "Accepted"
-          },
-          actions: {
-            items: [
-              {
-                href: "50558b2a-db55-40e0-ae99-ff02f9065ef7",
-                text: "View",
-                visuallyHiddenText: "registration"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Leading primary maths NPQ"
-          },
-          value: {
-            html: "Pending"
-          },
-          actions: {
-            items: [
-              {
-                href: "50558b2a-db55-40e0-ae99-ff02f9065ef7",
-                text: "View",
-                visuallyHiddenText: "registration"
               }
             ]
           }
