@@ -21,18 +21,33 @@
       <!-- Early years + no OFSTED-->
       {% if data['haveurn'] == "No" %}
           <p>You’re not eligible for scholarship funding for the Early years leadership NPQ because you or your employer is not registered on the Ofsted Early Years Register or with a registered Childminder Agency.</p>
-          <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
+          <p class="govuk-body">This means that you would need to pay for the course another way.</p>
+          <p>For example you could pay for the course fees yourself or ask your workplace or trust to:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+            <li>cover the full cost of the NPQ</li>
+            <li>share the cost of the NPQ with you</li>
+          </ul>
 
         <!-- Early years + not NPQEYL -->
         {% elseif (data['haveurn'] == "Yes") and (data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)") %}
           <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ because you do not work in one of the eligible settings, such as state-funded schools.</p>
-          <p>This means that you would need to pay for the course another way.</p>
-          <p>However, you are eligible for scholarship funding for the Early years leadership NPQ.</p>
-          <p class="govuk-body govuk-!-margin-bottom-7">You can <a href="/choose-npq.html">go back and select the Early years leadership NPQ</a> instead.</p>
+          <p>This means that you would need to pay for the course another way. </p>
+          <p>For example you could pay for the course fees yourself or ask your workplace or trust to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>cover the full cost of the NPQ</li>
+            <li>share the cost of the NPQ with you</li>
+          </ul>
+          <p>However, you may be eligible for scholarship funding for the Early years leadership NPQ.</p>
+          <p class="govuk-body govuk-!-margin-bottom-7">You can <a href="/choose-npq.html">go back and select the Early years leadership NPQ</a> instead to check if you're eligible.</p>
 
         {% else %}
           <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ as you do not work in one of the eligible settings, such as state-funded schools.</p>
-          <p class="govuk-body govuk-!-margin-bottom-7">This means that you would need to pay for the course another way.</p>
+          <p class="govuk-body">This means that you would need to pay for the course another way.</p>
+          <p>For example you could pay for the course fees yourself or ask your workplace or trust to:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+            <li>cover the full cost of the NPQ</li>
+            <li>share the cost of the NPQ with you</li>
+          </ul>
       {% endif %}
 
       {{ govukButton({

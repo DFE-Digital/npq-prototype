@@ -86,7 +86,7 @@ router.post('/check-data/_nursery-check', function (req, res){
 
   if (nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)' || nurserysettingt == 'Local authority-maintained nursery') {
     res.redirect('/where-school')
-  } else if (nurserysettingt == 'Private nursery' || nurserysettingt == 'Another early years setting') {
+  } else {
     res.redirect('/eyll/do-you-have-urn')
   }
 })
