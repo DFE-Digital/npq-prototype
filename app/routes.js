@@ -209,7 +209,7 @@ router.post('/check-data/_funding-check', function(req, res){
       // Works in a school, FE or academy setting
       if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
         // In eligible school list? (faked with school name, we don't actually check a list in the prototype)
-        if(whichschoolt == 'not-pp50'){
+        if(whichschoolt == 'not-pp50' || whichschoolt == 'private' || whichschoolt =='Private'){
           res.redirect('/funding/funding-not-available-not-in-list')
         }
         else {
@@ -295,7 +295,7 @@ router.post('/check-data/_funding-check', function(req, res){
           }
           // private nursery, childminder, other EY setting = ineligible 
           else {
-            res.redirect('/funding/funding-not-available-not-in-list')
+            res.redirect('/funding/funding-not-available-setting')
           }
         }
       }
