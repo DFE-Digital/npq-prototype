@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/choose-provider" method="post">
       <h1 class="govuk-heading-xl">How are you funding your course?</h1>
-      <!-- Early years or EHCO  -->
+      <!-- Early years  -->
       {% if data['whichsetting'] == "earlyyears" %}
         {{ govukRadios({
           name: "paymenteyll",
