@@ -15,7 +15,7 @@
 {% block content %}
   <!-- NOT England -->
     <!-- not funded for any -->
-    {% if data['wheredoyouwork'] == "No" %}
+  {% if data['wheredoyouwork'] == "No" %}
     {% include 'includes/answers/not-eng.html' %}
   
   <!-- Return to teaching -->
@@ -33,6 +33,11 @@
   {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') %}
     {% include 'includes/answers/ey-funded.html' %}
 
+  <!-- Childminder with URN -->
+    <!-- Only funded for EYL -->
+  {% elseif (data['nurserysetting'] == "As a childminder") and (data['haveurn'] == 'Yes') %}
+    {% include 'includes/answers/ey-funded.html' %}
+
   <!-- State nursery  -->
     <!-- eligible for funding if in PP50 -->
     <!-- EHCO not funded if -->
@@ -46,7 +51,7 @@
 
   <!-- Private school -->
     <!-- not funded for any -->
-  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
+  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") or (data['whichschool'] == "not-pp50") %}
     {% include 'includes/answers/private-school.html' %}
 
   <!-- Other setting AND ITT -->

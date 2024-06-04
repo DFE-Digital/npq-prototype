@@ -26,7 +26,7 @@
   <strong class="govuk-tag govuk-tag--red">
     Not eligible
   </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you or your employer is not registered on the Ofsted early years register or with a registered Childminder Agency.</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you've already been allocated scholarship funding for the leading literacy NPQ with [provider].</p>
   <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
 {% endset %}
 
@@ -138,7 +138,7 @@
     ]
   }) }}
 
-  {% include 'includes/registration-status/work-details/ey-no-ofsted.html' %}
+  {% include 'includes/registration-status/work-details/school-funded.html' %}
 
   {% include 'includes/registration-status/register-for-another-npq.html' %}
 

@@ -65,6 +65,19 @@
         </div>
       </details>
 
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            School or early years in eligibility check 
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Type '<strong>not-pp50</strong>' when asked for the <strong>name of the school</strong> or the <strong>Ofsted URN</strong>.</p>
+          <p>This will show the funding outcome (not eligible) for a workplace not in the eligibility list. </p>
+          <p>Entering anything else in those questions, shows the outcome for the workplace in the list (normally eligible, but subject to other rules).</p>
+        </div>
+      </details>
+
 <!-- LINKS TO PARTS OF THE PROTOTYPE STARTS HERE -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
       <h2 class="govuk-heading-l">Links to parts of the NPQ prototype</h2>
@@ -96,17 +109,20 @@
           </span>
         </summary>
         <div class="govuk-details__text">
+          <p><a href="https://lucid.app/lucidspark/e33a4231-5282-4a1f-b98d-694b4295d6cc/edit?invitationId=inv_31cc941f-c63c-4ac5-95fc-2775e26969fc&page=0_0#">Lucid board showing all registration flow routes, including funding messages</a></p>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/funding/funding-eligible">Eligible for scholarship funding</a></li>
-            <li><a href="/funding/already-funded">Already funded</a></li>
-            <li><a href="/funding/funding-not-available-setting">Not eligible for scholarship - not in an eligible setting </a></li>
-            <li><a href="/funding/funding-not-available-england">Not eligible for scholarship - not in England </a></li>
-            <li><a href="/funding/funding-not-available-lead-mentor">Not eligible for scholarship - Lead mentor not applying for LTD NPQ </a></li>
-            <li><a href="/funding/edge-case">Eligibility in review</a></li>
-            <li><a href="/funding/ehco-funded">EHCO funded</a></li>
-            <li><a href="/funding/ehco-not-funded">EHCO not funded</a></li>
-            <li><a href="/funding/ehco-already-funded">EHCO already funded</a></li>
-            <li><a href="/funding/how-pay">Question on how they will pay if scholarship funding not available</a></li>
+            <li><a href="/funding/funding-eligible">Message 1 - Eligible for scholarship funding</a></li>
+            <li><a href="/funding/ehco-funded">Message 1B - EHCO eligible</a></li>
+            <li><a href="/funding/funding-not-available-england">Message 2 - Not eligible for funding - not in England </a></li>
+            <li><a href="/funding/already-funded">Message 3 - Previously funded</a></li>
+            <li><a href="/funding/ehco-already-funded">Message 3B - EHCO previously funded</a></li>
+            <li><a href="/funding/funding-not-available-setting">Message 4 - Not eligible for funding - not in an eligible setting </a></li>
+            <li><a href="/funding/funding-not-available-not-in-list">Message 5 - Not eligible for funding – not in eligible list (top PP50)</a></li>
+            <li><a href="/funding/funding-not-available-setting">Message 6 - Not eligible for funding – not Ofsted (need to go through flow to see this)</a></li>
+            <li><a href="/funding/funding-not-available-lead-mentor">Message 7 - Not eligible for funding - Lead mentor not applying for LTD NPQ </a></li>
+            <li><a href="/funding/ehco-not-funded">Message 8 - EHCO not eligible for funding</a></li>
+            <li><a href="/funding/edge-case">Message 9 - Funding eligibility in review</a></li>
+            <li><a href="/funding/how-pay">Question on how they will pay if funding not available</a></li>
           </ul>
         </div>
       </details>
@@ -118,13 +134,18 @@
           </span>
         </summary>
         <div class="govuk-details__text">
+          <p><a href="https://lucid.app/lucidspark/e33a4231-5282-4a1f-b98d-694b4295d6cc/edit?invitationId=inv_31cc941f-c63c-4ac5-95fc-2775e26969fc&page=0_0#">Lucid board showing all registration flow routes, including funding messages</a></p>
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing different funding statuses </h3>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/registration-status/registration-status--scholarship-review">Funding – in review </a></li>
-            <li><a href="/registration-status/registration-status--scholarship-only">Eligible for Scholarship funding only </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-setting">Not eligible for funding – not the right setting </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-england">Not eligible for funding – not in England </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-ofsted">Not eligible for funding – not Ofsted </a></li>
+            <li><a href="/registration-status/registration-status--scholarship-only">Message 1 - Eligible for Scholarship funding only </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-england">Message 2 - Not eligible for funding – not in England </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-previously-funded">Message 3 - Not eligible for funding – previously funded </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-setting">Message 4 - Not eligible for funding – not in an eligible setting </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-not-in-list">Message 5 - Not eligible for funding – not in eligible list (top PP50) </a></li>
+            <li><a href="/registration-status/registration-status--not-funded-ofsted">Message 6 - Not eligible for funding – not Ofsted </a></li>
+            <li>Message 7 - same as 4</li>
+            <li><a href="/registration-status/registration-status--not-funded-ehco">Message 8 - Not eligible for funding – EHCO that doesn't meet requirements </a></li>
+            <li><a href="/registration-status/registration-status--scholarship-review">Message 9 - Funding – in review </a></li>
             <li><a href="/registration-status/registration-status--targeted-support">Pre April 2024 eligible for Targeted support funding </a></li>
           </ul>
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing provider application and course outcomes </h3>

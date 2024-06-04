@@ -10,10 +10,6 @@
   {{ data['mentor'] or 'In a hospital school' }}
 {% endset %}
 
-{% set roleHtml%}
-  {{ data['role'] or 'Administrator' }}
-{% endset %}
-
 {% set employerHtml%}
   {{ data['employer'] or 'Essex County Council' }}
 {% endset %}
@@ -84,14 +80,6 @@
       },
       value: {
         html: employmentHtml
-      }
-    },
-    {
-      key: {
-        text: "Role"
-      },
-      value: {
-        html: roleHtml
       }
     },
     {
