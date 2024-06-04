@@ -109,8 +109,11 @@ router.post('/other/role', function (req, res){
   if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
     res.redirect('/other/find-itt')
   } 
-  else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution' || mentort == 'Other') {
+  else if (mentort == 'Other') {
     res.redirect('/choose-npq')
+  } 
+  else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution') {
+    res.redirect('/other/employer')
   } 
   else {
     res.redirect('/other/role')
@@ -235,7 +238,7 @@ router.post('/check-data/_funding-check', function(req, res){
           }
           // NOT doing maths, SENCO, headship or EHCO
           else {
-            res.redirect('/funding/funding-not-available-setting')
+            res.redirect('/funding/edge-case')
           }
         }
         // Other > other
@@ -245,7 +248,7 @@ router.post('/check-data/_funding-check', function(req, res){
         // virtual school or supply teacher or Young offender institution
         else {
           // NOT maths, SENCO, headship or EHCO  = ineligible
-          res.redirect('/funding/funding-not-available-setting')
+          res.redirect('/funding/edge-case')
         }
       }
       // Early years setting
