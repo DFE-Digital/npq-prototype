@@ -144,9 +144,7 @@
                     {% include 'includes/registration-status/funding-message--eligible.html' %}
                 {% endif %}
               {% else %}
-                <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
-                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+                {% include 'includes/registration-status/funding-message--in-review.html' %}
             {% endif %}
           <!-- Other > other -->
           {% elseif data['mentor'] == "Other" %}
@@ -166,9 +164,7 @@
               {% elseif data['choosenpq'] == "Leading primary mathematics" or data['choosenpq'] == "Special educational needs co-ordinator (SENCO)" or data['choosenpq'] == "Headship" %}
                 {% include 'includes/registration-status/funding-message--in-review.html' %}
               {% else %}
-                <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
-                <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+                {% include 'includes/registration-status/funding-message--in-review.html' %}
             {% endif %}
         {% endif %}
       <!-- -----------------------
@@ -203,7 +199,7 @@
               {% include 'includes/registration-status/funding-message--eligible.html' %}
             {% endif %}
           {% endif %}
-        <!-- private nursery or other EY setting -->
+        <!-- private nursery, childminder or other EY setting -->
         {% else %}
           {% if data['choosenpq'] == "Early years leadership" %}
             <!-- have Ofsted URN-->
@@ -229,9 +225,17 @@
             {% endif %}
           <!-- not EYL -->
           {% else %}
-            <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+          <!-- have Ofsted URN-->
+            {% if data['haveurn'] == "Yes" %}
+              <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+            <!-- no Ofsted URN -->
+            {% else %}
+              <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you or your employer is not registered on the Ofsted Early Years Register or with a registered Childminder Agency. </p>
+              <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+            {% endif %}
           {% endif %}
         {% endif %}
       {% endif %}
