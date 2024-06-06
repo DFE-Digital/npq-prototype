@@ -13,20 +13,17 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Funding </h1>
 
-      {% include 'includes/funding-messages/message3-previously-funded.html' %}
+      {% include 'includes/funding-messages/message6-funding-not-available-noOFSTED.html' %}
 
       {{ govukButton({
         text: "Continue",
         href: "how-pay?referrer=not-funded",
         classes: "govuk-!-margin-top-2"
       }) }}
-
     </div>
   </div>
-
 {% endblock %}
