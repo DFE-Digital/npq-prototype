@@ -260,7 +260,7 @@ router.post('/check-data/_funding-check', function(req, res){
           if (nurserysettingt == "As a childminder") {
             // no Ofsted URN
             if(hasurnt == 'No'){
-              res.redirect('/funding/funding-not-available-setting')
+              res.redirect('/funding/funding-not-available-no-ofsted')
             }
             else {
               res.redirect('/funding/funding-eligible')
@@ -273,7 +273,7 @@ router.post('/check-data/_funding-check', function(req, res){
             }
             // Private nursery, with no Ofsted URN
             else if(hasurnt == 'No'){
-              res.redirect('/funding/funding-not-available-setting')
+              res.redirect('/funding/funding-not-available-no-ofsted')
             }
             else if(urnt == 'not-pp50'){
               res.redirect('/funding/funding-not-available-not-in-list')
@@ -295,7 +295,7 @@ router.post('/check-data/_funding-check', function(req, res){
           }
           // Private nursery, with no Ofsted URN
           else if(hasurnt == 'No'){
-            res.redirect('/funding/funding-not-available-setting')
+            res.redirect('/funding/funding-not-available-no-ofsted')
           }
           // private nursery, childminder, other EY setting = ineligible 
           else {

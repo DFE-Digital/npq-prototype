@@ -1,16 +1,15 @@
 {% extends "layout.html" %}
 {% set signedIn = 'true' %}
 
-
 {% block pageTitle %}
   DfE scholarship funding is not available
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -18,32 +17,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Funding </h1>
-      <p class="govuk-body">You’re not eligible for scholarship funding for the early headship coaching offer (EHCO).</p>
-      <p class="govuk-body">This means that you would need to pay for the EHCO another way. For example you could pay for the course fees yourself or ask your workplace or trust to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>cover the full cost of the course</li>
-        <li>share the cost of the course with you</li>
-      </ul>
+
+      {% include 'includes/funding-messages/message8-ehco-not-funded.html' %}
 
       {{ govukButton({
         text: "Continue",
-        href: "how-pay?referrer=not-funded"
+        href: "how-pay?referrer=not-funded",
+        classes: "govuk-!-margin-top-2"
       }) }}
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            For prototype reference
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p><a href="ehco-funded">User is eligible for funding</a></p>
-        </div>
-      </details>
 
     </div>
   </div>
-
-
 
 {% endblock %}

@@ -15,32 +15,19 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Funding 
-      </h1>
-      <p>You’re not eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ because your workplace is not in the <a href="https://www.gov.uk/guidance/funding-for-national-professional-qualifications-npqs#scholarship-funding-for-autumn-2024">list of settings that are eligible for funding</a>.</p>
-      <p class="govuk-body">This means that you would need to pay for the course another way.</p>
-      <p>For example you could pay for the course fees yourself or ask your workplace or trust to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>cover the full cost of the course</li>
-        <li>share the cost of the course with you</li>
-      </ul>
-
+      <h1 class="govuk-heading-xl">Funding </h1>
+      
       <!-- Not chosen Maths, SENCO, EHCO, Headship -->
       {% if data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)" %}
-        <p>However, you may be eligible for scholarship funding for one of the following courses:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>leading primary mathematics</li>
-          <li>headship</li>
-          <li>special educational needs co-ordinator (SENCO)</li>
-          <li>early headship coaching offer</li>
-        </ul>
-        <p class="govuk-body govuk-!-margin-bottom-7">You can <a href="/choose-npq.html">go back and select one of these courses</a> instead to check if you're eligible.</p>
+        {% include 'includes/funding-messages/message5B-funding-not-available-not-in-list.html' %}
+      {% else %}
+        {% include 'includes/funding-messages/message5-funding-not-available-not-in-list.html' %}
       {% endif %}
 
       {{ govukButton({
         text: "Continue",
-        href: "how-pay?referrer=not-funded"
+        href: "how-pay?referrer=not-funded",
+        classes: "govuk-!-margin-top-2"
       }) }}
     </div>
   </div>

@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
@@ -7,38 +6,25 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Funding 
-      </h1>
-      <p>Your registration will be reviewed by the Department for Education (DfE) to check if you’re eligible for scholarship funding for the {{ data['choosenpq'] }} NPQ starting before November 2024.</p>
-      <p>We may contact you to request more information about your registration.</p>
-      <p>If you're eligible, and the provider confirms that you have a funded space, you will not have to pay for the course fees.</p>
-
+      <h1 class="govuk-heading-xl">Funding </h1>
+      
+      {% include 'includes/funding-messages/message9-in-review.html' %}
+      
       {{ govukButton({
         text: "Continue",
-        href: "/choose-provider?referrer=inreview"
+        href: "/choose-provider?referrer=inreview",
+        classes: "govuk-!-margin-top-2"
       }) }}
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            For prototype reference
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p><a href="already-funded">User has already been funded</a></p>
-        </div>
-      </details>
       
     </div>
   </div>
