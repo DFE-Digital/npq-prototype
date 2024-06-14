@@ -32,9 +32,11 @@
 
 {% set courseFundingHtml %}
   {% if data['whichsetting'] == "earlyyears" %}
-    {{ data['paymenteyll'] or "I'm paying" }}
+    <p class="govuk-!-margin-bottom-0">{{ data['paymenteyll'] or "I'm paying" }}.</p>
+    <p>You may want to check the cost of the NPQ course with your provider.</p>
   {% else %}
-    {{ data['payment'] or "I'm paying" }}
+    <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
+    <p>You may want to check the cost of the NPQ course with your provider.</p>
   {% endif %}
 {% endset %}
 
