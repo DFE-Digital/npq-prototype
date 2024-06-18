@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include 'admin-console/v1/includes/header.html' %}
+
+  {% include 'admin-console/v1/includes/primary-navigation.html' %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukNotificationBanner({
+        text: "Carlton Shanahan JD's funding status has been updated successfully.",
+        type: 'success'
+      }) }}
+
+      {% include 'admin-console/v1/includes/npq-applications-edge-content.html' %}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
