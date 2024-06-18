@@ -1,23 +1,78 @@
 {% set reviewStatusHTML %}
-  {{ govukTag({
-    text: "Awaiting information",
-    classes: "govuk-tag--yellow"
-  })}}
+  {% if (data['applicant2--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['applicant2--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['applicant2--review-status'] == "Re-register") %}
+    {{govukTag({
+      text: data['applicant2--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['applicant2--review-status'] == "Awaiting information") %}
+    {{govukTag({
+      text: data['applicant2--review-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['applicant2--review-status'],
+      classes: "govuk-tag--blue"
+    })}}
+  {% endif %}
 {% endset %}
 
 {% set providerStatusHTML %}
-  {{ govukTag({
-    text: "Pending",
-    classes: "govuk-tag--yellow"
-  })}}
+  {% if (data['applicant2--provider-status'] == "Pending") %}
+    {{govukTag({
+      text: data['applicant2--provider-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% elseif (data['applicant2--provider-status'] == "Approved") %}
+    {{govukTag({
+      text: data['applicant2--provider-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['applicant2--provider-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
 {% endset %}
+
+{% set fundingStatusHTML %}
+  {% if (data['applicant2--funding-status'] == "–") %}
+    {{ data['applicant2--funding-status'] }}
+  {% elseif (data['applicant2--funding-status'] == "Yes") %}
+    {{govukTag({
+      text: data['applicant2--funding-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['applicant2--funding-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set ineligiblereasonHTML %}
+  {% if (data['applicant2--ineligible-reason'] == "Other") %}
+    {{ data['applicant2--ineligible-reason'] }} – {{ data['applicant2--ineligible-reason--other'] }}
+  {% elseif (data['applicant2--ineligible-reason'] == "Not an eligible establishment type") %}
+    {{ data['applicant2--ineligible-reason'] }} – {{ data['applicant2--ineligible-reason--establishment'] }}
+  {% else %}
+    {{ data['applicant2--ineligible-reason'] }} 
+  {% endif %}
+{% endset %}
+
+
   
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Lynne Howe</h1>
-    <p class="govuk-caption-m govuk-!-margin-bottom-6">l.howe@mail.com</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ data['applicant2--name'] }}</h1>
+    <p class="govuk-caption-m govuk-!-margin-bottom-6">{{ data['applicant2--email'] }}</p>
 
     {{ govukSummaryList({
       card: {
@@ -48,12 +103,12 @@
             text: "Eligible for funding"
           },
           value: {
-            html: "–"
+            html: fundingStatusHTML
           },
           actions: {
             items: [
               {
-                href: "#",
+                href: "/admin-console/v2/applicant-2/set-eligibility",
                 text: "Change",
                 visuallyHiddenText: "eligibility"
               }
@@ -62,15 +117,32 @@
         },
         {
           key: {
-            text: "Notes"
+            text: "Reason for not being eligible"
           },
           value: {
-            html: "10/04: JD Requested more info on place of work and location. 8/04: AB looks eligible but need to check school."
+            html: ineligiblereasonHTML
           },
           actions: {
             items: [
               {
-                href: "#",
+                href: "/admin-console/v2/applicant-2/set-ineligible-reason",
+                text: "Change",
+                visuallyHiddenText: "ineligible reason"
+              }
+            ]
+          }
+        } if data['applicant2--funding-status'] == "No",
+        {
+          key: {
+            text: "Notes"
+          },
+          value: {
+            text: data['applicant2--notes']
+          },
+          actions: {
+            items: [
+              {
+                href: "/admin-console/v2/applicant-2/set-notes",
                 text: "Change",
                 visuallyHiddenText: "eligibility"
               }
@@ -92,7 +164,7 @@
             text: "Referred by return to teaching adviser"
           },
           value: {
-            html: "No"
+            html: data['applicant2--referred']
           }
         },
         {
@@ -100,7 +172,7 @@
             text: "Employment type"
           },
           value: {
-            html: "Virtual school"
+            text: data['applicant2--employment-type']
           }
         },
         {
@@ -108,7 +180,7 @@
             text: "Employer name"
           },
           value: {
-            html: "A1 school"
+            text: data['applicant2--employer']
           }
         },
         {
@@ -116,7 +188,7 @@
             text: "Role"
           },
           value: {
-            html: "Math teacher"
+            text: data['applicant2--role']
           }
         }
       ]
@@ -134,7 +206,7 @@
             text: "NPQ course"
           },
           value: {
-            html: "NPQ Leading teacher development (NPQLTD)"
+            text: data['applicant2--course']
           }
         },
         {
@@ -142,7 +214,7 @@
             text: "Provider"
           },
           value: {
-            html: "Teach First"
+            text: data['applicant2--provider']
           }
         },
         {
@@ -171,7 +243,7 @@
             }
           },
           value: {
-            html: "fc8de4e2-88d2-40ec-b8f5-db2e1ac4fcfa"
+            text: data['applicant2--participant-id']
           }
         },
         {
@@ -179,7 +251,7 @@
             text: "Application ID"
           },
           value: {
-            html: "fc8de4e2-88d2-40ec-b8f5-db2e1ac4fcfa"
+            text: data['applicant2--applicant-id']
           }
         },
         {
@@ -187,7 +259,7 @@
             text: "Registration submission date"
           },
           value: {
-            html: "08 Feb 2023, 3:45pm"
+            text: data['applicant2--submitted-date']
           }
         },
         {
@@ -195,7 +267,7 @@
             text: "Last updated date"
           },
           value: {
-            html: "12 Feb 2023, 13:18pm"
+            text: data['applicant2--updated-date']
           },
           actions: {
             items: [

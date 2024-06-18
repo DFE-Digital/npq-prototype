@@ -1,207 +1,285 @@
+{% set reviewStatusHTML %}
+  {% if (data['applicant1--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['applicant1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['applicant1--review-status'] == "Re-register") %}
+    {{govukTag({
+      text: data['applicant1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['applicant1--review-status'] == "Awaiting information") %}
+    {{govukTag({
+      text: data['applicant1--review-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['applicant1--review-status'],
+      classes: "govuk-tag--blue"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set providerStatusHTML %}
+  {% if (data['applicant1--provider-status'] == "Pending") %}
+    {{govukTag({
+      text: data['applicant1--provider-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% elseif (data['applicant1--provider-status'] == "Approved") %}
+    {{govukTag({
+      text: data['applicant1--provider-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['applicant1--provider-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set fundingStatusHTML %}
+  {% if (data['applicant1--funding-status'] == "–") %}
+    {{ data['applicant1--funding-status'] }}
+  {% elseif (data['applicant1--funding-status'] == "Yes") %}
+    {{govukTag({
+      text: data['applicant1--funding-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['applicant1--funding-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set ineligiblereasonHTML %}
+  {% if (data['applicant1--ineligible-reason'] == "Other") %}
+    {{ data['applicant1--ineligible-reason'] }} – {{ data['applicant1--ineligible-reason--other'] }}
+  {% elseif (data['applicant1--ineligible-reason'] == "Not an eligible establishment type") %}
+    {{ data['applicant1--ineligible-reason'] }} – {{ data['applicant1--ineligible-reason--establishment'] }}
+  {% else %}
+    {{ data['applicant1--ineligible-reason'] }} 
+  {% endif %}
+{% endset %}
+
+
+  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Annamaria Green</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ data['applicant1--name'] }}</h1>
+    <p class="govuk-caption-m govuk-!-margin-bottom-6">{{ data['applicant1--email'] }}</p>
 
-    <h2 class="govuk-heading-l">Registration details</h2>
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Funding review details'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Review status"
+          },
+          value: {
+            html: reviewStatusHTML
+          },
+          actions: {
+            items: [
+              {
+                href: "/admin-console/v2/applicant-1/set-status",
+                text: "Change",
+                visuallyHiddenText: "review status"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Eligible for funding"
+          },
+          value: {
+            html: fundingStatusHTML
+          },
+          actions: {
+            items: [
+              {
+                href: "/admin-console/v2/applicant-1/set-eligibility",
+                text: "Change",
+                visuallyHiddenText: "eligibility"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Reason for not being eligible"
+          },
+          value: {
+            html: ineligiblereasonHTML
+          },
+          actions: {
+            items: [
+              {
+                href: "/admin-console/v2/applicant-1/set-ineligible-reason",
+                text: "Change",
+                visuallyHiddenText: "ineligible reason"
+              }
+            ]
+          }
+        } if data['applicant2--funding-status'] == "No",
+        {
+          key: {
+            text: "Notes"
+          },
+          value: {
+            text: data['applicant1--notes']
+          },
+          actions: {
+            items: [
+              {
+                href: "/admin-console/v2/applicant-1/set-notes",
+                text: "Change",
+                visuallyHiddenText: "eligibility"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Participant ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          50558b2a-db55-40e0-ae99-ff02f9065ef7
-          <br><span class="govuk-hint">This ID is unique to this participant. <br>Use this ID instead of sharing personal information e.g. through email.</span>
-        </dd>
-      </div>
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Work details'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Referred by return to teaching adviser"
+          },
+          value: {
+            html: data['applicant1--referred']
+          }
+        },
+        {
+          key: {
+            text: "Employment type"
+          },
+          value: {
+            text: data['applicant1--employment-type']
+          }
+        },
+        {
+          key: {
+            text: "Employer name"
+          },
+          value: {
+            text: data['applicant1--employer']
+          }
+        },
+        {
+          key: {
+            text: "Role"
+          },
+          value: {
+            text: data['applicant1--role']
+          }
+        }
+      ]
+    }) }}
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Application ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          50558b2a-db55-40e0-ae99-ff02f9065ef7
-          <br><span class="govuk-hint">This ID is unique to this registration. </span>
-        </dd>
-      </div>
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Course details'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "NPQ course"
+          },
+          value: {
+            text: data['applicant1--course']
+          }
+        },
+        {
+          key: {
+            text: "Provider"
+          },
+          value: {
+            text: data['applicant1--provider']
+          }
+        },
+        {
+          key: {
+            text: "Provider approval status"
+          },
+          value: {
+            html: providerStatusHTML
+          }
+        }
+      ]
+    }) }}
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Registration submission date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          10 Feb 2023, 2:30pm
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Last updated date 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 Feb 2023, 12:55pm
-        </dd>
-        <dd class="govuk-summary-list__value govuk-!-text-align-right">
-          <p><a href="set-notes">View change log</a></p>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email address
-        </dt>
-        <dd class="govuk-summary-list__value">
-          annamaria.green@mail.com
-        </dd>
-      </div>
-    </dl>
-
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Course details</h3>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          NPQ course name
-        </dt>
-        <dd class="govuk-summary-list__value">
-            NPQ Leading teacher development (NPQLTD)
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Provider
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Ambition Institute
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Provider approval status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{govukTag({
-            text: "Pending",
-            classes: "govuk-tag--yellow"
-          })}}
-        </dd>
-      </div>
-    </dl>
-
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Work details</h3>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Referred by return to teaching adviser
-        </dt>
-        <dd class="govuk-summary-list__value">
-          No
-        </dd>
-      </div>
-    
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Employment type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Local Authority supply teacher
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Employer name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Bailey, Kuhic and Kshlerin
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Employment role
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Lawyer
-        </dd>
-      </div>
-    </dl>
-  
-    <h2 class="govuk-heading-l govuk-!-margin-top-8">Funding review details</h2>
-    
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Review status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{govukTag({
-            text: "Decision made",
-            classes: "govuk-tag--grey"
-          })}}
-        </dd>
-        <dd class="govuk-summary-list__value govuk-!-text-align-right">
-          {% if (data['adminfunding1'] == "Yes") %}
-          {% else %}
-            <p><a href="set-code">Edit</a></p>
-          {% endif %}
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Eligible for funding
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if (data['adminfunding1'] == "Yes") %}
-            {{govukTag({
-              text: "Yes",
-              classes: "govuk-tag--green"
-            })}}
-
-            {% else %}
-
-            {{govukTag({
-              text: "No",
-              classes: "govuk-tag--red"
-            })}}
-
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__value govuk-!-text-align-right">
-          <p><a href="set-status">Edit</a></p>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Notes
-        </dt>
-        <dd class="govuk-summary-list__value">
-            <p id="notes-display1">{{ data['notes1'] or '15/04: NG sent email sent to user to confirm non-eligibility. 12/04: CD Agree not eligible. 11/04: AB Not elgible - in support role, not teaching.'}}</p>
-        </dd>
-        <dd class="govuk-summary-list__value govuk-!-text-align-right">
-          <p><a href="set-notes">Change notes</a></p>
-        </dd>
-      </div>
-    </dl>
-    
-    <h2 class="govuk-heading-l govuk-!-margin-top-8">Duplicate check</h2>
-    
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Registrations with the same participant ID 
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p><a href="#">50558b2a-db55-40e0-ae99-ff02f9065ef7</a></p>
-          <p><a href="#">83972h3j-dh76-27h5-ek10-nf34f9271th7</a></p>
-          <p><a href="#">20148b4h-he02-37h1-aj81-wh02f9372er6</a></p>
-        </dd>
-      </div>
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Registration details'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Participant ID",
+            hint: {
+              text: "fdf"
+            }
+          },
+          value: {
+            text: data['applicant1--participant-id']
+          }
+        },
+        {
+          key: {
+            text: "Application ID"
+          },
+          value: {
+            text: data['applicant1--applicant-id']
+          }
+        },
+        {
+          key: {
+            text: "Registration submission date"
+          },
+          value: {
+            text: data['applicant1--submitted-date']
+          }
+        },
+        {
+          key: {
+            text: "Last updated date"
+          },
+          value: {
+            text: data['applicant1--updated-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "View change log"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
   </div>
 </div>

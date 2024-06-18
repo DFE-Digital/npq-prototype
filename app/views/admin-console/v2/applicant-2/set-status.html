@@ -1,31 +1,24 @@
 {% extends "layout.html" %}
 
-
 {% block header %}
   {% include 'admin-console/v2/includes/header.html' %}
-
   {% include 'admin-console/v2/includes/primary-navigation.html' %}
-
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
-
 {% block content %}
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">Lynne Howe</h1>
-
-      <form class="form" action="/review-status" method="post">
-
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ data['applicant2--name'] }}</h1>
+      <form class="form" action="/applicant-2--review-status" method="post">
         {{ govukRadios({
-          name: "adminreviewstatus",
+          name: "applicant2--review-status",
           fieldset: {
             legend: {
               text: "What is review status for this registration?",
@@ -35,13 +28,9 @@
           },
           items: [
             {
-              value: "New",
-              text: "New"
+              value: "Needs review",
+              text: "Needs review"
             },  
-            {
-              value: "In progress",
-              text: "In progress"
-            },
             {
               value: "Awaiting information",
               text: "Awaiting information"
@@ -56,20 +45,13 @@
             }
           ]
           }) }}
-
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Update review status"
             }) }}
-
             <a class="govuk-link" href="applicant">Cancel</a>
           </div>
-
       </form>
-
     </div>
   </div>
-
-
-
 {% endblock %}

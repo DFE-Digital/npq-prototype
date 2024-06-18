@@ -1,53 +1,42 @@
 {% extends "layout.html" %}
 
-
 {% block header %}
   {% include 'admin-console/v2/includes/header.html' %}
-
   {% include 'admin-console/v2/includes/primary-navigation.html' %}
-
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
-
 {% block content %}
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">Annamaria Green</h1>
-
-      <form class="form" action="applicant-success" method="post">
-
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ data['applicant1--name'] }}</h1>
+      <form class="form" action="applicant" method="post">
         {{ govukCharacterCount({
-          name: "notes1",
-          id: "notes1",
+          name: "applicant1--notes",
+          id: "applicant1--notes",
           maxlength: 1000,
-          value: "This would show previous comments made about this participant",
+          value: data['applicant1--notes'],
           label: {
-            text: "Notes",
+            text: "Notes about changes to this registration",
             classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Please add the date and your initials when adding a note, and add above any existing notes. Notes are for internal use only. "
           }
         }) }}
-
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Confirm changes"
+            text: "Update notes"
           }) }}
-
           <a class="govuk-link" href="applicant">Cancel</a>
         </div>
-
       </form>
-
     </div>
   </div>
-
-
-
 {% endblock %}

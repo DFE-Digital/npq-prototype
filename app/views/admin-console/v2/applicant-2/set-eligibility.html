@@ -1,34 +1,27 @@
 {% extends "layout.html" %}
 
-
 {% block header %}
   {% include 'admin-console/v2/includes/header.html' %}
-
   {% include 'admin-console/v2/includes/primary-navigation.html' %}
-
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
-
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">Annamaria Green</h1>
-
-      <form class="form" action="applicant-success" method="post">
-
+      <h1 class="govuk-heading-xl">{{ data['applicant2--name'] }}</h1>
+      <form class="form" action="/applicant-2--eligibility-status" method="post">
         {{ govukRadios({
-          name: "adminfunding1",
+          name: "applicant2--funding-status",
           fieldset: {
             legend: {
-              text: "Is eligible for funding?",
+              html: "Is this registration eligible for funding?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -44,20 +37,13 @@
             }
           ]
           }) }}
-
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Confirm changes"
+              text: "Update eligibility"
             }) }}
-
             <a class="govuk-link" href="applicant">Cancel</a>
           </div>
-
       </form>
-
     </div>
   </div>
-
-
-
 {% endblock %}
