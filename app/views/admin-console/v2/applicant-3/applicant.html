@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'admin-console/v2/includes/header.html' %}
+  {% include 'admin-console/v2/includes/primary-navigation.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "/admin-console/v2/npq-applications-edge"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  {% include 'admin-console/v2/includes/applicant3.html' %}
+{% endblock %}
