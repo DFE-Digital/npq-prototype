@@ -61,11 +61,11 @@
                 </select>
               </div>
               <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="employment-type-field" class="govuk-label govuk-label--s">Year of registration</label><select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
-                <option value="hospital_school">2024-25</option>
-                <option value="other">2023-24</option>
-                <option value="local_authority_virtual_school">2022-23</option>
-                <option value="young_offender_institution">Pre-2022</option></select>
+                <label for="referral-field" class="govuk-label govuk-label--s">Referred by return to teaching adviser</label>
+                <select id="referral-field" class="govuk-select" name="Referral"><option value=""></option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
               </div>
             </div>
             <div style="display: flex; margin-left: -14px">
@@ -79,11 +79,17 @@
                   </div>
                 </div>
               </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Year of registration</label><select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                <option value="hospital_school">2024-25</option>
+                <option value="other">2023-24</option>
+                <option value="local_authority_virtual_school">2022-23</option>
+                <option value="young_offender_institution">Pre-2022</option></select>
+              </div>
             </div>
           <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
         </form>
       </div>
-
 
 <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
   <thead class="govuk-table__head">
