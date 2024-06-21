@@ -51,4 +51,54 @@ module.exports = router => {
     } 
   })
 
+  // Applicant 3 
+  // update review status 
+  router.post('/applicant-3--review-status', function(req, res){
+    var appp3reviewstatus = req.session.data['applicant3--review-status']
+
+    if (appp3reviewstatus == 'Decision made') {
+      res.redirect('/admin-console/v2/applicant-3/set-eligibility')
+    } else if ((appp3reviewstatus == 'Needs review') || (appp3reviewstatus == 'Awaiting information') || (appp3reviewstatus == 'Re-register')){
+      res.redirect('/admin-console/v2/applicant-3/set-notes')
+    } else {
+      res.redirect('/admin-console/v2/applicant-3/applicant')
+    }
+  })
+
+  // update eligibility status 
+  router.post('/applicant-3--eligibility-status', function(req, res){
+    var appp3fundingstatus = req.session.data['applicant3--funding-status']
+
+    if (appp3fundingstatus == 'No') {
+      res.redirect('/admin-console/v2/applicant-3/set-ineligible-reason')
+    } else {
+      res.redirect('/admin-console/v2/applicant-3/set-notes')
+    } 
+  })
+
+  // Applicant 4 
+  // update review status 
+  router.post('/applicant-4--review-status', function(req, res){
+    var appp4reviewstatus = req.session.data['applicant4--review-status']
+
+    if (appp4reviewstatus == 'Decision made') {
+      res.redirect('/admin-console/v2/applicant-4/set-eligibility')
+    } else if ((appp4reviewstatus == 'Needs review') || (appp4reviewstatus == 'Awaiting information') || (appp4reviewstatus == 'Re-register')){
+      res.redirect('/admin-console/v2/applicant-4/set-notes')
+    } else {
+      res.redirect('/admin-console/v2/applicant-4/applicant')
+    }
+  })
+
+  // update eligibility status 
+  router.post('/applicant-4--eligibility-status', function(req, res){
+    var appp4fundingstatus = req.session.data['applicant4--funding-status']
+
+    if (appp4fundingstatus == 'No') {
+      res.redirect('/admin-console/v2/applicant-4/set-ineligible-reason')
+    } else {
+      res.redirect('/admin-console/v2/applicant-4/set-notes')
+    } 
+  })
+
 }

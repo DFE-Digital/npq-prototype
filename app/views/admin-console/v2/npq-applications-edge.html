@@ -129,8 +129,8 @@
         {% endif %}
       </td>
       <td class="govuk-table__cell">
-        {% if (data['applicant1--funding-status'] == "–") %}
-          {{ data['applicant1--funding-status'] }}
+        {% if (data['applicant1--review-status'] != "Decision made") %}
+        –
         {% elseif (data['applicant1--funding-status'] == "Yes") %}
           {{govukTag({
             text: data['applicant1--funding-status'],
@@ -178,8 +178,8 @@
         {% endif %}
       </td>
       <td class="govuk-table__cell">
-        {% if (data['applicant2--funding-status'] == "–") %}
-          {{ data['applicant2--funding-status'] }}
+        {% if (data['applicant2--review-status'] != "Decision made") %}
+        –
         {% elseif (data['applicant2--funding-status'] == "Yes") %}
           {{govukTag({
             text: data['applicant2--funding-status'],
@@ -199,25 +199,100 @@
 
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__cell">
-        <a href="">Jorge Hund</a>
-        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution </p>
-        <p class="govuk-body-s govuk-!-margin-bottom-1">Deer River Institute</p>
+        <a href="/admin-console/v2/applicant-3/applicant">{{ data['applicant3--name'] }}</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['applicant3--employment-type'] }} </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['applicant3--employer'] }}</p>
       </td>
       <td class="govuk-table__cell">
-        {{govukTag({
-          text: "Needs review",
-          classes: "govuk-tag--blue"
-        })}}
+        {% if (data['applicant3--review-status'] == "Decision made") %}
+          {{govukTag({
+            text: data['applicant3--review-status'],
+            classes: "govuk-tag--grey"
+          })}}
+        {% elseif (data['applicant3--review-status'] == "Re-register") %}
+          {{govukTag({
+            text: data['applicant3--review-status'],
+            classes: "govuk-tag--grey"
+          })}}
+        {% elseif (data['applicant3--review-status'] == "Awaiting information") %}
+          {{govukTag({
+            text: data['applicant3--review-status'],
+            classes: "govuk-tag--yellow"
+          })}}
+        {% else %}
+          {{govukTag({
+            text: data['applicant3--review-status'],
+            classes: "govuk-tag--blue"
+          })}}
+        {% endif %}
       </td>
       <td class="govuk-table__cell">
-        {{govukTag({
-          text: "No",
-          classes: "govuk-tag--red"
-        })}}
+        {% if (data['applicant3--review-status'] != "Decision made") %}
+        –
+        {% elseif (data['applicant3--funding-status'] == "Yes") %}
+          {{govukTag({
+            text: data['applicant3--funding-status'],
+            classes: "govuk-tag--green"
+          })}}
+        {% else %}
+          {{govukTag({
+            text: data['applicant3--funding-status'],
+            classes: "govuk-tag--red"
+          })}}
+        {% endif %}
       </td>
-      <td class="govuk-table__cell">Rejected</td>
-      <td class="govuk-table__cell">–</td>
-      <td class="govuk-table__cell">5 Apr 2024<br> 2:51pm</td>
+      <td class="govuk-table__cell">{{ data['applicant3--provider-status'] }}</td>
+      <td class="govuk-table__cell">{{ data['applicant3--notes'] }}..</td>
+      <td class="govuk-table__cell">{{ data['applicant3--submitted-date'] }}</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="/admin-console/v2/applicant-4/applicant">{{ data['applicant4--name'] }}</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['applicant4--employment-type'] }} </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['applicant4--employer'] }}</p>
+      </td>
+      <td class="govuk-table__cell">
+        {% if (data['applicant4--review-status'] == "Decision made") %}
+          {{govukTag({
+            text: data['applicant4--review-status'],
+            classes: "govuk-tag--grey"
+          })}}
+        {% elseif (data['applicant4--review-status'] == "Re-register") %}
+          {{govukTag({
+            text: data['applicant4--review-status'],
+            classes: "govuk-tag--grey"
+          })}}
+        {% elseif (data['applicant4--review-status'] == "Awaiting information") %}
+          {{govukTag({
+            text: data['applicant4--review-status'],
+            classes: "govuk-tag--yellow"
+          })}}
+        {% else %}
+          {{govukTag({
+            text: data['applicant4--review-status'],
+            classes: "govuk-tag--blue"
+          })}}
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {% if (data['applicant4--review-status'] != "Decision made") %}
+        –
+        {% elseif (data['applicant4--funding-status'] == "Yes") %}
+          {{govukTag({
+            text: data['applicant4--funding-status'],
+            classes: "govuk-tag--green"
+          })}}
+        {% else %}
+          {{govukTag({
+            text: data['applicant4--funding-status'],
+            classes: "govuk-tag--red"
+          })}}
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">{{ data['applicant4--provider-status'] }}</td>
+      <td class="govuk-table__cell">{{ data['applicant4--notes'] }}..</td>
+      <td class="govuk-table__cell">{{ data['applicant4--submitted-date'] }}</td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -225,6 +300,49 @@
         <a href="">Carlton Shanahan JD</a>
         <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
         <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Re-register",
+          classes: "govuk-tag--grey"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+        –
+      </td>
+      <td class="govuk-table__cell">Rejected</td>
+      <td class="govuk-table__cell">15/04: NG Rejected by provider, no need to review.</td>
+      <td class="govuk-table__cell">4 Apr 2024<br> 11:28am</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Fareed Eilert</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+      </td>
+      <td class="govuk-table__cell">
+        {{govukTag({
+          text: "Decision made",
+          classes: "govuk-tag--grey"
+        })}}
+      </td>
+      <td class="govuk-table__cell">
+          {{govukTag({
+            text: "Yes",
+            classes: "govuk-tag--green"
+          })}}
+      </td>
+      <td class="govuk-table__cell">Accepted</td>
+      <td class="govuk-table__cell">05/04: BC Looks eligible. Meadows Ridge Academy is a virtual school.</td>
+      <td class="govuk-table__cell">3 Apr 2024<br> 2:32pm</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+        <a href="">Aiga Villum</a>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+        <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
       </td>
       <td class="govuk-table__cell">
         {{govukTag({
@@ -238,55 +356,15 @@
           classes: "govuk-tag--red"
         })}}
       </td>
-      <td class="govuk-table__cell">Pending</td>
-      <td class="govuk-table__cell">15/04: NG sent email sent to user to confirm non-eligibility...</td>
-      <td class="govuk-table__cell">4 Apr 2024<br> 11:28am</td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell">
-        <a href="">Fareed Eilert</a>
-        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
-        <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
-      </td>
-      <td class="govuk-table__cell">
-        {{govukTag({
-          text: "Needs review",
-          classes: "govuk-tag--blue"
-        })}}
-      </td>
-      <td class="govuk-table__cell">
-        –
-      </td>
-      <td class="govuk-table__cell">Pending</td>
-      <td class="govuk-table__cell">05/04: BC Looks eligible. Meadows Ridge Academy is a virtual school.</td>
-      <td class="govuk-table__cell">3 Apr 2024<br> 2:32pm</td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell">
-        <a href="">Aiga Villum</a>
-        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
-        <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
-      </td>
-      <td class="govuk-table__cell">
-        {{govukTag({
-          text: "Needs review",
-          classes: "govuk-tag--blue"
-        })}}
-      </td>
-      <td class="govuk-table__cell">
-        –
-      </td>
-      <td class="govuk-table__cell">Pending</td>
-      <td class="govuk-table__cell">05/04: AB Looks ineligible - in advisory role.</td>
+      <td class="govuk-table__cell">Accepted</td>
+      <td class="govuk-table__cell">15/04: NG sent email sent to user to confirm non-eligibility. 12/04: CD Agree not eligible. 11/04: AB Not eligible - in support role, not teaching...</td>
       <td class="govuk-table__cell">3 Apr 2024<br> 11:19am</td>
     </tr>
 
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__cell">
         <a href="">Colin Winter</a>
-        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institute </p>
+        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
         <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
       </td>
       <td class="govuk-table__cell">
@@ -298,29 +376,9 @@
       <td class="govuk-table__cell">
         –
       </td>
-      <td class="govuk-table__cell">Pending</td>
+      <td class="govuk-table__cell">Rejected</td>
       <td class="govuk-table__cell">05/04: RD: Reregister email sent (Digital #00000)...</td>
       <td class="govuk-table__cell">3 Apr 2024<br> 10:02am</td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell">
-        <a href="">Shahira Donald</a>
-        <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Virtual school </p>
-        <p class="govuk-body-s govuk-!-margin-bottom-1">Darwin School</p>
-      </td>
-      <td class="govuk-table__cell">
-        {{govukTag({
-          text: "Awaiting information",
-          classes: "govuk-tag--yellow"
-        })}}
-      </td>
-      <td class="govuk-table__cell">
-        –
-      </td>
-      <td class="govuk-table__cell">Pending</td>
-      <td class="govuk-table__cell">–</td>
-      <td class="govuk-table__cell">2 Apr 2024<br> 1:21pm</td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -341,7 +399,7 @@
             classes: "govuk-tag--green"
           })}}
       </td>
-      <td class="govuk-table__cell">Approved</td>
+      <td class="govuk-table__cell">Accepted</td>
       <td class="govuk-table__cell">01/04: LP agree...</td>
       <td class="govuk-table__cell">29 Mar 2024<br> 4:14pm</td>
     </tr>

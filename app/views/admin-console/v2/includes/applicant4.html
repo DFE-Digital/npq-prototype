@@ -1,69 +1,69 @@
 {% set reviewStatusHTML %}
-  {% if (data['applicant2--review-status'] == "Decision made") %}
+  {% if (data['applicant4--review-status'] == "Decision made") %}
     {{govukTag({
-      text: data['applicant2--review-status'],
+      text: data['applicant4--review-status'],
       classes: "govuk-tag--grey"
     })}}
-  {% elseif (data['applicant2--review-status'] == "Re-register") %}
+  {% elseif (data['applicant4--review-status'] == "Re-register") %}
     {{govukTag({
-      text: data['applicant2--review-status'],
+      text: data['applicant4--review-status'],
       classes: "govuk-tag--grey"
     })}}
-  {% elseif (data['applicant2--review-status'] == "Awaiting information") %}
+  {% elseif (data['applicant4--review-status'] == "Awaiting information") %}
     {{govukTag({
-      text: data['applicant2--review-status'],
+      text: data['applicant4--review-status'],
       classes: "govuk-tag--yellow"
     })}}
   {% else %}
     {{govukTag({
-      text: data['applicant2--review-status'],
+      text: data['applicant4--review-status'],
       classes: "govuk-tag--blue"
     })}}
   {% endif %}
 {% endset %}
 
 {% set providerStatusHTML %}
-  {% if (data['applicant2--provider-status'] == "Pending") %}
+  {% if (data['applicant4--provider-status'] == "Pending") %}
     {{govukTag({
-      text: data['applicant2--provider-status'],
+      text: data['applicant4--provider-status'],
       classes: "govuk-tag--yellow"
     })}}
-  {% elseif (data['applicant2--provider-status'] == "Approved") %}
+  {% elseif (data['applicant4--provider-status'] == "Approved") %}
     {{govukTag({
-      text: data['applicant2--provider-status'],
+      text: data['applicant4--provider-status'],
       classes: "govuk-tag--green"
     })}}
   {% else %}
     {{govukTag({
-      text: data['applicant2--provider-status'],
+      text: data['applicant4--provider-status'],
       classes: "govuk-tag--red"
     })}}
   {% endif %}
 {% endset %}
 
 {% set fundingStatusHTML %}
-  {% if (data['applicant2--review-status'] != "Decision made") %} 
+  {% if (data['applicant4--review-status'] != "Decision made") %}
     –
-  {% elseif (data['applicant2--funding-status'] == "Yes") %}
+  {% elseif (data['applicant4--funding-status'] == "Yes") %}
     {{govukTag({
-      text: data['applicant2--funding-status'],
+      text: data['applicant4--funding-status'],
       classes: "govuk-tag--green"
     })}}
   {% else %}
     {{govukTag({
-      text: data['applicant2--funding-status'],
+      text: data['applicant4--funding-status'],
       classes: "govuk-tag--red"
     })}}
   {% endif %}
 {% endset %}
 
 {% set ineligiblereasonHTML %}
-  {% if (data['applicant2--ineligible-reason'] == "Other") %}
-    {{ data['applicant2--ineligible-reason'] }} – {{ data['applicant2--ineligible-reason--other'] }}
-  {% elseif (data['applicant2--ineligible-reason'] == "Not an eligible establishment type") %}
-    {{ data['applicant2--ineligible-reason'] }} – {{ data['applicant2--ineligible-reason--establishment'] }}
+  {% if (data['applicant4--ineligible-reason'] == "Other") %}
+    {{ data['applicant4--ineligible-reason'] }} – {{ data['applicant4--ineligible-reason--other'] }}
+  {% elseif (data['applicant4--ineligible-reason'] == "Not an eligible establishment type") %}
+    {{ data['applicant4--ineligible-reason'] }} – {{ data['applicant4--ineligible-reason--establishment'] }}
   {% else %}
-    {{ data['applicant2--ineligible-reason'] }} 
+    {{ data['applicant4--ineligible-reason'] }} 
   {% endif %}
 {% endset %}
 
@@ -71,8 +71,8 @@
   
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ data['applicant2--name'] }}</h1>
-    <p class="govuk-caption-m govuk-!-margin-bottom-6">{{ data['applicant2--email'] }}</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ data['applicant4--name'] }}</h1>
+    <p class="govuk-caption-m govuk-!-margin-bottom-6">{{ data['applicant4--email'] }}</p>
 
     {{ govukSummaryList({
       card: {
@@ -91,7 +91,7 @@
           actions: {
             items: [
               {
-                href: "/admin-console/v2/applicant-2/set-status",
+                href: "/admin-console/v2/applicant-4/set-status",
                 text: "Change",
                 visuallyHiddenText: "review status"
               }
@@ -108,7 +108,7 @@
           actions: {
             items: [
               {
-                href: "/admin-console/v2/applicant-2/set-eligibility",
+                href: "/admin-console/v2/applicant-4/set-eligibility",
                 text: "Change",
                 visuallyHiddenText: "eligibility"
               }
@@ -125,24 +125,24 @@
           actions: {
             items: [
               {
-                href: "/admin-console/v2/applicant-2/set-ineligible-reason",
+                href: "/admin-console/v2/applicant-4/set-ineligible-reason",
                 text: "Change",
                 visuallyHiddenText: "ineligible reason"
               }
             ]
           }
-        } if data['applicant2--funding-status'] == "No",
+        } if data['applicant4--funding-status'] == "No",
         {
           key: {
             text: "Notes"
           },
           value: {
-            text: data['applicant2--notes']
+            text: data['applicant4--notes']
           },
           actions: {
             items: [
               {
-                href: "/admin-console/v2/applicant-2/set-notes",
+                href: "/admin-console/v2/applicant-4/set-notes",
                 text: "Change",
                 visuallyHiddenText: "eligibility"
               }
@@ -164,7 +164,7 @@
             text: "Referred by return to teaching adviser"
           },
           value: {
-            html: data['applicant2--referred']
+            html: data['applicant4--referred']
           }
         },
         {
@@ -172,25 +172,25 @@
             text: "Employment type"
           },
           value: {
-            text: data['applicant2--employment-type']
+            text: data['applicant4--employment-type']
           }
-        } if data['applicant2--employment-type'] != "",
+        } if data['applicant4--employment-type'] != "",
         {
           key: {
             text: "Employer name"
           },
           value: {
-            text: data['applicant2--employer']
+            text: data['applicant4--employer']
           }
-        } if data['applicant2--employer'] != "",
+        } if data['applicant4--employer'] != "",
         {
           key: {
             text: "Role"
           },
           value: {
-            text: data['applicant2--role']
+            text: data['applicant4--role']
           }
-        } if data['applicant2--role'] != ""
+        } if data['applicant4--role'] != ""
       ]
     }) }}
 
@@ -206,7 +206,7 @@
             text: "NPQ course"
           },
           value: {
-            text: data['applicant2--course']
+            text: data['applicant4--course']
           }
         },
         {
@@ -214,7 +214,7 @@
             text: "Provider"
           },
           value: {
-            text: data['applicant2--provider']
+            text: data['applicant4--provider']
           }
         },
         {
@@ -243,7 +243,7 @@
             }
           },
           value: {
-            text: data['applicant2--participant-id']
+            text: data['applicant4--participant-id']
           }
         },
         {
@@ -251,7 +251,7 @@
             text: "Application ID"
           },
           value: {
-            text: data['applicant2--applicant-id']
+            text: data['applicant4--applicant-id']
           }
         },
         {
@@ -259,7 +259,7 @@
             text: "Registration submission date"
           },
           value: {
-            text: data['applicant2--submitted-date']
+            text: data['applicant4--submitted-date']
           }
         },
         {
@@ -267,7 +267,7 @@
             text: "Last updated date"
           },
           value: {
-            text: data['applicant2--updated-date']
+            text: data['applicant4--updated-date']
           },
           actions: {
             items: [

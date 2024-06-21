@@ -42,8 +42,8 @@
 {% endset %}
 
 {% set fundingStatusHTML %}
-  {% if (data['applicant1--funding-status'] == "–") %}
-    {{ data['applicant1--funding-status'] }}
+  {% if (data['applicant1--review-status'] != "Decision made") %}
+    –
   {% elseif (data['applicant1--funding-status'] == "Yes") %}
     {{govukTag({
       text: data['applicant1--funding-status'],
