@@ -31,10 +31,6 @@
                 text: "Ambition Institute"
               },
               {
-                value: "Education Development Trust",
-                text: "Education Development Trust"
-              },
-              {
                 value: "National Institute of Teaching",
                 text: "National Institute of Teaching"
               },
@@ -88,6 +84,42 @@
               }
             ]
           }) }}
+        {% elseif (data['choosenpq'] == "Leading primary mathematics")%}
+          {{ govukRadios({
+            name: "provider",
+            id: "provider",
+            fieldset: {
+            },
+            hint: {
+              text: "Select one of the providers offering your chosen course."
+            },
+            items: [
+              {
+                value: "Ambition Institute",
+                text: "Ambition Institute"
+              },
+              {
+                value: "Church of England",
+                text: "Church of England"
+              },
+              {
+                value: "LLSE",
+                text: "LLSE"
+              },
+              {
+                value: "National Institute of Teaching",
+                text: "National Institute of Teaching"
+              },
+              {
+                value: "Teach First",
+                text: "Teach First"
+              },
+              {
+                value: "University College London (UCL) Institute of Education",
+                text: "University College London (UCL) Institute of Education"
+              }
+            ]
+          }) }}
         {% else %}
           {{ govukRadios({
             name: "provider",
@@ -109,10 +141,6 @@
               {
                 value: "Church of England",
                 text: "Church of England"
-              },
-              {
-                value: "Education Development Trust",
-                text: "Education Development Trust"
               },
               {
                 value: "LLSE",
