@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+
+
+{% block pageTitle %}
+  What kind of early years setting do you work in?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/check-data/_nursery-check" method="post">
+      {{ govukRadios({
+        name: "nurserysetting",
+        id: "nurserysetting",
+        fieldset: {
+          legend: {
+            text: "Which early years setting do you work in?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Local authority-maintained nursery",
+            text: "Local authority-maintained nursery"
+          },
+          {
+            value: "Pre-school class or nursery that’s part of a school (maintained or independent)",
+            text: "Pre-school class or nursery that’s part of a school (maintained or independent)"
+          },
+          {
+            value: "Private nursery",
+            text: "Private nursery"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Another early years setting",
+            text: "Another early years setting"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to your registrations",
+    href: "/registration-status/multiple-registrations"
+  }) }}
+{% endblock %}
+
+{% set passedHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Passed
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You can access your certificate through the<a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications service </a></p>
+{% endset %}
+
+{% set scholarshipfundingHtml %}
+  <strong class="govuk-tag govuk-tag--red">
+    Not eligible
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England.</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+{% endset %}
+
+{% set courseFundingHtml %}
+  {% if data['whichsetting'] == "earlyyears" %}
+    {{ data['paymenteyll'] or "I'm paying" }}
+  {% else %}
+    {{ data['payment'] or "I'm paying" }}
+  {% endif %}
+{% endset %}
+
+{% block content %}
+  <span class="govuk-caption-m">Submitted	10 April 2021</span>
+  <h1 class="govuk-heading-xl">
+    Your Senior leadership NPQ registration
+  </h1>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+        value: {
+          html: "Senior leadership NPQ"
+        }
+      },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html: "Teach First"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html: passedHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: scholarshipfundingHtml
+        }
+      },
+      {
+        key: {
+          text: "Course funding"
+        },
+        value: {
+          html: courseFundingHtml
+        }
+      }
+    ]
+  }) }}
+
+  {% include 'includes/registration-status/work-details/not-eng.html' %}
+
+  {% include 'includes/registration-status/register-for-another-npq.html' %}
+
+  {% include 'includes/prototype-links.html' %}
+
+{% endblock %}

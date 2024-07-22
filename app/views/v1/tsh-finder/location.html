@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+{% block pageTitle %}
+  Find a teaching school hub near you
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/pdtl/professional-development-for-teachers-and-leaders-2"
+      },
+      {
+        text: "Find a teaching school hub",
+        href: "start-finder"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="results" method="post">
+        {{ govukInput({
+          label: {
+              text: "Where do you live?",
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "Enter the town, city or the first part of the postcode. For example, Chester or CH1."
+            },
+            id: "tshlocation",
+            name: "tshlocation"
+          }) 
+        }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+  {% include 'includes/pdtl/survey.html' %}
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        For prototype reference
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <h3 class="govuk-heading-s">The following locations can be used to get relevant results:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Newcastle (using "newcastle" "Newcastle" or any postcode containing "NE")</li>
+        <li>Bristol (using "bristol" "Bristol" or any postcode containing "BS")</li>
+        <li>South London (using "Bromley" "Croydon" "Wimbledon" "Sutton" "Epsom" or any postcode containing "BR" "CR" "SE" "SW")</li>
+        <li>Central London (using "London" "london" "Central London")</li>
+        <li>Using any other location will show the results for central London</li>
+      </ul>
+      <p>Please note: Results are not accurate. There is no location logic built into this prototype, it uses text strings to search and roughly create a realistic experience. Results may not show in order of nearest first. </p>
+    </div>
+  </details>
+{% endblock %}

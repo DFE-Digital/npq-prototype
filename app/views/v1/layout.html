@@ -1,0 +1,77 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+  {% block pageTitle %}
+    {{ serviceName }} – GOV.UK
+  {% endblock %}
+
+  {% set serviceURL %}
+    {% if signedIn == 'true' %}
+      /chosen
+      {% else %}
+        /start-id
+    {% endif %}
+  {% endset %}
+
+  {% block header %}
+    {{ govukHeader({
+      homepageUrl: "/index",
+      serviceName: serviceName,
+      serviceUrl: serviceURL,
+      navigation: [
+        {
+          href: 'https://get-an-identity-prototype.herokuapp.com/account/account-details',
+          html: data['dia'],
+          active: true if account == 'true'
+        },
+        {
+          href: '/registration-status/multiple-registrations',
+          text: "NPQ account",
+          active: true if account == 'true'
+        },
+        {
+          href: "https://get-an-identity-prototype.herokuapp.com/user-research/npq/sign-out",
+          text: "Sign out"
+        }
+      ] if signedIn == 'true'
+    }) }}
+
+    <div class="govuk-width-container">
+      {{ govukPhaseBanner({
+        tag: {
+          text: "Prototype"
+        },
+        html: 'This is a new service – <a class="govuk-link" href="#">give feedback or report a problem</a>'
+      }) }}
+    </div>
+  {% endblock %}
+  
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "/manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "/manage-prototype/clear-data",
+            text: "Clear data"
+          },
+          {
+            href: "/settings",
+            text: "settings"
+          },
+          {
+            href: "/set-user-type?type=employer",
+            text: "Employer referral form"
+          }
+        ]
+      }
+    }) }}
+    {{ data | log }}
+  {% endblock %}

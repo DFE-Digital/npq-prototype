@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Sharing your NPQ information
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Sharing your registration information</h1>
+    <p>The information you have shared through this registration form will be shared with your provider. Your provider needs this information to enable you to apply.</p>
+
+      {{ govukCheckboxes({
+        name: "sharedata",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "yes",
+            text: "My registration information can be shared with my provider"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "check-answers"
+      }) }}
+
+
+  </div>
+</div>
+
+{% endblock %}
