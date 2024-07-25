@@ -1,7 +1,6 @@
 
 {% extends "layout.html" %}
 
-
 {% block pageTitle %}
   Register for an NPQ prototype
 {% endblock %}
@@ -16,7 +15,7 @@
 
       {{ govukButton({
         text: "View prototype",
-        href: "start-id"
+        href: "/v2/start-id"
       }) }}
 
       <h2 class="govuk-heading-m">
@@ -154,10 +153,10 @@
       <h3 class="govuk-heading-m">Teaching School Hub (TSH) finder</h3>
       <p>The TSH finder allows users to find their local TSH where they can get information about
       providers and delivery partners for the NPQ.</p>
-      <p><a href="/tsh-finder/start-finder">Find a teaching school hub</a> by location.</p>
+      <p><a href="./tsh-finder/start-finder">Find a teaching school hub</a> by location.</p>
 
       <h3 class="govuk-heading-m">Admin console</h3>
-      <p><a href="/admin-console/npq-applications">Prototype for the NPQ side of the admin console</a>.</p>
+      <p><a href="./admin-console/npq-applications">Prototype for the NPQ side of the admin console</a>.</p>
 
 <!-- ARCHIVE STARTS HERE -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
@@ -165,8 +164,8 @@
       <p>Explorations and older versions of different parts of the journey.</p>
 
       <h2 class="govuk-heading-m">Professional development for teachers and leaders (PDTL)</h2>
-      <p><a href="/_archive/pdtl/professional-development-for-teachers-and-leaders">Version one of the PDTL prototype</a>.</p>
-      <p><a href="/_archive/pdtl-step-by-step/professional-development-for-teachers-and-leaders">Step by step version of the PDTL prototype</a>.</p>
+      <p><a href="./_archive/pdtl/professional-development-for-teachers-and-leaders">Version one of the PDTL prototype</a>.</p>
+      <p><a href="./_archive/pdtl-step-by-step/professional-development-for-teachers-and-leaders">Step by step version of the PDTL prototype</a>.</p>
 
       <h2 class="govuk-heading-m">Provider finder</h2>
       <p>The following 4 versions of the provider finder show different stages of the MVP.</p>
@@ -178,7 +177,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p><a href="/_archive/pdtl/tsh-finder-2/start-finder">Find a TSH by location and filter by NPQs.</a> This version does not show lead providers.</p>
+          <p><a href="./_archive/pdtl/tsh-finder-2/start-finder">Find a TSH by location and filter by NPQs.</a> This version does not show lead providers.</p>
         </div>
       </details>
 
@@ -189,7 +188,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p><a href="/_archive/pdtl/tsh-finder-3/start-finder">Find a TSH by location and NPQs.</a> This version shows lead providers.</p>
+          <p><a href="./_archive/pdtl/tsh-finder-3/start-finder">Find a TSH by location and NPQs.</a> This version shows lead providers.</p>
         </div>
       </details>
 
@@ -200,7 +199,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p><a href="/_archive/pdtl/tsh-finder-4/start-finder">Find delivery partners by location and NPQ</a>, and see the relevant lead provider.</p>
+          <p><a href="./_archive/pdtl/tsh-finder-4/start-finder">Find delivery partners by location and NPQ</a>, and see the relevant lead provider.</p>
         </div>
       </details>
 

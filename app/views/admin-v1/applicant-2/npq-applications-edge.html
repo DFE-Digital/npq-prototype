@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include '../includes/header.html' %}
+
+  {% include '../includes/primary-navigation.html' %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukNotificationBanner({
+        text: "Lynne Howe's funding status has been updated successfully.",
+        type: 'success'
+      }) }}
+
+      {% include '../includes/npq-applications-edge-content.html' %}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

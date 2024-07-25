@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include './includes/header.html' %}
+
+  {% include './includes/primary-navigation.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">NPQ applications</h1>
+
+      {{ mojSubNavigation({
+        label: 'Sub navigation',
+        items: [{
+          text: 'Application exports',
+          href: 'npq-applications'
+        }, {
+          text: 'Eligibility imports',
+          href: 'npq-applications-imports',
+          active: true
+        }, {
+          text: 'Edge cases',
+          href: 'npq-applications-edge'
+        }]
+      }) }}
+
+      {{ govukButton({
+        text: "Schedule import"
+      }) }}
+
+      <table class="govuk-table govuk-!-font-size-16">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Filename</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Scheduled at</th>
+            <th scope="col" class="govuk-table__header">Processed at</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">eligibility_import_15_2_2023_2.csv</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">15 February 2023, 4:50 PM</td>
+            <td class="govuk-table__cell">15 February 2023, 4:50 PM</td>
+            <td class="govuk-table__cell"><a href="#">View results</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">eligibility_import_15_2_2023.csv</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">15 February 2023, 2:20 PM</td>
+            <td class="govuk-table__cell">15 February 2023, 2:20 PM</td>
+            <td class="govuk-table__cell"><a href="#">View results</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">eligibility_import_14_2_2023.csv</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">14 February 2023, 12:51 PM</td>
+            <td class="govuk-table__cell">14 February 2023, 12:51 PM</td>
+            <td class="govuk-table__cell"><a href="#">View results</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">eligibility_import_10_2_23.csv</td>
+            <td class="govuk-table__cell">Failed</td>
+            <td class="govuk-table__cell">10 February 2023, 4:10 PM</td>
+            <td class="govuk-table__cell">10 February 2023, 4:10 PM</td>
+            <td class="govuk-table__cell"><a href="#">View errors</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">eligibility_import_9_2_23_v3.csv</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">9 February 2023, 10:21 AM</td>
+            <td class="govuk-table__cell">9 February 2023, 10:21 AM</td>
+            <td class="govuk-table__cell"><a href="#">View results</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
