@@ -104,4 +104,12 @@ module.exports = router => {
     } 
   })
 
+  router.get('/npq-applications', function(req, res){
+    res.redirect(v + 'npq-applications')
+  })
+
+  router.get('/npq-applications-edge', function(req, res){
+    res.redirect(v + 'npq-applications-edge')
+  })
+
 }
