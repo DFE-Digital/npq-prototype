@@ -18,9 +18,9 @@
       <h1 class="govuk-heading-xl">Funding </h1>
       <!-- Early years + not NPQEYL -->
       {% if (data['haveurn'] == "Yes") and (data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)") %}
-        {% include 'includes/funding-messages/message4B-funding-not-available-setting.html' %}
+        {% include '../includes/funding-messages/message4B-funding-not-available-setting.html' %}
       {% else %}
-        {% include 'includes/funding-messages/message4-funding-not-available-setting.html' %}
+        {% include '../includes/funding-messages/message4-funding-not-available-setting.html' %}
       {% endif %}
 
       {{ govukButton({

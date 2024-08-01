@@ -91,6 +91,24 @@ module.exports = router => {
     }
   })
 
+    // Closed state - Header link 
+    router.get(v + 'registration-status/header-link', function (req, res) {
+
+      let closedState = req.session.data.closedState
+    
+      if (closedState === 'full') {
+          res.redirect(v + 'start-id')
+        } else if (closedState === 'partial'){
+          res.redirect(v + 'registrations-closed')
+        } else {
+        res.redirect(v + 'course-start')
+      }
+    })
+
+  router.get('/start-id', function(req, res){
+    res.redirect(v + 'start-id')
+  })
+
   // -----------------
   //  Set the number of registrations  
   // -----------------
@@ -116,7 +134,7 @@ module.exports = router => {
 
   // Redirect to correct account page if have 0,1 or >1 registrations
 
-  router.get(v + 'registration-status', function (req, res) {
+  router.get('/registration-status', function (req, res) {
 
     let numberOfRegistrations = req.session.data.numberOfRegistrations
   
@@ -132,6 +150,10 @@ module.exports = router => {
 // ------------
 // Registration flow  
 // ------------
+
+  router.get('/course-start', function(req, res){
+    res.redirect(v + 'course-start')
+  })
   
   router.post(v + 'chosen', function(req, res){
     var startdatet = req.session.data['startdate']
@@ -197,7 +219,7 @@ module.exports = router => {
   })
 
   // Does the user work in a state or private childcare setting?
-  router.post(v + 'check-data/_nursery-check', function (req, res){
+  router.post(v + 'eyll/nursery-type', function (req, res){
     var nurserysettingt = req.session.data['nurserysetting']
 
     if (nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)' || nurserysettingt == 'Local authority-maintained nursery') {
@@ -236,13 +258,17 @@ module.exports = router => {
     }
   })
 
+  router.get('/choose-npq', function(req, res){
+    res.redirect(v + 'choose-npq')
+  })
+
   // -------------------------------------------------------------------------------------
   // FUNDING OUTCOMES 
   // After completing questions - takes user to a page with the funding outcome
   // -------------------------------------------------------------------------------------
 
   // Does the user work in England and checks all other funding requirements
-  router.post(v + 'check-data/_funding-check', function(req, res){
+  router.post('/check-data/_funding-check', function(req, res){
     var npqt = req.session.data['choosenpq']
     var teachadvisoryt = req.session.data['teachadvisory']
     var locationt = req.session.data['wheredoyouwork']
@@ -516,7 +542,7 @@ module.exports = router => {
   // ----------
 
   // Maths - mastery answer
-  router.post(v + 'maths-mastery-outcome', function(req, res){
+  router.post('/maths-mastery-outcome', function(req, res){
     var mathsmasteryt = req.session.data['mathsmastery']
     var locationt = req.session.data['wheredoyouwork']
     var teachadvisoryt = req.session.data['teachadvisory']
@@ -579,7 +605,7 @@ module.exports = router => {
   })
 
   // Maths - other mastery route
-  router.post(v + 'maths-other-outcome', function(req, res){
+  router.post('/maths-other-outcome', function(req, res){
     var mathsothert = req.session.data['mathsmasteryother']
     var locationt = req.session.data['wheredoyouwork']
     var teachadvisoryt = req.session.data['teachadvisory']

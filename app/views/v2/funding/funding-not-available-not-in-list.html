@@ -19,9 +19,9 @@
       
       <!-- Not chosen Maths, SENCO, EHCO, Headship -->
       {% if data['choosenpq'] != "NPQ for Early Years Leadership (NPQEYL)" %}
-        {% include 'includes/funding-messages/message5B-funding-not-available-not-in-list.html' %}
+        {% include '../includes/funding-messages/message5B-funding-not-available-not-in-list.html' %}
       {% else %}
-        {% include 'includes/funding-messages/message5-funding-not-available-not-in-list.html' %}
+        {% include '../includes/funding-messages/message5-funding-not-available-not-in-list.html' %}
       {% endif %}
 
       {{ govukButton({

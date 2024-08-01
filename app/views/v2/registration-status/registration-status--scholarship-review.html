@@ -10,7 +10,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to your registrations",
-    href: "/registration-status/multiple-registrations"
+    href: "./multiple-registrations"
   }) }}
 {% endblock %}
 
@@ -175,10 +175,10 @@
     ]
   }) }}
 
-  {% include 'includes/registration-status/work-details/other-local-authority.html' %}
+  {% include '../includes/registration-status/work-details/other-local-authority.html' %}
 
-  {% include 'includes/registration-status/register-for-another-npq.html' %}
+  {% include '../includes/registration-status/register-for-another-npq.html' %}
 
-  {% include 'includes/prototype-links.html' %}
+  {% include '../includes/prototype-links.html' %}
 
 {% endblock %}

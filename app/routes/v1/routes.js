@@ -142,6 +142,10 @@ module.exports = router => {
 // Registration flow  
 // ------------
 
+  router.get('/chosen', function(req, res){
+    res.redirect(v + 'chosen')
+  })
+
   router.post(v + 'where-do-you-work', function(req, res){
     var choosenpqprovidert = req.session.data['choosenpqprovider']
 
@@ -420,5 +424,14 @@ router.post(v + 'maths-other-outcome', function(req, res){
     res.redirect(v + 'funding/funding-not-available-england')
   }
 })
+
+// registration details pages 
+  router.get('/change-details', function(req, res){
+    res.redirect(v + 'change-details')
+  })
+
+  router.get('/multiple-registrations', function(req, res){
+    res.redirect(v + 'registration-status/multiple-registrations')
+  })
 
 }
