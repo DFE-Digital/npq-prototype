@@ -15,46 +15,6 @@ var hasurnt = "no"
 
 module.exports = router => {
 
-// ------------
-// DfE Identity in/out links 
-// ------------
-
-  // Redirect from Identity prototype - NPQ create account
-  router.get(v + 'user-research/npq/new-user', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    res.redirect(v + 'course-start') 
-  })
-
-  // Redirect from Identity prototype - NPQ show account
-    router.get(v + 'user-research/npq/existing-user', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    res.redirect(v + 'registration-status/registration-status')
-  })
-
-  // Redirect from Identity prototype - Closed state - sign up to email  
-  router.get(v + 'user-research/npq/closed-eoi', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    data.closedState = 'Partial'
-    data.closedEoi = 'True'
-    res.redirect(v + 'closed/eoi-senco-interest')
-  })
-
-  // Redirect from Identity prototype - Closed state - sign in  
-  router.get(v + 'user-research/npq/closed-signin', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    data.closedState = 'Partial'
-    data.closedSignin = 'True'
-    res.redirect(v + 'registration-status/registration-status')
-  })
-
-  router.get(v + 'auth/return-to-service', (req, res) => {
-    res.redirect(req.session.data.returnToService)
-  })
-
   // Just submitted - show success message 
   router.get(v + 'submit', (req, res) => {
     const data = req.session.data
@@ -76,7 +36,7 @@ module.exports = router => {
   router.get(v + 'registration-account', function (req, res) {
       res.redirect(v + 'registration-status/multiple-registrations')
   })
-  
+
   router.get(v + 'registration-status/registration-account', function (req, res) {
     res.redirect(v + 'registration-status/multiple-registrations')
   })
