@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include '../includes/header.html' %}
+  {% include '../includes/primary-navigation.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "../npq-applications-review"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  {% include '../includes/applicant4.html' %}
+{% endblock %}
