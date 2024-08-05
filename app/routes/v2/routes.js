@@ -5,26 +5,27 @@ var v = '/v2/'
 
 module.exports = router => {
 
-// ------------
-// DfE Identity in/out links 
+  // ------------
+// DfE Identity in/out links
+       // only work for most recent version so identity prototype doesn't have to be updated each time. 
 // ------------
 
   // Redirect from Identity prototype - NPQ create account
-  router.get(v + 'user-research/npq/new-user', (req, res) => {
+  router.get('/user-research/npq/new-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
     res.redirect(v + 'course-start') 
   })
 
   // Redirect from Identity prototype - NPQ show account
-    router.get(v + 'user-research/npq/existing-user', (req, res) => {
+    router.get('/user-research/npq/existing-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
     res.redirect(v + 'registration-status/registration-status')
   })
 
   // Redirect from Identity prototype - Closed state - sign up to email  
-  router.get(v + 'user-research/npq/closed-eoi', (req, res) => {
+  router.get('/user-research/npq/closed-eoi', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
     data.closedState = 'Partial'
@@ -33,7 +34,7 @@ module.exports = router => {
   })
 
   // Redirect from Identity prototype - Closed state - sign in  
-  router.get(v + 'user-research/npq/closed-signin', (req, res) => {
+  router.get('/user-research/npq/closed-signin', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
     data.closedState = 'Partial'
@@ -41,15 +42,8 @@ module.exports = router => {
     res.redirect(v + 'registration-status/registration-status')
   })
 
-  router.get(v + 'auth/return-to-service', (req, res) => {
+  router.get('/auth/return-to-service', (req, res) => {
     res.redirect(req.session.data.returnToService)
-  })
-
-  // Just submitted - show success message 
-  router.get(v + 'submit', (req, res) => {
-    const data = req.session.data
-    data.submittedNow = 'True'
-    res.redirect(v + 'registration-status/registration-status')
   })
 
   // -----------------
@@ -154,6 +148,13 @@ module.exports = router => {
       } else {
         res.redirect(v + 'registration-status/multiple-registrations')
     }
+  })
+
+  // Just submitted - show success message 
+  router.get(v + 'submit', (req, res) => {
+    const data = req.session.data
+    data.submittedNow = 'True'
+    res.redirect(v + 'registration-status/registration-status')
   })
 
 // ------------
