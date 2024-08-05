@@ -46,6 +46,10 @@ module.exports = router => {
     res.redirect(req.session.data.returnToService)
   })
 
+  router.get('/npq-account', (req, res) => {
+    res.redirect(v + 'registration-status/registration-status')
+  })
+
   // -----------------
   //  Set closed states 
   // -----------------
