@@ -39,7 +39,12 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "https://get-an-identity-prototype.herokuapp.com/user-research/npq/id",
+        href: "chosen",
         isStartButton: true
       }) }}
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Prototype note</h3> 
+        <p>The DfE identity flow is not shown in this version of the prototype. This would have appeared after using the 'start now' button.You will instead be taken to the first question after the identity flow. To see the identity flow, go to the <a href="/v2/index">latest version of this prototype</a>.</p>
+      </div>
 {% endblock %}
