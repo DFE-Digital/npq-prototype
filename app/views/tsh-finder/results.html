@@ -47,43 +47,43 @@
           <!-- Newcastle -->
           {% if (("ne" in data['tshlocation']) or ("NE" in data['tshlocation'])) %}
             <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
-              {% include 'includes/pdtl/tsh-newcastle1.html' %}
+              {% include './includes/tsh-newcastle1.html' %}
             </div>
             <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-              {% include 'includes/pdtl/tsh-newcastle2.html' %}
+              {% include './includes/tsh-newcastle2.html' %}
             </div>
             <!-- Bristol -->
             {% elseif ((data['tshlocation'] == "bristol") or (data['tshlocation'] == "Bristol") or ("BS" in data['tshlocation']) or ("bs" in data['tshlocation']))  %}
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-bristol1.html' %}
+                {% include './includes/tsh-bristol1.html' %}
               </div>
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-bristol2.html' %}
+                {% include './includes/tsh-bristol2.html' %}
               </div>
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-bristol3.html' %}
+                {% include './includes/tsh-bristol3.html' %}
               </div>
             <!-- London SW, SE, Sutton, Croydon -->
             {% elseif (("SW" in data['tshlocation']) or ("sw" in data['tshlocation']) or ("SM" in data['tshlocation']) or ("sm" in data['tshlocation']) or ("SE" in data['tshlocation']) or ("se" in data['tshlocation']) or ("CR" in data['tshlocation']) or ("cr" in data['tshlocation']) or ("BR" in data['tshlocation']) or ("br" in data['tshlocation']) or ("Bromley" in data['tshlocation']) or ("Wimbledon" in data['tshlocation']) or ("Sutton" in data['tshlocation']) or ("Epsom" in data['tshlocation'])) %}
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-london-south.html' %}
+                {% include './includes/tsh-london-south.html' %}
               </div>
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-london-croydon.html' %}
+                {% include './includes/tsh-london-croydon.html' %}
               </div>
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-london-bromley.html' %}
+                {% include './includes/tsh-london-bromley.html' %}
               </div>
             <!-- if input anything else, then show central london results -->
             {% else %}
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 20px; border-bottom: 1px solid #b1b4b6; border-top: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-london-central.html' %}
+                {% include './includes/tsh-london-central.html' %}
               </div>
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-london-south.html' %}
+                {% include './includes/tsh-london-south.html' %}
               </div>
               <div class="govuk-grid-column govuk-!-margin-bottom-4" style="padding-top: 10px; border-bottom: 1px solid #b1b4b6">
-                {% include 'includes/pdtl/tsh-london-west.html' %}
+                {% include './includes/tsh-london-west.html' %}
               </div>
           {% endif %}
         </div>

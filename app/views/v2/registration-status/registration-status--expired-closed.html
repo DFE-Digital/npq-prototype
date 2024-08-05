@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% set passedHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Passed
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications</a> to get your certificate.</p>
+{% endset %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Your NPQ registrations</h1>
+
+  {{ govukInsetText({
+    html: '<a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.'
+  }) }}
+
+  <div class="govuk-rows" style="margin-top: 40px"></div>
+
+
+
+  <h3 class="govuk-heading-l govuk-!-margin-top-8">Expired registrations</h3>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading behaviour and culture NPQ
+        <p class="govuk-!-margin-bottom-0">Church of England</p>'
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "24 July 2022"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>'
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your registration has expired but you can register again for future courses when registrations open. </p>'
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}

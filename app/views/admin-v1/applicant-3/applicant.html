@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+
+{% block header %}
+  {% include '../includes/header.html' %}
+
+  {% include '../includes/primary-navigation.html' %}
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../npq-applications-edge"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Carlton Shanahan JD</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Participant ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            3a964bcf-369d-4473-9cd5-8c61bd2e10ca
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Application ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ???
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            NPQ course name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            NPQ Leading Teaching (43db5b685b82)
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Lead provider
+          </dt>
+          <dd class="govuk-summary-list__value">
+            UCL Institute of Education
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Eligible for funding
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if (data['adminfunding3'] == "Yes") %}
+              {{govukTag({
+                text: "YES",
+                classes: "govuk-tag--green"
+              })}}
+
+              {% else %}
+
+              {{govukTag({
+                text: "NO",
+                classes: "govuk-tag--red"
+              })}}
+
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Funding eligibility status code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            	Needs to re-register
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employment type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Young offender institute
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employer name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Schneider LLC
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employment role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Soldier
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created at
+          </dt>
+          <dd class="govuk-summary-list__value">
+            04 January 2023, 11:28 AM
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Updated at
+          </dt>
+          <dd class="govuk-summary-list__value">
+            25 January 2023, 15:34 PM
+          </dd>
+        </div>
+        </dl>
+
+      {{ govukButton({
+        text: "Set eligibility status",
+        classes: "govuk-button--secondary",
+        href: 'set-status'
+      }) }}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

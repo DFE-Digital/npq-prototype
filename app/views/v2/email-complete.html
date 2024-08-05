@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <br>
+
+      <h2 class="govuk-heading-m">
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      Your Early headship coaching offer registration and next steps
+      {% else %}
+      Your {{ data['choosenpq'] or "Leading literacy" }} NPQ registration and next steps
+      {% endif %}
+      </h2>
+
+    <p>Department for Education Teacher CPD</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-body">
+      <p>Dear {{ data['first-name'] or "Mary"}}</p>
+
+      <p>
+      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      You’ve registered for the Early headship coaching offer.
+      {% else %}
+      You’ve registered for the {{ data['choosenpq'] or "Leading literacy" }} NPQ.
+      {% endif %}
+      </p>
+
+      <h2 class="govuk-heading-m">Apply through your provider</h2>
+
+      <p>You still need to apply for your NPQ through {{ data['provider'] or "Ambition Institute" }}.</p>
+
+      <p>They will contact you to outline the next steps, including how to apply. </p>
+
+      <h1 class="govuk-heading-m">Get help</h1>
+
+      <p>You can change your personal details at any time by returning to the <a href="https://get-an-identity-prototype.herokuapp.com/sign-in/email">service</a>.</p>
+
+  </div>
+</div>
+
+
+{% endblock %}

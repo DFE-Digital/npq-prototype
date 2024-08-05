@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Have you chosen an NPQ and provider?
+{% endblock %}
+
+{% block beforeContent %}
+
+{%- if not data['signedIn'] -%}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{%- endif -%}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="where-do-you-work" method="post">
+      {{ govukRadios({
+        name: "choosenpqprovider",
+        fieldset: {
+          legend: {
+            text: "Have you chosen an NPQ and provider?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <p><a href="check-answers">For research purposes.</a></p>
+  </div>
+</div>
+
+{% endblock %}

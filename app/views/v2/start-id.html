@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Register for a national professional qualification (NPQ)
+{% endblock %}
+
+{% block content %}
+  <!-- Partial Closed  -->
+  {% if data['closedState'] == "Partial" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Register for a national professional qualification (NPQ)
+        </h1>
+        <h3 class="govuk-heading-m">Registration has closed temporarily</h3>
+        <p>When registration reopens, use this service to register for a NPQ or the early headship coaching offer starting before November 2024. </p>
+        <p><strong><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/closed-eoi">Request email updates to tell you when registration opens</a></strong>, this is usually in the summer. You can also tell us about your interest in the special educational needs coordinator (SENCO) NPQ course.</p>
+
+        <p>You’ll be asked to create a DfE Identity account or sign in to your account. </p>
+        <p>You will need a teacher reference number (TRN), even if you’re not a teacher. <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">Find a lost TRN or request one</a> if you do not have it yet.</p>
+        <p>If you're starting a national professional qualification (NPQ) course before July 2024, contact your course provider for support.</p>
+
+        <h3 class="govuk-heading-m">Check your existing registrations</h3>
+        <p>You can still <a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/closed-signin">sign in to your DfE Identity account</a> to check your: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>registration details, if you already registered </li>
+          <li>course outcome, if you have completed your course </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- FULL Closed  -->
+    {% elseif data['closedState'] == "Full" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Register for a national professional qualification (NPQ)
+        </h1>
+        <h3 class="govuk-heading-m">Registration has closed temporarily</h3>
+        <p><a href="closed/eoi-email">Request email updates to tell you when registration reopens</a>. </p>
+    
+
+        <h3 class="govuk-heading-m">When registration opens</h3>
+        <p>Use this service to: </p>
+        <ul class="govuk-list govuk-list--bullet">
+        
+          <li>register for a NPQ or the early headship coaching offer </li>
+          <li>check your registration details, if you already registered </li>
+          <li>check your course outcome, if you have completed your course </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Open -->
+    {% else %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Register for a national professional qualification (NPQ)
+        </h1>
+        <p>
+          Use this service to:
+        </p>
+  
+        <ul class="govuk-list govuk-list--bullet">
+          <li>register for a NPQ or the early headship coaching offer starting before November 2024 </li>
+          <li>check your registration details, if you already registered </li>
+          <li>check your course outcome, if you have completed your course </li>
+        </ul>
+  
+        <p>
+          Once you've registered for your NPQ, you'll then need to apply separately with your training provider</a>.</p>
+ 
+<p>Your training provider will send you an application form by email once you’ve registered. If they confirm that you are eligible for a funded space, you will not need to pay for the course fees</a>.</p>
+      
+  
+        <h2 class="govuk-heading-m">Before you start</h2>
+  
+        <p>You need to know which NPQ you want to do and who your provider is. If you have not chosen yet, <a href="https://www.gov.uk/guidance/national-professional-qualification-npq-courses">find out about NPQ courses</a>.</p>
+  
+        <p>You also need a teacher reference number (TRN) to register for a NPQ, even if you’re not a teacher. <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">Find a lost TRN or request one</a> if you do not have it yet.</p>
+  
+        <p>If you work in early years or childcare, <a href="https://reports.ofsted.gov.uk/childcare">check if your workplace is registered with Ofsted</a> and get their Ofsted unique reference number (URN) if they have one.</p>
+  
+        <p>Before registering for an NPQ you’ll be asked to create a DfE Identity account or sign in to your account.</p>
+  
+        <p>By continuing, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers#NPQ">privacy notice</a>.</p>
+        
+        {{ govukButton({
+          text: "Start now",
+          href: "https://get-an-identity-prototype.herokuapp.com/user-research/npq/id",
+          isStartButton: true
+        }) }}
+        
+      </div>
+    </div>
+    
+  {% endif %}
+{% endblock %}

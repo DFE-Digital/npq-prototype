@@ -1,7 +1,6 @@
 
 {% extends "layout.html" %}
 
-
 {% block pageTitle %}
   Register for a NPQ prototype
 {% endblock %}
@@ -10,28 +9,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Register for a NPQ prototype
-      </h1>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "start-page"
-      }) }}
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Skip create DfE Identity account (GAI)
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="https://get-an-identity-prototype.herokuapp.com/auth/finish">Last page of GAI, linking back to NPQ service </a></li>
-            <li><a href="/course-start">First page after GAI, if not previously registered </a></li>
-          </ul>
-        </div>
-      </details>
+      <h1 class="govuk-heading-xl">Register for an NPQ prototype</h1>
 
       <h2 class="govuk-heading-m">
         Style guide
@@ -39,168 +17,72 @@
 
       <p>To see the terms we use, and how we use them, visit the <a href="/style-guide/style-guide">style guide</a>.</p>
 
-      <h2 class="govuk-heading-m">
-        Navigate the prototype
-      </h2>
 
-      <p>The password for the Get an Identity prototype (i.e. the password you're asked for after
-        clicking "Start now") is: <strong>gai</strong></p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
 
+      <h2 class="govuk-heading-l">Registration service</h2>
+<!-- Current version Registration service -->
+      <h2 class="govuk-heading-m">July 2024</h2>
+      <div class="govuk-body">
+        <p class="govuk-body-m">How the service looked when we reopened for Autumn 2024 registrations.</p>
+        <p><a href="https://teacher-cpd.design-history.education.gov.uk/register-for-an-npq/autumn-2024/">Design history post detailing the main changes made</a>.</p>
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "v2/index",
+          isStartButton: true
+        }) }}
+      </div>
+<!-- Registration service archive -->
+      <h2 class="govuk-heading-m">Past versions of the registration prototype</h2>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Returning users
+            April 2024 
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p>Use <strong>existing@email.com</strong> when asked for your email address.</p>
+          <p><a href="v1/index">This prototype version</a> shows how the service looked prior to it closing for Autumn 2024 updates.</p>
         </div>
       </details>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            New user attempting to log in
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>Use <strong>new@email.com</strong> when asked for your email address.</p>
-        </div>
-      </details>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Private school journey
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>Type <strong>‘private’</strong> when asked for the <strong>name of the school</strong>.</p>
-        </div>
-      </details>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            School or early years in eligibility check 
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>Type '<strong>not-pp50</strong>' when asked for the <strong>name of the school</strong> or the <strong>Ofsted URN</strong>.</p>
-          <p>This will show the funding outcome (not eligible) for a workplace not in the eligibility list. </p>
-          <p>Entering anything else in those questions, shows the outcome for the workplace in the list (normally eligible, but subject to other rules).</p>
-        </div>
-      </details>
-
-<!-- LINKS TO PARTS OF THE PROTOTYPE STARTS HERE -->
+<!-- Admin console prototype -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">Links to parts of the NPQ prototype</h2>
+      <h2 class="govuk-heading-l">Admin console</h2>
+      <p>Prototype for the NPQ admin console, used by DfE staff.</p>
 
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
-        <li><a href="/start-page">Start page </a></li>
-        <li><a href="/check-answers">Check your answers page </a></li>
-        <li><a href="/registration-status/registration-status">Confirmation page </a></li>
-        <li><a href="/index-of-funding">View all funding outcome messages</a></li>
-      </ul>
+      <h2 class="govuk-heading-m">June 2024</h2>
+      <div class="govuk-body">
+        <p class="govuk-body-m">Streamlining the funding review process and making it easier to manage</p>
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "/admin-v2/npq-applications-edge",
+          isStartButton: true
+        }) }}
+      </div>
 
+<!-- Admin console archive -->
+      <h2 class="govuk-heading-m">Past versions of the admin console prototype</h2>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Users who have already registered
+            Feb 2023 
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p><a href="https://lucid.app/lucidspark/e33a4231-5282-4a1f-b98d-694b4295d6cc/edit?invitationId=inv_31cc941f-c63c-4ac5-95fc-2775e26969fc&page=0_0#">Lucid board showing all registration flow routes, including funding messages</a></p>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing different funding statuses </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/registration-status/registration-status--scholarship-only">Message 1 - Eligible for Scholarship funding only </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-england">Message 2 - Not eligible for funding – not in England </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-previously-funded">Message 3 - Not eligible for funding – previously funded </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-setting">Message 4 - Not eligible for funding – not in an eligible setting </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-not-in-list">Message 5 - Not eligible for funding – not in eligible list (top PP50) </a></li>
-            <li><a href="/registration-status/registration-status--not-funded-ofsted">Message 6 - Not eligible for funding – not Ofsted </a></li>
-            <li>Message 7 - same as 4</li>
-            <li><a href="/registration-status/registration-status--not-funded-ehco">Message 8 - Not eligible for funding – EHCO that doesn't meet requirements </a></li>
-            <li><a href="/registration-status/registration-status--scholarship-review">Message 9 - Funding – in review </a></li>
-            <li><a href="/registration-status/registration-status--targeted-support">Pre April 2024 eligible for Targeted support funding </a></li>
-          </ul>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing provider application and course outcomes </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/registration-status/registration-status">User with one registration </a></li>
-            <li><a href="/registration-status/multiple-registrations">User with multiple registrations </a> (showing all provider application and course outcomes)</li>
-            <li><a href="/registration-status/registration-status--expired">User with one registration, that's expired </a></li>
-          </ul>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><strong>Provider application statuses</strong></li>
-            <li><a href="/registration-status/registration-status--scholarship-review">Apply with provider</a></li>
-            <li><a href="/registration-status/registration-status--scholarship-only">Successful application</a></li>
-            <li><a href="/registration-status/registration-status--not-funded-setting">Unsuccessful application</a></li>
-            <li><a href="/registration-status/registration-status--expired-closed">Expired registration, while service is closed</a></li>
-          </ul>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><strong>Course outcome statuses</strong></li>
-            <li><a href="/registration-status/registration-status--not-funded-england">Course passed</a></li>
-            <li><a href="/registration-status/registration-status--not-funded-ofsted">Course not passed</a></li>
-          </ul>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Other </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/submit">Registration straight after submitted</a></li>
-            <li><a href="email-complete">Confirmation email</a></li>
-          </ul>
+          <p><a href="/admin-v1/npq-applications">Testing three ways to update edge case details</a>.</p>
         </div>
       </details>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Set data to take through prototype
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing different funding statuses </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/no-registrations">User with no registrations </a></li>
-            <li><a href="/one-registration">User with one registration </a></li>
-            <li><a href="/multiple-registrations">User with multiple registrations </a></li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Closed service 
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/closed-for-registations">Partial closure (closed for registrations, account access) </a></li>
-            <li><a href="/closed-fully">Full closure </a></li>
-            <li><a href="/start-page">Remove closed state</a></li>
-          </ul>
-          <h3 class="govuk-heading-s">Late registration – For users given access through admin panel </h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/closed/late-registration--start-page">Late registration start page </a></li>
-            <li><a href="/closed/late-registration--error-message">Late registration error message (when email address doesn't have access)</a></li>
-          </ul>
-        </div>
-      </details>
-
+<!-- TSH prototype -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">Other prototypes</h2>
-      <h3 class="govuk-heading-m">Teaching School Hub (TSH) finder</h3>
+      <h2 class="govuk-heading-l">Teaching School Hub (TSH) finder</h2>
       <p>The TSH finder allows users to find their local TSH where they can get information about
       providers and delivery partners for the NPQ.</p>
       <p><a href="/tsh-finder/start-finder">Find a teaching school hub</a> by location.</p>
 
-      <h3 class="govuk-heading-m">Admin console</h3>
-      <p>Prototype for the NPQ admin console, used by DfE staff.</p>
-      <p><a href="/admin-console/v1/npq-applications">Version 1</a> – testing three ways to update edge case details </p>
-      <p><a href="/admin-console/v2/npq-applications-edge">Version 2</a> – streamlining review process and making it easier to manage</p>
-
-<!-- ARCHIVE STARTS HERE -->
+<!-- Other prototypes archive -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">Archive</h2>
+      <h2 class="govuk-heading-l">Archive of parts of the service that are no longer used</h2>
       <p>Explorations and older versions of different parts of the journey.</p>
 
       <h2 class="govuk-heading-m">Professional development for teachers and leaders (PDTL)</h2>

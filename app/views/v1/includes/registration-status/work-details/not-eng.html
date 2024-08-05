@@ -1,0 +1,85 @@
+{% set englandHtml %}
+  {{ data['wheredoyouwork'] or 'No' }}
+{% endset %}
+
+{% set workSettingHtml %}
+  {{ data['whichsetting'] or 'A school' }}
+{% endset %}
+
+{% set mathsHtml %}
+  {% if data['mathsmastery'] == "Yes" %}
+    {{ data['mathsmastery'] }} 
+    {% elseif data['mathsmasteryother'] == "I’ve taken a course similar to the primary maths Teaching for Mastery programme" %}
+      {{ data['mathsmastery'] }} - but taken a similar course
+    {% else %}
+      {{ data['mathsmastery'] }} - but can show understanding of mastery approaches another way
+  {% endif %}
+{% endset %}
+
+{{ govukSummaryList({
+  card: {
+    classes: "govuk-!-margin-bottom-0",
+    title: {
+      text: "Work details"
+    },
+    actions: {
+      items: [
+        {
+          href: "../registration-status/work-details/where-do-you-work",
+          text: "Change work details",
+          classes: "govuk-!-font-weight-regular"
+        }
+      ]
+    } if courseOutcome != "Started"
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        html: englandHtml
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        html: workSettingHtml
+      } 
+    },
+    {
+      key: {
+        text: "Completed one year of the primary maths Teaching for Mastery programme"
+      },
+      value: {
+        html: mathsHtml
+      } 
+    } if data['choosenpq'] == "Leading primary mathematics",
+    {
+      key: {
+        text: "Headship NPQ stage"
+      },
+      value: {
+        text: data['completednpqh']
+      }
+    } if data['choosenpq'] == "Early headship coaching offer",
+    {
+      key: {
+        text: "Headteacher"
+      },
+      value: {
+        text: data['headteachers']
+      }
+    } if data['choosenpq'] == "Early headship coaching offer",
+    {
+      key: {
+        text: "First 5 years of headship"
+      },
+      value: {
+        text: data['earlyheadship']
+      }
+    } if (data['choosenpq'] == "Early headship coaching offer") and (data['headteachers'] != 'No')
+  ]
+}) }}

@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to your registrations",
+    href: "./multiple-registrations"
+  }) }}
+{% endblock %}
+
+{% set npqNameHTML %}
+  {% if (data['choosenpq'] == "Early headship coaching offer") %}
+    Early headship coaching offer
+    {% else %}
+      {{ data['choosenpq'] or "Headship" }} NPQ
+  {% endif %}
+{% endset %}
+
+{% set providerHTML %}
+  {{ data['provider'] or "LLSE" }}
+{% endset %}
+
+{% set providerstatusHTML %}
+  <strong class="govuk-tag govuk-tag--yellow">
+    Apply with provider
+  </strong>
+  <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already.</p>
+  <p>They’ll email you to explain what you need to do next.</p>
+  <p>During the application process your provider will check your:</p>
+  <ul class="govuk-!-margin-bottom-2">
+    <li>identity</li>
+    <li>place of work</li>
+    <li>suitability for the NPQ course you've chosen</li>
+    <li>eligibility for scholarship funding</li>
+    <li>decision to complete a NPQ is supported by your workplace</li>
+  </ul>
+{% endset %}
+
+{% set coursedateHTML %}
+  <p>Before November 2024</p>
+  <p>If your provider does not confirm you've started the course before November 2024, your registration will expire. You can register again later, but your funding may change.</p>
+{% endset %}
+
+{% set personaldetailsHTML %}
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+{% endset %}
+
+{% set scholarshipfundingHtml %}
+  <p>Contact LLSE to check if you're eligible for scholarship funding and that they can offer you a scholarship funded space, if you have not done so already.</p>
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What if I'm not eligible for scholarship funding or there no funded spaces are available with my chosen provider?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-!-margin-bottom-0">You can:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>register with this provider again at a later date (courses are run twice a year, except for the Early headship coaching offer which varies by provider and is available year-round)</li>
+      <li>register with a different provider</li>
+      <li>explore other payment options, including paying for the course yourself or checking if your workplace or trust can cover the cost</li>
+    </ul>
+    </div>
+  </details>
+{% endset %}
+
+{% block content %}
+
+  <span class="govuk-caption-m">Submitted 16 August 2024</span>
+
+  <h1 class="govuk-heading-xl">
+    Your Executive leadership NPQ registration
+  </h1>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+        value: {
+          html: npqNameHTML
+        },
+        actions: {
+          items: [
+            {
+              href: "../change-details",
+              html: 'Change <span class="govuk-visually-hidden"> course</span>'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html: providerHTML
+        },
+        actions: {
+          items: [
+            {
+              href: "../change-details",
+              html: 'Change <span class="govuk-visually-hidden"> provider</span>'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          classes: 'govuk-!-width-full',
+          html: providerstatusHTML
+        }
+      },
+      {
+        key: {
+          text: "Course start"
+        },
+        value: {
+          html: coursedateHTML
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: scholarshipfundingHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          classes: "display-none"
+        },
+        value: {
+          html: personaldetailsHTML,
+          classes: "govuk-!-width-full-width"
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/registration-status/work-details/other-local-authority.html' %}
+
+  {% include '../includes/registration-status/register-for-another-npq.html' %}
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}

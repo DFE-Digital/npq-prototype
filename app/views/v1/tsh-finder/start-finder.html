@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Professional development for teachers and leaders
+{% endset %}
+
+{% block pageTitle %}
+  Find a teaching school hub near you
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/pdtl/professional-development-for-teachers-and-leaders-2"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find a teaching school hub</h1>
+      <p>Use this service to find the contact details and websites of teaching school hubs near you.</p>
+      <p>Teaching school hubs provide professional development for teachers.</p>
+      <p>For example, they help deliver national professional qualifications (NPQs) and the early career framework (ECF).</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">They can also give advice on professional development.</p>
+      {{ govukButton({
+        text: "Start now",
+        href: "location"
+      }) }}
+    </div>
+  </div>
+  {% include '../includes/pdtl/survey.html' %}
+{% endblock %}

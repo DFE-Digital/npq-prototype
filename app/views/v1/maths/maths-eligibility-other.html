@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set pageTitle %}
+  How can you show your understanding of mastery approaches to teaching maths?
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="../maths-other-outcome" method="post">
+        {{ govukRadios({
+          name: "mathsmasteryother",
+          id: "mathsmasteryother",
+          fieldset: {
+            legend: {
+              html: pageTitle,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Your provider will ask you for details."
+          },
+          items: [
+            {
+              value: "I’ve taken a course similar to the primary maths Teaching for Mastery programme",
+              text: "I’ve taken a course similar to the primary maths Teaching for Mastery programme"
+            },
+            {
+              value: "Another way",
+              text: "Another way",
+              hint: {
+                text: "For example, a reference from a professional who has supported your mastery professional development."
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "No",
+              text: "I cannot show an understanding of mastery approaches to teaching maths"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

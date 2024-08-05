@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Check your answers and submit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <!-- Maths NPQ -->
+  {% if data['choosenpq'] == "Leading primary mathematics" %}
+    {% include './includes/answers/maths.html' %}
+
+  <!-- EHCO not funded -->
+  {% elseif (data['choosenpq'] == "Early headship coaching offer") and (data['headteachers'] == 'No') %}
+    {% include './includes/answers/ehco-not-funded.html' %}
+
+  <!-- EHCO not funded -->
+  {% elseif (data['choosenpq'] == "Early headship coaching offer") and (data['earlyheadship'] == 'No') %}
+    {% include './includes/answers/ehco-not-funded.html' %}
+  
+  <!-- EHCO funded -->
+  {% elseif (data['choosenpq'] == "Early headship coaching offer") %}
+    {% include './includes/answers/ehco-funded.html' %}
+
+  <!-- Private nursery with URN -->
+  {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
+    {% include './includes/answers/ey-funded.html' %}
+
+  <!-- Not a nursery with URN -->
+  {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') %}
+    {% include './includes/answers/ey-funded.html' %}
+
+  <!-- State nursery  -->
+  {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class or nursery that’s part of a school (maintained or independent)")) %}
+    {% include './includes/answers/ey-state-nursery.html' %}
+
+  <!-- Not OFSTED - not nursery or a private nursery -->
+  {% elseif (data['whichsetting'] == "Early years or childcare") and (data['haveurn'] == 'No') %}
+    {% include './includes/answers/ey-no-ofsted.html' %}
+
+  <!-- User not working in England -->
+  {% elseif data['wheredoyouwork'] == "No" %}
+    {% include './includes/answers/not-eng.html' %}
+
+  <!-- User works in a private school -->
+  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
+    {% include './includes/answers/private-school.html' %}
+
+  <!-- User works in another setting and ITT -->
+  {% elseif (data['whichsetting'] == "Other") and (data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider") %}
+    {% include './includes/answers/other-itt.html' %}
+  
+  <!-- User works in another setting -->
+  {% elseif data['whichsetting'] == "Other" %}
+    {% include './includes/answers/other.html' %}
+
+  {% else %}
+    {% include './includes/answers/school-funded.html' %}
+  {% endif %}
+
+  {{ govukButton({
+    text: "Submit",
+    href: "registration-status/registration-status"
+  }) }}
+
+{% endblock %}
