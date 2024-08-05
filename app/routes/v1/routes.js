@@ -14,6 +14,7 @@ var npqt = "Headship"
 var hasurnt = "no"
 
 module.exports = router => {
+
 // ------------
 // DfE Identity in/out links 
 // ------------
@@ -61,90 +62,28 @@ module.exports = router => {
     res.redirect(v + 'registration-status/registration-status')
   })
 
-  // -----------------
-  //  Set closed states 
-  // -----------------
-
-  // Closed state - partial
-  router.get(v + 'closed-for-registations', (req, res) => {
-    const data = req.session.data
-    data.closedState = 'Partial'
-    res.redirect(v + 'start-id')
-  })
-
-  // Closed state - full 
-  router.get(v + 'closed-fully', (req, res) => {
-    const data = req.session.data
-    data.closedState = 'Full'
-    res.redirect(v + 'start-id')
-  })
-
-  // Closed state - Remove any closed states
-  router.get(v + 'start-page', (req, res) => {
-    const data = req.session.data
-    data.closedState = ''
-    res.redirect(v + 'start-id')
-  })
-
-  // Closed state - Header link 
+  // Header link 
   router.get(v + 'header-link', function (req, res) {
-
-    let closedState = req.session.data.closedState
-  
-    if (closedState === 'full') {
-        res.redirect(v + 'start-id')
-      } else if (closedState === 'partial'){
-        res.redirect(v + 'registrations-closed')
-      } else {
-      res.redirect(v + 'course-start')
-    }
+      res.redirect(v + 'chosen')
   })
 
-  // -----------------
-  //  Set the number of registrations  
-  // -----------------
-
-  // 0 registrations 
-    router.get(v + 'no-registrations', (req, res) => {
-      const data = req.session.data
-      data.numberOfRegistrations = '0'
-      res.redirect(v + '')
-    })
-  // 1 registration
-    router.get(v + 'one-registration', (req, res) => {
-      const data = req.session.data
-      data.numberOfRegistrations = '1'
-      res.redirect(v + '')
-    })
-  // >1 registration
-  router.get(v + 'multiple-registrations', (req, res) => {
-    const data = req.session.data
-    data.numberOfRegistrations = '3'
-    res.redirect(v + '')
+  // Header link 
+  router.get(v + 'registration-status/header-link', function (req, res) {
+    res.redirect(v + 'chosen')
   })
 
-  // Redirect to correct account page if have 0,1 or >1 registrations
-
-  router.get(v + 'registration-status', function (req, res) {
-
-    let numberOfRegistrations = req.session.data.numberOfRegistrations
+  // Redirect to account page
+  router.get(v + 'registration-account', function (req, res) {
+      res.redirect(v + 'registration-status/multiple-registrations')
+  })
   
-    if (numberOfRegistrations === '0') {
-        res.redirect(v + 'registration-status/no-registrations')
-      } else if (numberOfRegistrations === '1') {
-        res.redirect(v + 'registration-status/registration-status')
-      } else {
-        res.redirect(v + 'registration-status/multiple-registrations')
-    }
+  router.get(v + 'registration-status/registration-account', function (req, res) {
+    res.redirect(v + 'registration-status/multiple-registrations')
   })
 
 // ------------
 // Registration flow  
 // ------------
-
-  router.get('/chosen', function(req, res){
-    res.redirect(v + 'chosen')
-  })
 
   router.post(v + 'where-do-you-work', function(req, res){
     var choosenpqprovidert = req.session.data['choosenpqprovider']
@@ -424,14 +363,5 @@ router.post(v + 'maths-other-outcome', function(req, res){
     res.redirect(v + 'funding/funding-not-available-england')
   }
 })
-
-// registration details pages 
-  router.get('/change-details', function(req, res){
-    res.redirect(v + 'change-details')
-  })
-
-  router.get('/multiple-registrations', function(req, res){
-    res.redirect(v + 'registration-status/multiple-registrations')
-  })
 
 }

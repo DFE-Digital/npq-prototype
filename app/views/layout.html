@@ -11,9 +11,9 @@
 
   {% set serviceURL %}
     {% if signedIn == 'true' %}
-      ../header-link
+      header-link
       {% else %}
-        /start-id
+        start-id
     {% endif %}
   {% endset %}
 
@@ -29,7 +29,7 @@
           active: true if account == 'true'
         },
         {
-          href: '/registration-status',
+          href: 'registration-account',
           text: "NPQ account",
           active: true if account == 'true'
         },

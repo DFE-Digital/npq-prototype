@@ -105,10 +105,6 @@ module.exports = router => {
       }
     })
 
-  router.get('/start-id', function(req, res){
-    res.redirect(v + 'start-id')
-  })
-
   // -----------------
   //  Set the number of registrations  
   // -----------------
@@ -134,7 +130,20 @@ module.exports = router => {
 
   // Redirect to correct account page if have 0,1 or >1 registrations
 
-  router.get('/registration-status', function (req, res) {
+  router.get(v + 'registration-account', function (req, res) {
+
+    let numberOfRegistrations = req.session.data.numberOfRegistrations
+  
+    if (numberOfRegistrations === '0') {
+        res.redirect(v + 'registration-status/no-registrations')
+      } else if (numberOfRegistrations === '1') {
+        res.redirect(v + 'registration-status/registration-status')
+      } else {
+        res.redirect(v + 'registration-status/multiple-registrations')
+    }
+  })
+
+  router.get(v + 'registration-status/registration-account', function (req, res) {
 
     let numberOfRegistrations = req.session.data.numberOfRegistrations
   
@@ -150,10 +159,6 @@ module.exports = router => {
 // ------------
 // Registration flow  
 // ------------
-
-  router.get('/course-start', function(req, res){
-    res.redirect(v + 'course-start')
-  })
   
   router.post(v + 'chosen', function(req, res){
     var startdatet = req.session.data['startdate']
@@ -258,17 +263,13 @@ module.exports = router => {
     }
   })
 
-  router.get('/choose-npq', function(req, res){
-    res.redirect(v + 'choose-npq')
-  })
-
   // -------------------------------------------------------------------------------------
   // FUNDING OUTCOMES 
   // After completing questions - takes user to a page with the funding outcome
   // -------------------------------------------------------------------------------------
 
   // Does the user work in England and checks all other funding requirements
-  router.post('/check-data/_funding-check', function(req, res){
+  router.post(v + 'check-data/_funding-check', function(req, res){
     var npqt = req.session.data['choosenpq']
     var teachadvisoryt = req.session.data['teachadvisory']
     var locationt = req.session.data['wheredoyouwork']
@@ -542,7 +543,7 @@ module.exports = router => {
   // ----------
 
   // Maths - mastery answer
-  router.post('/maths-mastery-outcome', function(req, res){
+  router.post(v + 'maths-mastery-outcome', function(req, res){
     var mathsmasteryt = req.session.data['mathsmastery']
     var locationt = req.session.data['wheredoyouwork']
     var teachadvisoryt = req.session.data['teachadvisory']
@@ -605,7 +606,7 @@ module.exports = router => {
   })
 
   // Maths - other mastery route
-  router.post('/maths-other-outcome', function(req, res){
+  router.post(v + 'maths-other-outcome', function(req, res){
     var mathsothert = req.session.data['mathsmasteryother']
     var locationt = req.session.data['wheredoyouwork']
     var teachadvisoryt = req.session.data['teachadvisory']

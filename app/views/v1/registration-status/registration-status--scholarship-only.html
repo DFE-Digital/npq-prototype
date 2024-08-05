@@ -11,7 +11,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to your registrations",
-    href: "/multiple-registrations"
+    href: "./multiple-registrations"
   }) }}
 {% endblock %}
 
@@ -38,7 +38,7 @@
         actions: {
           items: [
             {
-              href: "/change-details",
+              href: "../change-details",
               html: 'Change <span class="govuk-visually-hidden"> course</span>'
             }
           ]
@@ -54,7 +54,7 @@
         actions: {
           items: [
             {
-              href: "/change-details",
+              href: "../change-details",
               html: 'Change <span class="govuk-visually-hidden"> provider</span>'
             }
           ]
