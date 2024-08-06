@@ -17,11 +17,6 @@
     <!-- not funded for any -->
   {% if data['wheredoyouwork'] == "No" %}
     {% include './includes/answers/not-eng.html' %}
-  
-  <!-- Return to teaching -->
-    <!-- Funding goes to review. But eligible for funding for all NPQs -->
-  {% elseif data['teachadvisory'] == "Yes" %}
-    {% include './includes/answers/returner-teacher.html' %}
 
   <!-- Private nursery with URN -->
     <!-- Only funded for EYL -->
@@ -54,26 +49,26 @@
   {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") or (data['whichschool'] == "not-pp50") %}
     {% include './includes/answers/private-school.html' %}
 
-  <!-- Other setting AND ITT -->
+  <!-- Another setting AND ITT -->
     <!-- Only funded for LTD -->
   {% elseif data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider" %}
     {% include './includes/answers/other-itt.html' %}
 
-  <!-- Other setting AND virtual school OR supply teacher -->
+  <!-- Another setting AND virtual school OR supply teacher -->
     <!-- Goes to review. Funded for Maths, SENCO, Headship, EHCO -->
     <!-- EHCO not funded if -->
   {% elseif (data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a teacher employed by a local authority to teach in more than one school") %}
     {% include './includes/answers/other-local-authority.html' %}
 
-  <!-- Other setting AND hospital school OR young offender institution -->
+  <!-- Another setting AND hospital school OR young offender institution -->
     <!-- Funded for Maths, SENCO, Headship, EHCO -->
     <!-- EHCO not funded if -->
   {% elseif (data['mentor'] == "In a hospital school") or (data['mentor'] == "In a young offender institution") %}
     {% include './includes/answers/other-hospital-young-offenders.html' %}
-  
+
   <!-- Other, other setting -->
-    <!-- not funded for any -->
-  {% elseif data['mentor'] == "Other" %}
+    <!-- if return to teaching = goes to review. Otherwise not funded for any -->
+    {% elseif data['whichsetting'] == "Other" %}
     {% include './includes/answers/other.html' %}
 
   <!-- Funded schools -->
