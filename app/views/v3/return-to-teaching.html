@@ -13,26 +13,17 @@
 {% endblock %}
 
 {% set returnteachingHTML %}
-  <details class="govuk-details govuk-!-margin-top-4">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        What is a return to teaching adviser?
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      <p>This is a one-to-one service where an adviser supports you with:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>finding and applying for teaching vacancies</li>
-        <li>accessing courses to enhance your subject knowledge or teaching practice</li>
-      </ul>
-    </div>
-  </details>
+  <p class="govuk-body govuk-!-margin-top-2">The RTTA is a DfE service that provides you with an adviser who will give you one-to-one support to:</p>
+  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+    <li>find and apply for teaching vacancies</li>
+    <li>access courses to enhance your subject knowledge or teaching practice</li>
+  </ul>
 {% endset %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="route-what-setting" method="post">
+    <form class="form" action="choose-npq" method="post">
       {{ govukRadios({
         name: "teachadvisory",
         id: "teachadvisory",

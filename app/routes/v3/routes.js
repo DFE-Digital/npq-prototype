@@ -185,16 +185,6 @@ module.exports = router => {
     }
   })
 
-  router.post(v + 'route-return-to-teaching', function(req, res){
-    var locationt = req.session.data['wheredoyouwork']
-
-    if (locationt == 'No') {
-      res.redirect(v + 'what-setting')
-    } else {
-      res.redirect(v + 'return-to-teaching')
-    }
-  })
-
   // Does the user work in England and a state funded school?
   router.post(v + 'where-school', function (req, res) {
     var locationt = req.session.data['wheredoyouwork']
@@ -203,28 +193,19 @@ module.exports = router => {
     if (locationt == "Yes"){
       if (settingt == "Early years or childcare") {
         res.redirect(v + 'eyll/nursery-type')
-      } else if (settingt == "Other"){
+      } 
+      else if (settingt == "Another setting"){
         res.redirect(v + 'other/employment')
-      } else if (settingt == "Returning to teaching"){
+      } 
+      else if (settingt == "Other"){
         res.redirect(v + 'return-to-teaching')
-      }
-      else{
+      } 
+      else {
         res.redirect(v + 'where-school')
       }
     } else {
       res.redirect(v + 'choose-npq')
       funded = "no"
-    }
-  })
-
-  // Did a return to teaching adviser refer you to this service?
-  router.post(v + 'route-what-setting', function(req, res){
-    var teachadvisoryt = req.session.data['teachadvisory']
-
-    if (teachadvisoryt == 'Yes') {
-      res.redirect(v + 'choose-npq')
-    } else {
-      res.redirect(v + 'what-setting')
     }
   })
 
@@ -298,14 +279,6 @@ module.exports = router => {
       res.redirect(v + 'ehco/ehco-completed-npqh')
     } 
 
-    // Referred by teaching advisor
-    else if(teachadvisoryt == 'Yes'){
-      if(locationt == 'Yes'){
-        res.redirect(v + 'funding/edge-case')
-      } else {
-        res.redirect(v + 'funding/funding-not-available-england')
-      }
-    }
     // Works in England
     else if(locationt == 'Yes'){
 
@@ -323,8 +296,8 @@ module.exports = router => {
             res.redirect(v + 'funding/funding-eligible')
           }
         } 
-        // Other
-        else if(settingt == 'Other'){
+        // Another setting
+        else if(settingt == 'Another setting'){
           // Is a ITT mentor?
           if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
             res.redirect(v + 'funding/funding-not-available-lead-mentor')
@@ -333,11 +306,18 @@ module.exports = router => {
           else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
             res.redirect(v + 'funding/funding-eligible')
           }
-          // Other > other
-          else if (mentort == 'Other'){
+          // virtual school or supply teacher
+          else {
+            res.redirect(v + 'funding/edge-case')
+          }
+        }
+        // Other
+        else if(settingt == 'Other'){
+          // Other + not return to teaching 
+          if (teachadvisoryt == 'No'){
             res.redirect(v + 'funding/funding-not-available-setting')
           }
-          // virtual school or supply teacher
+          // return to teaching 
           else {
             res.redirect(v + 'funding/edge-case')
           }
@@ -368,7 +348,7 @@ module.exports = router => {
           }
         } 
         // Other
-        else if(settingt == 'Other'){
+        else if(settingt == 'Another setting'){
           // Is a mentor?
           if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
             if(npqt == 'Leading teacher development'){
@@ -389,13 +369,19 @@ module.exports = router => {
               res.redirect(v + 'funding/edge-case')
             }
           }
-          // Other > other
-          else if (mentort == 'Other'){
-            res.redirect(v + 'funding/funding-not-available-setting')
-          }
           // virtual school or supply teacher or Young offender institution
           else {
             // NOT maths, SENCO, headship or EHCO  = ineligible
+            res.redirect(v + 'funding/edge-case')
+          }
+        }
+        // Other
+        else if(settingt == 'Other'){
+          if(teachadvisoryt == "No"){
+            res.redirect(v + 'funding/funding-not-available-setting')
+          } 
+          // return to teaching 
+          else {
             res.redirect(v + 'funding/edge-case')
           }
         }
@@ -499,10 +485,6 @@ module.exports = router => {
       if(earlyheadshipt == 'No'){
         res.redirect(v + 'funding/ehco-not-funded')
       } 
-      // Referred by teaching advisor
-      else if(teachadvisoryt == 'Yes'){
-        res.redirect(v + 'funding/edge-case')
-      }
       else {
         if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
           // Private school
@@ -519,19 +501,25 @@ module.exports = router => {
             res.redirect(v + 'funding/ehco-not-funded')
           }
         } 
-        else if(settingt == 'Other'){
+        else if(settingt == 'Another setting'){
           if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
             res.redirect(v + 'funding/ehco-not-funded')
           } 
           else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
             res.redirect(v + 'funding/funding-eligible')
           }
-          else if (mentort == 'In a virtual school (local authority run organisations that support the education of children in care)' || mentort == 'As a teacher employed by a local authority to teach in more than one school'){
+          // virtual school or local authority
+          else {
             res.redirect(v + 'funding/edge-case')
           }
-          // other > other
-          else {
+        }
+        else if(settingt == 'Other'){
+          if(teachadvisoryt == "No"){
             res.redirect(v + 'funding/ehco-not-funded')
+          } 
+          // return to teaching 
+          else {
+            res.redirect(v + 'funding/edge-case')
           }
         }
         else {
@@ -562,12 +550,8 @@ module.exports = router => {
     }
     // Works in England
     else if(locationt == 'Yes'){
-      // Referred by teaching advisor
-      if(teachadvisoryt == 'Yes'){
-        res.redirect(v + 'funding/edge-case')
-      }
       // Works in a school setting or a state-funded nursery?
-      else if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
         if((whichschoolt != 'private' || whichschoolt !='Private')){
           res.redirect(v + 'funding/funding-eligible')
         }
@@ -576,21 +560,27 @@ module.exports = router => {
           res.redirect(v + 'funding/funding-not-available-setting')
         }
       } 
-      // Other
-      else if(settingt == 'Other'){
-        // Is a mentor?
-        if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+      // Another setting
+      else if(settingt == 'Another setting'){
+        if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
           res.redirect(v + 'funding/funding-not-available-lead-mentor')
-        }
+        } 
         else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
           res.redirect(v + 'funding/funding-eligible')
         }
-        else if (mentort == "In a virtual school (local authority run organisations that support the education of children in care)" || mentort == "As a teacher employed by a local authority to teach in more than one school"){
+        // virtual school or local authority
+        else {
           res.redirect(v + 'funding/edge-case')
         }
-        // other > other
-        else {
+      }
+      // Other
+      else if(settingt == 'Other'){
+        if(teachadvisoryt == "No"){
           res.redirect(v + 'funding/funding-not-available-setting')
+        } 
+        // return to teaching 
+        else {
+          res.redirect(v + 'funding/edge-case')
         }
       }
       // State nursery
@@ -625,12 +615,8 @@ module.exports = router => {
     }
     // Works in England
     else if(locationt == 'Yes'){
-      // Referred by teaching advisor
-      if(teachadvisoryt == 'Yes'){
-        res.redirect(v + 'funding/edge-case')
-      }
       // Works in a school setting or a state-funded nursery?
-      else if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
         if((whichschoolt != 'private' || whichschoolt !='Private')){
           res.redirect(v + 'funding/funding-eligible')
         }
@@ -639,21 +625,27 @@ module.exports = router => {
           res.redirect(v + 'funding/funding-not-available-setting')
         }
       } 
-      // Other
-      else if(settingt == 'Other'){
-        // Is a mentor?
-        if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+      // Another setting
+      else if(settingt == 'Another setting'){
+        if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
           res.redirect(v + 'funding/funding-not-available-lead-mentor')
-        }
+        } 
         else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
           res.redirect(v + 'funding/funding-eligible')
         }
-        else if (mentort == "In a virtual school (local authority run organisations that support the education of children in care)" || mentort == "As a teacher employed by a local authority to teach in more than one school"){
+        // virtual school or local authority
+        else {
           res.redirect(v + 'funding/edge-case')
         }
-        // other > other
-        else {
+      }
+      // Other
+      else if(settingt == 'Other'){
+        if(teachadvisoryt == "No"){
           res.redirect(v + 'funding/funding-not-available-setting')
+        } 
+        // return to teaching 
+        else {
+          res.redirect(v + 'funding/edge-case')
         }
       }
       // State nursery
@@ -693,12 +685,8 @@ module.exports = router => {
     } else {
       // Works in England
       if(locationt == 'Yes'){
-        // Referred by teaching advisor
-        if(teachadvisoryt == 'Yes'){
-          res.redirect(v + 'funding/edge-case')
-        }
         // Works in a school setting or a state-funded nursery?
-        else if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+        if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
           // Private school
           if(whichschoolt == 'private' || whichschoolt =='Private'){
             res.redirect(v + 'funding/funding-not-available-setting')
@@ -707,21 +695,27 @@ module.exports = router => {
             res.redirect(v + 'funding/funding-eligible')
           }
         } 
-        // Other
-        else if(settingt == 'Other'){
-          // Is a mentor?
-          if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+        // Another setting
+        else if(settingt == 'Another setting'){
+          if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
             res.redirect(v + 'funding/funding-not-available-lead-mentor')
-          }
+          } 
           else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
             res.redirect(v + 'funding/funding-eligible')
           }
-          else if (mentort == "In a virtual school (local authority run organisations that support the education of children in care)" || mentort == "As a teacher employed by a local authority to teach in more than one school"){
+          // virtual school or local authority
+          else {
             res.redirect(v + 'funding/edge-case')
           }
-          // other > other
-          else {
+        }
+        // Other
+        else if(settingt == 'Other'){
+          if(teachadvisoryt == "No"){
             res.redirect(v + 'funding/funding-not-available-setting')
+          } 
+          // return to teaching 
+          else {
+            res.redirect(v + 'funding/edge-case')
           }
         }
         // State nursery
@@ -752,12 +746,8 @@ module.exports = router => {
     
     // Works in England
     if(locationt == 'Yes'){
-      // Referred by teaching advisor
-      if(teachadvisoryt == 'Yes'){
-        res.redirect(v + 'funding/edge-case')
-      }
       // Works in a school setting or a state-funded nursery?
-      else if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
+      if(settingt == 'A school' || settingt == 'An academy trust' || settingt == 'A 16 to 19 educational setting'){
         // Private school
         if(whichschoolt == 'private' || whichschoolt =='Private'){
           res.redirect(v + 'funding/funding-not-available-setting')
@@ -766,21 +756,27 @@ module.exports = router => {
           res.redirect(v + 'funding/funding-eligible')
         }
       } 
-      // Other
-      else if(settingt == 'Other'){
-        // Is a mentor?
-        if (mentort == 'As a lead mentor for an accredited initial teacher training (ITT) provider') {
+      // Another setting
+      else if(settingt == 'Another setting'){
+        if(mentort == "As a lead mentor for an accredited initial teacher training (ITT) provider"){
           res.redirect(v + 'funding/funding-not-available-lead-mentor')
-        }
+        } 
         else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution'){
           res.redirect(v + 'funding/funding-eligible')
         }
-        else if (mentort == "In a virtual school (local authority run organisations that support the education of children in care)" || mentort == "As a teacher employed by a local authority to teach in more than one school"){
+        // virtual school or local authority
+        else {
           res.redirect(v + 'funding/edge-case')
         }
-        // other > other
-        else {
+      }
+      // Other
+      else if(settingt == 'Other'){
+        if(teachadvisoryt == "No"){
           res.redirect(v + 'funding/funding-not-available-setting')
+        } 
+        // return to teaching 
+        else {
+          res.redirect(v + 'funding/edge-case')
         }
       }
       // State nursery

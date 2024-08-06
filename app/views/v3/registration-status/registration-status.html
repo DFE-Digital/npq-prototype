@@ -78,10 +78,6 @@
     <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
   <!-- Works in England -->
   {% else %}
-    <!-- Referred by return to teaching adviser -->
-    {% if data['teachadvisory'] == "Yes" %}  
-      {% include '../includes/registration-status/funding-message--in-review.html' %}
-    {% else %}
       <!-- --------------------------------
           School or equivalent
       ----------------------------------- -->
@@ -131,7 +127,7 @@
       <!-- -------------
         Other setting
       ----------------- -->
-      {% elseif data['whichsetting'] == "Other" %}
+      {% elseif data['whichsetting'] == "Another setting" %}
         <!-- Is a mentor? -->
         {% if data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider" %}
           {% if data['choosenpq'] == "Leading teacher development" %}
@@ -172,11 +168,6 @@
               {% else %}
                 {% include '../includes/registration-status/funding-message--in-review.html' %}
             {% endif %}
-          <!-- Other > other -->
-          {% elseif data['mentor'] == "Other" %}
-            <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
           <!-- Virtual school or supply teacher -->
           {% else %}
             {% if data['choosenpq'] == "Early headship coaching offer" %}
@@ -192,6 +183,19 @@
               {% else %}
                 {% include '../includes/registration-status/funding-message--in-review.html' %}
             {% endif %}
+        {% endif %}
+      <!-- -----------------------
+        Other
+      -------------------------- -->
+      {% elseif data['whichsetting'] == "Other" %}
+        <!-- Other > NOT referred by RTTA -->
+        {% if data['teachadvisory'] == "No" %}
+          <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+          <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+          <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+        <!-- Other + referred by RTTA -->
+        {% else %}
+          {% include '../includes/registration-status/funding-message--in-review.html' %}
         {% endif %}
       <!-- -----------------------
         Early years or childcare
@@ -266,7 +270,6 @@
         {% endif %}
       {% endif %}
     {% endif %}
-  {% endif %}
 {% endset %}
 
 {% block content %}

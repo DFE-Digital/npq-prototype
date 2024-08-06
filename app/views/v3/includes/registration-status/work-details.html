@@ -1,10 +1,6 @@
 
-  <!-- Return to teaching -->
-  {% if (data['teachadvisory'] == "Yes") %}
-    {% include './work-details/return-teaching-adviser.html' %}
-
   <!-- Private nursery with URN -->
-  {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
+  {% if (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
     {% include './work-details/ey-funded.html' %}
 
   <!-- Not a nursery with URN -->
@@ -28,15 +24,15 @@
     {% include './work-details/not-eng.html' %}
 
   <!-- User works in other setting > ITT -->
-  {% elseif (data['whichsetting'] == "Other") and (data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider") %}
+  {% elseif data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider" %}
     {% include './work-details/other-itt.html' %}
   
   <!-- User works in other setting > hospital or yoi -->
-  {% elseif data['whichsetting'] == "Other" and ((data['mentor'] == "In a hospital school") or (data['mentor'] == "In a young offender institution")) %}
+  {% elseif (data['mentor'] == "In a hospital school") or (data['mentor'] == "In a young offender institution") %}
     {% include './work-details/other-hospital-yoi.html' %}
 
   <!-- User works in other setting > local authority -->
-  {% elseif data['whichsetting'] == "Other" and ((data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a teacher employed by a local authority to teach in more than one school")) %}
+  {% elseif (data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a teacher employed by a local authority to teach in more than one school") %}
     {% include './work-details/other-local-authority.html' %}
 
   <!-- User works in other > other setting -->
