@@ -3,7 +3,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  What’s the name of your workplace?
+  Where is your workplace located?
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,15 +17,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">What’s the name of your workplace?</h1>
+    <h1 class="govuk-heading-xl">Where is your workplace located?</h1>
 
-    <form class="form" action="choose-npq" method="post">
+    <form class="form" action="which-school" method="post">
       {{ govukInput({
         hint: {
-          text: "Search for schools or 16 to 19 educational settings located in. If you work for a trust, enter one of their schools."
+          text: "Enter the town, city or the first part of the postcode. For example Chester or CH1."
         },
-        id: "whichschool",
-        name: "whichschool"
+        id: "whereschool",
+        name: "whereschool"
       })
     }}
 
