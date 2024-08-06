@@ -1,0 +1,52 @@
+
+  <!-- Return to teaching -->
+  {% if (data['teachadvisory'] == "Yes") %}
+    {% include './work-details/return-teaching-adviser.html' %}
+
+  <!-- Private nursery with URN -->
+  {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
+    {% include './work-details/ey-funded.html' %}
+
+  <!-- Not a nursery with URN -->
+  {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') %}
+    {% include './work-details/ey-funded.html' %}
+
+  <!-- Not a nursery with URN -->
+  {% elseif (data['nurserysetting'] == "As a childminder") and (data['haveurn'] == 'Yes') %}
+    {% include './work-details/ey-funded.html' %}
+
+  <!-- State nursery  -->
+  {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class or nursery that’s part of a school (maintained or independent)")) %}
+    {% include './work-details/ey-state-nursery.html' %}
+
+  <!-- Not OFSTED - not nursery or a private nursery -->
+  {% elseif (data['whichsetting'] == "Early years or childcare") and (data['haveurn'] == 'No') %}
+    {% include './work-details/ey-no-ofsted.html' %}
+
+  <!-- User not working in England -->
+  {% elseif data['wheredoyouwork'] == "No" %}
+    {% include './work-details/not-eng.html' %}
+
+  <!-- User works in other setting > ITT -->
+  {% elseif (data['whichsetting'] == "Other") and (data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider") %}
+    {% include './work-details/other-itt.html' %}
+  
+  <!-- User works in other setting > hospital or yoi -->
+  {% elseif data['whichsetting'] == "Other" and ((data['mentor'] == "In a hospital school") or (data['mentor'] == "In a young offender institution")) %}
+    {% include './work-details/other-hospital-yoi.html' %}
+
+  <!-- User works in other setting > local authority -->
+  {% elseif data['whichsetting'] == "Other" and ((data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a teacher employed by a local authority to teach in more than one school")) %}
+    {% include './work-details/other-local-authority.html' %}
+
+  <!-- User works in other > other setting -->
+  {% elseif data['whichsetting'] == "Other" %}
+    {% include './work-details/other.html' %}
+
+  <!-- User works in a private school -->
+  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") or (data['whichschool'] == "not-pp50") %}
+    {% include './work-details/private-school.html' %}
+
+  {% else %}
+    {% include './work-details/school-funded.html' %}
+  {% endif %}

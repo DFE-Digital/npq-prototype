@@ -2,6 +2,7 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Registration status
@@ -14,18 +15,6 @@
   }) }}
 {% endblock %}
 
-{% set npqNameHTML %}
-  {% if (data['choosenpq'] == "Early headship coaching offer") %}
-    Early headship coaching offer
-    {% else %}
-      {{ data['choosenpq'] or "Headship" }} NPQ
-  {% endif %}
-{% endset %}
-
-{% set providerHTML %}
-  {{ data['provider'] or "LLSE" }}
-{% endset %}
-
 {% set coursedateHTML %}
   <p>Before November 2024</p>
   <p>If your provider does not confirm you've started the course before November 2024, your registration will expire. You can register again later, but your funding may change.</p>
@@ -35,13 +24,17 @@
   <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
 
-{% set scholarshipfundingHtml %}
-  <p>Contact LLSE to check if you're eligible for scholarship funding and that they can offer you a scholarship funded space, if you have not done so already.</p>
+{% set fundingHTML %}
+  <strong class="govuk-tag govuk-tag--green">
+    Eligible
+  </strong>
+  <p class="govuk-!-margin-top-2">This means that if Ambition Institute confirms that you have a scholarship funded space, you will not need to pay for the course fees.</p>
+  <p>Contact Ambition Institute to check if they can offer you a scholarship funded space, if you have not done so already.</p>
 
   <details class="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
-        What if I'm not eligible for scholarship funding or there no funded spaces are available with my chosen provider?
+        What if no funded spaces are available with my chosen provider?
       </span>
     </summary>
     <div class="govuk-details__text">
@@ -56,11 +49,9 @@
 {% endset %}
 
 {% block content %}
-
-  <span class="govuk-caption-m">Submitted 16 August 2024</span>
-
+  <span class="govuk-caption-m">Submitted	11 July 2024</span>
   <h1 class="govuk-heading-xl">
-    Your Executive leadership NPQ registration
+    Your leading teaching NPQ registration
   </h1>
 
   {{ govukSummaryList({
@@ -75,8 +66,8 @@
           text: "Course"
         },
         value: {
-          html: npqNameHTML
-        },
+          html:
+            'Leading teaching NPQ'        },
         actions: {
           items: [
             {
@@ -91,8 +82,8 @@
           text: "Provider"
         },
         value: {
-          html: providerHTML
-        },
+          html:
+            'Ambition Institute'        },
         actions: {
           items: [
             {
@@ -107,12 +98,10 @@
           text: "Provider application"
         },
         value: {
-          classes: 'govuk-!-width-full',
-          html: 
-            '<strong class="govuk-tag govuk-tag--yellow">
-              Apply with provider
-            </strong>
-            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider, if you have not done so already.</p>'
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
+            </strong>'
         }
       },
       {
@@ -138,7 +127,7 @@
           text: "Scholarship funding"
         },
         value: {
-          html: scholarshipfundingHtml
+          html: fundingHTML
         }
       }
     ]
@@ -163,7 +152,7 @@
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details/other-local-authority.html' %}
+  {% include '../includes/registration-status/work-details/ey-state-nursery.html' %}
 
   {% include '../includes/registration-status/register-for-another-npq.html' %}
 

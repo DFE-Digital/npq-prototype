@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  What setting do you work in?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="where-school" method="post">
+        {{ govukRadios({
+          name: "whichsetting",
+          id: "whichsetting",
+          fieldset: {
+            legend: {
+              text: "What setting do you work in?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "You must make sure the information you provide is correct, as your course provider will check your details.",
+            classes: "govuk-!-margin-bottom-6"
+          },
+          items: [
+            {
+              value: "Early years or childcare",
+              text: "Early years or childcare"
+            },
+            {
+              value: "A school",
+              text: "A school",
+              hint: {
+                text: "This includes local authority maintained schools."
+              }
+            },
+            {
+              value: "An academy trust",
+              text: "An academy trust"
+            },
+            {
+              value: "A 16 to 19 educational setting",
+              text: "A 16 to 19 educational setting"
+            },
+            
+            {
+              divider: "or"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              hint: {
+                text: "For example a virtual school, initial teacher training (ITT) provider (including ITT lead mentors), hospital school, young offender institution or other local authority setting."
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

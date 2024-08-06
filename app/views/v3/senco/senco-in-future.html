@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+Are you intending to take on a special educational needs co-ordinator (SENCO) role in the next 18 months?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/check-data/_senco-funding-check" method="post">
+      {{ govukRadios({
+        name: "sencofuture",
+        id: "sencofuture",
+        fieldset: {
+          legend: {
+            text: "Are you intending to take on a special educational needs co-ordinator (SENCO) role in the next 18 months?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
