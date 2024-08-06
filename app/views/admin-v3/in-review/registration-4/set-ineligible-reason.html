@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include '../../includes/header.html' %}
+  {% include '../../includes/primary-navigation.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ data['registration4--name'] }}</h1>
+      <form class="form" action="set-notes" method="post">
+        {% set otherHtml %}
+          {{ govukInput({
+            id: "registration4--ineligible-reason--other",
+            name: "registration4--ineligible-reason--other",
+            classes: "govuk-!-width-one-half",
+            label: {
+              text: "Provide a reason"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set establishmentHtml %}
+          {{ govukInput({
+            id: "registration4--ineligible-reason--establishment",
+            name: "registration4--ineligible-reason--establishment",
+            classes: "govuk-!-width-one-half",
+            label: {
+              text: "Provide establishment type"
+            }
+          }) }}
+        {% endset -%}
+        
+        {{ govukRadios({
+          name: "registration4--ineligible-reason",
+          fieldset: {
+            legend: {
+              text: "Why is this registration not eligible for funding?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Establishment not on eligible list",
+              text: "Establishment not on eligible list"
+            }, 
+            {
+              value: "Not an eligible establishment type",
+              text: "Not an eligible establishment type",
+              conditional: {
+                html: establishmentHtml
+              }
+            },
+            {
+              value: "No early years provision",
+              text: "No early years provision"
+            },
+            {
+              value: "Not in a teaching role",
+              text: "Not in a teaching role"
+            },
+            {
+              value: "Not curriculum based teacher",
+              text: "Not curriculum based teacher"
+            },
+            {
+              value: "Self employed",
+              text: "Self employed"
+            },
+            {
+              value: "Overseas establishment",
+              text: "Overseas establishment"
+            },
+            {
+              value: "Previously funded",
+              text: "Previously funded"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+          }) }}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add ineligible reason"
+            }) }}
+            <a class="govuk-link" href="registration">Cancel</a>
+          </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

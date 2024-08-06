@@ -1,0 +1,289 @@
+{% set reviewStatusHTML %}
+  {% if (data['registration4--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['registration4--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['registration4--review-status'] == "Re-register") %}
+    {{govukTag({
+      text: data['registration4--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['registration4--review-status'] == "Awaiting information") %}
+    {{govukTag({
+      text: data['registration4--review-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['registration4--review-status'],
+      classes: "govuk-tag--blue"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set providerStatusHTML %}
+  {% if (data['registration4--provider-status'] == "Pending") %}
+    {{govukTag({
+      text: data['registration4--provider-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% elseif (data['registration4--provider-status'] == "Approved") %}
+    {{govukTag({
+      text: data['registration4--provider-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['registration4--provider-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set fundingStatusHTML %}
+  {% if (data['registration4--review-status'] != "Decision made") %}
+    –
+  {% elseif (data['registration4--funding-status'] == "Yes") %}
+    {{govukTag({
+      text: data['registration4--funding-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['registration4--funding-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+{% endset %}
+
+{% set ineligiblereasonHTML %}
+  {% if (data['registration4--ineligible-reason'] == "Other") %}
+    {{ data['registration4--ineligible-reason'] }} – {{ data['registration4--ineligible-reason--other'] }}
+  {% elseif (data['registration4--ineligible-reason'] == "Not an eligible establishment type") %}
+    {{ data['registration4--ineligible-reason'] }} – {{ data['registration4--ineligible-reason--establishment'] }}
+  {% else %}
+    {{ data['registration4--ineligible-reason'] }} 
+  {% endif %}
+{% endset %}
+
+
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ data['registration4--name'] }}</h1>
+    <p class="govuk-caption-m govuk-!-margin-bottom-6">{{ data['registration4--email'] }}</p>
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Funding review details',
+          classes: 'govuk-!-font-size-24'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Review status"
+          },
+          value: {
+            html: reviewStatusHTML
+          },
+          actions: {
+            items: [
+              {
+                href: "../registration-4/set-status",
+                text: "Change",
+                visuallyHiddenText: "review status"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Eligible for funding"
+          },
+          value: {
+            html: fundingStatusHTML
+          },
+          actions: {
+            items: [
+              {
+                href: "../registration-4/set-eligibility",
+                text: "Change",
+                visuallyHiddenText: "eligibility"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Reason for not being eligible"
+          },
+          value: {
+            html: ineligiblereasonHTML
+          },
+          actions: {
+            items: [
+              {
+                href: "../registration-4/set-ineligible-reason",
+                text: "Change",
+                visuallyHiddenText: "ineligible reason"
+              }
+            ]
+          }
+        } if data['registration4--funding-status'] == "No",
+        {
+          key: {
+            text: "Notes"
+          },
+          value: {
+            text: data['registration4--notes']
+          },
+          actions: {
+            items: [
+              {
+                href: "../registration-4/set-notes",
+                text: "Change",
+                visuallyHiddenText: "eligibility"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Work details',
+          classes: 'govuk-!-font-size-24'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Referred by return to teaching adviser"
+          },
+          value: {
+            html: data['registration4--referred']
+          }
+        },
+        {
+          key: {
+            text: "Employment type"
+          },
+          value: {
+            text: data['registration4--employment-type']
+          }
+        } if data['registration4--employment-type'] != "",
+        {
+          key: {
+            text: "Employer name"
+          },
+          value: {
+            text: data['registration4--employer']
+          }
+        } if data['registration4--employer'] != "",
+        {
+          key: {
+            text: "Role"
+          },
+          value: {
+            text: data['registration4--role']
+          }
+        } if data['registration4--role'] != ""
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Course details',
+          classes: 'govuk-!-font-size-24'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "NPQ course"
+          },
+          value: {
+            text: data['registration4--course']
+          }
+        },
+        {
+          key: {
+            text: "Provider"
+          },
+          value: {
+            text: data['registration4--provider']
+          }
+        },
+        {
+          key: {
+            text: "Provider approval status"
+          },
+          value: {
+            html: providerStatusHTML
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: 'Registration details',
+          classes: 'govuk-!-font-size-24'
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Participant ID",
+            hint: {
+              text: "fdf"
+            }
+          },
+          value: {
+            text: data['registration4--participant-id']
+          }
+        },
+        {
+          key: {
+            text: "Application ID"
+          },
+          value: {
+            text: data['registration4--registration-id']
+          }
+        },
+        {
+          key: {
+            text: "Registration submission date"
+          },
+          value: {
+            text: data['registration4--submitted-date']
+          }
+        },
+        {
+          key: {
+            text: "Last updated date"
+          },
+          value: {
+            text: data['registration4--updated-date']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "View change log"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+  </div>
+</div>

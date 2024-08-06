@@ -4,112 +4,112 @@ const _ = require('lodash')
 var v = '/admin-v3/'
 
 module.exports = router => {
-  // Applicant 1 
+  // registration 1 
   // update review status 
-  router.post(v + 'applicant-1/set-status', function(req, res){
-    var appp1reviewstatus = req.session.data['applicant1--review-status']
+  router.post(v + 'in-review/registration-1/set-status', function(req, res){
+    var appp1reviewstatus = req.session.data['registration1--review-status']
 
     if (appp1reviewstatus == 'Decision made') {
-      res.redirect(v + 'applicant-1/set-eligibility')
+      res.redirect(v + 'in-review/registration-1/set-eligibility')
     } else if ((appp1reviewstatus == 'Needs review') || (appp1reviewstatus == 'Awaiting information') || (appp1reviewstatus == 'Re-register')){
-      res.redirect(v + 'applicant-1/set-notes')
+      res.redirect(v + 'in-review/registration-1/set-notes')
     } else {
-      res.redirect(v + 'applicant-1/applicant')
+      res.redirect(v + 'in-review/registration-1/registration')
     }
   })
 
   // update eligibility status 
-  router.post(v + 'applicant-1/set-eligibility', function(req, res){
-    var appp1fundingstatus = req.session.data['applicant1--funding-status']
+  router.post(v + 'in-review/registration-1/set-eligibility', function(req, res){
+    var appp1fundingstatus = req.session.data['registration1--funding-status']
 
     if (appp1fundingstatus == 'No') {
-      res.redirect(v + 'applicant-1/set-ineligible-reason')
+      res.redirect(v + 'in-review/registration-1/set-ineligible-reason')
     } else {
-      res.redirect(v + 'applicant-1/set-notes')
+      res.redirect(v + 'in-review/registration-1/set-notes')
     } 
   })
 
-  // Applicant 2 
+  // registration 2 
   // update review status 
-  router.post(v + 'applicant-2/set-status', function(req, res){
-    var appp2reviewstatus = req.session.data['applicant2--review-status']
+  router.post(v + 'in-review/registration-2/set-status', function(req, res){
+    var appp2reviewstatus = req.session.data['registration2--review-status']
 
     if (appp2reviewstatus == 'Decision made') {
-      res.redirect(v + 'applicant-2/set-eligibility')
+      res.redirect(v + 'in-review/registration-2/set-eligibility')
     } else if ((appp2reviewstatus == 'Needs review') || (appp2reviewstatus == 'Awaiting information') || (appp2reviewstatus == 'Re-register')){
-      res.redirect(v + 'applicant-2/set-notes')
+      res.redirect(v + 'in-review/registration-2/set-notes')
     } else {
-      res.redirect(v + 'applicant-2/applicant')
+      res.redirect(v + 'in-review/registration-2/registration')
     }
   })
 
   // update eligibility status 
-  router.post(v + 'applicant-2/set-eligibility', function(req, res){
-    var appp2fundingstatus = req.session.data['applicant2--funding-status']
+  router.post(v + 'in-review/registration-2/set-eligibility', function(req, res){
+    var appp2fundingstatus = req.session.data['registration2--funding-status']
 
     if (appp2fundingstatus == 'No') {
-      res.redirect(v + 'applicant-2/set-ineligible-reason')
+      res.redirect(v + 'in-review/registration-2/set-ineligible-reason')
     } else {
-      res.redirect(v + 'applicant-2/set-notes')
+      res.redirect(v + 'in-review/registration-2/set-notes')
     } 
   })
 
-  // Applicant 3 
+  // registration 3 
   // update review status 
-  router.post(v + 'applicant-3/set-status', function(req, res){
-    var appp3reviewstatus = req.session.data['applicant3--review-status']
+  router.post(v + 'in-review/registration-3/set-status', function(req, res){
+    var appp3reviewstatus = req.session.data['registration3--review-status']
 
     if (appp3reviewstatus == 'Decision made') {
-      res.redirect(v + 'applicant-3/set-eligibility')
+      res.redirect(v + 'in-review/registration-3/set-eligibility')
     } else if ((appp3reviewstatus == 'Needs review') || (appp3reviewstatus == 'Awaiting information') || (appp3reviewstatus == 'Re-register')){
-      res.redirect(v + 'applicant-3/set-notes')
+      res.redirect(v + 'in-review/registration-3/set-notes')
     } else {
-      res.redirect(v + 'applicant-3/applicant')
+      res.redirect(v + 'in-review/registration-3/registration')
     }
   })
 
   // update eligibility status 
-  router.post(v + 'applicant-3/set-eligibility', function(req, res){
-    var appp3fundingstatus = req.session.data['applicant3--funding-status']
+  router.post(v + 'in-review/registration-3/set-eligibility', function(req, res){
+    var appp3fundingstatus = req.session.data['registration3--funding-status']
 
     if (appp3fundingstatus == 'No') {
-      res.redirect(v + 'applicant-3/set-ineligible-reason')
+      res.redirect(v + 'in-review/registration-3/set-ineligible-reason')
     } else {
-      res.redirect(v + 'applicant-3/set-notes')
+      res.redirect(v + 'in-review/registration-3/set-notes')
     } 
   })
 
-  // Applicant 4 
+  // registration 4 
   // update review status 
-  router.post(v + 'applicant-4/set-status', function(req, res){
-    var appp4reviewstatus = req.session.data['applicant4--review-status']
+  router.post(v + 'in-review/registration-4/set-status', function(req, res){
+    var appp4reviewstatus = req.session.data['registration4--review-status']
 
     if (appp4reviewstatus == 'Decision made') {
-      res.redirect(v + 'applicant-4/set-eligibility')
+      res.redirect(v + 'in-review/registration-4/set-eligibility')
     } else if ((appp4reviewstatus == 'Needs review') || (appp4reviewstatus == 'Awaiting information') || (appp4reviewstatus == 'Re-register')){
-      res.redirect(v + 'applicant-4/set-notes')
+      res.redirect(v + 'in-review/registration-4/set-notes')
     } else {
-      res.redirect(v + 'applicant-4/applicant')
+      res.redirect(v + 'in-review/registration-4/registration')
     }
   })
 
   // update eligibility status 
-  router.post(v + 'applicant-4/set-eligibility', function(req, res){
-    var appp4fundingstatus = req.session.data['applicant4--funding-status']
+  router.post(v + 'in-review/registration-4/set-eligibility', function(req, res){
+    var appp4fundingstatus = req.session.data['registration4--funding-status']
 
     if (appp4fundingstatus == 'No') {
-      res.redirect(v + 'applicant-4/set-ineligible-reason')
+      res.redirect(v + 'in-review/registration-4/set-ineligible-reason')
     } else {
-      res.redirect(v + 'applicant-4/set-notes')
+      res.redirect(v + 'in-review/registration-4/set-notes')
     } 
   })
 
-  router.get('/npq-applications', function(req, res){
-    res.redirect(v + 'npq-applications')
+  router.get('/registrations', function(req, res){
+    res.redirect(v + 'registrations')
   })
 
-  router.get('/npq-applications-review', function(req, res){
-    res.redirect(v + 'npq-applications-review')
+  router.get('/registrations-review', function(req, res){
+    res.redirect(v + 'registrations-review')
   })
 
 }
