@@ -5,51 +5,6 @@ var v = '/v2/'
 
 module.exports = router => {
 
-  // ------------
-// DfE Identity in/out links
-       // only work for most recent version so identity prototype doesn't have to be updated each time. 
-// ------------
-
-  // Redirect from Identity prototype - NPQ create account
-  router.get('/user-research/npq/new-user', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    res.redirect(v + 'course-start') 
-  })
-
-  // Redirect from Identity prototype - NPQ show account
-    router.get('/user-research/npq/existing-user', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    res.redirect(v + 'registration-status/registration-status')
-  })
-
-  // Redirect from Identity prototype - Closed state - sign up to email  
-  router.get('/user-research/npq/closed-eoi', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    data.closedState = 'Partial'
-    data.closedEoi = 'True'
-    res.redirect(v + 'closed/eoi-senco-interest')
-  })
-
-  // Redirect from Identity prototype - Closed state - sign in  
-  router.get('/user-research/npq/closed-signin', (req, res) => {
-    const data = req.session.data
-    data.signedIn = 'true'
-    data.closedState = 'Partial'
-    data.closedSignin = 'True'
-    res.redirect(v + 'registration-status/registration-status')
-  })
-
-  router.get('/auth/return-to-service', (req, res) => {
-    res.redirect(req.session.data.returnToService)
-  })
-
-  router.get('/npq-account', (req, res) => {
-    res.redirect(v + 'registration-status/registration-status')
-  })
-
   // -----------------
   //  Set closed states 
   // -----------------
