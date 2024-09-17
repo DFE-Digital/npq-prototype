@@ -1,26 +1,15 @@
-{% extends "layout.html" %}
-
-
-{% block header %}
-  {% include '../../includes/header.html' %}
-
-  {% include '../../includes/primary-navigation.html' %}
-
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "../registrations-review"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../registrations-review"
+  }) }}
 {% endblock %}
 
-
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
       {{ govukNotificationBanner({
         text: "Annamaria Green's details have been updated successfully.",
         type: 'success'
@@ -28,7 +17,4 @@
       {% include '../includes/registration1.html' %}
     </div>
   </div>
-
-
-
 {% endblock %}

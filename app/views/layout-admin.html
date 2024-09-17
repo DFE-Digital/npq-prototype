@@ -20,27 +20,57 @@
   {% block header %}
     {{ govukHeader({
       homepageUrl: "/index",
-      serviceName: serviceName,
-      serviceUrl: serviceURL,
+      containerClasses: "dfe-width-container header-minus-margin",
+      serviceName: "Manage NPQs",
+      serviceUrl: "/admin-v3/dashboard",
       navigation: [
         {
-          href: 'https://get-an-identity-prototype.herokuapp.com/user-research/npq/account',
-          html: data['dia'],
-          active: true if account == 'true'
-        },
-        {
-          href: 'registration-account',
-          text: "NPQ account",
-          active: true if account == 'true'
-        },
-        {
-          href: "https://get-an-identity-prototype.herokuapp.com/user-research/npq/sign-out",
+          href: "#",
           text: "Sign out"
-        }
-      ] if signedIn == 'true'
+        } 
+      ]
     }) }}
 
-    <div class="govuk-width-container">
+    {{ mojPrimaryNavigation({
+      label: 'Primary navigation',
+      containerClasses: "dfe-width-container",
+      items: [
+        {
+          text: 'Dashboard',
+          href: './dashboard'
+        },  
+        {
+          text: 'Registrations',
+          href: './registrations'
+        },
+        {
+          text: 'Courses',
+          href: './courses'
+        },
+        {
+          text: 'Participants',
+          href: './participants'
+        },
+        {
+          text: 'Finance',
+          href: './finance'
+        },
+        {
+          text: 'Schools',
+          href: './schools'
+        },
+        {
+          text: 'Lead providers',
+          href: './lead-providers'
+        },
+        {
+          text: 'Settings',
+          href: './settings'
+        }
+      ]
+    }) }}
+
+    <div class="govuk-width-container dfe-width-container">
       {{ govukPhaseBanner({
         tag: {
           text: "Prototype"
@@ -49,9 +79,12 @@
       }) }}
     </div>
   {% endblock %}
-  
+
+  {% set containerClasses = "dfe-width-container" %}
+
   {% block footer %}
     {{ govukFooter({
+      containerClasses: "dfe-width-container",
       meta: {
         items: [
           {
@@ -65,13 +98,14 @@
           {
             href: "/settings",
             text: "Settings"
-          },
-          {
-            href: "/set-user-type?type=employer",
-            text: "Employer referral form"
           }
         ]
       }
     }) }}
     {{ data | log }}
+  {% endblock %}
+
+  {% block scripts %}
+    {{ super() }}
+    <script src="/node_modules/dfe-frontend/dist/dfefrontend.min.js"></script>
   {% endblock %}

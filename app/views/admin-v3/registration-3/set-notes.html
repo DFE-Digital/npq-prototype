@@ -1,9 +1,4 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {% include '../../includes/header.html' %}
-  {% include '../../includes/primary-navigation.html' %}
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,13 +10,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ data['registration2--name'] }}</h1>
+      <h1 class="govuk-heading-xl">{{ data['registration3--name'] }}</h1>
       <form class="form" action="registration" method="post">
         {{ govukCharacterCount({
-          name: "registration2--notes",
-          id: "registration2--notes",
+          name: "registration3--notes",
+          id: "registration3--notes",
           maxlength: 1000,
-          value: data['registration2--notes'],
+          value: data['registration3--notes'],
           label: {
             text: "Notes about changes to this registration",
             classes: "govuk-label--m"

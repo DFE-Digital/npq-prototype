@@ -1,21 +1,27 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {% include './includes/header.html' %}
-  {% include './includes/primary-navigation.html' %}
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="registrations" class="govuk-!-font-size-16">All registrations</a>
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="registrations-review" aria-current="location" class="govuk-!-font-size-16">In review</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
       <!-- {{ govukNotificationBanner({
         text: "Carlton Shanahan JD's funding status has been updated successfully.",
         type: 'success'
       }) }} -->
-      <h1 class="govuk-heading-l">Registrations</h1>
-      {% include './includes/secondary-navigation.html' %}
+      <h1 class="govuk-heading-l">Registrations in review</h1>
       <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
-        <h1 class="govuk-heading-l">Search for registrations in review</h1>
+        <h1 class="govuk-heading-m">Search for registrations in review</h1>
         <form action="" accept-charset="UTF-8" method="get">
           <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s">Enter the participant ID, name, email address, employer name, or application ID</label><input id="query-field" class="govuk-input" type="text" name="query"></div>
             <div style="display: flex; margin-left: -14px">
@@ -107,7 +113,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="in-review/registration-1/registration">{{ data['registration1--name'] }}</a>
+              <a href="registration-1/ltd-130824">{{ data['registration1--name'] }}</a>
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
             </td>
@@ -156,7 +162,7 @@
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="in-review/registration-2/registration">{{ data['registration2--name'] }}</a>
+              <a href="registration-2/overview">{{ data['registration2--name'] }}</a>
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
             </td>
@@ -205,7 +211,7 @@
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="in-review/registration-3/registration">{{ data['registration3--name'] }}</a>
+              <a href="registration-3/overview">{{ data['registration3--name'] }}</a>
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
             </td>
@@ -254,7 +260,7 @@
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="in-review/registration-4/registration">{{ data['registration4--name'] }}</a>
+              <a href="registration-4/overview">{{ data['registration4--name'] }}</a>
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
             </td>
@@ -413,4 +419,5 @@
       </table>
     </div>
   </div>
+      
 {% endblock %}

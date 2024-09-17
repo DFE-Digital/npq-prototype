@@ -111,6 +111,7 @@ module.exports = {
   // registration 1
   'registration1--name': 'Jorge Hund',
   'registration1--email': 'jorge@example.com',
+  'registration1--trn': '1234567',
   'registration1--referred': 'No',
   'registration1--employment-type': 'Supply teacher',
   'registration1--employer': 'York council',
@@ -122,12 +123,14 @@ module.exports = {
   'registration1--ineligible-reason': '',
   'registration1--ineligible-reason--other': '',
   'registration1--ineligible-reason--establishment': '',
-  'registration1--provider-status': 'Pending',
+  'registration1--provider-status': 'Approved',
+  'registration1--funded-place': 'Yes',
   'registration1--notes': '',
   'registration1--submitted-date': '9 Jul 2024 3:45pm',
   'registration1--updated-date': '9 Jul 2024 3:45pm',
   'registration1--participant-id': '20558b2a-db55-40e0-ae99-ff02f9065ef2',
   'registration1--registration-id': '20558b2a-db55-40e0-ae99-ff02f9065ef2',
+  'registration1--gai-id': '11ab2c34-56d7-89e1-234f-56789gh1234i',
 
   // registration 2
   'registration2--name': 'Shahira Donald',
