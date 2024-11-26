@@ -1,9 +1,4 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {% include '../../includes/header.html' %}
-  {% include '../../includes/primary-navigation.html' %}
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,10 +10,10 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ data['registration4--name'] }}</h1>
+      <h1 class="govuk-heading-xl">{{ data['registration1--name'] }}</h1>
       <form class="form" method="post">
         {{ govukRadios({
-          name: "registration4--review-status",
+          name: "registration1--review-status",
           fieldset: {
             legend: {
               text: "What is review status for this registration?",

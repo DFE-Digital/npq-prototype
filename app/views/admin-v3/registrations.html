@@ -1,67 +1,21 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {% include './includes/header.html' %}
-  {% include './includes/primary-navigation.html' %}
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="registrations" aria-current="location" class="govuk-!-font-size-16">All registrations</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="registrations-review" class="govuk-!-font-size-16">In review</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-l">Registrations</h1>
-      {{ mojSubNavigation({
-        label: 'Sub navigation',
-        items: [{
-          text: 'All',
-          href: '#'
-        }, 
-        {
-          text: 'In review',
-          href: './registrations-review'
-          
-        }]
-      }) }}
-
-      {{ govukButton({
-        text: "Schedule export"
-      }) }}
-
-      <table class="govuk-table govuk-!-font-size-16">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Start date</th>
-            <th scope="col" class="govuk-table__header">End date</th>
-            <th scope="col" class="govuk-table__header">Scheduled at</th>
-          </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">10 February 2023</td>
-            <td class="govuk-table__cell">14 February 2023</td>
-            <td class="govuk-table__cell">15 February 2023, 4:55 PM</td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">6 June 2022</td>
-            <td class="govuk-table__cell">14 February 2023</td>
-            <td class="govuk-table__cell">15 February 2023, 4:03 PM</td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">3 February 2023</td>
-            <td class="govuk-table__cell">9 February 2023</td>
-            <td class="govuk-table__cell">10 February 2023, 10:03 AM</td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">8 December 2022</td>
-            <td class="govuk-table__cell">8 February 2023</td>
-            <td class="govuk-table__cell">9 February 2023, 10:11 AM</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
-
 {% endblock %}

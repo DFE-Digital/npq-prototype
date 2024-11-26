@@ -1,13 +1,20 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {% include './includes/header.html' %}
-  {% include './includes/primary-navigation.html' %}
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="#1" aria-current="location" class="govuk-!-font-size-16">x</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="registrations-review" class="govuk-!-font-size-16">Y</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-l">Dashboard</h1>
     </div>
   </div>

@@ -1,9 +1,4 @@
-{% extends "layout.html" %}
-
-{% block header %}
-  {% include '../../includes/header.html' %}
-  {% include '../../includes/primary-navigation.html' %}
-{% endblock %}
+{% extends "layout-admin.html" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,12 +10,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ data['registration3--name'] }}</h1>
+      <h1 class="govuk-heading-xl">{{ data['registration1--name'] }}</h1>
       <form class="form" action="set-notes" method="post">
         {% set otherHtml %}
           {{ govukInput({
-            id: "registration3--ineligible-reason--other",
-            name: "registration3--ineligible-reason--other",
+            id: "registration1--ineligible-reason--other",
+            name: "registration1--ineligible-reason--other",
             classes: "govuk-!-width-one-half",
             label: {
               text: "Provide a reason"
@@ -30,8 +25,8 @@
 
         {% set establishmentHtml %}
           {{ govukInput({
-            id: "registration3--ineligible-reason--establishment",
-            name: "registration3--ineligible-reason--establishment",
+            id: "registration1--ineligible-reason--establishment",
+            name: "registration1--ineligible-reason--establishment",
             classes: "govuk-!-width-one-half",
             label: {
               text: "Provide establishment type"
@@ -40,7 +35,7 @@
         {% endset -%}
         
         {{ govukRadios({
-          name: "registration3--ineligible-reason",
+          name: "registration1--ineligible-reason",
           fieldset: {
             legend: {
               text: "Why is this registration not eligible for funding?",
