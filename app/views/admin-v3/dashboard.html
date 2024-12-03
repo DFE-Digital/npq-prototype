@@ -16,6 +16,446 @@
     </div>
     <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-l">Registrations dashboard</h1>
+
+      <!-- new table-->
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+    
+                <th scope="col" class="govuk-table__header">Participant</th>
+    
+                <th scope="col" class="govuk-table__header">Eligible for funding</th>
+    
+                <th scope="col" class="govuk-table__header">Provider approval status</th>
+    
+                <th scope="col" class="govuk-table__header">Notes</th>
+    
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="date">
+                    Registration submitted date
+                </th>
+    
+            </tr>
+        </thead>
+    
+        <tbody class="govuk-table__body">
+    
+            <tr class="govuk-table__row">
+    
+                <td scope="row" class="govuk-table__cell">
+                    <a href="">{{ data['registration1--name'] }}</a>
+                    <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }}</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
+                </td>
+    
+                <td class="govuk-table__cell" data-sort-value="6961">6,961 meters</td>
+    
+                <td class="govuk-table__cell">South America</td>
+    
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">1897</td>
+
+                <td class="govuk-table__cell">{{ data['registration1--submitted-date'] }}</td>
+
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Denali</td>
+                <td class="govuk-table__cell" data-sort-value="6194">6,194 meters</td>
+                <td class="govuk-table__cell">North America</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1913">1913</td>
+                <td class="govuk-table__cell">10 Jul 2024 10:30am</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Elbrus</td>
+                <td class="govuk-table__cell" data-sort-value="5642">5,642 meters</td>
+                <td class="govuk-table__cell">Europe</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1874">1874</td>
+                <td class="govuk-table__cell">11 Jul 2024 2:15pm</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Everest</td>
+                <td class="govuk-table__cell" data-sort-value="8850">8,850 meters</td>
+                <td class="govuk-table__cell">Asia</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1953">1953</td>
+                <td class="govuk-table__cell">12 Jul 2024 6:00pm</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Kilimanjaro</td>
+                <td class="govuk-table__cell" data-sort-value="5895">5,895 meters</td>
+                <td class="govuk-table__cell">Africa</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1889">1889</td>
+                <td class="govuk-table__cell">13 Jul 2024 11:45am</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Puncak Jaya</td>
+                <td class="govuk-table__cell" data-sort-value="4884">4,884 meters</td>
+                <td class="govuk-table__cell">Australia</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1962">1962</td>
+                <td class="govuk-table__cell">14 Jul 2024 8:30am</td>
+            </tr>
+    
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Vinson</td>
+                <td class="govuk-table__cell" data-sort-value="4897">4,897 meters</td>
+                <td class="govuk-table__cell">Antarctica</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1966">1966</td>
+                <td class="govuk-table__cell">15 Jul 2024 4:00pm</td>
+            </tr>
+    
+        </tbody>
+    </table>
+    
+
+      <!-- end of new table-->
+
+
+
+      <!-- sortable table moj-->
+
+  
+      
+      <!-- end of moj table-->
+      
+
+      <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Participant</th>
+           <!--<th scope="col" class="govuk-table__header" aria-sort="none">Review status</th> --> 
+            
+            <th scope="col" class="govuk-table__header">Eligible for funding</th>
+            <th scope="col" class="govuk-table__header">Provider approval status</th>
+            <th scope="col" class="govuk-table__header">Notes</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Registration submitted date</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-1/ltd-130824">{{ data['registration1--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration1--review-status'] == "Decision made") %}
+                {{govukTag({
+                  text: data['registration1--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration1--review-status'] == "Re-register") %}
+                {{govukTag({
+                  text: data['registration1--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration1--review-status'] == "Awaiting information") %}
+                {{govukTag({
+                  text: data['registration1--review-status'],
+                  classes: "govuk-tag--yellow"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration1--review-status'],
+                  classes: "govuk-tag--blue"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration1--review-status'] != "Decision made") %}
+              –
+              {% elseif (data['registration1--funding-status'] == "Yes") %}
+                {{govukTag({
+                  text: data['registration1--funding-status'],
+                  classes: "govuk-tag--green"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration1--funding-status'],
+                  classes: "govuk-tag--red"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">{{ data['registration1--provider-status'] }}</td>
+            <td class="govuk-table__cell">{{ data['registration1--notes'] }}..</td>
+            <td class="govuk-table__cell">{{ data['registration1--submitted-date'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-2/overview">{{ data['registration2--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration2--review-status'] == "Decision made") %}
+                {{govukTag({
+                  text: data['registration2--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration2--review-status'] == "Re-register") %}
+                {{govukTag({
+                  text: data['registration2--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration2--review-status'] == "Awaiting information") %}
+                {{govukTag({
+                  text: data['registration2--review-status'],
+                  classes: "govuk-tag--yellow"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration2--review-status'],
+                  classes: "govuk-tag--blue"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration2--review-status'] != "Decision made") %}
+              –
+              {% elseif (data['registration2--funding-status'] == "Yes") %}
+                {{govukTag({
+                  text: data['registration2--funding-status'],
+                  classes: "govuk-tag--green"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration2--funding-status'],
+                  classes: "govuk-tag--red"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">{{ data['registration2--provider-status'] }}</td>
+            <td class="govuk-table__cell">{{ data['registration2--notes'] }}..</td>
+            <td class="govuk-table__cell">{{ data['registration2--submitted-date'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-3/overview">{{ data['registration3--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration3--review-status'] == "Decision made") %}
+                {{govukTag({
+                  text: data['registration3--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration3--review-status'] == "Re-register") %}
+                {{govukTag({
+                  text: data['registration3--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration3--review-status'] == "Awaiting information") %}
+                {{govukTag({
+                  text: data['registration3--review-status'],
+                  classes: "govuk-tag--yellow"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration3--review-status'],
+                  classes: "govuk-tag--blue"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration3--review-status'] != "Decision made") %}
+              –
+              {% elseif (data['registration3--funding-status'] == "Yes") %}
+                {{govukTag({
+                  text: data['registration3--funding-status'],
+                  classes: "govuk-tag--green"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration3--funding-status'],
+                  classes: "govuk-tag--red"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">{{ data['registration3--provider-status'] }}</td>
+            <td class="govuk-table__cell">{{ data['registration3--notes'] }}..</td>
+            <td class="govuk-table__cell">{{ data['registration3--submitted-date'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-4/overview">{{ data['registration4--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration4--review-status'] == "Decision made") %}
+                {{govukTag({
+                  text: data['registration4--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration4--review-status'] == "Re-register") %}
+                {{govukTag({
+                  text: data['registration4--review-status'],
+                  classes: "govuk-tag--grey"
+                })}}
+              {% elseif (data['registration4--review-status'] == "Awaiting information") %}
+                {{govukTag({
+                  text: data['registration4--review-status'],
+                  classes: "govuk-tag--yellow"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration4--review-status'],
+                  classes: "govuk-tag--blue"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">
+              {% if (data['registration4--review-status'] != "Decision made") %}
+              –
+              {% elseif (data['registration4--funding-status'] == "Yes") %}
+                {{govukTag({
+                  text: data['registration4--funding-status'],
+                  classes: "govuk-tag--green"
+                })}}
+              {% else %}
+                {{govukTag({
+                  text: data['registration4--funding-status'],
+                  classes: "govuk-tag--red"
+                })}}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell">{{ data['registration4--provider-status'] }}</td>
+            <td class="govuk-table__cell">{{ data['registration4--notes'] }}..</td>
+            <td class="govuk-table__cell">{{ data['registration4--submitted-date'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Carlton Shanahan JD</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Re-register",
+                classes: "govuk-tag--grey"
+              })}}
+            </td>
+            <td class="govuk-table__cell">
+              –
+            </td>
+            <td class="govuk-table__cell">Rejected</td>
+            <td class="govuk-table__cell">15/04: NG Rejected by provider, no need to review.</td>
+            <td class="govuk-table__cell">4 Apr 2024<br> 11:28am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Fareed Eilert</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Decision made",
+                classes: "govuk-tag--grey"
+              })}}
+            </td>
+            <td class="govuk-table__cell">
+                {{govukTag({
+                  text: "Yes",
+                  classes: "govuk-tag--green"
+                })}}
+            </td>
+            <td class="govuk-table__cell">Accepted</td>
+            <td class="govuk-table__cell">05/04: BC Looks eligible. Meadows Ridge Academy is a virtual school.</td>
+            <td class="govuk-table__cell">3 Apr 2024<br> 2:32pm</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Aiga Villum</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Decision made",
+                classes: "govuk-tag--grey"
+              })}}
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "No",
+                classes: "govuk-tag--red"
+              })}}
+            </td>
+            <td class="govuk-table__cell">Accepted</td>
+            <td class="govuk-table__cell">15/04: NG sent email sent to user to confirm non-eligibility. 12/04: CD Agree not eligible. 11/04: AB Not eligible - in support role, not teaching...</td>
+            <td class="govuk-table__cell">3 Apr 2024<br> 11:19am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Colin Winter</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Re-register",
+                classes: "govuk-tag--grey"
+              })}}
+            </td>
+            <td class="govuk-table__cell">
+              –
+            </td>
+            <td class="govuk-table__cell">Rejected</td>
+            <td class="govuk-table__cell">05/04: RD: Reregister email sent (Digital #00000)...</td>
+            <td class="govuk-table__cell">3 Apr 2024<br> 10:02am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Bobby Small</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Decision made",
+                classes: "govuk-tag--grey"
+              })}}
+            </td>
+            <td class="govuk-table__cell">
+                {{govukTag({
+                  text: "Yes",
+                  classes: "govuk-tag--green"
+                })}}
+            </td>
+            <td class="govuk-table__cell">Accepted</td>
+            <td class="govuk-table__cell">01/04: LP agree...</td>
+            <td class="govuk-table__cell">29 Mar 2024<br> 4:14pm</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 {% endblock %}
