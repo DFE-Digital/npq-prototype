@@ -655,7 +655,7 @@
         rows: [
           {
             key: {
-              text: "Cohort"
+              text: "Eligible for funding"
             },
             value: {
               text: '2024'
@@ -663,7 +663,7 @@
           },
           {
             key: {
-              text: "Schedule identifier"
+              text: "Funding eligibility status code"
             },
             value: {
               text: 'npq-specialist-autumn'
@@ -695,14 +695,18 @@
             value: {
               text: 'npq-specialist-autumn'
             }
+          },
+          {
+            key: {
+              text: "Notes"
+            },
+            value: {
+              text: 'This application...'
+            }
           }
         ]
       }) }}
-      
 
-
-
-      
       {{ govukSummaryList({
         card: {
           title: {
@@ -713,10 +717,7 @@
         rows: [
           {
             key: {
-              text: "Participant ID",
-              hint: {
-                text: "fdf"
-              }
+              text: "Declaration ID" 
             },
             value: {
               text: data['registration1--participant-id']
@@ -724,7 +725,7 @@
           },
           {
             key: {
-              text: "Application ID"
+              text: "Declaration type"
             },
             value: {
               text: data['registration1--registration-id']
@@ -732,10 +733,43 @@
           },
           {
             key: {
-              text: "Registration submission date"
+              text: "Declaration data"
             },
             value: {
               text: data['registration1--submitted-date']
+            }
+          },
+          {
+            key: {
+              text: "Evidence held"
+            },
+            value: {
+              text: data['registration1--updated-date']
+            }
+          },
+          {
+            key: {
+              text: "Declaration state"
+            },
+            value: {
+              text: "123"
+            },
+            actions: {
+              items: [
+                {
+                  href: " ",
+                  text: "View state history",
+                  visuallyHiddenText: "school urn"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Created at"
+            },
+            value: {
+              text: data['registration1--updated-date']
             }
           },
           {
