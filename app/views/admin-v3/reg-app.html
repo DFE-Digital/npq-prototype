@@ -349,31 +349,169 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Funding details',
+            text: 'Course',
             classes: 'govuk-!-font-size-24'
           }
         },
         rows: [
+        {
+          key: {
+            text: "NPQ course"
+          },
+          value: {
+            text: "Course name"
+          }
+        },
+        {
+          key: {
+            text: "Course identifier"
+          },
+          value: {
+            text: "12345"
+          }
+        },
+        {
+          key: {
+            text: "Cohort"
+          },
+          value: {
+            text: "testttt"
+          }
+        },
           {
             key: {
-              text: "Review status"
+              text: "Course outcome"
             },
             value: {
-              html: reviewStatusHTML
+              text: "testttt"
             },
             actions: {
               items: [
                 {
-                  href: "../registration-1/set-status",
-                  text: "Change",
-                  visuallyHiddenText: "review status"
+                  href: "",
+                  text: "View outcome",
+                  visuallyHiddenText: "view course outcome"
                 }
               ]
             }
           },
           {
             key: {
-              text: "Eligible for funding"
+              text: "Enrollment"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "enrollment"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Lead provider"
+            },
+            value: {
+              text: "Lead provider name"
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "Change",
+                  visuallyHiddenText: "lead provider"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Lead provider approval"
+            },
+            value: {
+              text: "test"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../registration-1/set-notes",
+                  text: "Change",
+                  visuallyHiddenText: "Lead provider approval"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Employment details',
+            classes: 'govuk-!-font-size-24'
+          }
+        },
+        rows: [
+        {
+          key: {
+            text: "Role"
+          },
+          value: {
+            text: "Value"
+          }
+        },
+        {
+          key: {
+            text: "Employment type"
+          },
+          value: {
+            text: "Value"
+          }
+        },
+        {
+          key: {
+            text: "Training status"
+          },
+          value: {
+            text: "Value"
+          }
+        },
+        {
+          key: {
+            text: "Private childcare provider URN
+            "
+          },
+          value: {
+            text: "Value"
+          }
+        },
+        {
+          key: {
+            text: "Headteacher status
+            "
+          },
+          value: {
+            text: "Value"
+          }
+        },
+        {
+          key: {
+            text: "Number of pupils
+            "
+          },
+          value: {
+            text: "Value"
+          }
+        },
+          {
+            key: {
+              text: "School URN"
             },
             value: {
               html: fundingStatusHTML
@@ -381,30 +519,45 @@
             actions: {
               items: [
                 {
-                  href: "../registration-1/set-eligibility",
-                  text: "Change",
-                  visuallyHiddenText: "eligibility"
+                  href: " ",
+                  text: "View",
+                  visuallyHiddenText: "school urn"
                 }
               ]
             }
           },
           {
             key: {
-              text: "Reason for not being eligible"
+              text: "School UKPRN"
             },
             value: {
-              html: ineligiblereasonHTML
-            },
-            actions: {
-              items: [
-                {
-                  href: "../registration-1/set-ineligible-reason",
-                  text: "Change",
-                  visuallyHiddenText: "ineligible reason"
-                }
-              ]
+              text: data['registration1--funded-place']
             }
-          } if data['registration1--funding-status'] == "No",
+          },
+          {
+            key: {
+              text: "Country"
+            },
+            value: {
+              text: data['registration1--funded-place']
+            }
+          },
+          {
+            key: {
+              text: "ITT lead mentor"
+            },
+            value: {
+              text: data['registration1--funded-place']
+            }
+          },
+          {
+            key: {
+              text: "ITT provider"
+            },
+            value: {
+              text: data['registration1--funded-place']
+            }
+          },
           {
             key: {
               text: "Funded place"
@@ -415,19 +568,18 @@
           },
           {
             key: {
-              text: "Notes"
+              text: "Works in England"
             },
             value: {
-              text: data['registration1--notes']
+              text: data['registration1--funded-place']
+            }
+          },
+          {
+            key: {
+              text: "Works setting"
             },
-            actions: {
-              items: [
-                {
-                  href: "../registration-1/set-notes",
-                  text: "Change",
-                  visuallyHiddenText: "eligibility"
-                }
-              ]
+            value: {
+              text: data['registration1--funded-place']
             }
           }
         ]
@@ -436,14 +588,15 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Work details',
+            text: 'Key funding information',
             classes: 'govuk-!-font-size-24'
           }
         },
         rows: [
           {
             key: {
-              text: "Works in England"
+              text: "Primary establishment
+              "
             },
             value: {
               text: 'Yes'
@@ -451,7 +604,7 @@
           },
           {
             key: {
-              text: "Work setting"
+              text: "Targeted support funding primary plus eligibility"
             },
             value: {
               text: 'Another setting'
@@ -459,7 +612,7 @@
           },  
           {
             key: {
-              text: "Employment type"
+              text: "Targeted delivery funding eligibility"
             },
             value: {
               text: data['registration1--employment-type']
@@ -467,7 +620,7 @@
           },
           {
             key: {
-              text: "Employer name"
+              text: "Reffered by return to teaching adviser"
             },
             value: {
               text: data['registration1--employer']
@@ -475,7 +628,15 @@
           },
           {
             key: {
-              text: "Role"
+              text: "Funded place"
+            },
+            value: {
+              text: data['registration1--role']
+            }
+          },
+          {
+            key: {
+              text: "Funding choice"
             },
             value: {
               text: data['registration1--role']
@@ -487,7 +648,34 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Schedule',
+            text: "Funding outcome",
+            classes: 'govuk-!-font-size-24'
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Cohort"
+            },
+            value: {
+              text: '2024'
+            }
+          },
+          {
+            key: {
+              text: "Schedule identifier"
+            },
+            value: {
+              text: 'npq-specialist-autumn'
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Schedule",
             classes: 'govuk-!-font-size-24'
           }
         },
@@ -511,10 +699,14 @@
         ]
       }) }}
       
+
+
+
+      
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Declarations',
+            text: 'Declarations [schedule milestone name]',
             classes: 'govuk-!-font-size-24'
           }
         },
@@ -557,66 +749,6 @@
         ]
       }) }}
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: 'Registration details',
-            classes: 'govuk-!-font-size-24'
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Participant ID",
-              hint: {
-                text: "fdf"
-              }
-            },
-            value: {
-              text: data['registration1--participant-id']
-            }
-          },
-          {
-            key: {
-              text: "Application ID"
-            },
-            value: {
-              text: data['registration1--registration-id']
-            }
-          },
-          {
-            key: {
-              text: "Registration submission date"
-            },
-            value: {
-              text: data['registration1--submitted-date']
-            }
-          },
-          {
-            key: {
-              text: "Last updated date"
-            },
-            value: {
-              text: data['registration1--updated-date']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-log",
-                  text: "View change log"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
-
-      {{ govukDetails({
-        summaryText: "View registration as it appears on the Lead Provider API V3",
-        html: apiHTML
-      }) }}
-    </div>
-  </div>
-
+     
    
 {% endblock %}
