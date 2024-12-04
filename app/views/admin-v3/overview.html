@@ -89,7 +89,10 @@
             <a href="reg-app.html" class="govuk-!-font-size-16">Leading teacher development 13 Aug 24</a>
           </li>
           <li class="moj-side-navigation__item">
-            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Leading teacher development 9 Jul 2024</a>
+            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Leading teacher development 9 Jul 23</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Leading teaching development 1 May 23</a>
           </li>
           <li class="moj-side-navigation__item">
             <a href="change-log" class="govuk-!-font-size-16">Change log</a>
@@ -135,7 +138,7 @@
               text: "Provider"
             },
             value: {
-              text: data['registration1--provider']
+              text: "UCL"
             }
           },
           {
@@ -151,7 +154,8 @@
               text: "Eligible for funding"
             },
             value: {
-              html: fundingStatusHTML
+              text: "Yes"
+              
             }
           },
           {
@@ -183,7 +187,7 @@
               text: "Registration submission date"
             },
             value: {
-              text: data['registration1--submitted-date']
+              text: "9 Jul 2024, 3:54pm"
             }
           }
         ]
@@ -192,7 +196,7 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Leading teaching development registration 8 Jul 2024',
+            text: 'Leading teaching development registration 8 Jul 2023',
             classes: 'govuk-!-font-size-24'
           },
           actions: {
@@ -267,11 +271,97 @@
               text: "Registration submission date"
             },
             value: {
-              text: data['registration1--submitted-date']
+              text: "8 Jul 2023, 4:44pm"
             }
           }
         ]
       }) }}
+
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Leading teaching development 1 May 2023',
+            classes: 'govuk-!-font-size-24'
+          },
+          actions: {
+            items: [
+              {
+                href: "ltd-270724",
+                text: "View details",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "NPQ course"
+            },
+            value: {
+              text: data['registration1--course']
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "Funding review status"
+            },
+            value: {
+              html: reviewStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              html: fundingStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: '–'
+            }
+          },
+          {
+            key: {
+              text: "Latest declaration"
+            },
+            value: {
+              text: 'None'
+            }
+          },
+          {
+            key: {
+              text: "Registration submission date"
+            },
+            value: {
+              text: "1 May 2023, 4:44pm"
+            }
+          }
+        ]
+      }) }}
+
 
     </div>
   </div>

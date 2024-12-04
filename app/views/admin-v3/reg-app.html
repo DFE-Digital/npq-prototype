@@ -143,17 +143,111 @@
       <p class="govuk-!-margin-bottom-1"><strong>TRN (validated): </strong>1234567</p>
       <p class="govuk-!-margin-bottom-6"><strong>GAI ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
 
+
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Course details',
+            text: 'Registration details',
             classes: 'govuk-!-font-size-24'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View details",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
           }
         },
         rows: [
           {
             key: {
-              text: "NPQ course"
+              text: "Participant ID"
+            },
+            value: {
+              text: data['registration1--course']
+            }
+          },
+          {
+            key: {
+              text: "Registration ID"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          {
+            key: {
+              text: "Application ID"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          {
+            key: {
+              text: "Registration submitted"
+            },
+            value: {
+              html: reviewStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Last updated"
+            },
+            value: {
+              text: "19 Dec 2024, 3:45pm"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "View change log",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Lead provider API V3"
+            },
+            value: {
+              html: govukDetails({
+                summaryText: "See this application as it appears on the Lead Provider API",
+                text: apiHTML
+              })
+            }
+            
+          }
+          
+          
+        ]
+      }) }}
+
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Participant',
+            classes: 'govuk-!-font-size-24'
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "View participant",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Name"
             },
             value: {
               text: data['registration1--course']
@@ -169,18 +263,84 @@
           },
           {
             key: {
-              text: "Provider approval status"
+              text: "TRN"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "TRN validated"
             },
             value: {
               html: providerStatusHTML
             },
             actions: {
               items: [
-                {
-                  href: "#",
-                  text: "Change to pending"
-                }
               ]
+            }
+          },
+          
+          {
+            key: {
+              text: "User identity provider"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "User identity UID"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "Training status"
+            },
+            value: {
+              html: providerStatusHTML
+            },
+            actions: {
+              items: [
+                
+              ]
+            }
+          },
+          {
+            key: {
+              text: "External ID"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "National insurance number"
+            },
+            value: {
+              text: data['registration1--provider']
+            }
+          },
+          {
+            key: {
+              text: "Get an identity ID"
+            },
+            value: {
+              text: data['registration1--provider']
             }
           }
         ]
