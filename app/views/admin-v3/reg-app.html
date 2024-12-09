@@ -179,14 +179,6 @@
           },
           {
             key: {
-              text: "Application ID"
-            },
-            value: {
-              text: "UCL"
-            }
-          },
-          {
-            key: {
               text: "Registration submitted"
             },
             value: {
@@ -710,7 +702,7 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Declarations [schedule milestone name]',
+            text: 'Declarations ',
             classes: 'govuk-!-font-size-24'
           }
         },
@@ -729,6 +721,14 @@
             },
             value: {
               text: data['registration1--registration-id']
+            }
+          },
+          {
+            key: {
+              text: "Milestone"
+            },
+            value: {
+              text: "milestone"
             }
           },
           {
@@ -758,8 +758,8 @@
               items: [
                 {
                   href: " ",
-                  text: "View state history",
-                  visuallyHiddenText: "school urn"
+                  text: "",
+                  visuallyHiddenText: "view state history"
                 }
               ]
             }
