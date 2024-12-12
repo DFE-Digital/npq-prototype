@@ -3,71 +3,65 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
+      
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active">
-            <a href="dashboard.html" aria-current="location" class="govuk-!-font-size-16">Course</a>
+            <a href="" aria-current="location" class="govuk-!-font-size-16">Course </a>
           </li>
           <li class="moj-side-navigation__item">
-            <a href="dashboard-2"  class="govuk-!-font-size-16">Course providers</a>
+            <a href=" " class="govuk-!-font-size-16">Course providers</a>
           </li>
+          
         </ul>
-      </nav>
+      </nav> 
     </div>
     <div class="govuk-grid-column-three-quarters">
 
       
 
-      <!-- <h1 class="govuk-heading-l">Dashboard</h1> -->
+    <h1 class="govuk-heading-l">Dashboard</h1> 
 
-      <p class="govuk-body">This page is for xyz...Perhaps add a short summary of what the page is showing.</p>
+      <p class="govuk-body">You can review the number of applications received for each course.</p>
 
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Course provider</th>
-            <th scope="col" class="govuk-table__header">Registrations recieved</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Ambition instiute</td>
-            <td class="govuk-table__cell">5563</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Best practice network</td>
-            <td class="govuk-table__cell">6563</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Church of England</td>
-            <td class="govuk-table__cell">1760</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">LLSE</td>
-            <td class="govuk-table__cell">111</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Leading teacher development</td>
-            <td class="govuk-table__cell">2321</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">National institute of teaching</td>
-            <td class="govuk-table__cell">2563</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Teach first</td>
-            <td class="govuk-table__cell">563</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Teacher development trust</td>
-            <td class="govuk-table__cell">3563</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">UCL institute of education</td>
-            <td class="govuk-table__cell">563</td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-m">Choose the academic year you wish to review</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+            <div style="display: flex; margin-left: -14px">
+              
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Employment type</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="2021 - 2022">2021 - 2022</option>
+                  <option value="2022 - 2023">2022 - 2023</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2024 - 2025">2024 - 2025</option>
+                  <option value="2025 - 2026">2025 - 2026</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+      <p class="govuk-body"><a href="dashboard.html"> Change to chart view</a></p>
+
+
+
+      <img src="/public/images/new-dash-tables.png" alt="."> 
+
+
+      
+      
+
+
+
+
+
+
+
 
 
 
