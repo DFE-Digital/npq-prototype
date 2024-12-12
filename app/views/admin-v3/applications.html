@@ -6,7 +6,7 @@
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active">
-            <a href="registrations" aria-current="location" class="govuk-!-font-size-16">All registrations </a>
+            <a href="registrations" aria-current="location" class="govuk-!-font-size-16">All applications </a>
           </li>
           <li class="moj-side-navigation__item">
             <a href="registrations-review" class="govuk-!-font-size-16">In review</a>
@@ -15,80 +15,82 @@
       </nav>
     </div>
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-l">All registrations</h1>
+      <h1 class="govuk-heading-l">All applications</h1>
 
       <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
-        <h1 class="govuk-heading-m">Search for registrations in review</h1>
+        <h1 class="govuk-heading-m">Find an application</h1>
         <form action="" accept-charset="UTF-8" method="get">
-          <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s">Enter the participant ID, name, email address, employer name, or application ID</label><input id="query-field" class="govuk-input" type="text" name="query"></div>
+
+          <div id="account-number-hint" class="govuk-hint">
+            Search by the [need to define what data to search with]. 
+          </div>
+          <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s"></label><input id="query-field" class="govuk-input" type="text" name="query"></div>
             <div style="display: flex; margin-left: -14px">
+              
               <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="funding-eligiblity-status-code-field" class="govuk-label govuk-label--s">Review status</label><select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
-                  <option value="funded">Needs review</option>
-                  <option value="funded">Awaiting information</option>
-                  <option value="funded">Decision made</option>
-                  <option value="funded">Re-register</option>
-                <optgroup label="Legacy statuses">
-                  <option value="funded">funded</option>
-                  <option value="no_institution">no institution</option>
-                  <option value="ineligible_establishment_type">ineligible establishment type</option>
-                  <option value="ineligible_institution_type">ineligible institution type</option>
-                  <option value="previously_funded">previously funded</option>
-                  <option value="not_new_headteacher_requesting_ehco">not new headteacher requesting ehco</option>
-                  <option value="school_outside_catchment">school outside catchment</option>
-                  <option value="early_years_outside_catchment">early years outside catchment</option>
-                  <option value="not_on_early_years_register">not on early years register</option>
-                  <option value="early_years_invalid_npq">early years invalid npq</option>
-                  <option value="marked_funded_by_policy">marked funded by policy</option>
-                  <option value="marked_ineligible_by_policy">marked ineligible by policy</option></select>
-                </optgroup>
-              </div>
-              <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="employment-type-field" class="govuk-label govuk-label--s">Employment type</label>
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Application status</label>
                 <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
-                  <option value="hospital_school">Hospital school</option>
-                  <option value="local_authority_supply_teacher">Local authority supply teacher</option>
-                  <option value="local_authority_virtual_school">Local authority virtual school</option>
-                  <option value="young_offender_institution">Young offender institution</option>
-                  <option value="other">Other</option>
+                  <option value="Status">Status</option>
+                  <option value="Status">Status</option>
+                  <option value="Status">Status</option>
+                  <option value="Status">Status</option>
                 </select>
               </div>
+
             </div>
+
             <div style="display: flex; margin-left: -14px">
               <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Eligible for funding</label>
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Year of application</label>
                 <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                  <option value="no">–</option>
-                </select>
-              </div>
-              <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="referral-field" class="govuk-label govuk-label--s">Referred by return to teaching adviser</label>
-                <select id="referral-field" class="govuk-select" name="Referral"><option value=""></option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="Pre - 2022">Pre - 2022</option>
+
+
                 </select>
               </div>
             </div>
+
             <div style="display: flex; margin-left: -14px">
               <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint" checked>
-                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
-                      Show registrations without a funding decision
-                    </label>
-                  </div>
-                </div>
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Employment type</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="Early years or childcare">Early years or childcare </option>
+                  <option value="Schools">Schools</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="16 to 19 settings ">16 to 19 settings </option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                </select>
               </div>
-              <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="employment-type-field" class="govuk-label govuk-label--s">Year of registration</label><select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
-                <option value="hospital_school">2024-25</option>
-                <option value="other">2023-24</option>
-                <option value="local_authority_virtual_school">2022-23</option>
-                <option value="young_offender_institution">Pre-2022</option></select>
-              </div>
+            </div>
+
+
+            <div style="display: flex; margin-left: -14px">
+
+              
+
+              
+              
+              
             </div>
           <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
         </form>
@@ -97,12 +99,10 @@
       <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Participant</th>
+            <th scope="col" class="govuk-table__header">Applicant</th>
            <!--<th scope="col" class="govuk-table__header" aria-sort="none">Review status</th> --> 
-            
-            <th scope="col" class="govuk-table__header">Eligible for funding</th>
-            <th scope="col" class="govuk-table__header">Provider approval status</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Registration submitted date</th>
+            <th scope="col" class="govuk-table__header">Application ID</th>
+            <th scope="col" class="govuk-table__header">Workplace</th>
           </tr>
         </thead>
 
@@ -113,12 +113,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Yes",
-                classes: "govuk-tag--green"
-              })}}
-            </td>
+            
             <td class="govuk-table__cell">
              Approved
             </td>
@@ -131,12 +126,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "No",
-                classes: "govuk-tag--red"
-              })}}
-            </td>
+           
             <td class="govuk-table__cell">
               Rejected
             </td>
@@ -149,13 +139,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "No",
-                classes: "govuk-tag--red"
-              })}}
-             
-            </td>
+          
             <td class="govuk-table__cell">
              Pending
             </td>
@@ -168,12 +152,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Yes",
-                classes: "govuk-tag--green"
-              })}}
-            </td>
+          
             <td class="govuk-table__cell">
               Pending
            
@@ -186,13 +165,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Yes",
-                classes: "govuk-tag--green"
-              })}}
             
-            </td>
             <td class="govuk-table__cell">
               Rejected
             </td>
@@ -206,12 +179,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Yes",
-                classes: "govuk-tag--green"
-              })}}
-            </td>
+            
             <td class="govuk-table__cell">
             Approved    
             </td>
@@ -224,13 +192,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "No",
-                classes: "govuk-tag--red"
-              })}}
             
-            </td>
             <td class="govuk-table__cell">
             Rejected
              
@@ -245,13 +207,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Yes",
-                classes: "govuk-tag--green"
-              })}}
             
-            </td>
             <td class="govuk-table__cell">
               Rejected
             </td>
@@ -265,13 +221,7 @@
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
             </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Yes",
-                classes: "govuk-tag--green"
-              })}}
-             
-            </td>
+           
             <td class="govuk-table__cell">
              Accepted
               
