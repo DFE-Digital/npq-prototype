@@ -1,0 +1,278 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="registrations" aria-current="location" class="govuk-!-font-size-16">All applications </a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="registrations-review" class="govuk-!-font-size-16">In review</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">All applications</h1>
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-m">Find an application</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+
+          <div id="account-number-hint" class="govuk-hint">
+            Search by the [need to define what data to search with]. 
+          </div>
+          <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s"></label><input id="query-field" class="govuk-input" type="text" name="query"></div>
+            <div style="display: flex; margin-left: -14px">
+              
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Application status</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="Status">Status</option>
+                  <option value="Status">Status</option>
+                  <option value="Status">Status</option>
+                  <option value="Status">Status</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Year of application</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="Pre - 2022">Pre - 2022</option>
+
+
+                </select>
+              </div>
+            </div>
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Employment type</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="Early years or childcare">Early years or childcare </option>
+                  <option value="Schools">Schools</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="16 to 19 settings ">16 to 19 settings </option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div style="display: flex; margin-left: -14px">
+
+              
+
+              
+              
+              
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+      <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Applicant</th>
+           <!--<th scope="col" class="govuk-table__header" aria-sort="none">Review status</th> --> 
+            <th scope="col" class="govuk-table__header">Application ID</th>
+            <th scope="col" class="govuk-table__header">Workplace</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="overview.html">Lorelai Gilmore</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
+            </td>
+            
+            <td class="govuk-table__cell">
+             Approved
+            </td>
+            <td class="govuk-table__cell">1 Jan 2024<br> 11:28am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-2/overview">{{ data['registration2--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
+            </td>
+           
+            <td class="govuk-table__cell">
+              Rejected
+            </td>
+            <td class="govuk-table__cell">7 Feb 2024<br> 11:28am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-3/overview">{{ data['registration3--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
+            </td>
+          
+            <td class="govuk-table__cell">
+             Pending
+            </td>
+            <td class="govuk-table__cell">6 Jan 2024<br> 11:28am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="registration-4/overview">{{ data['registration4--name'] }}</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
+            </td>
+          
+            <td class="govuk-table__cell">
+              Pending
+           
+            </td>
+            <td class="govuk-table__cell">{{ data['registration4--submitted-date'] }}</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Carlton Shanahan JD</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
+            </td>
+            
+            <td class="govuk-table__cell">
+              Rejected
+            </td>
+            
+            <td class="govuk-table__cell">17 Mar 2024<br> 11:28am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Fareed Eilert</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+            </td>
+            
+            <td class="govuk-table__cell">
+            Approved    
+            </td>
+            <td class="govuk-table__cell">4 Apr 2024<br> 11:28am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Aiga Villum</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
+            </td>
+            
+            <td class="govuk-table__cell">
+            Rejected
+             
+            </td>
+            
+            <td class="govuk-table__cell">3 Apr 2024<br> 11:19am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Colin Winter</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+            </td>
+            
+            <td class="govuk-table__cell">
+              Rejected
+            </td>
+            
+            <td class="govuk-table__cell">3 Apr 2024<br> 10:02am</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              <a href="">Bobby Small</a>
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
+            </td>
+           
+            <td class="govuk-table__cell">
+             Accepted
+              
+            </td>
+            
+            <td class="govuk-table__cell">29 Mar 2024<br> 4:14pm</td>
+          </tr>
+        </tbody>
+      </table>
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+
+
+    </div>
+  </div>
+{% endblock %}

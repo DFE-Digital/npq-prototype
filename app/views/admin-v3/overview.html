@@ -1,0 +1,379 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  {% set reviewStatusHTML %}
+  {% if (data['registration1--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['registration1--review-status'] == "Re-register") %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+  {% elseif (data['registration1--review-status'] == "Awaiting information") %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--blue"
+    })}}
+  {% endif %}
+  {% endset %}
+
+  {% set providerStatusHTML %}
+  {% if (data['registration1--provider-status'] == "Pending") %}
+    {{govukTag({
+      text: data['registration1--provider-status'],
+      classes: "govuk-tag--yellow"
+    })}}
+  {% elseif (data['registration1--provider-status'] == "Approved") %}
+    {{govukTag({
+      text: data['registration1--provider-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['registration1--provider-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+  {% endset %}
+
+  {% set fundingStatusHTML %}
+  {% if (data['registration1--review-status'] != "Decision made") %}
+    –
+  {% elseif (data['registration1--funding-status'] == "Yes") %}
+    {{govukTag({
+      text: data['registration1--funding-status'],
+      classes: "govuk-tag--green"
+    })}}
+  {% else %}
+    {{govukTag({
+      text: data['registration1--funding-status'],
+      classes: "govuk-tag--red"
+    })}}
+  {% endif %}
+  {% endset %}
+
+  {% set ineligiblereasonHTML %}
+  {% if (data['registration1--ineligible-reason'] == "Other") %}
+    {{ data['registration1--ineligible-reason'] }} – {{ data['registration1--ineligible-reason--other'] }}
+  {% elseif (data['registration1--ineligible-reason'] == "Not an eligible establishment type") %}
+    {{ data['registration1--ineligible-reason'] }} – {{ data['registration1--ineligible-reason--establishment'] }}
+  {% else %}
+    {{ data['registration1--ineligible-reason'] }} 
+  {% endif %}
+  {% endset %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h4 class="moj-side-navigation__title">Registrations</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="../registrations" class="govuk-!-font-size-16">All</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="../registrations-review" class="govuk-!-font-size-16">In review</a>
+          </li>
+          <h4 class="moj-side-navigation__title">Lorelai Gilmore</h4>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="../registration-1/overview" aria-current="location" class="govuk-!-font-size-16">Overview</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="app-details.html" class="govuk-!-font-size-16">Application 1</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Application 2</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Application3</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="change-log" class="govuk-!-font-size-16">Change log</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1>
+      <p class="govuk-!-margin-bottom-2"><strong>ID:</strong> 12345I</p>
+      <p class="govuk-!-margin-bottom-2"><strong>e:</strong> gilmore.girls@google.com</p>
+      <p class="govuk-!-margin-bottom-2"><strong>DOB:</strong> DOB | <strong> NI: </strong> NI</p>
+      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 (v)</p>
+      <p class="govuk-!-margin-bottom-6"><strong>GAI ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
+
+     
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Application 1: Leading teaching development registration 17 Oct 2024',
+            classes: 'govuk-!-font-size-24'
+          },
+          actions: {
+            items: [
+              {
+                href: "app-details",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "NPQ course"
+            },
+            value: {
+              text: data['registration1--course']
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: '–'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "View full application",
+                  visuallyHiddenText: "View full application"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Application 1: Leading teaching development registration 17 Oct 2024',
+            classes: 'govuk-!-font-size-24'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "NPQ course"
+            },
+            value: {
+              text: data['registration1--course']
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: '–'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "View full application",
+                  visuallyHiddenText: "View full application"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Application 1: Leading teaching development registration 17 Oct 2024',
+            classes: 'govuk-!-font-size-24'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "NPQ course"
+            },
+            value: {
+              text: data['registration1--course']
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: '–'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                  href: "",
+                  text: "View full application",
+                  visuallyHiddenText: "View full application"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      
+
+
+    </div>
+  </div>
+{% endblock %}
