@@ -4,6 +4,232 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">Finance</h1>
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-m">Filter</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity-status-code-field" class="govuk-label govuk-label--s">Review status</label><select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="funded">Needs review</option>
+                  <option value="funded">Awaiting information</option>
+                  <option value="funded">Decision made</option>
+                  <option value="funded">Re-register</option>
+                <optgroup label="Legacy statuses">
+                  <option value="funded">funded</option>
+                  <option value="no_institution">no institution</option>
+                  <option value="ineligible_establishment_type">ineligible establishment type</option>
+                  <option value="ineligible_institution_type">ineligible institution type</option>
+                  <option value="previously_funded">previously funded</option>
+                  <option value="not_new_headteacher_requesting_ehco">not new headteacher requesting ehco</option>
+                  <option value="school_outside_catchment">school outside catchment</option>
+                  <option value="early_years_outside_catchment">early years outside catchment</option>
+                  <option value="not_on_early_years_register">not on early years register</option>
+                  <option value="early_years_invalid_npq">early years invalid npq</option>
+                  <option value="marked_funded_by_policy">marked funded by policy</option>
+                  <option value="marked_ineligible_by_policy">marked ineligible by policy</option></select>
+                </optgroup>
+              </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Employment type</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="hospital_school">Hospital school</option>
+                  <option value="local_authority_supply_teacher">Local authority supply teacher</option>
+                  <option value="local_authority_virtual_school">Local authority virtual school</option>
+                  <option value="young_offender_institution">Young offender institution</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Eligible for funding</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="no">–</option>
+                </select>
+              </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="referral-field" class="govuk-label govuk-label--s">Referred by return to teaching adviser</label>
+                <select id="referral-field" class="govuk-select" name="Referral"><option value=""></option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  
+                </div>
+              </div>
+            
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Statement ID</th>
+            <th scope="col" class="govuk-table__header">Provider</th>
+            <th scope="col" class="govuk-table__header">Cohort</th>
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+            
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--grey">Open</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--grey">Open</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Org name </a></td>
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--grey">Open</strong></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 {% endblock %}
