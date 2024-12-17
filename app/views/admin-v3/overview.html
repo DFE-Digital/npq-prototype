@@ -73,26 +73,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
       <nav class="moj-side-navigation" aria-label="Side navigation">
-        <h4 class="moj-side-navigation__title">Registrations</h4>
+        <h4 class="moj-side-navigation__title">Applications</h4>
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item">
-            <a href="../registrations" class="govuk-!-font-size-16">All</a>
           </li>
           <li class="moj-side-navigation__item">
-            <a href="../registrations-review" class="govuk-!-font-size-16">In review</a>
           </li>
-          <h4 class="moj-side-navigation__title">Lorelai Gilmore</h4>
           <li class="moj-side-navigation__item moj-side-navigation__item--active">
-            <a href="../registration-1/overview" aria-current="location" class="govuk-!-font-size-16">Overview</a>
           </li>
           <li class="moj-side-navigation__item">
-            <a href="app-details.html" class="govuk-!-font-size-16">Application 1</a>
+            <a href="app-details.html" class="govuk-!-font-size-16">Leading teacher development NPQ, 17 October 2024</a>
           </li>
           <li class="moj-side-navigation__item">
-            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Application 2</a>
+            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Leading literacy NPQ, 23 November 2024</a>
           </li>
           <li class="moj-side-navigation__item">
-            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Application3</a>
+            <a href="../registration-1/ltd-270724" class="govuk-!-font-size-16">Headship NPQ, 3 January 2025</a>
           </li>
           <li class="moj-side-navigation__item">
             <a href="change-log" class="govuk-!-font-size-16">Change log</a>
@@ -102,19 +98,20 @@
     </div>
     <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1>
-      <p class="govuk-!-margin-bottom-2"><strong>ID:</strong> 12345I</p>
-      <p class="govuk-!-margin-bottom-2"><strong>e:</strong> gilmore.girls@google.com</p>
-      <p class="govuk-!-margin-bottom-2"><strong>DOB:</strong> DOB | <strong> NI: </strong> NI</p>
-      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 (v)</p>
-      <p class="govuk-!-margin-bottom-6"><strong>GAI ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
+      <p class="govuk-!-margin-bottom-2"><strong>Applicant ID:</strong> 12345I</p>
+      <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> gilmore.girls@google.com</p>
+      <p class="govuk-!-margin-bottom-2"><strong>Date of birth:</strong> DOB | <strong> National Insurance:</strong> JH576827D</p>
+      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 (verified)</p>
+      <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Applications</h1>
 
      
       
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Application 1: Leading teaching development registration 17 Oct 2024',
-            classes: 'govuk-!-font-size-24'
+            text: 'Leading teacher development NPQ, 17 October 2024',
+            classes: 'govuk-!-font-size-20'
           },
           actions: {
             items: [
@@ -129,7 +126,7 @@
         rows: [
           {
             key: {
-              text: "NPQ course"
+              text: "Course"
             },
             value: {
               text: data['registration1--course']
@@ -166,7 +163,7 @@
               text: "Funded place"
             },
             value: {
-              text: '–'
+              text: 'No'
             }
           },
           {
@@ -187,9 +184,7 @@
             actions: {
               items: [
                 {
-                  href: "",
-                  text: "View full application",
-                  visuallyHiddenText: "View full application"
+               
                 }
               ]
             }
@@ -200,8 +195,8 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Application 1: Leading teaching development registration 17 Oct 2024',
-            classes: 'govuk-!-font-size-24'
+            text: 'Leading literacy NPQ, 23 November 2024',
+            classes: 'govuk-!-font-size-20'
           },
           actions: {
             items: [
@@ -216,7 +211,7 @@
         rows: [
           {
             key: {
-              text: "NPQ course"
+              text: "Course"
             },
             value: {
               text: data['registration1--course']
@@ -253,7 +248,7 @@
               text: "Funded place"
             },
             value: {
-              text: '–'
+              text: 'No'
             }
           },
           {
@@ -274,9 +269,7 @@
             actions: {
               items: [
                 {
-                  href: "",
-                  text: "View full application",
-                  visuallyHiddenText: "View full application"
+                
                 }
               ]
             }
@@ -287,8 +280,8 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Application 1: Leading teaching development registration 17 Oct 2024',
-            classes: 'govuk-!-font-size-24'
+            text: 'Headship NPQ, 3 January 2025',
+            classes: 'govuk-!-font-size-20'
           },
           actions: {
             items: [
@@ -303,7 +296,7 @@
         rows: [
           {
             key: {
-              text: "NPQ course"
+              text: "Course"
             },
             value: {
               text: data['registration1--course']
@@ -340,7 +333,7 @@
               text: "Funded place"
             },
             value: {
-              text: '–'
+              text: 'Yes'
             }
           },
           {
@@ -361,9 +354,7 @@
             actions: {
               items: [
                 {
-                  href: "",
-                  text: "View full application",
-                  visuallyHiddenText: "View full application"
+                
                 }
               ]
             }
