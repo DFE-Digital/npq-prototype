@@ -1,0 +1,127 @@
+ {% extends "layout-admin.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h4 class="moj-side-navigation__title">Settings</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="settings.html" aria-current="location">Course start date</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="email-sub.html">Email subscriptions</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="users.html">Users</a>
+          </li>
+
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="flags.html">Feature flags</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="messages.html">Webhook messages</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="closed-reg.html">Closed registrations</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Settings</h1>
+
+      <br>
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-1">Feature flags</h1>
+
+      <br>
+
+      <p>  Feature flags allow you to control what features are switched on or off in the staging environment.
+                
+        <br>
+        <br>
+      
+        Turn these features on or off depending on your requirements:
+
+       <br>
+       <br>
+
+       <p><strong>Registration service</strong>
+        <br> 
+        Turns the NPQ registration service on or off.</p>
+
+        <p><strong>Late registrations</strong>
+          <br> 
+          Enables authorised users to register for an NPQ even when the registration service is closed.</p>
+
+          <p><strong>DfE analytics</strong>
+            <br>  ???
+             </p>
+
+
+             <p><strong>Get an Identity integration </strong>
+              <br> Prompts users to set up or sign into a DfE Identity account.
+               </p>
+
+               <p><strong>Early career framework API </strong>
+                <br> ???
+                 </p>
+
+                 <p><strong>SENCO NPQ course </strong>
+                  <br> Enables users to register for the special educational needs coordinator NPQ course.
+                   </p>
+
+                   <p><strong>Maths NPQ course </strong>
+                    <br> Enables users to register for the maths NPQ course.
+                     </p>
+
+                     <p><strong>Get an Identity pilot </strong>
+                      <br> ???
+                       </p>
+
+                       <p><strong>Maintenance banner </strong>
+                        <br> Displays a banner to notify users that the registration service will experience some downtime to receive maintenance work.
+                         </p>
+            
+          
+        
+      
+      
+
+
+
+      
+
+      
+
+        
+
+
+           
+         
+
+          
+
+
+
+          
+     
+
+    </div>
+  </div>
+
+  {% endblock %}
+ 
+
+
+
+
+
+ 

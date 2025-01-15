@@ -1,0 +1,163 @@
+ {% extends "layout-admin.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h4 class="moj-side-navigation__title">Settings</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="settings.html" aria-current="location">Course start date</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="email-sub.html">Email subscriptions</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="users.html">Users</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="flags.html">Feature flags</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="messages.html">Webhook messages</a>
+          </li>
+
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="closed-reg.html">Closed registrations</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Settings</h1>
+
+      <br>
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-1">Closed service registrations</h1>
+
+      <br>
+
+      <p>  When the registration service is closed, we allow late registrations for those who have been added to the following list:  </p>
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+
+        <div class="moj-search">
+
+          <form action="#" method="post">
+        
+            <div class="govuk-form-group">
+              <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                Add a user
+              </label>
+        
+              <div id="search-hint" class="govuk-hint moj-search__hint ">
+                Enter their email address:
+              </div>
+        
+              <div class="govuk-input-wrapper" style="display: flex; align-items: center;">
+                <input class="govuk-input moj-search__input" id="search" name="search" type="search" aria-describedby="search-hint">
+                <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button" style="margin-left: 10px; vertical-align: middle;">
+                  Add
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+                
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Email address</th>
+            <th scope="col" class="govuk-table__header">Do they have a DfE identity account?</th>
+            <th scope="col" class="govuk-table__header">Date of last registration</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+
+
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">email.address@gmail.com</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><a href="">Remove access</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">email.address@gmail.com</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><a href="">Remove access</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">email.address@gmail.com</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><a href="">Remove access</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+     
+
+    </div>
+  </div>
+
+  {% endblock %}
+ 
+
+
+
+
+
+ 

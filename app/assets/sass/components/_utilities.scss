@@ -37,3 +37,14 @@ code {
 .width1 {
   display: inline-block;
 }
+
+/* Custom styles for GOV.UK button */
+.govuk-button--blue {
+  background-color: #005ea5; /* GOV.UK blue color */
+  color: white; /* White text */
+}
+
+.govuk-button--blue:hover {
+  background-color: #003c73; /* Darker blue for hover effect */
+}
+
