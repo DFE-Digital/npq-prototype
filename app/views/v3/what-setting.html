@@ -14,7 +14,6 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="where-school" method="post">
         {{ govukRadios({
@@ -34,28 +33,31 @@
           items: [
             {
               value: "Early years or childcare",
-              text: "Early years or childcare"
+              html: "<strong>Early years or childcare</strong>"
             },
             {
-              value: "A school",
-              text: "A school",
+              value: "School",
+              html: "<strong>School</strong>",
               hint: {
-                text: "This includes local authority maintained schools."
+                html: "Includes:<div style='margin-top: 0.5em;'><ul><li>local authority maintained schools (some may provide hospital education, for example pupil referral units, alternative provision or special schools)</li><li>secure children’s homes and secure training centres</li></ul></div>"
               }
             },
             {
-              value: "An academy trust",
-              text: "An academy trust"
+              value: "Academy trust",
+              html: "<strong>Academy trust</strong>",
+              hint: {
+                html: "Some may provide hospital education (for example, alternative provision or academy special schools)<div style='margin-top: 0.5em;'><ul>"
+              }
             },
             {
-              value: "A 16 to 19 educational setting",
-              text: "A 16 to 19 educational setting"
+              value: "16 to 19 educational setting",
+              html: "<strong>16 to 19 educational setting</strong>"
             },
             {
               value: "Another setting",
-              text: "Another setting",
+              html: "<strong>Another setting</strong>",
               hint: {
-                text: "For example a virtual school, initial teacher training (ITT) provider (including ITT lead mentors), hospital school, young offender institution or other local authority setting."
+                html: "For example:<div style='margin-top: 0.5em;'><ul><li>local authority (for staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles)</li><li>initial teacher training (ITT) providers (for ITT lead mentors)</li><li>independent hospital education organisations</li><li>young offender institutions</li></ul></div>"
               }
             },
             {
@@ -63,9 +65,9 @@
             },
             {
               value: "Other",
-              text: "Other",
+              html: "<strong>Other</strong>",
               hint: {
-                text: "For example you are any of the following: self employed, not currently working in an educational setting or were referred to this service by the Return To Teaching Adviser (RTTA) support service."
+                html: "Select ‘Other’ if you were referred by the Return to Teaching Advisory (RTTA) service, or if none of the above options apply to you, for example you’re:<div style='margin-top: 0.5em;'><ul><li>self-employed</li><li>not working in an educational setting</li><li>an agency supply teacher</li><li>working in any other independent setting</li></ul></div>"
               }
             }
           ]
