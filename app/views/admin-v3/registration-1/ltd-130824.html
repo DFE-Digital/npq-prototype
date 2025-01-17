@@ -351,51 +351,6 @@
         ]
       }) }}
       
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: 'Declarations',
-            classes: 'govuk-!-font-size-24'
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Participant ID",
-              hint: {
-                text: "fdf"
-              }
-            },
-            value: {
-              text: data['registration1--participant-id']
-            }
-          },
-          {
-            key: {
-              text: "Application ID"
-            },
-            value: {
-              text: data['registration1--registration-id']
-            }
-          },
-          {
-            key: {
-              text: "Registration submission date"
-            },
-            value: {
-              text: data['registration1--submitted-date']
-            }
-          },
-          {
-            key: {
-              text: "Last updated date"
-            },
-            value: {
-              text: data['registration1--updated-date']
-            }
-          }
-        ]
-      }) }}
 
       {{ govukSummaryList({
         card: {
