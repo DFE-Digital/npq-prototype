@@ -50,26 +50,73 @@
       </div>
 
       <!-- Search Component -->
-      <div class="govuk-!-margin-top-6" style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
-        <div class="moj-search">
-          <form action="#" method="post">
-            <div class="govuk-form-group">
-              <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
-                Find a subscription
-              </label>
-              <div id="search-hint" class="govuk-hint moj-search__hint">
-                You can search by email address
-              </div>
-              <div class="govuk-input-wrapper" style="display: flex; align-items: center;">
-                <input class="govuk-input moj-search__input" id="search" name="search" type="search" aria-describedby="search-hint">
-                <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button" style="margin-left: 10px;">
-                  Search
-                </button>
+      
+
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-m">Find a subscription</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+
+          <div id="account-number-hint" class="govuk-hint">
+            You can search by email address
+                    </div>
+          <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s"></label><input id="query-field" class="govuk-input" type="text" name="query"></div>
+            <div style="display: flex; margin-left: -14px">
+              
+              
+
+            </div>
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Academic year</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="2023 - 2024">2023 - 2024</option>
+                  <option value="Pre - 2022">Pre - 2022</option>
+
+
+                </select>
               </div>
             </div>
-          </form>
-        </div>
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                      Show most recent cohort
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+          
+
+
+            <div style="display: flex; margin-left: -14px">
+
+              
+
+              
+              
+              
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
       </div>
+      
+
+
+
+
+
+
+
 
       <!-- Table -->
       <table class="govuk-table">
@@ -77,6 +124,9 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Email address</th>
             <th scope="col" class="govuk-table__header">Interested in SENCO?</th>
+            <th scope="col" class="govuk-table__header">Date of registration</th>
+            <th scope="col" class="govuk-table__header">Date of subscription</th>
+
             <th scope="col" class="govuk-table__header">Action</th>
           </tr>
         </thead>
@@ -84,16 +134,22 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">email@address.com</td>
             <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">20 Dec 2024</td>
+            <td class="govuk-table__cell">3 Jan 2025</td>
             <td class="govuk-table__cell"><a href="">Unsubscribe</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">email@address.com</td>
             <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">20 Dec 2024</td>
+            <td class="govuk-table__cell">3 Jan 2025</td>
             <td class="govuk-table__cell"><a href="">Unsubscribe</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">email@address.com</td>
             <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">20 Dec 2024</td>
+            <td class="govuk-table__cell">3 Jan 2025</td>
             <td class="govuk-table__cell"><a href="">Unsubscribe</a></td>
           </tr>
         </tbody>
