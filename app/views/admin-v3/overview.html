@@ -7,68 +7,12 @@
       text: data['registration1--review-status'],
       classes: "govuk-tag--grey"
     })}}
-  {% elseif (data['registration1--review-status'] == "Re-register") %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--grey"
-    })}}
-  {% elseif (data['registration1--review-status'] == "Awaiting information") %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--yellow"
-    })}}
-  {% else %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--blue"
-    })}}
+ 
+ 
   {% endif %}
   {% endset %}
 
-  {% set providerStatusHTML %}
-  {% if (data['registration1--provider-status'] == "Pending") %}
-    {{govukTag({
-      text: data['registration1--provider-status'],
-      classes: "govuk-tag--yellow"
-    })}}
-  {% elseif (data['registration1--provider-status'] == "Approved") %}
-    {{govukTag({
-      text: data['registration1--provider-status'],
-      classes: "govuk-tag--green"
-    })}}
-  {% else %}
-    {{govukTag({
-      text: data['registration1--provider-status'],
-      classes: "govuk-tag--red"
-    })}}
-  {% endif %}
-  {% endset %}
-
-  {% set fundingStatusHTML %}
-  {% if (data['registration1--review-status'] != "Decision made") %}
-    –
-  {% elseif (data['registration1--funding-status'] == "Yes") %}
-    {{govukTag({
-      text: data['registration1--funding-status'],
-      classes: "govuk-tag--green"
-    })}}
-  {% else %}
-    {{govukTag({
-      text: data['registration1--funding-status'],
-      classes: "govuk-tag--red"
-    })}}
-  {% endif %}
-  {% endset %}
-
-  {% set ineligiblereasonHTML %}
-  {% if (data['registration1--ineligible-reason'] == "Other") %}
-    {{ data['registration1--ineligible-reason'] }} – {{ data['registration1--ineligible-reason--other'] }}
-  {% elseif (data['registration1--ineligible-reason'] == "Not an eligible establishment type") %}
-    {{ data['registration1--ineligible-reason'] }} – {{ data['registration1--ineligible-reason--establishment'] }}
-  {% else %}
-    {{ data['registration1--ineligible-reason'] }} 
-  {% endif %}
-  {% endset %}
+ 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
@@ -123,7 +67,7 @@
       <p class="govuk-!-margin-bottom-2"><strong>Applicant ID:</strong> 123456</p>
       <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> gilmore.girls@google.com</p>
       <p class="govuk-!-margin-bottom-2"><strong>Date of birth:</strong> 30 October 2020 | <strong> National Insurance:</strong> JH576827D</p>
-      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 (verified)</p>
+      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 <strong class="govuk-tag govuk-tag--green"> (validated)</strong></p>
       <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
      
       
