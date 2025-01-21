@@ -96,53 +96,12 @@
       </nav>
     </div>
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ data['registration1--name'] }}</h1>
-      <p class="govuk-!-margin-bottom-2">{{ data['registration1--email'] }}</p>
-      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>{{ data['registration1--trn'] }}</p>
-      <p class="govuk-!-margin-bottom-6"><strong>GAI ID: </strong>{{ data['registration1--gai-id'] }}</p>
-
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: 'Participant details',
-            classes: 'govuk-!-font-size-24'
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Email address"
-            },
-            value: {
-              text: data['registration1--email']
-            }
-          },
-          {
-            key: {
-              text: "TRN"
-            },
-            value: {
-              text: data['registration1--trn']
-            }
-          },
-          {
-            key: {
-              text: "TRN validated"
-            },
-            value: {
-              html: 'Yes'
-            }
-          },
-          {
-            key: {
-              text: "GAI ID"
-            },
-            value: {
-              text: data['registration1--gai-id']
-            }
-          }
-        ]
-      }) }}
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jorge Hund</h1>
+      <p class="govuk-!-margin-bottom-2"><strong>Applicant ID:</strong> 123456</p>
+      <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> hund.j@google.com</p>
+      <p class="govuk-!-margin-bottom-2"><strong>Date of birth:</strong> 13 February 1999 | <strong> National Insurance: </strong> JH785420H</p>
+      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>7654321 (validated)</p>
+      <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
       
       {{ govukSummaryList({
         card: {
