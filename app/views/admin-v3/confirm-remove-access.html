@@ -1,0 +1,94 @@
+ {% extends "layout-admin.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h4 class="moj-side-navigation__title">Settings</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="settings.html" aria-current="location">Course start date</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="email-sub.html">Email subscriptions</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="users.html">Admin users</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="flags.html">Feature flags</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="messages.html">Webhook messages</a>
+          </li>
+          
+
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="closed-reg.html">Closed registrations</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <a href="/admin-v3/closed-reg" class="govuk-back-link">Back</a>
+
+      <br>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Closed service registrations</h1>
+
+      <br>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to remove access for all registrations? 
+            </h1>
+          </legend>
+          <div id="signIn-hint" class="govuk-hint">
+            Hint text
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn">
+                Yes, remove access to all registrations
+              </label>
+             
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn-2">
+                No, do not remove access to all registrations
+              </label>
+            
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="/admin-v3/success-access-reg.html.html" class="govuk-button" data-module="govuk-button">
+        Save changes
+      </a>
+
+
+      
+     
+    
+      
+
+  {% endblock %}
+ 
+
+
+
+
+
+ 
