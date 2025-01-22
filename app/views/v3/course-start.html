@@ -3,7 +3,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Do you want to start a course before November 2024?
+  Do you want to start a course before April 2025?
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,16 +22,16 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Course start</h1>
-    <p>NPQ start dates are usually every April and October.</p>
+    <p>NPQ start dates are usually every April and November.</p>
     <p>Early headship coaching offer start dates vary by provider and are throughout the year.</p>
-    <p class="govuk-body govuk-!-margin-bottom-8">Registrations are currently open for courses starting before November 2024.</p>
+    <p class="govuk-body govuk-!-margin-bottom-8">Registrations are currently open for courses starting before April 2025.</p>
 
     <form class="form" action="chosen" method="post">
       {{ govukRadios({
         name: "startdate",
         fieldset: {
           legend: {
-            text: "Do you want to start a course before November 2024?",
+            text: "Do you want to start a course before April 2025?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
