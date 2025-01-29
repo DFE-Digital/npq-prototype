@@ -18,7 +18,7 @@
             name: "registration1--ineligible-reason--other",
             classes: "govuk-!-width-one-half",
             label: {
-              text: "Provide a reason"
+              text: "The reason you provide here will be included in the email notifying the applicant of their funding outcome."
             }
           }) }}
         {% endset -%}
@@ -38,7 +38,7 @@
           name: "registration1--ineligible-reason",
           fieldset: {
             legend: {
-              text: "Why is this registration not eligible for funding?",
+              text: "Select reason for why funding is not eligible:",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -88,9 +88,12 @@
             }
           ]
           }) }}
+          <div class="govuk-inset-text">
+            When you submit the reason, an email will be sent to notify the applicant of the funding outcome.
+          </div>
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Add ineligible reason"
+              text: "Submit reason"
             }) }}
             <a class="govuk-link" href="registration">Cancel</a>
           </div>
