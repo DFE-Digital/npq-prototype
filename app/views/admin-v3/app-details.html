@@ -1,115 +1,7 @@
 {% extends "layout-admin.html" %}
 
 {% block content %}
-  {% set reviewStatusHTML %}
-  {% if (data['registration1--review-status'] == "Decision made") %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--grey"
-    })}}
-  {% elseif (data['registration1--review-status'] == "Re-register") %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--grey"
-    })}}
-  {% elseif (data['registration1--review-status'] == "Awaiting information") %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--yellow"
-    })}}
-  {% else %}
-    {{govukTag({
-      text: data['registration1--review-status'],
-      classes: "govuk-tag--blue"
-    })}}
-  {% endif %}
-  {% endset %}
-
-  {% set providerStatusHTML %}
-  {% if (data['registration1--provider-status'] == "Pending") %}
-    {{govukTag({
-      text: data['registration1--provider-status'],
-      classes: "govuk-tag--yellow"
-    })}}
-  {% elseif (data['registration1--provider-status'] == "Approved") %}
-    {{govukTag({
-      text: data['registration1--provider-status'],
-      classes: "govuk-tag--green"
-    })}}
-  {% else %}
-    {{govukTag({
-      text: data['registration1--provider-status'],
-      classes: "govuk-tag--red"
-    })}}
-  {% endif %}
-  {% endset %}
-
-  {% set fundingStatusHTML %}
-  {% if (data['registration1--review-status'] != "Decision made") %}
-    –
-  {% elseif (data['registration1--funding-status'] == "Yes") %}
-    {{govukTag({
-      text: data['registration1--funding-status'],
-      classes: "govuk-tag--green"
-    })}}
-  {% else %}
-    {{govukTag({
-      text: data['registration1--funding-status'],
-      classes: "govuk-tag--red"
-    })}}
-  {% endif %}
-  {% endset %}
-
-  {% set ineligiblereasonHTML %}
-    {% if (data['registration1--ineligible-reason'] == "Other") %}
-      {{ data['registration1--ineligible-reason'] }} – {{ data['registration1--ineligible-reason--other'] }}
-    {% elseif (data['registration1--ineligible-reason'] == "Not an eligible establishment type") %}
-      {{ data['registration1--ineligible-reason'] }} – {{ data['registration1--ineligible-reason--establishment'] }}
-    {% else %}
-      {{ data['registration1--ineligible-reason'] }} 
-    {% endif %}
-  {% endset %}
-
-  {% set apiHTML %}
-    <pre><code>{ 
-  "data": { 
-    "id": "74d6ca58-45ee-494f-a0c9-ce64800350fe", 
-      "type": "npq_application", 
-      "attributes": { 
-        "course_identifier": "npq-senco", 
-        "email": "bhavishasoma@yahoo.co.uk", 
-        "email_validated": true, 
-        "employer_name": null, 
-        "employment_role": null, 
-        "full_name": "Bhavisha Soma", 
-        "funding_choice": null, 
-        "headteacher_status": null, 
-        "ineligible_for_funding_reason": null, 
-        "participant_id": "9ea1765d-cee9-4eb1-8e01-d728a6b9fefd", 
-        "private_childcare_provider_urn": null, 
-        "teacher_reference_number": "1154737", 
-        "teacher_reference_number_validated": true, 
-        "school_urn": "138621", 
-        "school_ukprn": "10038682", 
-        "status": "accepted", 
-        "works_in_school": true, 
-        "funded_place": true, 
-        "created_at": "2024-08-09T12:29:10Z", 
-        "updated_at": "2024-08-09T13:10:05Z", 
-        "cohort": "2024", 
-        "eligible_for_funding": true, 
-        "targeted_delivery_funding_eligibility": false, 
-        "teacher_catchment": true, 
-        "teacher_catchment_iso_country_code": "GBR", 
-        "teacher_catchment_country": "United Kingdom of Great Britain and Northern Ireland", 
-        "itt_provider": null, 
-        "lead_mentor": false, 
-        "schedule_identifier": "npq-leadership-autumn" 
-      }
-    }
- }</code></pre>
-  {% endset %}
-
+  
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
       <nav class="moj-side-navigation" aria-label="Side navigation">
@@ -144,12 +36,7 @@
           <li class="moj-side-navigation__item">
             <a href="app-history-1.html" class="govuk-!-font-size-16">Application history</a>
           </li>
-          <li class="moj-side-navigation__item">
-            <a href="app-history.html" class="govuk-!-font-size-16">OLD application history</a>
-          </li>
-          <li class="moj-side-navigation__item">
-            <a href="admin-changelog.html" class="govuk-!-font-size-16">OLD admin change log</a>
-          </li>
+           
         </ul>
       </nav>
     </div>
@@ -220,18 +107,7 @@
                 }
               ]
             }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              html: govukDetails({
-                text: apiHTML
-              })
-            }
-            
-          }
+          } 
           
           
         ]
@@ -307,51 +183,6 @@
             value: {
               text: "N/A"
             }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              html: providerStatusHTML
-            },
-            actions: {
-              items: [
-                
-              ]
-            }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              text: data['registration1--provider']
-            }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              text: data['registration1--provider']
-            }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              text: data['registration1--provider']
-            }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              text: data['registration1--provider']
-            }
           }
         ]
       }) }}
@@ -404,57 +235,7 @@
                 }
               ]
             }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              text: "testttt"
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "enrollment"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-     
-            },
-            value: {
-            },
-            actions: {
-              items: [
-                {
-                  href: "",
-                  text: "Change",
-                  visuallyHiddenText: "DELETE"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "DELETE"
-            },
-            value: {
-              text: "test"
-            },
-            actions: {
-              items: [
-                {
-                  href: "../registration-1/set-notes",
-                  text: "Change",
-                  visuallyHiddenText: "Lead provider approval"
-                }
-              ]
-            }
-          }
+          } 
         ]
       }) }}
 
