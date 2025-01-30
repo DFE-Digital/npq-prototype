@@ -1,0 +1,293 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Finance</h1>
+      <p class="govuk-body">You can search for financial statements that are paid, unpaid or open.</p>
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-m">Filter statements by:</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity-status-code-field" class="govuk-label govuk-label--s">Status</label><select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="funded">Needs review</option>
+                  <option value="funded">Awaiting information</option>
+                  <option value="funded">Decision made</option>
+                  <option value="funded">Re-register</option>
+                <optgroup label="Legacy statuses">
+                  <option value="funded">funded</option>
+                  <option value="no_institution">no institution</option>
+                  <option value="ineligible_establishment_type">ineligible establishment type</option>
+                  <option value="ineligible_institution_type">ineligible institution type</option>
+                  <option value="previously_funded">previously funded</option>
+                  <option value="not_new_headteacher_requesting_ehco">not new headteacher requesting ehco</option>
+                  <option value="school_outside_catchment">school outside catchment</option>
+                  <option value="early_years_outside_catchment">early years outside catchment</option>
+                  <option value="not_on_early_years_register">not on early years register</option>
+                  <option value="early_years_invalid_npq">early years invalid npq</option>
+                  <option value="marked_funded_by_policy">marked funded by policy</option>
+                  <option value="marked_ineligible_by_policy">marked ineligible by policy</option></select>
+                </optgroup>
+              </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Statement date</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="January 2022 ">January 2022</option>
+                  <option value="February 2022">February 2022</option>
+                  <option value="March 2022">March 2022</option>
+                  <option value="April 2022">April 2022</option>
+                  <option value="May 2022">May 2022</option>
+                  <option value="June 2022">June 2022</option>
+                  <option value="July 2022">July 2022</option>
+                  <option value="August 2022">August 2022</option>
+                  <option value="September 2022">September 2022</option>
+                  <option value="October 2022">October 2022</option>
+                  <option value="November 2022">November 2022</option>
+                  <option value="December 2022">December 2022</option>
+                  <option value="January 2023 ">January 2023</option>
+                  <option value="February 2023">February 2023</option>
+                  <option value="March 2023">March 2023</option>
+                  <option value="April 2023">April 2023</option>
+                  <option value="May 2023">May 2023</option>
+                  <option value="June 2023">June 2023</option>
+                  <option value="July 2023">July 2023</option>
+                  <option value="August 2023">August 2023</option>
+                  <option value="September 2023">September 2023</option>
+                  <option value="October 2023">October 2023</option>
+                  <option value="November 2023">November 2023</option>
+                  <option value="December 2023">December 2023</option>
+                  <option value="January 2024 ">January 2024</option>
+                  <option value="February 2024">February 2024</option>
+                  <option value="March 2024">March 2024</option>
+                  <option value="April 2024">April 2024</option>
+                  <option value="May 2024">May 2024</option>
+                  <option value="June 2024">June 2024</option>
+                  <option value="July 2024">July 2024</option>
+                  <option value="August 2024">August 2024</option>
+                  <option value="September 2024">September 2024</option>
+                  <option value="October 2024">October 2024</option>
+                  <option value="November 2024">November 2024</option>
+                  <option value="December 2024">December 2024</option>
+                  <option value="January 2025 ">January 2025</option>
+                  <option value="February 2025">February 2025</option>
+                  <option value="March 2025">March 2025</option>
+                  <option value="April 2025">April 2025</option>
+                  <option value="May 2025">May 2025</option>
+                  <option value="June 2025">June 2025</option>
+                  <option value="July 2025">July 2025</option>
+                  <option value="August 2025">August 2025</option>
+                  <option value="September 2025">September 2025</option>
+                  <option value="October 2025">October 2025</option>
+                  <option value="November 2025">November 2025</option>
+                  <option value="December 2025">December 2025</option>
+
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Course provider</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                
+                  <option value="All">All</option>
+                  <option value="Ambition Institute" selected>Ambition Institute</option>
+                  <option value="Best Practice Network">Best Practice Network</option>
+                  <option value="Church of England">Church of England</option>
+                  <option value="Education Development Trust">Education Development Trust</option>
+                  <option value="LLSE">LLSE</option>
+                  <option value="National Institute of Teaching">National Institute of Teaching</option>
+                  <option value="School-Led Network">School-Led Network</option>
+                  <option value="Teacher Development Trust">Teacher Development Trust</option>
+                  <option value="Teach First">Teach First</option>
+                  <option value="UCL Institute of Education">UCL Institute of Education</option>
+                </select>
+              </div>
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="referral-field" class="govuk-label govuk-label--s">Cohort</label>
+                <select id="referral-field" class="govuk-select" name="Referral"><option value=""></option>
+                  <option value="All">All</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  
+                </div>
+              </div>
+            
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Statement ID</th>
+            <th scope="col" class="govuk-table__header">Course provider</th>
+            <th scope="col" class="govuk-table__header">Cohort</th>
+            <th scope="col" class="govuk-table__header">Statement date</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/admin-v3/finance-statement">ofij4-lkesd-nosgj98-apggsk-27sfa </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2021 to 2022</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="f-statement-unpaid.html">hgdv7-lgfdd-nbgjj55-lfwhu-45jgjg </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2023 to 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">gtyp3-qmzsd-xvbrj72-kfnnpl-59hfa </a></td>
+            <td class="govuk-table__cell">Ambition Institute </td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2021 to 2022</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+            
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">zkwt7-bxgyd-fmpvq45-tnhsjl-82rfa </a></td>
+            <td class="govuk-table__cell">Ambition Institute </td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2022 to 2023</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">dqso9-vcnlm-hjwyr27-xpfgkt-64ufa </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2021 to 2022</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">dqso9-vcnlm-hjwyr27-xpfgkt-64ufa </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2022 to 2023</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">vmrw8-qskzl-njcfo56-tydxgp-73bfa </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2023 to 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--grey">Open</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">ypgk3-mftqd-lxwjo19-vznshk-48efa </a></td>
+            <td class="govuk-table__cell">Ambition Institutek</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2022 to 2023</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--grey">Open</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">kwnt4-jbzxp-mgyqo78-hclvdq-62dfa </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2021 to 2022</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">hczo6-vxlnm-bqpjw32-fgtdkr-95sfa </a></td>
+            <td class="govuk-table__cell">Ambition Institute</td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">2023 to 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--grey">Open</strong></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+{% endblock %}

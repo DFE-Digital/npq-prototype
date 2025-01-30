@@ -15,15 +15,29 @@
 </ul>
 
 
-
       <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
         <h1 class="govuk-heading-m">Find a workplace</h1>
+        <div id="account-number-hint" class="govuk-hint">
+          Search by entering the workplace name or its Unique Reference Number (URN)
+        </div>
+         
         <form action="" accept-charset="UTF-8" method="get">
-          <div id="account-number-hint" class="govuk-hint">
-            Search by entering the workplace name or its Unique Reference Number (URN)
-      </div>
-            
-           
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <div class="govuk-form-group">
+                 
+                  <input class="govuk-input" id="event-name" name="eventName" type="text">
+                </div>
+                
+              </div>
+            </div>
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                </div>
+              </div>
+            </div>
           <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
         </form>
       </div>
