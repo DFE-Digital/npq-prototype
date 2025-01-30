@@ -38,7 +38,7 @@
           name: "registration1--ineligible-reason",
           fieldset: {
             legend: {
-              text: "Select reason for why funding is not eligible:",
+              text: "Select the reason why this applicant is not eligible for funding:",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -49,11 +49,15 @@
               text: "Establishment not on eligible list"
             }, 
             {
-              value: "Not an eligible establishment type",
-              text: "Not an eligible establishment type",
+              value: "Not an eligible setting",
+              text: "Not an eligible setting",
               conditional: {
                 html: establishmentHtml
               }
+            },
+            {
+              value: "Setting not eligible, but may qualify for early years leadership NPQ funding",
+              text: "Setting not eligible, but may qualify for early years leadership NPQ funding"
             },
             {
               value: "No early years provision",
