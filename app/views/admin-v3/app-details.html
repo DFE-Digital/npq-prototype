@@ -36,6 +36,9 @@
           <li class="moj-side-navigation__item">
             <a href="app-history-1.html" class="govuk-!-font-size-16">Application history</a>
           </li>
+          <li class="moj-side-navigation__item">
+            <a href=" " class="govuk-!-font-size-16">Declaration state history</a>
+          </li>
            
         </ul>
       </nav>
@@ -239,141 +242,146 @@
         ]
       }) }}
 
+      
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: 'Declarations',
-            classes: 'govuk-!-font-size-24'
-          }
-        },
-        rows: [
-        {
-          key: {
-            text: "Role"
-          },
-          value: {
-            text: "Value"
-          }
-        },
-        {
-          key: {
-            text: "Employment type"
-          },
-          value: {
-            text: "Value"
-          }
-        },
-        {
-          key: {
-            text: "Training status"
-          },
-          value: {
-            text: "Value"
-          }
-        },
-        {
-          key: {
-            text: "Private childcare provider URN
-            "
-          },
-          value: {
-            text: "Value"
-          }
-        },
-        {
-          key: {
-            text: "Headteacher status
-            "
-          },
-          value: {
-            text: "Value"
-          }
-        },
-        {
-          key: {
-            text: "Number of pupils
-            "
-          },
-          value: {
-            text: "Value"
-          }
-        },
-          {
-            key: {
-              text: "School URN"
-            },
-            value: {
-              html: fundingStatusHTML
-            },
-            actions: {
-              items: [
-                {
-                  href: " ",
-                  text: "View",
-                  visuallyHiddenText: "school urn"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "School UKPRN"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          },
-          {
-            key: {
-              text: "Country"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          },
-          {
-            key: {
-              text: "ITT lead mentor"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          },
-          {
-            key: {
-              text: "ITT provider"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          },
-          {
-            key: {
-              text: "Funded place"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          },
-          {
-            key: {
-              text: "Works in England"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          },
-          {
-            key: {
-              text: "Works setting"
-            },
-            value: {
-              text: data['registration1--funded-place']
-            }
-          }
-        ]
-      }) }}
+
+      
+
+
+
+
+
+      
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
+            Declarations
+          </h1>
+
+           
+            <a class="govuk-link" href="#"><strong>View state history </strong><span class="govuk-visually-hidden"></span></a>
+        
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Role
+              </dt>
+              <dd class="govuk-summary-list__value">
+              Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employment type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Training status 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Private childcare provider URN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Headteacher status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of pupils
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                School URN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">View school URN<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                School UKPRN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Country
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                ITT lead mentor
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                ITT provider
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Fundeded place
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Works in England
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Work setting
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Value
+              </dd>
+            </div>
 
      
    
