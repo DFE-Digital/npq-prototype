@@ -17,18 +17,30 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">What’s the name of your workplace?</h1>
+    <h1 class="govuk-heading-xl">What is the name of your workplace?</h1>
 
     <form class="form" action="choose-npq" method="post">
       {{ govukInput({
         hint: {
-          text: "Start your search by entering the name of your school or 16-19 educational setting. If you work for a trust, enter the name of one of their schools."
+          text: "Start your search by entering the name of your school or 16 to 19 educational setting. If you work for a trust, enter the name of one of their schools rather than the trust’s postcode."
         },
         id: "whichschool",
         name: "whichschool"
       })
     }}
-
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          My workplace is not listed
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If your workplace is not listed, check the spelling or try entering part of the name. 
+<p class="govuk-body">
+  If it’s still not listed, <a href="mailto:continuing-professional-development@digital.education.gov.uk" class="govuk-link">contact us</a> for support.
+</p>
+      </div>
+    </details>
     {{ govukButton({
       text: "Continue"
     }) }}
