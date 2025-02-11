@@ -1,7 +1,28 @@
 {% extends "layout-admin.html" %}
 
 {% block content %}
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="moj-side-navigation__title">Finance</h4>
+
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="finance.html" aria-current="location" class="govuk-!-font-size-16">Finance </a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="" class="govuk-!-font-size-16">Cohorts</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+
+
+  <div class="govuk-grid-column-three-quarters">
+
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">Finance</h1>
       <p class="govuk-body">You can search for financial statements that are paid, unpaid or open.</p>
@@ -154,7 +175,7 @@
 
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="f-statement-unpaid.html">hgdv7-lgfdd-nbgjj55-lfwhu-45jgjg </a></td>
+            <td class="govuk-table__cell"><a href="/admin-v3/finance-statement-unpaid">hgdv7-lgfdd-nbgjj55-lfwhu-45jgjg </a></td>
             <td class="govuk-table__cell">Ambition Institute</td>
             <td class="govuk-table__cell">20 May 2024</td>
             <td class="govuk-table__cell">2023 to 2024</td>
@@ -292,4 +313,5 @@
 
     </div>
   </div>
+</div>
 {% endblock %}
