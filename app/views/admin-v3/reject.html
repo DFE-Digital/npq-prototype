@@ -27,20 +27,20 @@
             <a href="messages.html">Webhook messages</a>
           </li>
           
-          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <li class="moj-side-navigation__item">
             <a href="closed-reg.html">Closed registrations</a>
           </li>
 
           <br>
 
-          <h4 class="moj-side-navigation__title">Bulk operations</h4>
+          <h4 class="moj-side-navigation__title  ">Bulk operations</h4>
 
           <li class="moj-side-navigation__item">
             <a href="revert.html">Revert applications</a>
           </li>
 
-          <li class="moj-side-navigation__item">
-            <a href=" ">Reject applications</a>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="reject.html">Reject applications</a>
           </li>
 
 
@@ -52,49 +52,71 @@
 
       <br>
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Closed service registrations</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Reject applications</h1>
 
       <br>
 
-      <p> Add a user below to allow them to make a late registration while the service is closed.</p>
+      <p>You must upload:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the school you teach in</li>
+          <li>the hours you work</li>
+        </ul>
+      </p>
 
-      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        <div class="moj-search">
+          <br>
 
-          <form action="#" method="post">
-        
-            <div class="govuk-form-group">
-              <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
-                Add a user
-              </label>
-        
-              <div id="search-hint" class="govuk-hint moj-search__hint ">
-                Enter their email address:
+          
+      
+      
+          <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
+      
+            <div class="moj-multi-file-upload">
+              <div class="moj-multi-file__uploaded-files ">
+                <h2 class="govuk-heading-m">Upload files</h2>
+                
               </div>
-        
-              <div class="govuk-input-wrapper" style="display: flex; align-items: center;">
-                <input class="govuk-input moj-search__input" id="search" name="search" type="search" aria-describedby="search-hint">
-                <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button" style="margin-left: 10px; vertical-align: middle;">
-                  Add
+      
+              <div class="moj-multi-file-upload__upload">
+      
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--s" for="documents">
+                    
+                  </label>
+      
+                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+      
+                </div>
+      
+                <button type="submit" class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                  Upload file
                 </button>
+      
               </div>
             </div>
+      
+          
+      
           </form>
         </div>
       </div>
-      <h2 class="govuk-heading-m">Existing users</h2>
+      
 
-      <a href="/admin-v3/confirm-remove-access.html" class="govuk-button govuk-button--warning">
-        Remove all users
-      </a>
+      
+
+      
+
+      
                 
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Email address</th>
-            <th scope="col" class="govuk-table__header">DfE Identity account?</th>
-            <th scope="col" class="govuk-table__header">Last registration date</th>
+            <th scope="col" class="govuk-table__header">File name</th>
+            <th scope="col" class="govuk-table__header">Rows</th>
+            <th scope="col" class="govuk-table__header">Date created</th>
+            <th scope="col" class="govuk-table__header">Date started</th>
             <th scope="col" class="govuk-table__header">Action</th>
           </tr>
         </thead>
@@ -106,16 +128,6 @@
             <td class="govuk-table__cell">email.address@gmail.com</td>
             <td class="govuk-table__cell">No</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
-            <td class="govuk-table__cell"><div class="govuk-button-group">
-              <button type="submit" class="govuk-button govuk-button--warning">
-                Remove 
-              </button>
-            </div></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
               <button type="submit" class="govuk-button govuk-button--warning">
@@ -127,6 +139,19 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">email.address@gmail.com</td>
             <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><div class="govuk-button-group">
+              <button type="submit" class="govuk-button govuk-button--warning">
+                Remove 
+              </button>
+            </div></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">email.address@gmail.com</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
               <button type="submit" class="govuk-button govuk-button--warning">
