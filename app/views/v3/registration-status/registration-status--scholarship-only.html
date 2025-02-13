@@ -15,11 +15,6 @@
   }) }}
 {% endblock %}
 
-{% set coursedateHTML %}
-  <p>Before April 2025</p>
-  <p>If your provider does not confirm you've started the course before April 2025, your registration will expire. You can register again later, but your funding may change.</p>
-{% endset %}
-
 {% set personaldetailsHTML %}
   <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
@@ -49,7 +44,7 @@
 {% endset %}
 
 {% block content %}
-  <span class="govuk-caption-m">Submitted	11 July 2024</span>
+  <span class="govuk-caption-m">Submitted 11 July 2024</span>
   <h1 class="govuk-heading-xl">
     Your leading teaching NPQ registration
   </h1>
@@ -102,14 +97,6 @@
             '<strong class="govuk-tag govuk-tag--green">
               Successful
             </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course start"
-        },
-        value: {
-          html: coursedateHTML
         }
       }
     ]
