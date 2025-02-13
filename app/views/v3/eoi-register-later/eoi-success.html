@@ -21,8 +21,10 @@
       }) }}
 
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p>We'll send email updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> about registration opening for courses starting after November 2024. This is usually in the new year.</p>
+      <p>We'll send email updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> about when the registration service will reopen.</p>
       {% if data['numberOfRegistrations'] != "0" %} 
+
+      <p>When registration opens use this service to register for an NPQ or the early headship coaching offer starting in spring 2025.</p>
         <p><a href="../registration-status">View your existing registrations</a>.</p>
       {% endif %}
     </div>
