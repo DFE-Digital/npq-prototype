@@ -1,6 +1,28 @@
 {% extends "layout-admin.html" %}
 
 {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="moj-side-navigation__title">Finance</h4>
+
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="finance.html" aria-current="location" class="govuk-!-font-size-16">Finance </a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="cohorts.html" class="govuk-!-font-size-16">Cohorts</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+ <div class="govuk-grid-column-three-quarters">
+
+
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">Finance</h1>
@@ -287,7 +309,7 @@
 
 
 
-
+    </div>
     </div>
   </div>
 {% endblock %}
