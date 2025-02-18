@@ -56,10 +56,16 @@
 
       <br>
 
-      <p>You must upload:
+      <p>Change the status of multiple applications to "pending" by providing their application IDs.</p>
+
+        <p>Create a file with a list of application IDs, one per row, and no header. </p>
+
+        <p>For example:</p>
+
         <ul class="govuk-list govuk-list--bullet">
-          <li>the school you teach in</li>
-          <li>the hours you work</li>
+          <li>2f581c80-b5bb-4404-bcaf-4044d9c0c674</li>
+          <li>21fe9549-28f0-492c-ae3a-d52969b40536</li>
+          <li>e7e8a629-f75f-4d98-b157-269136110099   </li>
         </ul>
       </p>
 
@@ -75,7 +81,10 @@
       
             <div class="moj-multi-file-upload">
               <div class="moj-multi-file__uploaded-files ">
-                <h2 class="govuk-heading-m">Upload files</h2>
+                <h2 class="govuk-heading-m">Upload file</h2>
+                <div id="account-number-hint" class="govuk-hint">
+                  Maximum file size is 256MB. Files must be in CSV format.
+                </div>
                 
               </div>
       
@@ -90,7 +99,7 @@
       
                 </div>
       
-                <button type="submit" class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                <button type="submit" class="govuk-button govuk-button--primary moj-multi-file-upload__button" data-module="govuk-button">
                   Upload file
                 </button>
       
@@ -103,13 +112,8 @@
         </div>
       </div>
       
-
+      <h2 class="govuk-heading-m">Uploaded files</h2>
       
-
-      
-
-      
-                
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -125,37 +129,37 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><a href="">File name</a></td>
+            <td class="govuk-table__cell">1</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
               <button type="submit" class="govuk-button govuk-button--warning">
-                Remove 
+                Delete 
               </button>
             </div></td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><a href="">File name</a></td>
+            <td class="govuk-table__cell">2</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
               <button type="submit" class="govuk-button govuk-button--warning">
-                Remove 
+                Delete 
               </button>
             </div></td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><a href="">File name</a></td>
+            <td class="govuk-table__cell">3</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
               <button type="submit" class="govuk-button govuk-button--warning">
-                Remove 
+                Delete 
               </button>
             </div></td>
           </tr>
