@@ -1,0 +1,182 @@
+ {% extends "layout-admin.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h4 class="moj-side-navigation__title">Settings</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="settings.html" aria-current="location">Course start date</a>
+          </li>
+  
+          <li class="moj-side-navigation__item">
+            <a href="email-sub.html">Email subscriptions</a>
+          </li>
+  
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="admin-users.html">Admin users</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="flags.html">Feature flags</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="me">Webhook messages</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="closed-reg.html">Closed registrations</a>
+          </li>
+
+          <br>
+
+          <h4 class="moj-side-navigation__title">Bulk operations</h4>
+
+          <li class="moj-side-navigation__item">
+            <a href="revert.html">Revert applications</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href=" ">Reject applications</a>
+          </li>
+
+
+
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <br>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Admin users</h1>
+
+      <br>
+      <p>  You can add colleagues to the admin console by creating a new user.  
+
+        <p class="govuk-body">There are 2 levels of access: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><strong>Regular Admins: </strong> Can access the admin console to view the Dashboard, Applicant and Application tabs, and sync unsynced data.</li>
+          <li><strong>Super Admins: </strong> Have all Regular Admin privileges, plus the ability to add or remove admins, create Super Admins, and control feature flags.</li>      
+        <br>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Add new user
+          </button>
+
+
+           <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header">Email address</th>
+                <th scope="col" class="govuk-table__header">Access level</th>
+                <th scope="col" class="govuk-table__header">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Samantha Reid</td>
+                <td class="govuk-table__cell">email@address.com</td>
+                <td class="govuk-table__cell">Regular</td>
+                <td class="govuk-table__cell"><div class="govuk-button-group">
+                  <button type="submit" class="govuk-button govuk-button--warning">
+                    Remove
+                  </button>
+                  <button type="submit" class="govuk-button--blue govuk-button" data-module="govuk-button">
+                    Make Super Admin
+                  </button>
+                </div></td>
+
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Reiss A Smith</td>
+                <td class="govuk-table__cell">email@address.com</td>
+                <td class="govuk-table__cell">Super</td>
+                <td class="govuk-table__cell"><div class="govuk-button-group">
+                  <button type="submit" class="govuk-button govuk-button--warning">
+                    Remove
+                  </button>
+                </div></td>
+
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Suluman Ziout</td>
+                <td class="govuk-table__cell">email@address.com</td>
+                <td class="govuk-table__cell">Regular</td>
+                <td class="govuk-table__cell"><div class="govuk-button-group">
+                  <button type="submit" class="govuk-button govuk-button--warning">
+                    Remove
+                  </button>
+                  <button type="submit" class="govuk-button--blue govuk-button" data-module="govuk-button">
+                    Make Super Admin
+                  </button>
+                </div></td>
+
+              </tr>
+            </tbody>
+          </table>
+
+          <nav class="govuk-pagination" aria-label="Pagination">
+            <div class="govuk-pagination__prev">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="govuk-pagination__link-title">
+                  Previous<span class="govuk-visually-hidden"> page</span>
+                </span>
+              </a>
+            </div>
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next<span class="govuk-visually-hidden"> page</span>
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+
+
+          
+
+
+
+          
+     
+
+    </div>
+  </div>
+
+  {% endblock %}
+ 
+
+
+
+
+
+ 
