@@ -56,12 +56,16 @@
 
       <br>
 
-      <p>You must upload:
-        <ul class="govuk-list govuk-list--bullet">
-          <li>the school you teach in</li>
-          <li>the hours you work</li>
-        </ul>
-      </p>
+      <p> Reject multiple applications by providing their application IDs.</p>
+
+      <p>Create a file with a list of application IDs, one per row, and no header.</p> 
+        
+      <p>For example:</p>
+        
+      <p>2f581c80-b5bb-4404-bcaf-4044d9c0c674</p>
+      <p>21fe9549-28f0-492c-ae3a-d52969b40536</p>
+      <p>e7e8a629-f75f-4d98-b157-269136110099</p>
+  
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -75,10 +79,11 @@
       
             <div class="moj-multi-file-upload">
               <div class="moj-multi-file__uploaded-files ">
-                <h2 class="govuk-heading-m">Upload files</h2>
-                
+                <h2 class="govuk-heading-m">Upload file</h2>
               </div>
-      
+              <div id="event-name-hint" class="govuk-hint">
+                Maximum file size is 256MB. Files must be in CSV format.
+             
               <div class="moj-multi-file-upload__upload">
       
                 <div class="govuk-form-group">
@@ -114,7 +119,7 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">File name</th>
-            <th scope="col" class="govuk-table__header">Rows</th>
+            <th scope="col" class="govuk-table__header">Number of rows</th>
             <th scope="col" class="govuk-table__header">Date created</th>
             <th scope="col" class="govuk-table__header">Date started</th>
             <th scope="col" class="govuk-table__header">Action</th>
@@ -125,8 +130,9 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><p class="govuk-body">
+              <a href="#" class="govuk-link">TDT applications</a>
+            <td class="govuk-table__cell">25</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
@@ -137,8 +143,9 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><p class="govuk-body">
+              <a href="#" class="govuk-link">TDT applications</a>
+            <td class="govuk-table__cell">6</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
@@ -149,8 +156,9 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">email.address@gmail.com</td>
-            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><p class="govuk-body">
+              <a href="#" class="govuk-link">TDT applications</a>
+            <td class="govuk-table__cell">57</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell"><div class="govuk-button-group">
