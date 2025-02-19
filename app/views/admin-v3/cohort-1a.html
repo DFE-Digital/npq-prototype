@@ -47,7 +47,7 @@
       <div class="govuk-button-group">
 
 
-        <a href="/admin-v3/cohort-edit.html" class="govuk-button search-box__button" data-module="govuk-button">
+        <a href="/admin-v3/cohort-edit" class="govuk-button search-box__button" data-module="govuk-button">
           Edit cohort details
         </a>
         <a href="/admin-v3/cohort-delete.html" class="govuk-button govuk-button--warning" data-module="govuk-button">
@@ -63,7 +63,31 @@
 
       <h1 class="govuk-heading-m"> Schedules </h1>
 
-      <p> There are no schedules available. </p>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Applied from</th>
+            <th scope="col" class="govuk-table__header">Applies to</th>
+            <th scope="col" class="govuk-table__header">Declaration types</th>
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Name</td>
+            <td class="govuk-table__cell"> 20 May 2024</td>
+            <td class="govuk-table__cell"> 20 May 2025</td>
+            <td class="govuk-table__cell"> Started <br> Completed </td>
+
+ 
+
+
+          </tr>
+        
+        </tbody>
+      </table>
 
       <a href="/admin-v3/cohort-schedule.html" class="govuk-button search-box__button" data-module="govuk-button">
         Create a new schedule

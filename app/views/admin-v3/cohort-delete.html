@@ -1,0 +1,114 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="moj-side-navigation__title">Finance</h4>
+
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="finance.html" aria-current="location" class="govuk-!-font-size-16">Finance </a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="cohorts.html" class="govuk-!-font-size-16">Cohorts</a>
+        </li>
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="cohort-1.html" class="govuk-!-font-size-16">Cohort 2027/28</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-grid-column-full">
+      <a href="cohort-1.html" class="govuk-back-link">Back</a>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-0"style="color: #505a5f; font-weight: normal;"> Cohort 2027/28 </h2>
+      <h1 class="govuk-heading-l">Delete cohort</h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Cohort 2027/28
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Start year</th>
+                <th scope="col" class="govuk-table__header">Date of registration</th>
+                <th scope="col" class="govuk-table__header">Funding cap</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="cohort-1.html">2027/28</a></td>
+                <td class="govuk-table__cell"> 20 May 2024</td>
+                <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
+    
+              </tr>
+            
+            </tbody>
+          </table>
+    
+        </div>
+      </details>
+
+
+      
+
+      
+ 
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+             Are you sure you want to delete this cohort?
+            </h1>
+          </legend>
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              There is no way to undo this action.
+            </strong>
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                No
+              </label>
+            </div>
+          
+           
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <a href="/admin-v3/cohorts-deleted.html" class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Delete cohort
+        </a>
+        <a class="govuk-link" href="cohort-1.html">Cancel</a>
+      </div>
+
+
+    
+    
+
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

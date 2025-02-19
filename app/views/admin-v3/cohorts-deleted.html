@@ -1,0 +1,165 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="moj-side-navigation__title">Finance</h4>
+
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="finance.html" aria-current="location" class="govuk-!-font-size-16">Finance </a>
+        </li>
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="cohorts.html" class="govuk-!-font-size-16">Cohorts</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-grid-column-full">
+
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Cohort 2027/28 has been deleted
+          </h3>
+        </div>
+      </div>
+
+
+      <h1 class="govuk-heading-l">Cohorts</h1>
+      <p class="govuk-body">You xyz on this page</p>
+
+      <a href="/admin-v3/finance-ambition.html" class="govuk-button search-box__button" data-module="govuk-button">
+        Add a new cohort
+      </a>
+
+    
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Start year</th>
+            <th scope="col" class="govuk-table__header">Date of registration</th>
+            <th scope="col" class="govuk-table__header">Funding cap</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+           
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href=" ">2025/26 </a></td>
+            <td class="govuk-table__cell"> 20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">No</strong></td>
+
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">2024/25 </a></td>
+            <td class="govuk-table__cell"> 20 May 2024 </td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">No</strong></td>
+            
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">2023/24 </a></td>
+            <td class="govuk-table__cell"> 20 May 2024 </td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">2022/23 </a></td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">No</strong></td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">2021/22 </a></td>
+            <td class="govuk-table__cell">20 May 2024</td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
+
+          </tr>
+           
+         
+          
+          
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

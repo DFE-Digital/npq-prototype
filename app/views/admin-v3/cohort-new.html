@@ -1,0 +1,112 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="moj-side-navigation__title">Finance</h4>
+
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item">
+          <a href="finance.html" aria-current="location" class="govuk-!-font-size-16">Finance </a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="cohorts.html" class="govuk-!-font-size-16">Cohorts</a>
+        </li>
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="cohort-1.html" class="govuk-!-font-size-16">Cohort 2027/28</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-grid-column-full">
+      <a href="cohort-1.html" class="govuk-back-link">Back</a>
+ 
+      <h1 class="govuk-heading-l">Create a new statement</h1>
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+        Upload statement CSV
+        </h1>
+      </legend>
+
+      <div id="account-number-hint" class="govuk-hint">
+        One row per statement to be created for each contracted lead provider, e.g:
+        <br>
+        <br>
+        <ul class="govuk-list govuk-list--bullet govuk-hint">
+          <li>year,month,deadline_date,payment_date,output_fee </li>
+          <li> 2025,2,2024-12-25,2025-01-26,true</li>
+          <li>2025,3,2025-01-26,2025-02-27,false </li>
+          <li> 2025,4,2025-02-24,2025-03-25,false/li> </li>
+        </ul>
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
+        </label>
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+      <p> <a href=""> Download empty statement template</a></p>
+
+      <br>
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+        Upload contract CSV
+        </h1>
+      </legend>
+
+      <div id="account-number-hint" class="govuk-hint">
+        One row per statement to be created for each contracted lead provider, e.g:
+        <br>
+        <br>
+        <ul class="govuk-list govuk-list--bullet govuk-hint">
+          <li>lead_provider_name,course_identifier,recruitment_target,per_participan <br>t,service_fee_installments,special_course,monthly_service_fee </li>
+          <li> "Ambition Institute",npq-additional-support-offer,30,1000,12,false,100</li>
+          <li>2025,3,2025-01-26,2025-02-27,false </li>
+          <li> "Ambition Institute",npq-early-headship-coaching-offer,50,400,6,true,200<br> "UCL Institute of Education",npq-additional-support-offer,20,750,9,false,0 </li>
+        </ul>
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
+        </label>
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+      <p> <a href=""> Download empty statement template</a></p>
+
+      <p> <a href=""> Course provider </a></p>
+
+      <p> <a href=""> Courses </a></p>
+
+      <a href="/admin-v3/cohort-1a.html" class="govuk-button search-box__button" data-module="govuk-button">
+        Save changes
+      </a>
+
+
+
+
+
+
+
+    
+
+      
+
+      
+ 
+
+   
+
+    
+    
+
+      
+    </div>
+  </div>
+</div>
+{% endblock %}
