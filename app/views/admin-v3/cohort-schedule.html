@@ -25,7 +25,7 @@
     <div class="govuk-grid-column-full">
       <a href="cohort-1.html" class="govuk-back-link">Back</a>
       <h2 class="govuk-heading-s govuk-!-margin-bottom-0"style="color: #505a5f; font-weight: normal;"> Cohort 2027/28 </h2>
-      <h1 class="govuk-heading-l">Create a new schedule</h1>
+      <h1 class="govuk-heading-l">Create new schedule</h1>
 
       <details class="govuk-details">
         <summary class="govuk-details__summary">
@@ -39,7 +39,7 @@
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header">Start year</th>
-                <th scope="col" class="govuk-table__header">Date of registration</th>
+                <th scope="col" class="govuk-table__header">Registration start date</th>
                 <th scope="col" class="govuk-table__header">Funding cap</th>
               </tr>
             </thead>
@@ -59,34 +59,39 @@
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="width-20">
-          <strong>Full name </strong>
+          <strong>Schedule name </strong>
         </label>
         <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="width-20">
-          <strong> Identifies </strong>
+          <strong> Identifier </strong>
         </label>
         <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
       </div>
 
+      
       <div class="govuk-form-group">
-        <label class="govuk-label" for="width-20">
+        <label class="govuk-label" for="sort">
           <strong> Course group </strong>
         </label>
-        <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published"></option>
+          <option value="published">Specialist</option>
+          <option value="updated" selected>Leadership</option>
+          <option value="views">Early headship coaching offer</option>
+        </select>
       </div>
-
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              Applied from
+              Applies from
             </h1>
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 2007
+            Enter the date this schedule will start
           </div>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
@@ -121,11 +126,11 @@
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              Applies to
+              Applies until
             </h1>
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 2007
+            Enter the date this schedule will finish
           </div>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">

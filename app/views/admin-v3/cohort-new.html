@@ -21,29 +21,58 @@
   </div>
 
   <div class="govuk-grid-column-three-quarters">
-
     <div class="govuk-grid-column-full">
       <a href="cohort-1.html" class="govuk-back-link">Back</a>
+
+      <h1 class="govuk-heading-l">Create statements</h1>
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Upload statements
+        </h1>
+      </legend>
+
+      <div id="account-number-hint" class="govuk-hint">
+        Upload a CSV file with all the statement details in the following format.
+        Create one row for each statement, per contracted course provider. For example:
+      </div>
+
+      <!-- First Table -->
+      <div class="flex-container">
+        <div class="flex-header">
+          <div class="flex-item">Year</div>
+          <div class="flex-item">Month</div>
+          <div class="flex-item">Deadline_Date</div>
+          <div class="flex-item">Payment_Date</div>
+          <div class="flex-item">Output_Fee</div>
+        </div>
+
+        <div class="flex-row">
+          <div class="flex-item">2026</div>
+          <div class="flex-item">2</div>
+          <div class="flex-item">25-12-2025</div>
+          <div class="flex-item">26-01-2025</div>
+          <div class="flex-item">true</div>
+        </div>
+
+        <div class="flex-row">
+          <div class="flex-item">2026</div>
+          <div class="flex-item">3</div>
+          <div class="flex-item">26-01-2025</div>
+          <div class="flex-item">27-02-2025</div>
+          <div class="flex-item">false</div>
+        </div>
+
+        <div class="flex-row">
+          <div class="flex-item">2026</div>
+          <div class="flex-item">4</div>
+          <div class="flex-item">24-02-2024</div>
+          <div class="flex-item">25-03-2025</div>
+          <div class="flex-item">false</div>
+        </div>
+      </div>
+
  
-      <h1 class="govuk-heading-l">Create a new statement</h1>
-
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h1 class="govuk-fieldset__heading">
-        Upload statement CSV
-        </h1>
-      </legend>
-
-      <div id="account-number-hint" class="govuk-hint">
-        One row per statement to be created for each contracted lead provider, e.g:
-        <br>
-        <br>
-        <ul class="govuk-list govuk-list--bullet govuk-hint">
-          <li>year,month,deadline_date,payment_date,output_fee </li>
-          <li> 2025,2,2024-12-25,2025-01-26,true</li>
-          <li>2025,3,2025-01-26,2025-02-27,false </li>
-          <li> 2025,4,2025-02-24,2025-03-25,false/li> </li>
-        </ul>
-      </div>
       <div class="govuk-form-group">
         <label class="govuk-label" for="file-upload-1">
           Upload a file
@@ -52,60 +81,102 @@
       </div>
       <p> <a href=""> Download empty statement template</a></p>
 
-      <br>
-
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <h1 class="govuk-fieldset__heading">
-        Upload contract CSV
+          Upload contracts
         </h1>
       </legend>
 
       <div id="account-number-hint" class="govuk-hint">
-        One row per statement to be created for each contracted lead provider, e.g:
-        <br>
-        <br>
-        <ul class="govuk-list govuk-list--bullet govuk-hint">
-          <li>lead_provider_name,course_identifier,recruitment_target,per_participan <br>t,service_fee_installments,special_course,monthly_service_fee </li>
-          <li> "Ambition Institute",npq-additional-support-offer,30,1000,12,false,100</li>
-          <li>2025,3,2025-01-26,2025-02-27,false </li>
-          <li> "Ambition Institute",npq-early-headship-coaching-offer,50,400,6,true,200<br> "UCL Institute of Education",npq-additional-support-offer,20,750,9,false,0 </li>
-        </ul>
+        Upload a CSV file with all the contract details in the following format.
+        Create one row for each course to add to each course provider’s statement. For example:
       </div>
+
+           <!-- Second Table -->
+           <div class="flex-container">
+            <div class="flex-header">
+              <div class="flex-item">Lead_Provider_Name</div>
+              <div class="flex-item">Course_Identifier</div>
+              <div class="flex-item">Recruitment_Target</div>
+              <div class="flex-item">Per_Participant</div>
+              <div class="flex-item">Service_Fee_Installments</div>
+              <div class="flex-item">Special_Course</div>
+              <div class="flex-item">Monthly_Service_Fee</div>
+            </div>
+    
+            <div class="flex-row">
+              <div class="flex-item">Ambition Institute</div>
+              <div class="flex-item">npq-headship</div>
+              <div class="flex-item">30</div>
+              <div class="flex-item">1000</div>
+              <div class="flex-item">12</div>
+              <div class="flex-item">false</div>
+              <div class="flex-item">100</div>
+            </div>
+    
+            <div class="flex-row">
+              <div class="flex-item">UCL Institute of Education</div>
+              <div class="flex-item">npq-early-headship-coaching-offer</div>
+              <div class="flex-item">20</div>
+              <div class="flex-item">750</div>
+              <div class="flex-item">9</div>
+              <div class="flex-item">false</div>
+              <div class="flex-item">0</div>
+            </div>
+          </div>
+    
+          <style>
+            .flex-container {
+              display: flex;
+              flex-direction: column;
+              margin-top: 20px;
+            }
+    
+            .flex-header, .flex-row {
+              display: flex;
+              justify-content: space-between;
+              padding: 10px;
+            }
+    
+            .flex-item {
+              flex: 1;
+              text-align: center;
+              padding: 5px;
+              border: 1px solid #ddd;
+              font-size: 10px; /* Smaller font size */
+            }
+    
+            .flex-header {
+              font-weight: bold;
+              background-color: #e6e6e6;
+              font-size: 12px; /* Slightly larger font size for header */
+            }
+    
+            .flex-row:nth-child(even) .flex-item {
+              background-color: #f9f9f9;
+            }
+    
+            .flex-item:first-child {
+              text-align: left;
+            }
+          </style>
+    
+
       <div class="govuk-form-group">
         <label class="govuk-label" for="file-upload-1">
           Upload a file
         </label>
         <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
       </div>
-      <p> <a href=""> Download empty statement template</a></p>
+      <p> <a href=""> Download empty template</a></p>
 
-      <p> <a href=""> Course provider </a></p>
-
-      <p> <a href=""> Courses </a></p>
+      <div class="govuk-inset-text">
+        You may experience a short delay while your files are being processed.
+      </div>
 
       <a href="/admin-v3/cohort-1a.html" class="govuk-button search-box__button" data-module="govuk-button">
-        Save changes
+        Continue to preview
       </a>
-
-
-
-
-
-
-
-    
-
-      
-
-      
- 
-
-   
-
-    
-    
-
-      
     </div>
   </div>
 </div>
