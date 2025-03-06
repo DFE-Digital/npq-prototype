@@ -222,8 +222,7 @@
     {% else %}
       Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
     {% endif %}
-  </h1>
-
+ 
   {{ govukSummaryList({
     card: {
       title: {
@@ -321,6 +320,12 @@
   }) }}
 
   {% include '../includes/registration-status/work-details.html' %}
+
+  <h2 class="govuk-heading-l">We'd like your feedback</h2>
+ 
+  <p class="govuk-body">
+    Tell us about your experience using the registration service by <a href="https://forms.office.com/e/hPvnPscP6R" class="govuk-link">completing a short feedback form.</a>
+  </p>
 
   {% include '../includes/registration-status/register-for-another-npq.html' %}
 
