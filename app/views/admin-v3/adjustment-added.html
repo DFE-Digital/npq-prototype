@@ -71,7 +71,7 @@
             </tbody>
           </table>
 
-          <div class="govuk-form-group">
+        <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h1 class="govuk-fieldset__heading">
@@ -80,14 +80,24 @@
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="DoYouNeedToAddAnotherAdjustment" name="DoYouNeedToAddAnotherAdjustment" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for=" DoYouNeedToAddAnotherAdjustment">
+                  <input class="govuk-radios__input" id="doYouNeedToAddAnotherAdjustment" name="DoYouNeedToAddAnotherAdjustment" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for=" doYouNeedToAddAnotherAdjustment">
                     Yes
                   </label>
+
+                  <script>
+                    function handleRadioClick(value) {
+                      if (value === "yes") {
+                        // Redirect to the 'aa added' page
+                        window.location.href = '/admin-v3/finance-statement-aa';
+                      }
+                    }
+                  </script>
+                  
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="DoYouNeedToAddAnotherAdjustment-2" name="DoYouNeedToAddAnotherAdjustment" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="DoYouNeedToAddAnotherAdjustment-2">
+                  <input class="govuk-radios__input" id="doYouNeedToAddAnotherAdjustment-2" name="DoYouNeedToAddAnotherAdjustment" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="doYouNeedToAddAnotherAdjustment-2">
                     No
                   </label>
                 </div>
@@ -95,19 +105,16 @@
               </div>
             </fieldset>
           </div>
-
         
-
-
-
-          
- 
-
-        <div class="govuk-button-group">
-          <a href="finance-statement-aa.html" class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </a>
-        </div>
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </div>
+        </form>
+        
+        
+        
 
         <br>
         <br>
