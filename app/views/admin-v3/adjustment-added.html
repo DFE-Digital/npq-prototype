@@ -3,6 +3,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+   
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
@@ -29,20 +31,11 @@
  
           </nav>
         </div> 
-
-        
-
-
         <div class="govuk-grid-column-three-quarters">
         
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">You have added an adjustment</h1>
         
-
-         
         <div class="govuk-grid-column-three-quarters">
-
-      
-
         </div>
 
         <br> <br>
@@ -71,7 +64,7 @@
             </tbody>
           </table>
 
-        <div class="govuk-form-group">
+      <!-- <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h1 class="govuk-fieldset__heading">
@@ -84,16 +77,6 @@
                   <label class="govuk-label govuk-radios__label" for=" doYouNeedToAddAnotherAdjustment">
                     Yes
                   </label>
-
-                  <script>
-                    function handleRadioClick(value) {
-                      if (value === "yes") {
-                        // Redirect to the 'aa added' page
-                        window.location.href = '/admin-v3/finance-statement-aa';
-                      }
-                    }
-                  </script>
-                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="doYouNeedToAddAnotherAdjustment-2" name="DoYouNeedToAddAnotherAdjustment" type="radio" value="no">
@@ -105,15 +88,38 @@
               </div>
             </fieldset>
           </div>
+         --> 
+
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+         <form method="POST" action="/admin-v3/adjustment-added">
+          {{ govukRadios({
+            name: "doYouNeedToAddAnotherAdjustment",
+            fieldset: {
+              legend: {
+                text: "Do you need to add another adjustment?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              { value: "Yes", text: "Yes" },
+              { value: "No", text: "No" }
+            ]
+          }) }}
         
-          <div class="govuk-button-group">
-            <button type="submit" class="govuk-button" data-module="govuk-button">
-              Save and continue
-            </button>
-          </div>
+          <!-- Save and continue button -->
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
         </form>
+
         
         
+        
+
+
+
         
 
         <br>
@@ -123,6 +129,7 @@
       </div> 
       </div>
       </div>
+    
 
     </div>
     </div>

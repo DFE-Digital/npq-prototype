@@ -112,15 +112,19 @@ module.exports = router => {
     res.redirect(v + 'registrations-review')
   })
 
+
+
   // add another adjustment
-  router.post('/fe-admin-v3/add-adjustment', function (req, res){
-    var adjustmentadded = req.session.data['doYouNeedToAddAnotherAdjustment'];
-    if (adjustmentadded == 'Yes') {
-      res.redirect('/admin-v3/add-adjustment');
+  router.post(v + 'adjustment-added', function(req, res){
+    var addAnotherAdjustment = req.body.doYouNeedToAddAnotherAdjustment;
+
+    if (addAnotherAdjustment === 'No') {
+      res.redirect(v + 'finance-statement-aa');
     } else {
-      res.redirect('/admin-v3/finance-statement-aa');
+      res.redirect(v + 'add-adjustment');
     }
   });
- 
 
+
+  
 }
