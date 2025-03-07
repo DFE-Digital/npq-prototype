@@ -10,62 +10,43 @@
           <li class="moj-side-navigation__item">
             <a href="settings.html" aria-current="location">Course start date</a>
           </li>
-  
           <li class="moj-side-navigation__item">
             <a href="email-sub.html">Email subscriptions</a>
           </li>
-  
           <li class="moj-side-navigation__item">
             <a href="users.html">Admin users</a>
           </li>
-
           <li class="moj-side-navigation__item">
             <a href="flags.html">Feature flags</a>
           </li>
-
           <li class="moj-side-navigation__item">
             <a href="messages.html">Webhook messages</a>
           </li>
-          
           <li class="moj-side-navigation__item">
             <a href="closed-reg.html">Closed registrations</a>
           </li>
-
           <br>
-
           <h4 class="moj-side-navigation__title">Bulk operations</h4>
-
-          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <li class="moj-side-navigation__item">
             <a href="revert.html">Revert applications</a>
           </li>
-
           <li class="moj-side-navigation__item">
             <a href="reject.html">Reject applications</a>
           </li>
-
-          <li class="moj-side-navigation__item">
+          <li class="moj-side-navigation__item  moj-side-navigation__item--active">
             <a href="/admin-v3/amend-trn.html">Amend and validate TRNs</a>
           </li>
-          
-
         </ul>
       </nav>
     </div>
 
     <div class="govuk-grid-column-three-quarters">
-
       <br>
-
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Revert applications to pending</h1>
-
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Amend and validate TRNs</h1>
       <br>
-
-      <p>Change the status of multiple applications to "pending" by providing their application IDs.</p>
-
+      <p>Something about why they may need to do this....</p>
       <p>Create a file with a list of application IDs, one per row, and no header.</p>
-
       <p>For example:</p>
-
       <ul class="govuk-list govuk-list--bullet">
         <li>2f581c80-b5bb-4404-bcaf-4044d9c0c674</li>
         <li>21fe9549-28f0-492c-ae3a-d52969b40536</li>
@@ -74,11 +55,8 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
           <br>
-
           <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
-
             <div class="moj-multi-file-upload">
               <div class="moj-multi-file__uploaded-files">
                 <h2 class="govuk-heading-m">Upload file</h2>
@@ -86,30 +64,21 @@
                   Maximum file size is 256MB. Files must be in CSV format.
                 </div>
               </div>
-
-
               <div class="moj-multi-file-upload__upload">
-
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-label--s" for="documents"></label>
-
                   <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-
                 </div>
-
                 <button type="submit" class="govuk-button govuk-button--primary moj-multi-file-upload__button" data-module="govuk-button">
                   Upload file
                 </button>
-
               </div>
             </div>
-
           </form>
         </div>
       </div>
 
       <h2 class="govuk-heading-m">Uploaded files</h2>
-
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -122,8 +91,8 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">TDT applications</a></td>
-            <td class="govuk-table__cell">452</td>
+            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell">25</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">
@@ -134,10 +103,9 @@
               </div>
             </td>
           </tr>
-
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">TDT applications</a></td>
-            <td class="govuk-table__cell">1254</td>
+            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell">6</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">
@@ -148,10 +116,9 @@
               </div>
             </td>
           </tr>
-
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">TDT applications</a></td>
-            <td class="govuk-table__cell">19</td>
+            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell">57</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">
@@ -162,16 +129,13 @@
               </div>
             </td>
           </tr>
-          
         </tbody>
       </table>
 
       <nav class="govuk-pagination" aria-label="Pagination">
         <div class="govuk-pagination__prev">
           <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-            <span class="govuk-pagination__link-title">
-              Previous<span class="govuk-visually-hidden"> page</span>
-            </span>
+            <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
           </a>
         </div>
         <ul class="govuk-pagination__list">
@@ -193,9 +157,7 @@
         </ul>
         <div class="govuk-pagination__next">
           <a class="govuk-link govuk-pagination__link" href="#" rel="next">
-            <span class="govuk-pagination__link-title">
-              Next<span class="govuk-visually-hidden"> page</span>
-            </span>
+            <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
           </a>
         </div>
       </nav>
