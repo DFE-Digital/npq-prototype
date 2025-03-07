@@ -121,7 +121,7 @@ module.exports = router => {
     if (addAnotherAdjustment === 'No') {
       res.redirect(v + 'finance-statement-aa');
     } else {
-      res.redirect(v + 'add-adjustment');
+      res.redirect(v + 'add-another');
     }
   });
 
