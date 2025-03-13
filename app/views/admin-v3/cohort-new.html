@@ -34,45 +34,19 @@
 
       <div id="account-number-hint" class="govuk-hint">
         Upload a CSV file with all the statement details in the following format.
-        Create one row for each statement, per contracted course provider. For example:
+        Create one row for each statement, per contracted course provider. 
       </div>
 
-      <!-- First Table -->
-      <div class="flex-container">
-        <div class="flex-header">
-          <div class="flex-item">Year</div>
-          <div class="flex-item">Month</div>
-          <div class="flex-item">Deadline_Date</div>
-          <div class="flex-item">Payment_Date</div>
-          <div class="flex-item">Output_Fee</div>
-        </div>
+      <p class="govuk-body">For example:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Year:</strong> 2026</li>
+  <li><strong>Month:</strong> 2</li>
+  <li><strong>Deadline_Date:</strong> 25-12-2025</li>
+  <li><strong>Payment_Date:</strong> 26-01-2025</li>
+  <li><strong>Output_Fee:</strong> TRUE</li>
+</ul>
 
-        <div class="flex-row">
-          <div class="flex-item">2026</div>
-          <div class="flex-item">2</div>
-          <div class="flex-item">25-12-2025</div>
-          <div class="flex-item">26-01-2025</div>
-          <div class="flex-item">true</div>
-        </div>
-
-        <div class="flex-row">
-          <div class="flex-item">2026</div>
-          <div class="flex-item">3</div>
-          <div class="flex-item">26-01-2025</div>
-          <div class="flex-item">27-02-2025</div>
-          <div class="flex-item">false</div>
-        </div>
-
-        <div class="flex-row">
-          <div class="flex-item">2026</div>
-          <div class="flex-item">4</div>
-          <div class="flex-item">24-02-2024</div>
-          <div class="flex-item">25-03-2025</div>
-          <div class="flex-item">false</div>
-        </div>
-      </div>
-
- 
+   
       <div class="govuk-form-group">
         <label class="govuk-label" for="file-upload-1">
           Upload a file
@@ -92,78 +66,19 @@
 
       <div id="account-number-hint" class="govuk-hint">
         Upload a CSV file with all the contract details in the following format.
-        Create one row for each course to add to each course provider’s statement. For example:
+        Create one row for each course to add to each course provider’s statement. 
       </div>
 
-           <!-- Second Table -->
-           <div class="flex-container">
-            <div class="flex-header">
-              <div class="flex-item">Lead_Provider_Name</div>
-              <div class="flex-item">Course_Identifier</div>
-              <div class="flex-item">Recruitment_Target</div>
-              <div class="flex-item">Per_Participant</div>
-              <div class="flex-item">Service_Fee_Installments</div>
-              <div class="flex-item">Special_Course</div>
-              <div class="flex-item">Monthly_Service_Fee</div>
-            </div>
-    
-            <div class="flex-row">
-              <div class="flex-item">Ambition Institute</div>
-              <div class="flex-item">npq-headship</div>
-              <div class="flex-item">30</div>
-              <div class="flex-item">1000</div>
-              <div class="flex-item">12</div>
-              <div class="flex-item">false</div>
-              <div class="flex-item">100</div>
-            </div>
-    
-            <div class="flex-row">
-              <div class="flex-item">UCL Institute of Education</div>
-              <div class="flex-item">npq-early-headship-coaching-offer</div>
-              <div class="flex-item">20</div>
-              <div class="flex-item">750</div>
-              <div class="flex-item">9</div>
-              <div class="flex-item">false</div>
-              <div class="flex-item">0</div>
-            </div>
-          </div>
-    
-          <style>
-            .flex-container {
-              display: flex;
-              flex-direction: column;
-              margin-top: 20px;
-            }
-    
-            .flex-header, .flex-row {
-              display: flex;
-              justify-content: space-between;
-              padding: 10px;
-            }
-    
-            .flex-item {
-              flex: 1;
-              text-align: center;
-              padding: 5px;
-              border: 1px solid #ddd;
-              font-size: 10px; /* Smaller font size */
-            }
-    
-            .flex-header {
-              font-weight: bold;
-              background-color: #e6e6e6;
-              font-size: 12px; /* Slightly larger font size for header */
-            }
-    
-            .flex-row:nth-child(even) .flex-item {
-              background-color: #f9f9f9;
-            }
-    
-            .flex-item:first-child {
-              text-align: left;
-            }
-          </style>
-    
+      <p class="govuk-body">For example:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><strong>Lead_Provider_Name:</strong> Ambition Institute</li>
+  <li><strong>Course_Identifier:</strong> npq-headship</li>
+  <li><strong>Recruitment_Target:</strong> 30</li>
+  <li><strong>Per_Participant:</strong> 1000</li>
+  <li><strong>Service_Fee_Installments:</strong> 12</li>
+  <li><strong>Special_Course:</strong> FALSE</li>
+  <li><strong>Monthly_Service_Fee:</strong> 100</li>
+</ul>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="file-upload-1">

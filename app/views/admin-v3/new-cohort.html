@@ -22,46 +22,17 @@
 
     <div class="govuk-grid-column-full">
       <a href="cohorts.html" class="govuk-back-link">Back</a>
-      <h1 class="govuk-heading-l">Add a new cohort</h1>
+      <h1 class="govuk-heading-l">Add new cohort</h1>
 
      
 
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="width-10"> <strong>Start year </strong> </label>
-        <div id="passport-issued-hint" class="govuk-hint"> Hint text </div>
+        <div id="passport-issued-hint" class="govuk-hint"> Enter the year that your cohort will start their NPQ, for example 2029 </div>
         <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
       </div>
 
-      
-
-    
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Is there a funding cap?
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                No
-              </label>
-            </div>
-          
-           
-          </div>
-        </fieldset>
-      </div>
 
 
       <div class="govuk-form-group">
@@ -72,7 +43,7 @@
             </h1>
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 2007
+            Enter the date that your cohort will be able to register from, for example 27 3 2029
           </div>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
@@ -102,11 +73,38 @@
           </div>
         </fieldset>
       </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Cap funding for this cohort?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                No
+              </label>
+            </div>
+          
+           
+          </div>
+        </fieldset>
+      </div>
 
-
-      <a href="/admin-v3/cohorts.html" class="govuk-button search-box__button" data-module="govuk-button">
-        Save changes
-      </a>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save
+        </button>
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
       
     </div>
   </div>
