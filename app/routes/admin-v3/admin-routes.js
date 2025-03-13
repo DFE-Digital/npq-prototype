@@ -112,4 +112,19 @@ module.exports = router => {
     res.redirect(v + 'registrations-review')
   })
 
+
+
+  // add another adjustment
+  router.post(v + 'adjustment-added', function(req, res){
+    var addAnotherAdjustment = req.body.doYouNeedToAddAnotherAdjustment;
+
+    if (addAnotherAdjustment === 'No') {
+      res.redirect(v + 'finance-statement-aa');
+    } else {
+      res.redirect(v + 'add-another');
+    }
+  });
+
+
+  
 }

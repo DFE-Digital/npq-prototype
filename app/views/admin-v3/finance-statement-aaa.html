@@ -1,0 +1,945 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <nav class="moj-side-navigation" aria-label="Side navigation">
+
+            <h4 class="moj-side-navigation__title">Finance</h4>
+
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item ">
+                  <a href="finance.html" aria-current="location" class="govuk-!-font-size-16">Finance </a>
+                </li>
+                <li class="moj-side-navigation__item">
+                  <a href="" class="govuk-!-font-size-16">Cohorts</a>
+                </li>
+              </ul>
+
+              <h4 class="moj-side-navigation__title">Finance statement</h4>
+              <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <a href="finance-statement.html" aria-current="location" class="govuk-!-font-size-16">Church of England, January 2025 </a>
+                </li>
+      
+              </ul>
+
+      
+              <h4 class="moj-side-navigation__title">Filter statements by: </h4>
+
+              
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Provider</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="All">All</option>
+                  <option value="Ambition Institute">Ambition Institute</option>
+                  <option value="Best Practice Network">Best Practice Network</option>
+                  <option value="Church of England">Church of England</option>
+                  <option value="Education Development Trust">Education Development Trust</option>
+                  <option value="LLSE">LLSE</option>
+                  <option value="National Institute of Teaching">National Institute of Teaching</option>
+                  <option value="School-Led Network">School-Led Network</option>
+                  <option value="Teacher Development Trust">Teacher Development Trust</option>
+                  <option value="Teach First">Teach First</option>
+                  <option value="UCL Institute of Education">UCL Institute of Education</option><option value="Status"></option>
+                 
+                </select>
+              </div>
+
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Cohort</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="Status">All</option>
+                  <option value="Status">2022</option>
+                  <option value="Status">2023</option>
+                  <option value="Status">2024</option>
+                  <option value="Status">2025</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Statement date</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="January 2022 ">January 2022</option>
+                  <option value="February 2022">February 2022</option>
+                  <option value="March 2022">March 2022</option>
+                  <option value="April 2022">April 2022</option>
+                  <option value="May 2022">May 2022</option>
+                  <option value="June 2022">June 2022</option>
+                  <option value="July 2022">July 2022</option>
+                  <option value="August 2022">August 2022</option>
+                  <option value="September 2022">September 2022</option>
+                  <option value="October 2022">October 2022</option>
+                  <option value="November 2022">November 2022</option>
+                  <option value="December 2022">December 2022</option>
+                  <option value="January 2023 ">January 2023</option>
+                  <option value="February 2023">February 2023</option>
+                  <option value="March 2023">March 2023</option>
+                  <option value="April 2023">April 2023</option>
+                  <option value="May 2023">May 2023</option>
+                  <option value="June 2023">June 2023</option>
+                  <option value="July 2023">July 2023</option>
+                  <option value="August 2023">August 2023</option>
+                  <option value="September 2023">September 2023</option>
+                  <option value="October 2023">October 2023</option>
+                  <option value="November 2023">November 2023</option>
+                  <option value="December 2023">December 2023</option>
+                  <option value="January 2024 ">January 2024</option>
+                  <option value="February 2024">February 2024</option>
+                  <option value="March 2024">March 2024</option>
+                  <option value="April 2024">April 2024</option>
+                  <option value="May 2024">May 2024</option>
+                  <option value="June 2024">June 2024</option>
+                  <option value="July 2024">July 2024</option>
+                  <option value="August 2024">August 2024</option>
+                  <option value="September 2024">September 2024</option>
+                  <option value="October 2024">October 2024</option>
+                  <option value="November 2024">November 2024</option>
+                  <option value="December 2024">December 2024</option>
+                  <option value="January 2025 ">January 2025</option>
+                  <option value="February 2025">February 2025</option>
+                  <option value="March 2025">March 2025</option>
+                  <option value="April 2025">April 2025</option>
+                  <option value="May 2025">May 2025</option>
+                  <option value="June 2025">June 2025</option>
+                  <option value="July 2025">July 2025</option>
+                  <option value="August 2025">August 2025</option>
+                  <option value="September 2025">September 2025</option>
+                  <option value="October 2025">October 2025</option>
+                  <option value="November 2025">November 2025</option>
+                  <option value="December 2025">December 2025</option>
+
+                </select>
+              </div>
+
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Status</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="Status">Paid</option>
+                  <option value="Status">Unpaid</option>
+
+                </select>
+
+                <br>
+                <br>
+
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Search
+                </button>
+
+              </div>
+          </nav>
+        </div> 
+
+        
+
+
+        <div class="govuk-grid-column-three-quarters">
+        
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Church of England, January 2025</h1>
+        <p class="govuk-!-margin-bottom-2"><strong>Cohort:</strong> 2024/2025 </p>
+        <p class="govuk-!-margin-bottom-2"><strong>Output payment date:</strong> 15 May 2025 </p>
+        <p class="govuk-!-margin-bottom-2"><strong>Authorised:</strong> 15 May 2025 </p>
+        <p class="govuk-!-margin-bottom-2"><strong>Status:</strong> Paid </p>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Statement ID
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            ofij4-lkesnd-nosgnj98-apgogsk-27sjfa
+           </div>
+        </details>
+        <p class="govuk-!-margin-bottom-2"><strong></strong> <strong class="govuk-tag govuk-tag--green"> Authorised for payment at 3:01pm on 12 Mar 2025</strong></p>
+        <div class="govuk-grid-column-three-quarters">
+
+        <div class="govuk-inset-text">
+          Calculations may have minor rounding discrepancies. Contact your contract manager for clarification.
+        </div>
+
+        </div>
+
+      
+
+        <div class="govuk-grid-column-three-quarters"> 
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Statement summary
+            </h2>
+            <a class="govuk-link" href="#"><strong>Save as PDF
+              <br>
+              Download declarations (CSV)
+              <br>
+              Freeze statement
+            </strong><span class="govuk-visually-hidden"><strong></strong></span></a>
+    
+
+        </div>
+        <div class="govuk-summary-card__content">
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              The output payment deadline is 15 May 2025.
+            </strong>
+          </div>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Starts
+              </dt>
+              <dd class="govuk-summary-list__value">
+               446
+              </dd>
+            
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Retained
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Completed
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Voids
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">View voids<span class="govuk-visually-hidden"> working situation (Person 3)</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Output payment
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £90,120.75
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Clawbacks
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £0.00
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Total net VAT
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong> £144,679.08 </strong> 
+              </dd>
+            </div>
+
+            <br>
+
+          </dl>
+        </div>
+        </div>
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Adjustments</h1>
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Clawbacks</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Payment type</th>
+              <th scope="col" class="govuk-table__header">Number of users</th>
+              <th scope="col" class="govuk-table__header">Fee per user</th>
+              <th scope="col" class="govuk-table__header">Payments</th>
+
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> Uplift clawbacks</th>
+              <td class="govuk-table__cell">12</td>
+              <td class="govuk-table__cell">-£100</td>
+              <td class="govuk-table__cell"> -£1,2000.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Clawback for Started (Band C)</th>
+              <td class="govuk-table__cell">30</td>
+              <td class="govuk-table__cell">-£162.60</td>
+              <td class="govuk-table__cell">-£4,878.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> Uplift clawbacks</th>
+              <td class="govuk-table__cell">30</td>
+              <td class="govuk-table__cell">-£162.60</td>
+              <td class="govuk-table__cell">-£3,658.60</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> Uplift clawbacks</th>
+              <td class="govuk-table__cell">30</td>
+              <td class="govuk-table__cell">-£425.20</td>
+              <td class="govuk-table__cell">-£8,170.65</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"> Total  </th>
+              <td class="govuk-table__cell"> 30 </td>
+              <td class="govuk-table__cell"> -£425.20  </td>
+              <td class="govuk-table__cell"> -£17,907.15</td>
+
+           
+            </tr>
+
+          </tbody>
+        </table>
+
+  
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Additional adjustments</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Payment type</th>
+              <th scope="col" class="govuk-table__header">Payment</th>
+      
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Fully trained mentor (n=902) access fees</td>
+              <td class="govuk-table__cell">£19,844.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Trained mentor</td>
+              <td class="govuk-table__cell">£500</td>
+            </tr>
+           
+          </tbody>
+        </table>
+
+        <div class="govuk-button-group">
+          <a href="add-adjustment.html" class="govuk-button" data-module="govuk-button">
+            Add an adjustment
+          </a>
+          <a class="govuk-link" href="adjustment-added.html">Change or remove</a>
+        </div>
+
+       
+
+        <br>
+        <br>
+        
+
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Course finance details</h1>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Additional support offer
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Additional support offer
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Payment type</th>
+                        <th scope="col" class="govuk-table__header">Participants</th>
+                        <th scope="col" class="govuk-table__header">Payment per participant</th>
+                        <th scope="col" class="govuk-table__header">Course total</th>
+            
+            
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Output</td>
+                        <td class="govuk-table__cell">20</td>
+                        <td class="govuk-table__cell">£200</td>
+                        <td class="govuk-table__cell">£4000</td>
+                      </tr>
+                    </table>
+
+
+                    <dl class="govuk-summary-list">
+
+                  
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Started
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 1
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 2
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Compeleted
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          20
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total declarations 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          2
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total not eligible for funding
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong>1 </strong>
+                        </dd>
+                      </div>
+                    </dl>
+                    </div>
+                  </dl>
+                </div>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Early headship coaching offer
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Early headship coaching offer
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Payment type</th>
+                        <th scope="col" class="govuk-table__header">Participants</th>
+                        <th scope="col" class="govuk-table__header">Payment per participant</th>
+                        <th scope="col" class="govuk-table__header">Course total</th>
+                        
+            
+            
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Output</td>
+                        <td class="govuk-table__cell">20</td>
+                        <td class="govuk-table__cell">£200</td>
+                        <td class="govuk-table__cell">£4000</td>
+                        
+                      </tr>
+                    </table>
+
+                    <dl class="govuk-summary-list">
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Started
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1
+                        </dd>
+                        
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 1
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 2
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Compeleted
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          20
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total declarations 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          2
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total not eligible for funding
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong>1 </strong>
+                        </dd>
+                        
+                      </div>
+                    </dl>
+                    </div>
+                  </dl>
+                </div>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  Early years leadership NPQ
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Early years leadership NPQ
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Payment type</th>
+                        <th scope="col" class="govuk-table__header">Participants</th>
+                        <th scope="col" class="govuk-table__header">Payment per participant</th>
+                        <th scope="col" class="govuk-table__header">Course total</th>
+                        
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Output</td>
+                        <td class="govuk-table__cell">20</td>
+                        <td class="govuk-table__cell">£200</td>
+                        <td class="govuk-table__cell">£4000</td>
+                      </tr>
+                    </table>
+
+                    <dl class="govuk-summary-list">
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Started
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1
+                        </dd>
+                        
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 1
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 2
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Compeleted
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          20
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total declarations 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          2
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total not eligible for funding
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong>1 </strong>
+                        </dd>
+                        
+                      </div>
+                    </dl>
+                    </div>
+                  </dl>
+                </div>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                  Executive leadership NPQ
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Executive leadership NPQ
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Payment type</th>
+                        <th scope="col" class="govuk-table__header">Participants</th>
+                        <th scope="col" class="govuk-table__header">Payment per participant</th>
+                        <th scope="col" class="govuk-table__header">Course total</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Output</td>
+                        <td class="govuk-table__cell">20</td>
+                        <td class="govuk-table__cell">£200</td>
+                        <td class="govuk-table__cell">£4000</td>
+                       
+                      </tr>
+                    </table>
+
+                    <dl class="govuk-summary-list">
+                   
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Started
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1
+                        </dd>
+                        
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 1
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 2
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Compeleted
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          20
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total declarations 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          2
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total not eligible for funding
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong>1 </strong>
+                        </dd>
+                        
+                      </div>
+                    </dl>
+                    </div>
+                  </dl>
+                </div>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                  Leading primary mathematics NPQ
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  <p class="govuk-body">
+                    The leading primary mathematics NPQ has <a href="#" class="govuk-link">standalone payments</a>.
+                  </p>
+                </strong>
+              </div>
+
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Leading primary mathematics NPQ
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Payment type</th>
+                        <th scope="col" class="govuk-table__header">Participants</th>
+                        <th scope="col" class="govuk-table__header">Payment per participant</th>
+                        <th scope="col" class="govuk-table__header">Course total</th>
+                        
+            
+            
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Output</td>
+                        <td class="govuk-table__cell">20</td>
+                        <td class="govuk-table__cell">£200</td>
+                        <td class="govuk-table__cell">£4000</td>
+                        
+                      </tr>
+                    </table>
+
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Started
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1
+                        </dd>
+                        
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 1
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Retained 2
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          0
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Compeleted
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          20
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total declarations 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          2
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Total not eligible for funding
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong>1 </strong>
+                        </dd>
+                        
+                      </div>
+                    </dl>
+                    </div>
+                  </dl>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+         
+          
+           
+
+
+        
+        
+
+       
+
+
+
+        <details class="govuk-details">
+        
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contract information
+            </span>
+            </summary>
+            <div class="govuk-grid-column-three-quarters"> 
+            <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Course</th>
+                <th scope="col" class="govuk-table__header">Recruitment target</th>
+                <th scope="col" class="govuk-table__header">Payment per participant </th>
+  
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Additional support offer</th>
+                <td class="govuk-table__cell">60</td>
+                <td class="govuk-table__cell">£800</td>
+  
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Early headship coaching offer</th>
+                <td class="govuk-table__cell">168</td>
+                <td class="govuk-table__cell">£3,600</td>
+  
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Executive leadership NPQ</th>
+                <td class="govuk-table__cell">272</td>
+                <td class="govuk-table__cell">£1,975</td>
+  
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Headship NPQ</th>
+                <td class="govuk-table__cell">393</td>
+                <td class="govuk-table__cell">£895</td>
+  
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Executive leadership NPQ</th>
+                <td class="govuk-table__cell">535</td>
+                <td class="govuk-table__cell">£850</td>
+  
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Leading teaching NPQ</th>
+                <td class="govuk-table__cell">398</td>
+                <td class="govuk-table__cell">£895</td>
+  
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Senior leadership NPQ</th>
+                <td class="govuk-table__cell">591</td>
+                <td class="govuk-table__cell">£1,080</td>
+
+  
+              </tr>
+
+            </tbody>
+          </table> 
+        </div>
+        </details>
+      </div> 
+      </div>
+      </div>
+
+    </div>
+    </div>
+  </div> 
+{% endblock %}
