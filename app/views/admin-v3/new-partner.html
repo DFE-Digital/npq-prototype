@@ -32,69 +32,42 @@
 
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="width-10"> <strong>Start year </strong> </label>
-        <div id="passport-issued-hint" class="govuk-hint"> Enter the year that your cohort will start their NPQ, for example 2029 </div>
+        <label class="govuk-label" for="width-10"> <strong>Enter delivery partner name </strong> </label>
         <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
       </div>
 
 
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-               Registration start date
-            </h1>
-          </legend>
-          <div id="passport-issued-hint" class="govuk-hint">
-            Enter the date that your cohort will be able to register from, for example 27 3 2029
-          </div>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              Cap funding for this cohort?
+              Select which cohort this delivery partner is for
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Yes
+                Cohort 2027/28
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                No
+                Cohort 2026/27
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Cohort 2025/26
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                Cohort 2024/25
               </label>
             </div>
           
@@ -104,10 +77,10 @@
       </div>
 
       <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
+        <a href="/admin-v3/delivery-partners" class="govuk-button search-box__button" data-module="govuk-button">
           Save
-        </button>
-        <a class="govuk-link" href="#">Cancel</a>
+        </a>
+        <a class="govuk-link" href="/admin-v3/delivery-partners">Cancel</a>
       </div>
       
     </div>
