@@ -55,23 +55,16 @@
         <div class="govuk-grid-column-two-thirds">
           <br>
           <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
-            <div class="moj-multi-file-upload">
-              <div class="moj-multi-file__uploaded-files">
-                <h2 class="govuk-heading-m">Upload file</h2>
-                <div id="account-number-hint" class="govuk-hint">
-                  Maximum file size is 256MB. Files must be in CSV format.
-                </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Upload file</h2>
+              <div id="file-upload-hint" class="govuk-hint">
+                Maximum file size is 256MB. File must be in CSV format.
               </div>
-              <div class="moj-multi-file-upload__upload">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-label--s" for="documents"></label>
-                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-                </div>
-                <button type="submit" class="govuk-button govuk-button--primary moj-multi-file-upload__button" data-module="govuk-button">
-                  Upload file
-                </button>
-              </div>
+              <input class="govuk-file-upload" id="documents" name="documents" type="file" aria-describedby="file-upload-hint">
             </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Upload file
+            </button>
           </form>
         </div>
       </div>
@@ -88,7 +81,7 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell"><a href="amend-trn-details-page.html">Ambition 2024 pending applications test</a></td>
             <td class="govuk-table__cell">25</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
