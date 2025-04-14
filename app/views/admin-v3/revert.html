@@ -10,11 +10,11 @@
           <li class="moj-side-navigation__item">
             <a href="settings.html" aria-current="location">Course start date</a>
           </li>
-  
+
           <li class="moj-side-navigation__item">
             <a href="email-sub.html">Email subscriptions</a>
           </li>
-  
+
           <li class="moj-side-navigation__item">
             <a href="users.html">Admin users</a>
           </li>
@@ -26,7 +26,7 @@
           <li class="moj-side-navigation__item">
             <a href="messages.html">Webhook messages</a>
           </li>
-          
+
           <li class="moj-side-navigation__item">
             <a href="closed-reg.html">Closed registrations</a>
           </li>
@@ -46,8 +46,6 @@
           <li class="moj-side-navigation__item">
             <a href="/admin-v3/amend-trn.html">Amend and validate TRNs</a>
           </li>
-          
-
         </ul>
       </nav>
     </div>
@@ -72,39 +70,26 @@
         e7e8a629-f75f-4d98-b157-269136110099
       </pre>
 
-
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
           <br>
 
           <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
-
-            <div class="moj-multi-file-upload">
-              <div class="moj-multi-file__uploaded-files">
-                <h2 class="govuk-heading-m">Upload file</h2>
-                <div id="account-number-hint" class="govuk-hint">
-                  Maximum file size is 256MB. Files must be in CSV format.
-                </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Upload file</h2>
+              <div id="account-number-hint" class="govuk-hint">
+                Maximum file size is 256MB. Files must be in CSV format.
               </div>
 
-
-              <div class="moj-multi-file-upload__upload">
-
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-label--s" for="documents"></label>
-
-                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-
-                </div>
-
-                <button type="submit" class="govuk-button govuk-button--primary moj-multi-file-upload__button" data-module="govuk-button">
-                  Upload file
-                </button>
-
-              </div>
+              <label class="govuk-label govuk-label--s" for="document">
+              </label>
+              <input class="govuk-file-upload" id="document" name="document" type="file" accept=".csv">
             </div>
 
+            <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+              Upload file
+            </button>
           </form>
         </div>
       </div>
@@ -122,15 +107,11 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">TDT applications</a></td>
-            <td class="govuk-table__cell">452</td>
+            <td class="govuk-table__cell"><a href="https://register-national-professional-qualifications.education.gov.uk/npq-separation/admin/bulk-operations/revert_applications_to_pending/2">Ambition 2024 pending applications test</a></td>
+            <td class="govuk-table__cell">1073</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
-            <td class="govuk-table__cell">
-              <div class="govuk-button-group">
-
-              </div>
-            </td>
+            <td class="govuk-table__cell"><div class="govuk-button-group"></div></td>
           </tr>
 
           <tr class="govuk-table__row">
@@ -138,11 +119,7 @@
             <td class="govuk-table__cell">1254</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
-            <td class="govuk-table__cell">
-              <div class="govuk-button-group">
-       
-              </div>
-            </td>
+            <td class="govuk-table__cell"><div class="govuk-button-group"></div></td>
           </tr>
 
           <tr class="govuk-table__row">
@@ -150,13 +127,8 @@
             <td class="govuk-table__cell">19</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
-            <td class="govuk-table__cell">
-              <div class="govuk-button-group">
-                
-              </div>
-            </td>
+            <td class="govuk-table__cell"><div class="govuk-button-group"></div></td>
           </tr>
-          
         </tbody>
       </table>
 
