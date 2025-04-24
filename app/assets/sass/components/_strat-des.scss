@@ -1,0 +1,24 @@
+.header_unbranded {
+  font-family: arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1;
+  border-bottom: 10px solid #ffffff;
+  color: #ffffff;
+  background: #0b0c0c;
+  padding-bottom: 10px;
+
+}
+
+.header__container_unbranded {
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 0px solid #ffffff;
+}
+
+.header__content-unbranded {
+  padding-left: 0px;
+}
