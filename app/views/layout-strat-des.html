@@ -1,0 +1,52 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+  {% block pageTitle %}
+    {{ serviceName }} – GOV.UK
+  {% endblock %}
+
+  {% block header %}
+    <div class="govuk-width-container">
+      {{ govukPhaseBanner({
+        tag: {
+          text: "Prototype"
+        },
+        html: 'This is a prototype'
+      }) }}
+    </div>
+  {% endblock %}
+
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "/strat-des-v1/index",
+            text: "Strat des index"
+          },  
+          {
+            href: "/manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "/manage-prototype/clear-data",
+            text: "Clear data"
+          },
+          {
+            href: "/settings",
+            text: "Settings"
+          }
+        ]
+      }
+    }) }}
+    {{ data | log }}
+  {% endblock %}
+
+  {% block scripts %}
+    {{ super() }}
+    <script src="/node_modules/dfe-frontend/dist/dfefrontend.min.js"></script>
+  {% endblock %}
