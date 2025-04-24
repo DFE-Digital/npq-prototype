@@ -1,11 +1,103 @@
 {% extends "layout-strat-des.html" %}
 
+{% block pageTitle %}
+  Strategic design testing
+{% endblock %}
+
+{% set detailsHTML %}
+  <ul class="govuk-list govuk-list--bullet">
+    <li>school culture </li>
+    <li>effective teaching</li>
+    <li>supporting curriculum and assessment development</li>
+    <li>behaviour</li>
+    <li>additional and special educational needs</li>
+    <li>professional development</li>
+    <li>organisational management</li>
+    <li>the latest evidence-based learning and approaches to teaching and leadership</li>
+  </ul>
+{% endset %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-    
-      <h1 class="govuk-heading-l">Options</h1>
-      <p class="govuk-body">X</p>
+
+      <h1 class="govuk-heading-l">Additional modules</h1>
+      <p>As part of your course you need to complete 6 credits worth of additional modules. </p>
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+      {{ govukDetails({
+        summaryText: "Review mandatory modules",
+        html: detailsHTML
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "npqoptions",
+        fieldset: {
+          legend: {
+            text: "Choose your additional modules",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select 6 credits."
+        },
+        items: [
+          {
+            value: "inclusion",
+            text: "Inclusion in mainstream schools",
+            hint: {
+              text: "2 credits"
+            }
+          },
+          {
+            value: "implementation",
+            text: "Implementation strategies",
+            hint: {
+              text: "1 credit"
+            }
+          },
+          {
+            value: "partnership",
+            text: "Working in partnership with parents and carers",
+            hint: {
+              text: "1 credit"
+            }
+          },
+          {
+            value: "gov",
+            text: "Governance and accountability",
+            hint: {
+              text: "2 credits"
+            }
+          },
+          {
+            value: "finance",
+            text: "Finance",
+            hint: {
+              text: "1 credit"
+            }
+          },
+          {
+            value: "ops",
+            text: "Operational leadership",
+            hint: {
+              text: "1 credit"
+            }
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Submit",
+        href: "/strat-des-v1/build-an-npq/mandatory"
+      }) }}
 
     </div>
   </div>
