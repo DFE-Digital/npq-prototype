@@ -1,12 +1,30 @@
 {% extends "layout-strat-des.html" %}
 
+{% block pageTitle %}
+  Strategic design testing
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
     
       <h1 class="govuk-heading-l">Mandatory modules</h1>
-      <p class="govuk-body">X</p>
-
+      <p class="govuk-body">As part of your course there are some set mandatory modules. These are: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>school culture </li>
+        <li>effective teaching</li>
+        <li>supporting curriculum and assessment development</li>
+        <li>behaviour</li>
+        <li>additional and special educational needs</li>
+        <li>professional development</li>
+        <li>organisational management</li>
+        <li>the latest evidence-based learning and approaches to teaching and leadership</li>
+      </ul>
+      <p>You will also be able to choose from a selection of optional modules.</p>
+      {{ govukButton({
+        text: "Continue",
+        href: "/strat-des-v1/build-an-npq/options"
+      }) }}
     </div>
   </div>
 {% endblock %}
