@@ -1,0 +1,306 @@
+{% extends "layout-strat-des.html" %}
+
+{% block pageTitle %}
+  Find professional development courses
+{% endblock %}
+
+{% set shortcoursetitle %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong>Bitesize courses</strong></h2>
+    <p class="govuk-!-margin-bottom-0">Short courses offering full flexibility. Allowing you to choose the topics you want to study, whenever you need them.</p>
+  </div>
+{% endset %}
+
+{% set certificationtitle %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong>Certification courses</strong></h2>
+    <p class="govuk-!-margin-bottom-0">Short courses that offer certification in the areas you need to fill skills gaps. <br>Add more over time to receive a full qualification.</p>
+  </div>
+{% endset %}
+
+{% set flexibletitle %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong>Flexible qualifications</strong></h2>
+    <p class="govuk-!-margin-bottom-0">Qualifications with mandatory and selectable modules, giving you<br> the flexibility to choose areas to focus on in more depth. </p>
+  </div>
+{% endset %}
+
+{% set jointqualtitle %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong>Joint qualifications</strong></h2>
+    <p class="govuk-!-margin-bottom-0">Qualifications with a mandatory section and a specialisation,<br> giving you a solid foundation as well as a specialism.</p>
+  </div>
+{% endset %}
+
+{% set qualificationtitle %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong>Single qualifications</strong></h2>
+    <p class="govuk-!-margin-bottom-0">Qualifications that have set content, giving depth to the subject you choose to study.</p>
+  </div>
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Find professional development courses</h1>
+      <h2 class="govuk-heading-l">Explore different types of courses </h2>
+      <p class="govuk-body">There are many types of courses available ranging from 1-day through to 2-years and offering full flexibility of what you study through to pre-set courses.</p>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: shortcoursetitle
+          },
+          actions: {
+            items: [
+              {
+                href: "send/short-courses",
+                text: "View all",
+                visuallyHiddenText: "short courses"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Length"
+            },
+            value: {
+              html: "1 to 5 days"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Attendance"
+            }
+          },
+          {
+            key: {
+              text: "Choice"
+            },
+            value: {
+              html: "Pick from over 50 courses"
+            }
+          },
+          {
+            key: {
+              text: "Mandatory elements"
+            },
+            value: {
+              html: "None"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: certificationtitle
+          },
+          actions: {
+            items: [
+              {
+                href: "short-certification",
+                text: "View all",
+                visuallyHiddenText: "short certification courses"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Length"
+            },
+            value: {
+              html: "5 to 15 days over 3 months"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Certification"
+            }
+          },
+          {
+            key: {
+              text: "Choice"
+            },
+            value: {
+              html: "Pick from 22 courses"
+            }
+          },
+          {
+            key: {
+              text: "Mandatory elements"
+            },
+            value: {
+              html: "None"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: flexibletitle
+          },
+          actions: {
+            items: [
+              {
+                href: "flexible-qualification",
+                text: "View all",
+                visuallyHiddenText: "flexible qualifications"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Length"
+            },
+            value: {
+              html: "12 to 24 months"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Qualification"
+            }
+          },
+          {
+            key: {
+              text: "Choice"
+            },
+            value: {
+              html: "Select some modules"
+            }
+          },
+          {
+            key: {
+              text: "Mandatory elements"
+            },
+            value: {
+              html: "Some mandatory modules"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: jointqualtitle
+          },
+          actions: {
+            items: [
+              {
+                href: "joint-qualification",
+                text: "View all",
+                visuallyHiddenText: "joint qualifications"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Length"
+            },
+            value: {
+              html: "12 to 24 months"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Qualification"
+            }
+          },
+          {
+            key: {
+              text: "Choice"
+            },
+            value: {
+              html: "Select specialism"
+            }
+          },
+          {
+            key: {
+              text: "Mandatory elements"
+            },
+            value: {
+              html: "Mostly mandatory modules"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: qualificationtitle
+          },
+          actions: {
+            items: [
+              {
+                href: "single-qualification",
+                text: "View all",
+                visuallyHiddenText: "single qualifications"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Length"
+            },
+            value: {
+              html: "12 to 24 months"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Qualification"
+            }
+          },
+          {
+            key: {
+              text: "Choice"
+            },
+            value: {
+              html: "Pick your course"
+            }
+          },
+          {
+            key: {
+              text: "Mandatory elements"
+            },
+            value: {
+              html: "All mandatory modules"
+            }
+          }
+        ]
+      }) }}
+      
+    </div>
+  </div>
+{% endblock %}
