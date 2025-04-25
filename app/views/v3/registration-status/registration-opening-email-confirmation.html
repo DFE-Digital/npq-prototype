@@ -1,7 +1,5 @@
 {% extends "layout.html" %}
 
-{% set signedIn = 'true' %}
-
 {% block pageTitle %}
   Your email alert has been set up
 {% endblock %}
@@ -13,19 +11,17 @@
   }) }}
 {% endblock %}
 
+{% set panelHTML %}
+  <p><span class="govuk-colour-white">We'll send email updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> about registration opening.</p>
+{% endset %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
-        titleText: "Your email request has been set up"
+        titleText: "Your email alert has been set up",
+        html: panelHTML
       }) }}
-
-      <h2 class="govuk-heading-m">What happens next</h2>
-      <p>We'll send email updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> tell you when the registration service will open.</p>
-      <p>When registration opens use this service to register for an NPQ or the early headship coaching offer starting in spring.</p>
-      {% if data['numberOfRegistrations'] != "0" %} 
-        <p><a href="../registration-status">View your existing registrations</a>.</p>
-      {% endif %}
     </div>
   </div>
 {% endblock %}
