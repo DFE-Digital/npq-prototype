@@ -1,0 +1,315 @@
+{% extends "layout-strat-des.html" %}
+
+{% block pageTitle %}
+  Find short bitesize professional development courses
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set bitesize1 %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong><a href="">Leading in rural settings</a></strong></h2>
+    <p class="govuk-!-margin-bottom-0">Aimed at leaders in rural settings.</p>
+  </div>
+{% endset %}
+
+{% set bitesize2 %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong><a href="">Senior leadership in mainstream schools</a></strong></h2>
+    <p class="govuk-!-margin-bottom-0">Aimed at senior leaders in mainstream settings.</p>
+  </div>
+{% endset %}
+
+{% set bitesize3 %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong><a href="">Becoming a senior leader</a></strong></h2>
+    <p class="govuk-!-margin-bottom-0">Aimed at leaders in all settings.</p>
+  </div>
+{% endset %}
+
+{% set bitesize4 %}
+  <div>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2"><strong><a href="">Sharing best practice for leaders</a></strong></h2>
+    <p class="govuk-!-margin-bottom-0">Aimed at leaders in all settings.</p>
+  </div>
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Find bitesize professional development courses</h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-6">Short courses offering full flexibility. Allowing you to choose the topics you want to study, whenever you need them.</p>
+      <div class="background-light-grey govuk-!-padding-6 govuk-!-margin-bottom-6">
+        <form action="" method="post" accept-charset="utf-8" novalidate>
+          <input type="hidden" name="Inclusion">
+          {{ govukInput({
+            id: "searchterm",
+            name: "keywords",
+            label: {
+              text: "Search by keywords",
+              classes: "govuk-label--m"
+            },
+            value: "Senior leadership"
+          }) }}
+          <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-bottom:5px;">
+            Search
+          </button>
+        </form>
+      </div>
+
+      <div class="sort-container">
+        <p class="govuk-heading-m" style="margin-bottom:0;">Sorted by soonest start date</p>
+        <form action="" method="get" accept-charset="utf-8" novalidate>
+          <div class="govuk-form-group" style="margin-bottom:0px;">
+            <label class="govuk-label" for="sort">
+              Sort by
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="updated" selected>Soonest</option>
+              <option value="views">Format</option>
+              <option value="comments">Cost</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: bitesize1
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Course length"
+            },
+            value: {
+              html: "5 days over 1 week"
+            }
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              html: "14 Sep 2026"
+            }
+          },
+          {
+            key: {
+              text: "Format"
+            },
+            value: {
+              html: "Webinar"
+            }
+          },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "Online"
+            }
+          },
+          {
+            key: {
+              text: "Cost"
+            },
+            value: {
+              html: "£399"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Attendance"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: bitesize2
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Course length"
+            },
+            value: {
+              html: "1 day"
+            }
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              html: "18 Oct 2026"
+            }
+          },
+          {
+            key: {
+              text: "Format"
+            },
+            value: {
+              html: "Conference"
+            }
+          },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "In-person"
+            }
+          },
+          {
+            key: {
+              text: "Cost"
+            },
+            value: {
+              html: "£199"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Attendance"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: bitesize3
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Course length"
+            },
+            value: {
+              html: "3 days over 1 week"
+            }
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              html: "6 Nov 2026"
+            }
+          },
+          {
+            key: {
+              text: "Format"
+            },
+            value: {
+              html: "Coaching"
+            }
+          },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "Online"
+            }
+          },
+          {
+            key: {
+              text: "Cost"
+            },
+            value: {
+              html: "£450"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Attendance"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: bitesize4
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Course length"
+            },
+            value: {
+              html: "2 hours"
+            }
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              html: "3 Jan 2027"
+            }
+          },
+          {
+            key: {
+              text: "Format"
+            },
+            value: {
+              html: "Networking"
+            }
+          },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "In-person"
+            }
+          },
+          {
+            key: {
+              text: "Cost"
+            },
+            value: {
+              html: "£99"
+            }
+          },
+          {
+            key: {
+              text: "Certificate"
+            },
+            value: {
+              html: "Attendance"
+            }
+          }
+        ]
+      }) }}
+      
+    </div>
+  </div>
+{% endblock %}
