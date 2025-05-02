@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -20,33 +20,43 @@
     <h1 class="govuk-heading-xl">What is the name of your workplace?</h1>
 
     <form class="form" action="choose-npq" method="post">
+
       {{ govukInput({
         hint: {
-          text: "Start your search by entering the name of your school or 16 to 19 educational setting. If you work for a trust, enter the name of one of their schools rather than the trust’s postcode."
+          html: "Begin entering the name of your workplace, then select from the drop-down box that appears. For example, enter <strong>‘St Luk’</strong> and select <strong>‘St Lukes Primary School’</strong>. 
+          <br>
+           If you work for a trust, enter the name of the school that matches the postcode you gave."
         },
         id: "whichschool",
         name: "whichschool"
-      })
-    }}
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          My workplace is not listed
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        If your workplace is not listed, check the spelling or try entering part of the name. 
-<p class="govuk-body">
-  If it’s still not listed, <a href="mailto:continuing-professional-development@digital.education.gov.uk" class="govuk-link">contact us</a> for support.
-</p>
+      }) }}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            My workplace is not listed
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>check the spelling and try entering part of the name</li>
+            <li>make sure the <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">name matches the postcode</a> you entered</li>
+            <li>make sure your web browser settings have JavaScript enabled</li>
+          </ul>
+          <p class="govuk-body">
+            If it’s still not listed, <a href="mailto:continuing-professional-development@digital.education.gov.uk" class="govuk-link">contact us</a> for support.
+          </p>
+        </div>
+      </details>
+
+      <div class="govuk-!-margin-top-6">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
       </div>
-    </details>
-    {{ govukButton({
-      text: "Continue"
-    }) }}
 
     </form>
   </div>
 </div>
-
 {% endblock %}
