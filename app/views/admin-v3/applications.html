@@ -25,15 +25,30 @@
             Search by the applicant's name, application ID or declaration ID
                     </div>
           <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s"></label><input id="query-field" class="govuk-input" type="text" name="query"></div>
+
             <div style="display: flex; margin-left: -14px">
               
               <div class="govuk-form-group govuk-grid-column-two-thirds">
                 <label for="employment-type-field" class="govuk-label govuk-label--s">Application status</label>
                 <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
-                  <option value="Status">Status</option>
-                  <option value="Status">Status</option>
-                  <option value="Status">Status</option>
-                  <option value="Status">Status</option>
+                  <option value="Status">All</option>
+                  <option value="Status">Active</option>
+                  <option value="Status">Deferred</option>
+                  <option value="Status">Withdrawn</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div style="display: flex; margin-left: -14px">
+              
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Provider approval status</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="Status">All</option>
+                  <option value="Status">Pending</option>
+                  <option value="Status">Accepted</option>
+                  <option value="Status">Rejected</option>
                 </select>
               </div>
 
@@ -90,9 +105,8 @@
       <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Applicant</th>
-           <!--<th scope="col" class="govuk-table__header" aria-sort="none">Review status</th> --> 
             <th scope="col" class="govuk-table__header">Application ID</th>
+            <th scope="col" class="govuk-table__header">Applicant</th>
             <th scope="col" class="govuk-table__header">Workplace</th>
           </tr>
         </thead>
@@ -100,65 +114,70 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="overview.html">Lorelai Gilmore</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
+              <a href="overview.html">45698</a>
             </td>
             
             <td class="govuk-table__cell">
-             45698
+
+              Lorelai Gilmore
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
+             
             </td>
             <td class="govuk-table__cell">Abacus Belsize Primary School</td>
           </tr>
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-2/overview">{{ data['registration2--name'] }}</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
+              <a href="">88054</a>
             </td>
            
             <td class="govuk-table__cell">
-              88054
+              {{ data['registration2--name'] }}
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
             </td>
             <td class="govuk-table__cell">Abbey CofE Infant School</td>
           </tr>
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-3/overview">{{ data['registration3--name'] }}</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
+              <a href=""> 77852</a>
+             
             </td>
           
             <td class="govuk-table__cell">
-             77852
+              {{ data['registration3--name'] }}
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
             </td>
             <td class="govuk-table__cell">Abbey College Cambridge</td>
           </tr>
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-4/overview">{{ data['registration4--name'] }}</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
+              <a href=""> 66521</a>
             </td>
           
             <td class="govuk-table__cell">
-              66521
+              {{ data['registration4--name'] }}
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
            
             </td>
             <td class="govuk-table__cell">{{ data['registration4--submitted-date'] }}</td>
           </tr>
+
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="">Carlton Shanahan JD</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
+              <a href=""> 84567</a>
             </td>
             
             <td class="govuk-table__cell">
-              84567
+              Carlton Shanahan JD
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
+               
             </td>
             
             <td class="govuk-table__cell">Abbey Court Foundation Special School</td>
@@ -166,27 +185,28 @@
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="">Fareed Eilert</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+              <a href="">123741</a>
             </td>
             
             <td class="govuk-table__cell">
-            123741    
+            Fareed Eilert 
+            <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
             </td>
             <td class="govuk-table__cell">Abbeyfield School</td>
           </tr>
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="">Aiga Villum</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
+              
+              <a href="">69921</a>
+              
             </td>
             
             <td class="govuk-table__cell">
-            69921
-             
+              Aiga Villum 
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
             </td>
             
             <td class="govuk-table__cell">Ystrad Mynach Primary</td>
@@ -194,13 +214,13 @@
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="">Colin Winter</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
+              <a href="">44568</a>
             </td>
             
             <td class="govuk-table__cell">
-              44568
+              Colin Winter
+              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
             </td>
             
             <td class="govuk-table__cell">Abbots Green Community Primary School</td>
@@ -208,20 +228,22 @@
 
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">
-              <a href="">Bobby Small</a>
-              <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
-              <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
+              <a href="">22123</a>
             </td>
            
             <td class="govuk-table__cell">
-             22123
+              Bobby Small
+             <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
+             <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
               
             </td>
             
             <td class="govuk-table__cell">Abbots Farm Junior School</td>
           </tr>
+
         </tbody>
       </table>
+
       <nav class="govuk-pagination" aria-label="Pagination">
         <div class="govuk-pagination__prev">
           <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
