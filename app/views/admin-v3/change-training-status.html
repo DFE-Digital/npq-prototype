@@ -1,0 +1,132 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+ 
+
+    
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <a href="app-details.html" class="govuk-back-link">Back</a>
+
+      <br>
+      <br>
+
+      <h1 class="govuk-heading-l">Change training status</h1>
+
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        User ID
+      </dt>
+      <dd class="govuk-summary-list__value">
+          0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+     </div>
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Training status
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Active
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
+      </div>
+     </dl>
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Choose a different training status
+        </h1>
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus" name="chooseAdifferentTrainingStatus" type="radio" value="active">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus">
+            Active
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-2" name="chooseAdifferentTrainingStatus" type="radio" value="deferred">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-2">
+            Deferred
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-3" name="chooseAdifferentTrainingStatus" type="radio" value="withdrawn">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-3">
+            Withdrawn
+          </label>
+        </div>
+      
+      </div>
+    </fieldset>
+</div>
+
+    <h1 class="govuk-heading-m">What's the reason for change?</h1>
+      <div class="govuk-form-group">
+       <label class="govuk-label" for="sort">
+        Required for deferred or withdrawn
+        </label>
+
+
+
+    <select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+
+       <option value="funded">-no reason-</option>
+
+        <optgroup label="deferred">
+          <option value="deferred">breavement</option>
+          <option value="deferred">long-term-sickness</option>
+          <option value="deferred">parental-leave</option>
+          <option value="deferred">career-break</option>
+          <option value="deferred">other</option>
+        </optgroup>
+        <optgroup label="withdrawn">
+          <option value="funded">insufficient-capacity-to-undertake-programme</option>
+          <option value="no_institution">personal-reason-health-or-pregnancy-related</option>
+          <option value="ineligible_establishment_type">personal-reason-moving-school</option>
+          <option value="ineligible_institution_type">personal-reason-other</option>
+          <option value="previously_funded">insufficient-capacity</option>
+          <option value="not_new_headteacher_requesting_ehco">change-in-developmental-or-personal-priorities</option>
+          <option value="school_outside_catchment">change-in-school-circumstances</option>
+          <option value="early_years_outside_catchment">change-in-school-leadership </option>
+          <option value="early_years_outside_catchment">quality-of-programme-structure-not-suitable </option>
+          <option value="early_years_outside_catchment">quality-of-programme-content-not-suitable </option>
+          <option value="quality-of-programme-facilitation-not-effective">quality-of-programme-facilitation-not-effective</option>
+          <option value="quality-of-programme-accessibility">quality-of-programme-accessibility</option>
+          <option value="quality-of-programme-other">quality-of-programme-other</option>
+          <option value="programme-not-appropriate-for-role-and-cpd-needs">programme-not-appropriate-for-role-and-cpd-needs</option>
+          <option value="started-in-error">started-in-error</option>
+          <option value="expected-commitment-unclear">expected-commitment-unclear</option>
+          <option value="other">other</option>
+        </select>
+      </optgroup>
+     </div>
+    </select>
+
+    <!-- Submit and Cancel Links -->
+      <div class="govuk-button-group">
+        <a href="app-details-training.html" class="govuk-button search-box__button" data-module="govuk-button">
+          Change training status
+        </a>
+        <a class="govuk-link" href="app-details.html">Cancel</a>
+      </div>
+
+
+
+    </div>
+    
+  </div>
+  </div>
+  </div>
+   
+  </div>
+{% endblock %}

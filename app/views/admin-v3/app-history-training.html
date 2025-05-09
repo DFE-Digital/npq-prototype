@@ -1,0 +1,228 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  {% set reviewStatusHTML %}
+  {% endset %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+
+        <h4 class="moj-side-navigation__title">Applications</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="/admin-v3/applications" class="govuk-!-font-size-16">All applications</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="/admin-v3/registrations-review" class="govuk-!-font-size-16">In review</a>
+          </li>
+
+
+
+
+
+      <h4 class="moj-side-navigation__title">Lorelai Gilmore</h4>
+
+
+
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item">
+          </li>
+         
+          <li class="moj-side-navigation__item">
+            <a href="app-details.html" aria-current="location" class="govuk-!-font-size-16">Leading teacher development NPQ, 17 October 2024</a>
+          </li>
+          <li class="moj-side-navigation__item ">
+            <a href="state-history-b.html" class="govuk-!-font-size-16">Declaration state history</a>
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="app-history-1.html" class="govuk-!-font-size-16">Application history</a>
+          </li>
+
+ 
+
+
+
+ 
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Application history</h1>
+      <br>
+
+
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-1">Lorelai Gilmore</h1>
+      <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> gilmore.girls@google.com</p>
+      <p class="govuk-!-margin-bottom-2"><strong>User ID:</strong> 123456 ( <a href="">View user</a>)</p>
+      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 <strong class="govuk-tag govuk-tag--green"> Verified</strong> <a href="/admin-v3/changetrn.html">Change</a></p>
+
+
+      <br>
+      <br>
+
+
+      <div class="moj-timeline">
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Training status changed from active to deferred </h2>
+      
+            <p class="moj-timeline__byline">by Andrew Roberts</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-14T14:01:00.000Z">8 May at 5:01pm</time>
+          </p>
+          <div class="govuk-inset-text">
+           Reason for change: parental-leave<br>
+            
+          </div>
+          <div class="moj-timeline__description">
+          
+          </div>
+        </div>
+      
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Registration in manual review </h2>
+      
+            <p class="moj-timeline__byline"> by Nathalie G (policy)</p>
+          
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-07T12:32:00.000Z">18 October 2024 at 12:32pm</time>
+          </p>
+          <div class="govuk-inset-text">
+            Reason for manual review: Referred by a Return To Teaching Adviser (RTTA).
+          </div>
+
+          <br> 
+
+                </div>
+      
+        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Manual review decision made: Not eligible for funding</h2>
+      
+            <p class="moj-timeline__byline">by Nathalie G</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-06T09:12:00.000Z">20 October 2024 at 9:12am</time>
+          </p>
+          <div class="govuk-inset-text">
+            Reason for being ineligible: Do not work in one of the eligible settings, such as a state-funded school or 16-19 educational organisation.
+          </div>
+
+          <div class="moj-timeline__description">
+            
+          </div>
+      
+        </div>
+      
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Registered for Leading Literacy NPQ</h2>
+      
+            <p class="moj-timeline__byline">by Lorelai Gilmore</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-05-28T10:45:00.000Z">22 October 2024 at 10:45am</time>
+          </p>
+          <div class="govuk-inset-text">
+            Eligible for funding: Yes<br>
+            Course provider: Ambition 
+          </div>
+
+          <div class="moj-timeline__description">
+          
+          </div>
+      
+        </div>
+
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Transferred providers</h2>
+      
+            <p class="moj-timeline__byline">by Caseworker 1</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-06-06T09:12:00.000Z">25 October 2024 at 9:12am</time>
+          </p>
+          <div class="govuk-inset-text">
+            Transferred from Ambition to Church of England for the Leading Literacy NPQ.
+          </div>
+          <div class="moj-timeline__description">
+            
+          </div>
+      
+      
+        </div>
+
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Registered for Leading Literacy NPQ</h2>
+      
+            <p class="moj-timeline__byline">by Lorelai Gilmore</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-05-28T10:45:00.000Z">27 October 2024 at 10:45am</time>
+          </p>
+          <div class="govuk-inset-text">
+            Eligible for funding: Yes<br>
+            Course provider: Church of England
+          </div>
+          <div class="moj-timeline__description">
+            
+          </div>
+        </div>
+      
+        <div class="moj-timeline__item">
+      
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Completed Leading Literacy NPQ: Passed</h2>
+      
+            <p class="moj-timeline__byline">Automated</p>
+      
+          </div>
+      
+          <p class="moj-timeline__date">
+            <time datetime="2019-05-28T10:45:00.000Z">27 October 2025 at 10:45am</time>
+          </p>
+      
+        
+
+
+      
+        </div>
+      
+        
+      
+        
+  
+
+
+
+       
+     
+   
+{% endblock %}
