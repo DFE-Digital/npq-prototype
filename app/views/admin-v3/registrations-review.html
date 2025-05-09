@@ -22,7 +22,7 @@
       <h1 class="govuk-heading-l">Registrations in review</h1> 
 
       <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
-        <h1 class="govuk-heading-m">Search for registrations in review</h1>
+        <h1 class="govuk-heading-m">Find a registration</h1>
         <form action="" accept-charset="UTF-8" method="get">
           <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s">Enter the User ID, name, email address, employer name, or application ID</label><input id="query-field" class="govuk-input" type="text" name="query"></div>
             <div style="display: flex; margin-left: -14px">
@@ -106,9 +106,9 @@
       <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Participant</th>
+            <th scope="col" class="govuk-table__header">Application ID</th>
+            <th scope="col" class="govuk-table__header">Name</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Review status</th>
-            
             <th scope="col" class="govuk-table__header">Eligible for funding</th>
             <th scope="col" class="govuk-table__header">Provider approval status</th>
             <th scope="col" class="govuk-table__header">Notes</th>
@@ -118,8 +118,14 @@
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="registration-1/ltd-130824">f12a34b5-c678-4f3f-d9e8-abcdef123456</a></td>
+
+            
+
+
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-1/ltd-130824">Jorge Hund</a>
+             <a href="/admin-v3/registration-1/overview">Jorge Hund </a>
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration1--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration1--employer'] }}</p>
             </td>
@@ -167,8 +173,11 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">9876ab12-cd34-4f3f-5e6f-7g8h9i0jklmn</a></td>
+
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-2/overview">{{ data['registration2--name'] }}</a>
+              <a href=""> {{ data['registration2--name'] }} </a>
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration2--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration2--employer'] }}</p>
             </td>
@@ -216,12 +225,19 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">a1b2c3d4-5e6f-4f3f-7890-123456abcdef</a></td>
+
+
+
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-3/overview">{{ data['registration3--name'] }}</a>
+              <a href=""> {{ data['registration3--name'] }}</a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration3--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration3--employer'] }}</p>
             </td>
+
             <td class="govuk-table__cell">
+
               {% if (data['registration3--review-status'] == "Decision made") %}
                 {{govukTag({
                   text: data['registration3--review-status'],
@@ -244,6 +260,7 @@
                 })}}
               {% endif %}
             </td>
+
             <td class="govuk-table__cell">
               {% if (data['registration3--review-status'] != "Decision made") %}
               –
@@ -265,8 +282,12 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">3456abcd-7890-4f3f-12ef-3456ghijklmn</a></td>
+
+
             <td scope="row" class="govuk-table__cell">
-              <a href="registration-4/overview">{{ data['registration4--name'] }}</a>
+              <a href="">{{ data['registration4--name'] }} </a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">{{ data['registration4--employment-type'] }} </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">{{ data['registration4--employer'] }}</p>
             </td>
@@ -314,8 +335,11 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">bcde1234-5678-4f3f-9a0b-1c2d3e4f5g6h</a></td>
+
             <td scope="row" class="govuk-table__cell">
-              <a href="">Carlton Shanahan JD</a>
+               <a href="">Carlton Shanahan JD </a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Grandview Grammar School</p>
             </td>
@@ -334,8 +358,12 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">9f8e7d6c-5b4a-4f3f-3210-abcd5678efgh</a></td>
+
+
             <td scope="row" class="govuk-table__cell">
-              <a href="">Fareed Eilert</a>
+             <a href="">Fareed Eilert  </a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Hospital school </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
             </td>
@@ -357,8 +385,11 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">abcd5678-9012-4f3f-3e4f-5g6h7i8j9k0l</a></td>
+
             <td scope="row" class="govuk-table__cell">
-              <a href="">Aiga Villum</a>
+              <a href="">Aiga Villum  </a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Bristol City Council</p>
             </td>
@@ -380,8 +411,11 @@
           </tr>
 
           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">def12345-6789-4f3f-0abc-1d2e3f4g5h6i</a></td>
+
+
             <td scope="row" class="govuk-table__cell">
-              <a href="">Colin Winter</a>
+             <a href=""> Colin Winter </a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Young offender institution</p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Meadows Ridge Academy</p>
             </td>
@@ -400,8 +434,12 @@
           </tr>
 
           <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell"><a href="">6543ba98-7cde-4f3f-12fg-3456ijklmnop</a></td>
+
+
             <td scope="row" class="govuk-table__cell">
-              <a href="">Bobby Small</a>
+              <a href=""> Bobby Small </a> 
               <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-1">Supply teacher </p>
               <p class="govuk-body-s govuk-!-margin-bottom-1">Lambeth Council</p>
             </td>
