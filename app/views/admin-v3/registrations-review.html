@@ -155,19 +155,7 @@
               {% endif %}
             </td>
             <td class="govuk-table__cell">
-              {% if (data['registration1--review-status'] != "Decision made") %}
-              –
-              {% elseif (data['registration1--funding-status'] == "Yes") %}
-                {{govukTag({
-                  text: data['registration1--funding-status'],
-                  classes: "govuk-tag--green"
-                })}}
-              {% else %}
-                {{govukTag({
-                  text: data['registration1--funding-status'],
-                  classes: "govuk-tag--red"
-                })}}
-              {% endif %}
+              Not decided
             </td>
             <td class="govuk-table__cell">{{ data['registration1--provider-status'] }}</td>
             <td class="govuk-table__cell">{{ data['registration1--notes'] }}..</td>
@@ -207,19 +195,7 @@
               {% endif %}
             </td>
             <td class="govuk-table__cell">
-              {% if (data['registration2--review-status'] != "Decision made") %}
-              –
-              {% elseif (data['registration2--funding-status'] == "Yes") %}
-                {{govukTag({
-                  text: data['registration2--funding-status'],
-                  classes: "govuk-tag--green"
-                })}}
-              {% else %}
-                {{govukTag({
-                  text: data['registration2--funding-status'],
-                  classes: "govuk-tag--red"
-                })}}
-              {% endif %}
+              Not decided
             </td>
             <td class="govuk-table__cell">{{ data['registration2--provider-status'] }}</td>
             <td class="govuk-table__cell">{{ data['registration2--notes'] }}..</td>
@@ -264,19 +240,7 @@
             </td>
 
             <td class="govuk-table__cell">
-              {% if (data['registration3--review-status'] != "Decision made") %}
-              –
-              {% elseif (data['registration3--funding-status'] == "Yes") %}
-                {{govukTag({
-                  text: data['registration3--funding-status'],
-                  classes: "govuk-tag--green"
-                })}}
-              {% else %}
-                {{govukTag({
-                  text: data['registration3--funding-status'],
-                  classes: "govuk-tag--red"
-                })}}
-              {% endif %}
+              Not decided
             </td>
             <td class="govuk-table__cell">{{ data['registration3--provider-status'] }}</td>
             <td class="govuk-table__cell">{{ data['registration3--notes'] }}..</td>
@@ -317,19 +281,7 @@
               {% endif %}
             </td>
             <td class="govuk-table__cell">
-              {% if (data['registration4--review-status'] != "Decision made") %}
-              –
-              {% elseif (data['registration4--funding-status'] == "Yes") %}
-                {{govukTag({
-                  text: data['registration4--funding-status'],
-                  classes: "govuk-tag--green"
-                })}}
-              {% else %}
-                {{govukTag({
-                  text: data['registration4--funding-status'],
-                  classes: "govuk-tag--red"
-                })}}
-              {% endif %}
+              Not decided
             </td>
             <td class="govuk-table__cell">{{ data['registration4--provider-status'] }}</td>
             <td class="govuk-table__cell">{{ data['registration4--notes'] }}..</td>
@@ -352,7 +304,7 @@
               })}}
             </td>
             <td class="govuk-table__cell">
-              –
+              Not decided
             </td>
             <td class="govuk-table__cell">Rejected</td>
             <td class="govuk-table__cell">15/04: NG Rejected by provider, no need to review.</td>
@@ -428,7 +380,7 @@
               })}}
             </td>
             <td class="govuk-table__cell">
-              –
+              Not decided
             </td>
             <td class="govuk-table__cell">Rejected</td>
             <td class="govuk-table__cell">05/04: RD: Reregister email sent (Digital #00000)...</td>
