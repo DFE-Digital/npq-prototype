@@ -1,0 +1,539 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-grid-column-full">
+      <a href="delivery-partners.html" class="govuk-back-link">Back</a>
+
+          <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Assign course provider
+          </h1>
+        </legend>
+        <div id="contact-hint" class="govuk-hint">
+          Select all the course providers that Delivery Partner name has partnered with:
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="assign" name="assign" type="checkbox" value="email" data-aria-controls="conditional-assign">
+            <label class="govuk-label govuk-checkboxes__label" for="assign">
+              Ambition institute
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-assign">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+
+            <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="bpn" name="bpn" type="checkbox" value="email" data-aria-controls="conditional-bpn">
+            <label class="govuk-label govuk-checkboxes__label" for="bpn">
+              Best Practice Network
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-bpn">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+           <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="el" name="el" type="checkbox" value="email" data-aria-controls="conditional-el">
+            <label class="govuk-label govuk-checkboxes__label" for="el">
+              Executive leadership
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-el">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="coe" name="coe" type="checkbox" value="email" data-aria-controls="conditional-coe">
+            <label class="govuk-label govuk-checkboxes__label" for="coe">
+              Church of England
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-coe">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="llse" name="LLSE" type="checkbox" value="email" data-aria-controls="conditional-LLSE">
+            <label class="govuk-label govuk-checkboxes__label" for="LLSE">
+              LLSE
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-LLSE">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="niot" name="niot" type="checkbox" value="email" data-aria-controls="conditional-niot">
+            <label class="govuk-label govuk-checkboxes__label" for="niot">
+              National Institute of Teaching
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-niot">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="tf" name="tf" type="checkbox" value="email" data-aria-controls="conditional-tf">
+            <label class="govuk-label govuk-checkboxes__label" for="tf">
+              Teach First
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-tf">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="tdt" name="tdt" type="checkbox" value="email" data-aria-controls="conditional-tdt">
+            <label class="govuk-label govuk-checkboxes__label" for="tdt">
+              Teacher Development Trust
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-tdt">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="ucl" name="ucl" type="checkbox" value="email" data-aria-controls="conditional-ucl">
+            <label class="govuk-label govuk-checkboxes__label" for="ucl">
+              UCL Institute of Education
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ucl">
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Select all the cohorts that you wish to add the <br> delivery partner to:
+                </h1>
+                </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts" name="cohorts" type="checkbox" value="2025/26">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts">
+                    2025/26
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-2" name="cohorts" type="checkbox" value="2024/25">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-2">
+                    2024/25
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organicohortsation-3" name="cohorts" type="checkbox" value="2023/24">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-3">
+                    2023/24
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-4" name="cohorts" type="checkbox" value="2022/23">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-4">
+                    2022/23
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="cohorts-5" name="cohorts" type="checkbox" value="2021/22">
+                  <label class="govuk-label govuk-checkboxes__label" for="cohorts-5">
+                    2021/22
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          </div>
+
+
+
+          
+        </div>
+      </fieldset>
+    </div>
+
+      
+
+      
+
+      <div class="govuk-button-group">
+        <a href="/admin-v3/course-provider-added.html" class="govuk-button search-box__button" data-module="govuk-button">
+          Save
+        </a>
+        <a class="govuk-link" href="/admin-v3/delivery-partners">Cancel</a>
+      </div>
+
+
+      <br>
+      <br>
+
+      
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

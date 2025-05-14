@@ -2,7 +2,27 @@
 
 {% block content %}
   <div class="govuk-grid-row">
+
+
     <div class="govuk-grid-column-full">
+      
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Success
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              You’ve successfully assigned course provider name to delivery partner name.
+            </h3>
+          </div>
+        </div>
+
+        
+      
+
+      
       <h1 class="govuk-heading-l">Delivery partners</h1>
       <p>Here’s a list of delivery partners that help course providers deliver NPQs. You can add a new delivery partner, link it to a course provider, and select the cohort it supports.</p>
 
@@ -23,7 +43,7 @@
                 <th scope="col" class="govuk-table__header">Delivery partner</th>
                 <th scope="col" class="govuk-table__header">Course provider partnered with</th>
                 <th scope="col" class="govuk-table__header">Cohort</th>
-                <th scope="col" class="govuk-table__header">Actions</th>
+                <th scope="col" class="govuk-table__header">Action</th>
     
     
     
@@ -34,7 +54,7 @@
                 <td class="govuk-table__cell">Partner name</td>
                 <td class="govuk-table__cell">Ambition institute</td>
                 <td class="govuk-table__cell">2028/29</td>
-                <td class="govuk-table__cell"><a href="update-dp">Update name</a> <br> <a href="assign-course-provider.html">Assign course provider</a></td>
+                <td class="govuk-table__cell"><a href="update-dp">Update name</a> <br> <a href="/admin-v3/assign-course-provider">Assign course provider</a></td>
     
     
     
