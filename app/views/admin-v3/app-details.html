@@ -83,6 +83,14 @@
     },
     {
       key: {
+        text: "Course identifier"
+      },
+      value: {
+        text: "npq-leading-teaching-development"
+      }
+    },
+    {
+      key: {
         text: "Course provider"
       },
       value: {
@@ -92,7 +100,7 @@
         items: [
           {
             href: "transfer-providers.html",
-            text: "Transfer provider",
+            text: "Transfer",
             visuallyHiddenText: "for Ambition Institute"
           }
         ]
@@ -109,7 +117,7 @@
         items: [
           {
             href: "change-training-status",
-            text: "Change status",
+            text: "Change",
             visuallyHiddenText: "name"
           }
         ]
@@ -118,12 +126,87 @@
   ]
 }) }}
 
-
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Funding',
+      classes: 'govuk-!-font-size-24'
+    },
+    actions: {
+      items: [
+        {
+          href: "/admin-v3/app-details",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Application ID"
+      },
+      value: {
+        text: '0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9'
+      }
+    },
+    {
+      key: {
+        text: "Course"
+      },
+      value: {
+        text: "Leading teacher development NPQ"
+      }
+    },
+    {
+      key: {
+        text: "Course identifier"
+      },
+      value: {
+        text: "npq-leading-teaching-development"
+      }
+    },
+    {
+      key: {
+        text: "Course provider"
+      },
+      value: {
+        text: "Ambition Institute"
+      },
+      actions: {
+        items: [
+          {
+            href: "transfer-providers.html",
+            text: "Transfer",
+            visuallyHiddenText: "for Ambition Institute"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Training status"
+      },
+      value: {
+        text: "Active"
+      },
+      actions: {
+        items: [
+          {
+            href: "change-training-status",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
 
 {{ govukSummaryList({
   card: {
     title: {
-      text: 'Workplace details',
+      text: 'Workplace',
       classes: 'govuk-!-font-size-24'
     },
     actions: {
@@ -162,7 +245,15 @@
     },
     {
       key: {
-        text: "Headteacher status / employment type"
+        text: "Headteacher status"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+        {
+      key: {
+        text: "Employment type"
       },
       value: {
         text: "-"
