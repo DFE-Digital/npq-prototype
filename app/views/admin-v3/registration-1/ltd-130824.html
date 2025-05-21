@@ -153,7 +153,7 @@
         rows: [
           {
             key: {
-              text: "NPQ course"
+              text: "Course"
             },
             value: {
               text: data['registration1--course']
@@ -161,7 +161,7 @@
           },
           {
             key: {
-              text: "Provider"
+              text: "Course provider"
             },
             value: {
               text: data['registration1--provider']
@@ -169,7 +169,7 @@
           },
           {
             key: {
-              text: "Provider approval status"
+              text: "Course provider approval status"
             },
             value: {
               html: providerStatusHTML
@@ -189,7 +189,7 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Funding details',
+            text: 'Funding',
             classes: 'govuk-!-font-size-24'
           }
         },
@@ -250,7 +250,7 @@
               text: "Funded place"
             },
             value: {
-              text: data['registration1--funded-place']
+              text: "-"
             }
           },
           {
@@ -258,7 +258,7 @@
               text: "Notes"
             },
             value: {
-              text: data['registration1--notes']
+              text: "-"
             },
             actions: {
               items: [
@@ -276,11 +276,19 @@
       {{ govukSummaryList({
         card: {
           title: {
-            text: 'Work details',
+            text: 'Workplace',
             classes: 'govuk-!-font-size-24'
           }
         },
         rows: [
+         {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "St Lukes Primary School"
+            }
+          },
           {
             key: {
               text: "Works in England"
@@ -305,14 +313,7 @@
               text: data['registration1--employment-type']
             }
           },
-          {
-            key: {
-              text: "Employer name"
-            },
-            value: {
-              text: data['registration1--employer']
-            }
-          },
+         
           {
             key: {
               text: "Role"
@@ -362,17 +363,6 @@
         rows: [
           {
             key: {
-              text: "User ID",
-              hint: {
-                text: "fdf"
-              }
-            },
-            value: {
-              text: data['registration1--participant-id']
-            }
-          },
-          {
-            key: {
               text: "Application ID"
             },
             value: {
@@ -381,7 +371,7 @@
           },
           {
             key: {
-              text: "Registration submission date"
+              text: "Registration submitted"
             },
             value: {
               text: data['registration1--submitted-date']
@@ -389,7 +379,7 @@
           },
           {
             key: {
-              text: "Last updated date"
+              text: "Last updated"
             },
             value: {
               text: data['registration1--updated-date']
