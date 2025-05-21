@@ -108,7 +108,7 @@
     },
     {
       key: {
-        text: "Provider approval status"
+        text: "Course provider approval status"
       },
       value: {
         text: "Accepted"
@@ -116,6 +116,9 @@
       actions: {
         items: [
           {
+                        href: "transfer-providers.html",
+            text: "Change",
+            visuallyHiddenText: "for Ambition Institute"
             
           }
         ]
@@ -137,14 +140,45 @@
           }
         ]
       }
+    },
+       {
+      key: {
+        text: "Created"
+      },
+      value: {
+        text: "1 Jul 2021 at 3:11pm"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+       {
+      key: {
+        text: "Updated"
+      },
+      value: {
+        text: "7 Jan 2022 at 3:22pm"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
     }
+    
   ]
 }) }}
 
 {{ govukSummaryList({
   card: {
     title: {
-      text: 'Funding',
+      text: 'Funding eligibility',
       classes: 'govuk-!-font-size-24'
     },
     actions: {
@@ -159,40 +193,40 @@
   rows: [
     {
       key: {
-        text: "Application ID"
+        text: "Eligible for funding"
       },
       value: {
-        text: '0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9'
+        text: 'Yes'
       }
     },
     {
       key: {
-        text: "Course"
+        text: "Funded place"
       },
       value: {
-        text: "Leading teacher development NPQ"
+        text: "Yes"
       }
     },
     {
       key: {
-        text: "Course identifier"
+        text: "Status code"
       },
       value: {
-        text: "npq-leading-teaching-development"
+        text: "1234"
       }
     },
     {
       key: {
-        text: "Course provider"
+        text: "Schedule cohort"
       },
       value: {
-        text: "Ambition Institute"
+        text: "2024"
       },
       actions: {
         items: [
           {
             href: "transfer-providers.html",
-            text: "Transfer",
+            text: "Change",
             visuallyHiddenText: "for Ambition Institute"
           }
         ]
@@ -200,16 +234,31 @@
     },
     {
       key: {
-        text: "Training status"
+        text: "Funding choice"
       },
       value: {
-        text: "Active"
+        text: "-"
       },
       actions: {
         items: [
           {
-            href: "change-training-status",
-            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+      },
+    {
+      key: {
+        text: "Notes"
+      },
+      value: {
+        text: "DC 14 May 2025, more information required."
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "View all",
             visuallyHiddenText: "name"
           }
         ]
@@ -236,10 +285,10 @@
   rows: [
     {
       key: {
-        text: "Workplace"
+        text: "Name"
       },
       value: {
-        text: "Abacus Belsize Primary School"
+        html: '<a class="govuk-link" href="/workplaces/abacus-belsize-primary-school">Abacus Belsize Primary School</a>'
       }
     },
     {
@@ -289,6 +338,14 @@
       },
       value: {
         text: "N/A"
+      }
+    },
+    {
+      key: {
+        text: "Country"
+      },
+      value: {
+        text: "England"
       }
     }
   ]
