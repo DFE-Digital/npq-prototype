@@ -1,0 +1,707 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+
+
+        <h4 class="moj-side-navigation__title">Applications</h4>
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="/admin-v3/applications" class="govuk-!-font-size-16">All</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="/admin-v3/registrations-review" class="govuk-!-font-size-16">In review</a>
+          </li>
+
+        
+
+      <h4 class="moj-side-navigation__title">Lorelai Gilmore</h4>
+       
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="ltd-130824" aria-current="location" class="govuk-!-font-size-16">Leading teacher development NPQ, 17 October 2024</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="state-history-b.html" class="govuk-!-font-size-16">Declaration state history</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="app-history-1.html" class="govuk-!-font-size-16">Application history</a>
+          </li>
+         
+           
+        </ul>
+      </nav>
+    </div>
+  
+
+    <div class="govuk-grid-column-three-quarters">
+
+       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            The TRN has been updated
+          </h3>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1>
+      <p class="govuk-!-margin-bottom-2"><strong>User ID:</strong> 123456</p> 
+      <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> gilmore.girls@google.com</p>
+      <p class="govuk-!-margin-bottom-2"><strong>Date of birth:</strong> 30 October 2020 | <strong> National Insurance: </strong> JH576827D</p>
+      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>754321 <strong class="govuk-tag govuk-tag--green"> Verified</strong> <a href="/admin-v3/changetrn.html">Change</a></p>
+      <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Application overview',
+      classes: 'govuk-!-font-size-24'
+    },
+    actions: {
+      items: [
+        {
+          href: "/admin-v3/app-details",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Application ID"
+      },
+      value: {
+        text: '0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9'
+      }
+    },
+    {
+      key: {
+        text: "Course"
+      },
+      value: {
+        text: "Leading teacher development NPQ"
+      }
+    },
+    {
+      key: {
+        text: "Course identifier"
+      },
+      value: {
+        text: "npq-leading-teaching-development"
+      }
+    },
+    {
+      key: {
+        text: "Course provider"
+      },
+      value: {
+        text: "Ambition Institute"
+      },
+      actions: {
+        items: [
+          {
+            href: "transfer-providers.html",
+            text: "Transfer",
+            visuallyHiddenText: "for Ambition Institute"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Course provider approval status"
+      },
+      value: {
+        text: "Accepted"
+      },
+      actions: {
+        items: [
+          {
+                        href: "transfer-providers.html",
+            text: "Change",
+            visuallyHiddenText: "for Ambition Institute"
+            
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Training status"
+      },
+      value: {
+        text: "Active"
+      },
+      actions: {
+        items: [
+          {
+            href: "change-training-status",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+       {
+      key: {
+        text: "Created"
+      },
+      value: {
+        text: "1 Jul 2021 at 3:11pm"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+       {
+      key: {
+        text: "Updated"
+      },
+      value: {
+        text: "7 Jan 2022 at 3:22pm"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+    
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Funding eligibility',
+      classes: 'govuk-!-font-size-24'
+    },
+    actions: {
+      items: [
+        {
+          href: "/admin-v3/app-details",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Eligible for funding"
+      },
+      value: {
+        text: 'Yes'
+      }
+    },
+    {
+      key: {
+        text: "Funded place"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Status code"
+      },
+      value: {
+        text: "1234"
+      }
+    },
+    {
+      key: {
+        text: "Schedule cohort"
+      },
+      value: {
+        text: "2024"
+      },
+      actions: {
+        items: [
+          {
+            href: "transfer-providers.html",
+            text: "Change",
+            visuallyHiddenText: "for Ambition Institute"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Funding choice"
+      },
+      value: {
+        text: "-"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+      },
+    {
+      key: {
+        text: "Notes"
+      },
+      value: {
+        text: "DC 14 May 2025, more information required."
+      },
+      actions: {
+        items: [
+          {
+            href: "",
+            text: "View all",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Workplace',
+      classes: 'govuk-!-font-size-24'
+    },
+    actions: {
+      items: [
+        {
+          href: "/admin-v3/overview",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: '<a class="govuk-link" href="/workplaces/abacus-belsize-primary-school">Abacus Belsize Primary School</a>'
+      }
+    },
+    {
+      key: {
+        text: "UK Provider Reference Number (UKPRN)"
+      },
+      value: {
+        text: "10000684"
+      }
+    },
+    {
+      key: {
+        text: "Unique reference number (URN)"
+      },
+      value: {
+        text: "140076"
+      }
+    },
+    {
+      key: {
+        text: "Headteacher status"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+        {
+      key: {
+        text: "Employment type"
+      },
+      value: {
+        text: "-"
+      }
+    },
+    
+    {
+      key: {
+        text: "ITT lead mentor"
+      },
+      value: {
+        text: "No"
+      }
+    },
+    {
+      key: {
+        text: "ITT provider"
+      },
+      value: {
+        text: "N/A"
+      }
+    },
+    {
+      key: {
+        text: "Country"
+      },
+      value: {
+        text: "England"
+      }
+    }
+  ]
+}) }}
+
+
+
+
+      <label class="govuk-label govuk-label--l" for="more-detail">
+        Declarations
+      </label>
+
+      <br>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
+            Started (paid)
+          </h1>
+
+           
+        
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ofij4-lkesnd-nosgnj98-apgogsk-27sjfa
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 Nov 2021 at 12:00pm
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Declaration cohort
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2021
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course provider 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Ambition Institute
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Created at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                14 Dec 2021 at 5:26pm
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Updated at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                14 Mar 2022 at 10:35am
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Statements
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+  <a href="#" class="govuk-link">January 2022</a>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+       </div>
+       </div>
+
+       <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
+            Retained-1 (paid)
+          </h1>        
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ofij4-lkesnd-nosgnj98-apgogsk-27sjfa
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                30 Apr 2022 at 12:00am
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Declaration cohort
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2021
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course provider 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Ambition Institute
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Created at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                23 Jun 2022 at 4:27pm
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Updated at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                	13 Oct 2022 at 4:02pm
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Statements
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+  <a href="#" class="govuk-link">July 2022</a>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+       </div>
+       </div>
+
+       <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
+            Retained-2 (paid)
+          </h1>
+        
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ofij4-lkesnd-nosgnj98-apgogsk-27sjfa
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                21 Sep 2022 at 12:00am
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Declaration cohort
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2021
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course provider 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Ambition Institute
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Created at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                21 Feb 2023 at 5:23pm
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Updated at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                	10 Mar 2023 at 2:21pm
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Statements
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+  <a href="#" class="govuk-link">March 2023</a>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+       </div>
+       </div>
+
+       <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
+            Completed (paid)
+          </h1>        
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ofij4-lkesnd-nosgnj98-apgogsk-27sjfa
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Declaration date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                21 Nov 2022 at 12:00am
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Declaration cohort
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2021
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course provider 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Ambition Institute
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Created at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                21 Nov 2023 at 1:30pm
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Updated at
+              </dt>
+              <dd class="govuk-summary-list__value">
+                10 Dec 2023 at 2:21pm
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Statements
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+              <a href="#" class="govuk-link">November 2023</a>
+            </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+
+            <br>
+            <br>
+
+         
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Declaration outcome - Passed</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Outcome</th>
+              <th scope="col" class="govuk-table__header">Completion date</th>
+              <th scope="col" class="govuk-table__header">Submitted by provider</th>
+              <th scope="col" class="govuk-table__header">Recorded by API</th>
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Passed</th>
+              <td class="govuk-table__cell"> 2 June 2024</td>
+              <td class="govuk-table__cell"> 2 June 2024</td>
+              <td class="govuk-table__cell"> 2 June 2024</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Failed</th>
+              <td class="govuk-table__cell"> 2 June 2024</td>
+              <td class="govuk-table__cell"> 2 June 2024</td>
+              <td class="govuk-table__cell"> 2 June 2024</td>
+            </tr>
+          
+          </tbody>
+        </table>
+       </div>
+
+          
+
+          
+
+            
+
+     
+   
+{% endblock %}
