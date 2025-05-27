@@ -1,0 +1,107 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+ 
+
+    
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <a href="app-details-pending.html" class="govuk-back-link">Back</a>
+
+      <br>
+      <br>
+
+
+      <div class="govuk-inset-text">
+  <strong>Course provider approval status:</strong> <br>
+Accepted
+</div>
+
+
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+    
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    
+      <h2 class="govuk-fieldset__heading">
+        Are you sure you want to change the status to pending?
+      </h2>
+    
+    </legend>
+    
+  
+    <div class="govuk-radios" data-module="govuk-radios">
+      
+      
+        
+    
+      
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="choose-cohort" name="choose-cohort" type="radio" value="2025">
+        <label class="govuk-label govuk-radios__label" for="choose-cohort">
+          Yes
+        </label>
+        
+      </div>
+      
+    
+      
+        
+    
+      
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="choose-cohort-2" name="choose-cohort" type="radio" value="2024">
+        <label class="govuk-label govuk-radios__label" for="choose-cohort-2">
+          No
+        </label>
+        
+      </div>
+      
+    
+      
+        
+    
+      
+      
+      
+     
+    
+      
+      
+    </div>
+  
+  </fieldset>
+
+</div>
+
+
+   
+    <!-- Submit and Cancel Links -->
+      <div class="govuk-button-group">
+        <a href="ltd-130824-status-changed.html" class="govuk-button search-box__button" data-module="govuk-button">
+          Change to pending
+        </a>
+        <a class="govuk-link" href="ltd-130824.html">Cancel</a>
+      </div>
+
+
+
+    </div>
+    
+  </div>
+  </div>
+  </div>
+   
+  </div>
+{% endblock %}
