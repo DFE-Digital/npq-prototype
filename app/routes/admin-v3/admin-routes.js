@@ -126,9 +126,51 @@ module.exports = router => {
   });
 
   // Dashboard navigation
-  router.get('/admin-v3/dashboard', function(req, res){
-    res.redirect(v + 'admin-v3/dashboard')
+  router.get('/dashboard', function(req, res){
+    res.redirect(v + 'dashboard')
   })
+
+  // Applications navigation
+  router.get('/applications', function(req, res){
+    res.redirect(v + 'applications')
+  })
+
+  // Courses navigation
+  router.get('/courses', function(req, res){
+    res.redirect(v + 'courses')
+  })
+
+  // Users navigation
+  router.get('/users', function(req, res){
+    res.redirect(v + 'users')
+  })
+
+  // Finance navigation
+  router.get('/finance', function(req, res){
+    res.redirect(v + 'finance')
+  })
+
+   // Workplaces navigation
+  router.get('/workplaces', function(req, res){
+    res.redirect(v + 'workplaces')
+  })
+
+  // Course providers navigation
+  router.get('/course-providers', function(req, res){
+    res.redirect(v + 'course-providers')
+  })
+
+  // Delivery partners navigation
+  router.get('/delivery-partners', function(req, res){
+    res.redirect(v + 'delivery-partners')
+  })
+
+  // Settings navigation
+  router.get('/settings', function(req, res){
+    res.redirect(v + 'settings')
+  })
+
+
 
 
   
