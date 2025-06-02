@@ -125,6 +125,11 @@ module.exports = router => {
     }
   });
 
+  // Dashboard navigation
+  router.get('/admin-v3/dashboard', function(req, res){
+    res.redirect(v + 'admin-v3/dashboard')
+  })
+
 
   
 }
