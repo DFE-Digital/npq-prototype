@@ -54,14 +54,20 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <br>
-          <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
+    
             <div class="govuk-form-group">
-              <h2 class="govuk-heading-m">Upload file</h2>
-              <div id="file-upload-hint" class="govuk-hint">
-                Maximum file size is 256MB. File must be in CSV format.
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <div
+                class="govuk-drop-zone"
+                data-module="govuk-file-upload">
+                <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
               </div>
-              <input class="govuk-file-upload" id="documents" name="documents" type="file" aria-describedby="file-upload-hint">
             </div>
+
+
+
             <button type="submit" class="govuk-button" data-module="govuk-button">
               Upload file
             </button>

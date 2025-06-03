@@ -13,7 +13,7 @@
         <li class="moj-side-navigation__item">
           <a href="cohorts.html" class="govuk-!-font-size-16">Cohorts</a>
         </li>
-        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+        <li class="moj-side-navigation__item ">
           <a href="cohort-1.html" class="govuk-!-font-size-16">Cohort 2027/28</a>
         </li>
       </ul>
@@ -40,22 +40,29 @@
 
       </div>
 
-      <p class="govuk-body">For example:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li><strong>Year:</strong> 2026</li>
-  <li><strong>Month:</strong> 2</li>
-  <li><strong>Deadline_Date:</strong> 25-12-2025</li>
-  <li><strong>Payment_Date:</strong> 26-01-2025</li>
-  <li><strong>Output_Fee:</strong> TRUE</li>
-</ul>
+    <p class="govuk-body">For example:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Year:</strong> 2026</li>
+      <li><strong>Month:</strong> 2</li>
+      <li><strong>Deadline_Date:</strong> 25-12-2025</li>
+      <li><strong>Payment_Date:</strong> 26-01-2025</li>
+      <li><strong>Output_Fee:</strong> TRUE</li>
+    </ul>
 
    
+      <br>
+
       <div class="govuk-form-group">
         <label class="govuk-label" for="file-upload-1">
           Upload a file
         </label>
-        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        <div
+          class="govuk-drop-zone"
+          data-module="govuk-file-upload">
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        </div>
       </div>
+
       <p> <a href=""> Download empty statement template</a></p>
 
       <br>
@@ -86,12 +93,20 @@
   <li><strong>Monthly_Service_Fee:</strong> 100</li>
 </ul>
 
+     
       <div class="govuk-form-group">
         <label class="govuk-label" for="file-upload-1">
           Upload a file
         </label>
-        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        <div
+          class="govuk-drop-zone"
+          data-module="govuk-file-upload">
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        </div>
       </div>
+
+
+      
       <p> <a href=""> Download empty template</a></p>
 
       <div class="govuk-inset-text">
