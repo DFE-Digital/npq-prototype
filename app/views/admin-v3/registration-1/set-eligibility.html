@@ -10,13 +10,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">{{ data['registration1--name'] }}</h1>
       <form class="form" method="post">
         {{ govukRadios({
           name: "registration1--funding-status",
           fieldset: {
             legend: {
-              html: "Is this registration eligible for funding?",
+              html: "Is Jorge Hund eligible for funding?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -31,8 +30,6 @@
               text: "No"
                           },
             {
-              value: "Not decided",
-              text: "Not decided"
             }
           ]
           }) }}
@@ -40,7 +37,7 @@
             {{ govukButton({
               text: "Submit"
             }) }}
-            <a class="govuk-link" href="registration">Cancel</a>
+            <a class="govuk-link" href="ltd-130824.html">Cancel</a>
           </div>
       </form>
     </div>
