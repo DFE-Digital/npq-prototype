@@ -14,12 +14,12 @@
       <div class="govuk-error-summary" data-module="govuk-error-summary">
         <div role="alert">
           <h2 class="govuk-error-summary__title">
-            There is a problem
+            You cannot change Lorelai Gilmore's funding eligibility yet
           </h2>
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#">Enter your full name</a>
+                <a href="#">Submitted or billed declarations must be voided or clawed back by the course provider before you can update funding eligibility</a>
               </li>
              
             </ul>
@@ -29,13 +29,12 @@
 
 
 
-      <h1 class="govuk-heading-xl">Lorelai Gilmore</h1>
       <form class="form" method="post">
         {{ govukRadios({
           name: "registration1--funding-status",
           fieldset: {
             legend: {
-              html: "Is this registration eligible for funding?",
+              html: "Is Lorelai Gilmore eligible for funding?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -50,8 +49,6 @@
               text: "No"
                           },
             {
-              value: "Not decided",
-              text: "Not decided"
             }
           ]
           }) }}

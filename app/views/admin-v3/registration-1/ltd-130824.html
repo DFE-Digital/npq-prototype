@@ -46,7 +46,7 @@
 
   {% set fundingStatusHTML %}
   {% if (data['registration1--review-status'] != "Decision made") %}
-    Not decided
+    No
   {% elseif (data['registration1--funding-status'] == "Yes") %}
     {{govukTag({
       text: data['registration1--funding-status'],
