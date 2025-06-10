@@ -62,7 +62,7 @@
       <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>754321 <strong class="govuk-tag govuk-tag--green"> Verified</strong> <a href="/admin-v3/changetrn.html">Change</a></p>
       <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
 
-{{ govukSummaryList({
+      {{ govukSummaryList({
   card: {
     title: {
       text: 'Application overview',
@@ -129,8 +129,8 @@
       actions: {
         items: [
           {
-                        href: "transfer-providers.html",
-            text: "Change",
+                        href: "change-to-pending.html",
+            text: "Change to pending",
             visuallyHiddenText: "for Ambition Institute"
             
           }
@@ -204,12 +204,22 @@
     }
   },
   rows: [
+   
     {
       key: {
         text: "Eligible for funding"
       },
       value: {
-        text: 'Yes'
+        text: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "set-eligibility.html",
+            text: "Change",
+            visuallyHiddenText: "change funding eligiblity"
+          }
+        ]
       }
     },
     {
@@ -238,7 +248,7 @@
       actions: {
         items: [
           {
-            href: "transfer-providers.html",
+            href: "change-schedule-cohort.html",
             text: "Change",
             visuallyHiddenText: "for Ambition Institute"
           }
@@ -301,7 +311,7 @@
         text: "Name"
       },
       value: {
-        html: '<a class="govuk-link" href="/workplaces/abacus-belsize-primary-school">Abacus Belsize Primary School</a>'
+        html: '<a class="govuk-link" href="workplaces-selected.html">Abacus Belsize Primary School</a>'
       }
     },
     {
@@ -363,6 +373,8 @@
     }
   ]
 }) }}
+
+
 
 
 
