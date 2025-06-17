@@ -27,6 +27,15 @@
 
   {% block header %}
 
+
+
+  
+
+
+
+
+
+
     <header class="govuk-header" data-module="govuk-header">
       <div class="govuk-header__container govuk-width-container">
           <div class="govuk-header__logo">
@@ -45,7 +54,13 @@
                   <a href="#" class="govuk-service-navigation__link">
                     Manage NPQs
                   </a>
-                </span>
+                  </span>
+                  
+                  <span class="govuk-service-navigation__item" style="margin-left: auto;">
+                  <a class="govuk-service-navigation__link" href="#"><strong>Sign out </strong></a>
+                  </span>
+                  
+                </nav>
                 <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
                   <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
                     Menu
@@ -85,9 +100,14 @@
                         Delivery partners
                       </a>
                     </li>
-                    <li class="govuk-service-navigation__item">
+                     <li class="govuk-service-navigation__item">
                       <a class="govuk-service-navigation__link" href="/admin-v3/settings">
                         Settings
+                      </a>
+                    </li>
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="">
+                        
                       </a>
                     </li>
                   </ul>
@@ -153,6 +173,8 @@
         }
       ]
     }) }} --> 
+
+    
 
     <div class="govuk-width-container dfe-width-container">
       {{ govukPhaseBanner({
