@@ -128,6 +128,12 @@
 
 
         <div class="govuk-grid-column-three-quarters">
+
+       {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
         
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Church of England, January 2025</h1>
         <p class="govuk-!-margin-bottom-2"><strong>Cohort:</strong> 2024/2025 </p>
@@ -216,7 +222,7 @@
                 1
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">View voids<span class="govuk-visually-hidden"> working situation (Person 3)</span></a>
+                <a class="govuk-link" href="voids.html">View voids<span class="govuk-visually-hidden"> working situation (Person 3)</span></a>
               </dd>
             </div>
 
