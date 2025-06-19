@@ -3,7 +3,15 @@
   https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
+  
+
+
+  {% set htmlClasses ="govuk-template--rebranded" %}
+
+
   {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+
 
   {% block pageTitle %}
     {{ serviceName }} – GOV.UK
@@ -18,7 +26,97 @@
   {% endset %}
 
   {% block header %}
-    {{ govukHeader({
+
+
+
+  
+
+
+
+
+
+
+    <header class="govuk-header" data-module="govuk-header">
+      <div class="govuk-header__container govuk-width-container">
+          <div class="govuk-header__logo">
+            <a href="#" class="govuk-header__link govuk-header__link--homepage">
+                <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+            </a>
+          </div> 
+      </div>
+    </header>
+
+          <section aria-label="Service information" class="govuk-service-navigation"
+            data-module="govuk-service-navigation">
+            <div class="govuk-width-container">
+              <div class="govuk-service-navigation__container">
+                <span class="govuk-service-navigation__service-name">
+                  <a href="#" class="govuk-service-navigation__link">
+                    Manage NPQs
+                  </a>
+                  </span>
+                  
+                  
+                </nav>
+                <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+                  <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+                    Menu
+                  </button>
+                  <ul class="govuk-service-navigation__list" id="navigation">
+                    <li class="govuk-service-navigation__item  govuk-service-navigation__item--active "> <!-- govuk-service-navigation__item--active -->
+                      <a class="govuk-service-navigation__link" href="/admin-v3/dashboard" aria-current="true">
+                        <strong class="govuk-service-navigation__active-fallback">Dashboard</strong>
+                    </li>
+                    <li class="govuk-service-navigation__item ">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/applications" aria-current="true">
+                        <strong class="govuk-service-navigation__active-fallback">Applications</strong>
+                      </a>
+                    </li>
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/courses">
+                        Courses
+                      </a>
+                    </li>
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/users">
+                        Users
+                      </a>
+                    </li>
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/finance">
+                        Finance
+                      </a>
+                    </li>
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/course-providers">
+                        Course providers
+                      </a>
+                    </li>
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/delivery-partners">
+                        Delivery partners
+                      </a>
+                    </li>
+                     <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="/admin-v3/settings">
+                        Settings
+                      </a>
+                    </li>
+                      
+                    <li class="govuk-service-navigation__item">
+                      <a class="govuk-service-navigation__link" href="">
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+        </section>
+
+
+
+   <!-- {{ govukHeader({
       homepageUrl: "/index",
       containerClasses: "dfe-width-container header-minus-margin",
       serviceName: "Manage NPQs",
@@ -72,7 +170,9 @@
           href: '/settings'
         }
       ]
-    }) }}
+    }) }} --> 
+
+    
 
     <div class="govuk-width-container dfe-width-container">
       {{ govukPhaseBanner({
