@@ -155,7 +155,7 @@ module.exports = router => {
     res.redirect(v + 'workplaces')
   })
 
-  // Course providers navigation
+  // Providers navigation
   router.get('/course-providers', function(req, res){
     res.redirect(v + 'course-providers')
   })
