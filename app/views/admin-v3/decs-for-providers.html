@@ -9,15 +9,37 @@
 
   
       <h1 class="govuk-heading-l">
-        Update and verify teacher reference numbers (TRNs)
+      Submit declrations for providers
       </h1>
-      <br>
-      <p>If the service shows multiple incorrect teacher reference numbers (TRNs), you can fix this by uploading a CSV file with the correct TRNs. The service will then verify the TRNs you provide.</p>
-      <p>Create a CSV file with the headings:</p>
+      <p>You can submit multiple declarations for a provider by uploading a CSV file. </p>
+      <p>You can do this when:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>'User ID' in column A, followed by the relevant user IDs</li>
-        <li>'Updated TRN' in column B, followed by the replacement TRNs</li>
+        <li>a provider has no access to the API</li>
+        <li>there are outstanding declarations that need to be submitted</li>
       </ul>
+
+      <h1 class="govuk-heading-m">
+      Create your CSV file
+      </h1>
+      <p>Your file must include the following column headers:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>participant_id</li>
+        <li>declaration_type</li>
+        <li>declaration_date </li>
+        <li>course_identifier</li>
+        <li>delivery_partner_id</li>
+      </ul>
+
+     <p>For example:</p>
+
+      <pre>
+             "participant_id": "db3a7848-7308-4879-942a-c4a70ced400a",
+             "declaration_type": "started",
+              "declaration_date": "2021-05-31T02:21:32Z",
+              "course_identifier": "npq-senior-leadership",
+              "delivery_partner_id": "524df095-f9bf-4f9d-ba4c-772545a99e60"
+      </pre>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -55,7 +77,7 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="amend-trn-details-page.html">Ambition 2024 pending applications test</a></td>
+            <td class="govuk-table__cell"><a href="amend-trn-details-page.html">Declaration a</a></td>
             <td class="govuk-table__cell">25</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
@@ -65,7 +87,7 @@
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell"><a href="#">Declaration b</a></td>
             <td class="govuk-table__cell">6</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
@@ -76,7 +98,7 @@
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell"><a href="#">Declaration c</a></td>
             <td class="govuk-table__cell">57</td>
             <td class="govuk-table__cell">20 Sept 2024</td>
             <td class="govuk-table__cell">20 Sept 2024</td>

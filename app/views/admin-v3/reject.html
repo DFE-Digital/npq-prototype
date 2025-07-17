@@ -2,6 +2,11 @@
 
 {% block content %}
 
+       {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
  
       <h1 class="govuk-heading-l">
       Reject applications
