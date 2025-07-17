@@ -1,0 +1,68 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">
+
+       {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+       <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Check your changes before submitting</h1>
+
+       <div class="govuk-inset-text">
+        You are about to change the fee per user for the following course:
+        <br>
+        <strong>Additional support offer  </strong>
+      </div>
+
+         <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Old fee</th>
+                <th scope="col" class="govuk-table__header">New fee</th>
+                <th scope="col" class="govuk-table__header">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+  
+              <td class="govuk-table__cell">£800</td>
+              <td class="govuk-table__cell">£700</td>
+              <td class="govuk-table__cell"><a href="change-fee"> Change </a></td>
+  
+              </tr>
+              
+            
+
+            </tbody>
+          </table> 
+
+
+    
+
+        <div class="govuk-button-group">
+               <a href="finance-fee-success.html" class="govuk-button" data-module="govuk-button">
+          Confirm and submit
+        </a>  
+      
+          <a class="govuk-link" href="finance-statement">Cancel</a>
+        </div>
+
+        
+
+
+
+
+           
+
+      </div> 
+      </div>
+      </div>
+
+    </div>
+    </div>
+  </div> 
+{% endblock %}
