@@ -11,13 +11,11 @@ module.exports = router => {
 // ------------
 
   // Redirect from Identity prototype - NPQ create account
- 
-
-
-router.get('/user-research/npq/new-user', (req, res) => {
-  req.session.data = { signedIn: 'true' }; // Keep it minimal
-  res.redirect(v + 'course-start');
-});
+  router.get('/user-research/npq/new-user', (req, res) => {
+    const data = req.session.data
+    data.signedIn = 'true'
+    res.redirect(v + 'course-start') 
+  })
 
 
   // Redirect from Identity prototype - NPQ show account
