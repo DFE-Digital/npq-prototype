@@ -3,7 +3,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Do you want to start a course in spring 2025?
+  Do you want to start a course in autumn 2025?
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,15 +23,15 @@
 
     <h1 class="govuk-heading-xl">Course start</h1>
     <p>NPQ start dates are usually every spring and autumn.</p>
-    <p>Early headship coaching offer start dates vary by provider and are throughout the year.</p>
-    <p class="govuk-body govuk-!-margin-bottom-8">Registrations are currently open for courses starting in spring 2025.</p>
+    <p>Early headship coaching offer start dates vary by provider and are run throughout the year.</p>
+    <p class="govuk-body govuk-!-margin-bottom-8">Registrations are currently open for courses starting in autumn 2025.</p>
 
     <form class="form" action="chosen" method="post">
       {{ govukRadios({
         name: "startdate",
         fieldset: {
           legend: {
-            text: "Do you want to start a course in spring 2025?",
+            text: "Do you want to start a course in autumn 2025?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
@@ -41,7 +41,7 @@
             value: "yes",
             text: "Yes",
             hint: {
-              text: "You can also select this option if you have already started"
+              text: "You can also select this option if you've already started"
             }
           },
           {

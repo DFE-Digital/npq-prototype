@@ -18,10 +18,15 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Choose an NPQ</h1>
       <p class="govuk-body govuk-!-margin-bottom-6">If you’re registering for an NPQ and the <a href="https://professional-development-for-teachers-leaders.education.gov.uk/early-headship-coaching-offer">early headship coaching offer</a>, you must complete this registration twice—once for each course.</p>
+      
       <h1 class="govuk-heading-m">Which NPQ do you want to do?</h1>
       <form class="form" action="check-data/_funding-check" method="post">
+        
         {% include './includes/npqs-list.html' %}
+        
       </form>
+      
     </div>
+    
   </div>
 {% endblock %}
