@@ -68,67 +68,131 @@
 
 
 
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: 'Application overview',
-            classes: 'govuk-!-font-size-24'
-          },
-          actions: {
-            items: [
-              {
-                href: "/admin-v3/app-details",
-                visuallyHiddenText: "of the Leading teaching development registration"
-              }
-            ]
+     {{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Application overview',
+      classes: 'govuk-!-font-size-24'
+    },
+    actions: {
+      items: [
+        {
+          href: "/admin-v3/app-details",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Application ID"
+      },
+      value: {
+        text: '0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9'
+      }
+    },
+    {
+      key: {
+        text: "Course"
+      },
+      value: {
+        text: "Leading teacher development NPQ"
+      }
+    },
+    {
+      key: {
+        text: "Course identifier"
+      },
+      value: {
+        text: "npq-leading-teaching-development"
+      }
+    },
+    {
+      key: {
+        text: "Provider"
+      },
+      value: {
+        text: "Ambition Institute"
+      },
+      actions: {
+        items: [
+          {
+            href: "transfer-providers.html",
+            text: "Transfer",
+            visuallyHiddenText: "for Ambition Institute"
           }
-        },
-        rows: [
-          {
-            key: {
-              text: "Application ID"
-            },
-            value: {
-              text: '0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9'
-            }
-          },
-          {
-            key: {
-              text: "Course"
-            },
-            value: {
-              text: "Leading teacher development NPQ"
-            }
-          },
-          {
-            key: {
-              text: "Provider"
-            },
-            value: {
-              html: reviewStatusHTML
-            }
-          },
-          {
-            key: {
-              text: "Training status"
-            },
-            value: {
-              text: "Deferred"
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-training-status",
-                  text: "Change status",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          } 
-          
-          
         ]
-      }) }}
+      }
+    },
+    {
+      key: {
+        text: "Provider approval status"
+      },
+      value: {
+        text: "Accepted"
+      },
+      actions: {
+        items: [
+          {
+                        href: "change-to-pending.html",
+            text: "Change to pending",
+            visuallyHiddenText: "for Ambition Institute"
+            
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Training status"
+      },
+      value: {
+        text: "Active"
+      },
+      actions: {
+        items: [
+          {
+            href: "change-training-status",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+       {
+      key: {
+        text: "Created"
+      },
+      value: {
+        text: "1 Jul 2021 at 3:11pm"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+       {
+      key: {
+        text: "Updated"
+      },
+      value: {
+        text: "7 Jan 2022 at 3:22pm"
+      },
+      actions: {
+        items: [
+          {
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+    
+  ]
+}) }}
 
 
       {{ govukSummaryList({
@@ -525,10 +589,10 @@
        </div>
        </div>
 
-       <div class="govuk-summary-card">
+      <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
-            Completed
+            Completed (paid)
           </h1>        
         </div>
         <div class="govuk-summary-card__content">
@@ -543,18 +607,10 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Declaration type
-              </dt>
-              <dd class="govuk-summary-list__value">
-              Started
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
                 Declaration date
               </dt>
               <dd class="govuk-summary-list__value">
-                Value
+                21 Nov 2022 at 12:00am
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -562,23 +618,15 @@
               Declaration cohort
               </dt>
               <dd class="govuk-summary-list__value">
-                Value
+                2021
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Lead provider 
+                Provider 
               </dt>
               <dd class="govuk-summary-list__value">
-                Value
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                State
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Value
+                Ambition Institute
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -586,7 +634,7 @@
                 Created at
               </dt>
               <dd class="govuk-summary-list__value">
-                Value
+                21 Nov 2023 at 1:30pm
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -594,7 +642,7 @@
                 Updated at
               </dt>
               <dd class="govuk-summary-list__value">
-                Value
+                10 Dec 2023 at 2:21pm
               </dd>
             </div>
             
@@ -603,47 +651,85 @@
               Statements
               </dt>
               <dd class="govuk-summary-list__value">
-                Value
+                <p class="govuk-body">
+              <a href="#" class="govuk-link">November 2023</a>
+            </p>
               </dd>
               <dd class="govuk-summary-list__actions">
               </dd>
             </div>
 
-            <br>
-            <br>
-
-              <table class="govuk-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Declaration outcome - Passed</caption>
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Outcome</th>
-                    <th scope="col" class="govuk-table__header">Completion date</th>
-                    <th scope="col" class="govuk-table__header">Submitted by provider</th>
-                    <th scope="col" class="govuk-table__header">Sent to TRA API</th>
-                    <th scope="col" class="govuk-table__header">Recorded by API</th>
-
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Passed</th>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Failed</th>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                    <td class="govuk-table__cell"> 2 June 2024</td>
-                  </tr>
-                
-                </tbody>
-              </table>
        </div>
+
+        </div>
+
+          <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h1 class="govuk-summary-card__title" govuk-!-font-size-24>
+            NPQ outcome
+          </h1>        
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Outcome
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">
+                Passed
+              </strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course started
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 Jan 2025
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Course completed
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2 May 2025
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date awarded
+              </dt>
+              <dd class="govuk-summary-list__value">
+                3 June 2025
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Submitted by provider
+              </dt>
+              <dd class="govuk-summary-list__value">
+               1 June 2025
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Recorded by API
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Not applicable 
+              </dd>
+            </div>
+            
+           
+         
+       </div>
+
+       </div>
+
+
+      </div>
 
           
 
