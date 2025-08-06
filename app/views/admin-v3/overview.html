@@ -71,7 +71,7 @@
       
       
       
-      {{ govukSummaryList({
+ {{ govukSummaryList({
   card: {
     title: {
       text: 'Personal information',
@@ -104,9 +104,20 @@
       value: { text: "JH576827D" }
     },
     {
-      key: { text: "TRN" },
-      value: { text: '1234567' }
-    },
+  key: { text: "TRN" },
+  value: {
+    html: '1234567&nbsp;' + govukTag({ text: "Verified", classes: "govuk-tag--green" })
+  },
+  actions: {
+    items: [
+      {
+        href: "changetrn",
+        text: "Change",
+        visuallyHiddenText: "TRN"
+      }
+    ]
+  }
+},
     {
       key: { text: "Get an Identity ID" },
       value: { text: '11ab2c36-55f8-00r3-776f-56781jj03214o' }
