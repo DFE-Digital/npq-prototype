@@ -97,13 +97,7 @@
             <a href="/admin-v3/registrations-review.html" class="govuk-back-link">Back</a>
 
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jorge Hund</h1>
-      <p class="govuk-!-margin-bottom-2"><strong>User ID:</strong> 123456</p>
-
-      <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> hund.j@google.com</p>
-      <p class="govuk-!-margin-bottom-2"><strong>Date of birth:</strong> 13 Feb 1990 | <strong> National Insurance: </strong> JH785420H</p>
-      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 <strong class="govuk-tag govuk-tag--red"> Not verified</strong> <a href="/admin-v3/changetrn-inreview.html">Change</a></p>
-      <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-888d-56781jj87654r</p>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jorge Hund</h1><br>
 
 
       <!-- {{ govukSummaryList({
@@ -148,7 +142,49 @@
           }
         ]
       }) }} -->
-      
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Personal information',
+      classes: 'govuk-!-font-size-24'
+    },
+    actions: {
+      items: [
+        {
+          href: "ltd-130824",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: { text: "User ID" },
+      value: { text: '12345' }
+    },
+    {
+      key: { text: "Email" },
+      value: { text: 'hund.j@google.com' }
+    },
+    {
+      key: { text: "Date of birth" },
+      value: { text: '13 Feb 1990' }
+    },
+    {
+      key: { text: "National Insurance" },
+      value: { text: 'JH785420H' }
+    },
+    {
+      key: { text: "TRN" },
+      value: { text: '1234567' }
+    },
+    {
+      key: { text: "Get an Identity ID" },
+      value: { text: '11ab2c36-55f8-00r3-888d-56781jj87654r' }
+    }
+  ]
+}) }}
+
       {{ govukSummaryList({
         card: {
           title: {

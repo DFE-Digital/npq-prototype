@@ -67,19 +67,52 @@
 
 
       <br>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1>
-      <p class="govuk-!-margin-bottom-2"><strong>User ID:</strong> 123456</p>
-
-      <p class="govuk-!-margin-bottom-2"><strong>Email:</strong> gilmore.girls@google.com</p>
-      <p class="govuk-!-margin-bottom-2"><strong>Date of birth:</strong> 30 October 2020 | <strong> National Insurance:</strong> JH576827D</p>
-      <p class="govuk-!-margin-bottom-1"><strong>TRN: </strong>1234567 <strong class="govuk-tag govuk-tag--green"> Verified</strong> <a href="/admin-v3/changetrn.html">Change</a></p>
-      <p class="govuk-!-margin-bottom-6"><strong>Get an Identity ID: </strong>11ab2c36-55f8-00r3-776f-56781jj03214o</p>
-     
-      
-
-     
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1> <br>
       
       {{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Personal information',
+      classes: 'govuk-!-font-size-20'
+    },
+    actions: {
+      items: [
+        {
+          href: "app-details",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: { text: "User ID" },
+      value: { text: "123456" }
+    },
+    {
+      key: { text: "Email" },
+      value: { text: "gilmore.girls@google.com" }
+    },
+    {
+      key: { text: "Date of birth" },
+      value: { text: "30 October 2020" }
+    },
+    {
+      key: { text: "National Insurance" },
+      value: { text: "JH576827D" }
+    },
+    {
+      key: { text: "TRN" },
+      value: { text: '1234567' }
+    },
+    {
+      key: { text: "Get an Identity ID" },
+      value: { text: '11ab2c36-55f8-00r3-776f-56781jj03214o' }
+    }
+  ]
+}) }}
+
+            {{ govukSummaryList({
         card: {
           title: {
             text: 'Leading teacher development NPQ',
