@@ -1,0 +1,86 @@
+{% extends "layout-strat-des.html" %}
+
+{% block pageTitle %}
+  Child development and inclusion in practice
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Become an inclusive teacher trainer for your setting</h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-6">Learn how to teach inclusive and adaptive teaching to your school colleagues and influence school culture.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l govuk-!-margin-top-6">Course details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Who this course is for"
+            },
+            value: {
+              html: "Senior and or appropriate leaders within a setting <br>We recommend at least two members of staff per school participate"
+            }
+          },
+          {
+            key: {
+              text: "Duration"
+            },
+            value: {
+              html: "3 day commitment for initial trainer training<sup>*</sup> <br> Trainers will have a year to deliver in-school training whilst having access to materials and support"
+            }
+          },
+          {
+            key: {
+              text: "Time commitment"
+            },
+            value: {
+              html: "Initial training for leaders: 20 hours <br>Delivery of training in school: 40 hours <br>1 year, can cover just core or cover much more"
+            }
+          },
+          {
+            key: {
+              text: "Delivery"
+            },
+            value: {
+              html: "Participants in the initial trainer training will have the option of in-person sessions or remotely. These participants will then deliver in-school training of DfE materials."
+            }
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              html: "Three start dates per year, at each half term"
+            }
+          },
+          {
+            key: {
+              text: "Assessment"
+            },
+            value: {
+              html: "Initial trainer training is not assessed but you will invited to submit a school improvement plan for peer review. <br>Participation within schools will be assessed on a continual basis and moderated by school leadership."
+            }
+          },
+          {
+            key: {
+              text: "Certification"
+            },
+            value: {
+              html: "Individuals that complete the initial trainer training will become TTE* inclusive training assessors <br>TTE<sup>*</sup> inclusive accredited school"
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
