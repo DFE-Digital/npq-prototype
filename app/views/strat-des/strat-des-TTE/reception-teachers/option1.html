@@ -1,0 +1,180 @@
+{% extends "layout-strat-des.html" %}
+
+{% block pageTitle %}
+  Child development and inclusion in practice
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Inclusive child development with coaching support</h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-6">Learn or revisit the principles of inclusive and adaptive teaching and how to apply them to meet the learning needs of pupils in your class.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l govuk-!-margin-top-6">Course details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Who this course is for"
+            },
+            value: {
+              html: "Classroom teachers"
+            }
+          },
+          {
+            key: {
+              text: "Duration"
+            },
+            value: {
+              html: "10-12 weeks <br> In addition to the core time spent learning the fundamental modules, you will be supported with five follow up coaching sessions, that must be completed by the end of the academic year."
+            }
+          },
+          {
+            key: {
+              text: "Time commitment"
+            },
+            value: {
+              html: "2 hours per fortnight"
+            }
+          },
+          {
+            key: {
+              text: "Delivery"
+            },
+            value: {
+              html: "50% of the time asynchronous <br>50% of the time online webinars <br>Five coaching sessions to be delivered by an internal or external nominated coach"
+            }
+          },
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              html: "September"
+            }
+          },
+          {
+            key: {
+              text: "Assessment"
+            },
+            value: {
+              html: "Assessment will a reflective presentation delivered to your colleagues in school, which will be signed off by your manager or a senior member of staff you nominate. To be completed at the end of your five coaching sessions."
+            }
+          },
+          {
+            key: {
+              text: "Certification"
+            },
+            value: {
+              html: "Certification in TTE<sup>*</sup> adaptive teaching"
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l govuk-!-margin-top-6">Course modules</h2>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Module 1: Understanding child development and variation
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+            <p class="govuk-body">This module covers: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>The importance of early childhood education and care, including how to implement strategies to provide a positive approach in your setting</li>
+              <li>The importance of child development knowledge and the various factors that impact on children’s development</li>
+              <li>the impact of the COVID-19 pandemic on children’s development</li>
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                Module 2: Identifying pupils needs
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+            <p class="govuk-body">This module covers:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Recognise how social and emotional development, language and communication proficiency may impact learning</li>
+              <li>Understand the importance of your role in supporting children’s individual differences and needs, creating an inclusive environment and building effective partnerships</li>
+              <li>Implementing formative assessments to identify individual starting points and plan next steps</li>
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                Module 3: Supporting speech, language and communication
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+            <p class="govuk-body">This module covers:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Identify and explore the stages of language development in the early year</li>
+              <li>Review the potential factors that can affect language development</li>
+              <li>Understand how to identify and support children with speech, language and communication needs (SLCN)</li>
+              <li>Explore how to develop responsive adult-child interactions to support learning</li>
+            </ul>          
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                Module 4: Develop adaptive approaches to early writing
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+            <p class="govuk-body">This module covers:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Understand the developmental journey towards writing in the early years</li>
+              <li>Explore inclusive strategies to support mark-making, fine motor skills, and composition</li>
+              <li>Address barriers to writing, including those linked to age, language, or SEND</li>
+              <li>Use assessment to celebrate progress and ensure all children feel successful</li>
+            </ul> 
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                Module 5: Working with families to support child development
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+            <p class="govuk-body">This module covers:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Build strong, respectful relationships with families to support development and safety </li>
+              <li>Collaborate with families to identify and respond to individual needs</li>
+              <li>Promote a shared commitment to safeguarding and inclusive values across home and school</li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
