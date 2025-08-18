@@ -1,0 +1,95 @@
+{% extends "layout-strat-des.html" %}
+
+{% block pageTitle %}
+  Check your answers and submit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Your answers</h1>
+      <form class='form' action="" method="post">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can commit to post-course coaching 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEcoaching'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course duration
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEcourseDuration'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Time commitment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEtimeCommitment'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEdelivery'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ttestartdate'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Assessment method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEassessment'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Certification
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEcertification'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Optional modules
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['TTEmodules'] }}
+            </dd>
+          </div>
+        </dl>
+      </form>
+    </div>
+  </div>
+{% endblock %}
