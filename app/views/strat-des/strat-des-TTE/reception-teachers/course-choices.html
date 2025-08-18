@@ -1,0 +1,222 @@
+{% extends "layout-strat-des.html" %}
+
+{% block pageTitle %}
+  Find professional development courses
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your inclusive teaching fundamentals course choices</h1>
+      <p class="govuk-body-l">Use this page to pick your ideal setup for the course </p>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" action="check-answers" method="post">
+            {{ govukRadios({
+              name: "TTEcoaching",
+              fieldset: {
+                legend: {
+                  text: "Could you commit to post-course coaching?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes"
+                },
+                {
+                  value: "No",
+                  text: "No"
+                }
+              ]
+            }) }}
+            <hr>
+            {{ govukRadios({
+              name: "TTEcourseDuration",
+              fieldset: {
+                legend: {
+                  text: "What would be your preferred course duration?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              items: [
+                {
+                  value: "10-12 weeks",
+                  text: "10-12 weeks"
+                },
+                {
+                  value: "3-6 months",
+                  text: "3-6 months"
+                },
+                {
+                  value: "6-12 months",
+                  text: "6-12 months"
+                },
+                {
+                  value: "12-18 months",
+                  text: "12-18 months"
+                }
+              ]
+            }) }}
+            <hr>
+            {{ govukRadios({
+              name: "TTEtimeCommitment",
+              fieldset: {
+                legend: {
+                  text: "What time commitment would best suit you? ",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              items: [
+                {
+                  value: "2 hours per fortnight",
+                  text: "2 hours per fortnight"
+                },
+                {
+                  value: "3 hours per week",
+                  text: "3 hours per week"
+                },
+                {
+                  value: "40 hours total",
+                  text: "40 hours total"
+                }
+              ]
+            }) }}
+            <hr>
+            {{ govukRadios({
+              name: "TTEdelivery",
+              fieldset: {
+                legend: {
+                  text: "Which delivery method do you prefer?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              items: [
+                {
+                  value: "In person",
+                  text: "In person"
+                },
+                {
+                  value: "50% live webinars, 50% pre-recorded webinars",
+                  text: "50% live webinars, 50% pre-recorded webinars"
+                },
+                {
+                  value: "Live webinars",
+                  text: "Live webinars"
+                }
+              ]
+            }) }}
+            <hr>
+            {{ govukInput({
+              label: {
+                text: "When is your ideal start date?",
+                classes: "govuk-label--m govuk-!-padding-top-6",
+                isPageHeading: true
+              },
+              id: "ttestartdate",
+              name: "ttestartdate"
+            }) }}
+            <hr>
+            {{ govukRadios({
+              name: "TTEassessment",
+              fieldset: {
+                legend: {
+                  text: "Which assessment method do you prefer?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              items: [
+                {
+                  value: "Formative assessment",
+                  text: "Formative assessment",
+                  hint: {
+                    text: "Throughout the course"
+                  }
+                },
+                {
+                  value: "Summative assessment",
+                  text: "Summative assessment",
+                  hint: {
+                    text: "At the end of the course"
+                  }
+                }
+              ]
+            }) }}
+            <hr>
+            {{ govukRadios({
+              name: "TTEcertification",
+              fieldset: {
+                legend: {
+                  text: "Which certification would you like to receive?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              items: [
+                {
+                  value: "None",
+                  text: "None"
+                },
+                {
+                  value: "Certificate of attendance",
+                  text: "Certificate of attendance"
+                },
+                {
+                  value: "Certification to level X",
+                  text: "Certification to level X"
+                }
+              ]
+            }) }}
+            <hr>
+            {{ govukCheckboxes({
+              name: "TTEmodules",
+              fieldset: {
+                legend: {
+                  text: "Which optional modules would you like to do?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+                }
+              },
+              hint: {
+                text: "Every optional module you choose will take an additional month to complete."
+              },
+              items: [
+                {
+                  value: "Technology / AI",
+                  text: "Technology / AI"
+                },
+                {
+                  value: "Supporting English as an additional language",
+                  text: "Supporting English as an additional language"
+                },
+                {
+                  value: "Supporting transitions and change",
+                  text: "Supporting transitions and change"
+                },
+                {
+                  divider: "or"
+                },
+                {
+                  value: "None",
+                  text: "None",
+                  behaviour: "exclusive"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Submit"
+            }) }}
+          </form>
+        </div> 
+      </div>    
+    </div>
+  </div>
+{% endblock %}
