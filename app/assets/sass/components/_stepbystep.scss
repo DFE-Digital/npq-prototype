@@ -1,0 +1,82 @@
+@media (min-width: 40.0625em) {
+    .gem-c-step-nav--large .gem-c-step-nav__circle--number {
+        font-size: 19px;
+        line-height: 34px;
+    }
+}
+
+.gem-c-step-nav--large .gem-c-step-nav__circle--number {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 29px;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-step-nav--large .gem-c-step-nav__circle {
+        top: 11px;
+        width: 1.8421052632em;
+        height: 1.8421052632em;
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-step-nav__circle--number {
+        font-size: 16px;
+        line-height: 29px;
+    }
+}
+
+.gem-c-step-nav__circle--number {
+    border: solid 1px #b1b4b6;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 29px;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.gem-c-step-nav__circle {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 5;
+    top: 9px;
+    left: 0;
+    width: 1.875em;
+    height: 1.875em;
+    color: #0b0c0c;
+    background: #fff;
+    border-radius: 100px;
+    text-align: center;
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-step-nav__title {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+}
+
+.gem-c-step-nav__title {
+    margin: 0;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.4;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #0b0c0c;
+}
+
+.gem-c-step-nav__circle-inner {
+    float: right;
+    min-width: 100%;
+}
+
+.gem-c-step-nav__heading {
+    position: relative;
+    width: 90%;
+}

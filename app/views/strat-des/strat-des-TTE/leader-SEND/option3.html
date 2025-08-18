@@ -11,6 +11,13 @@
   }) }}
 {% endblock %}
 
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -18,69 +25,185 @@
       <p class="govuk-body-l govuk-!-margin-bottom-6">Learn how to teach inclusive and adaptive teaching to your school colleagues and influence school culture.</p>
     </div>
   </div>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l govuk-!-margin-top-6">Course details</h2>
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Who this course is for"
-            },
-            value: {
-              html: "Senior and or appropriate leaders within a setting <br>We recommend at least two members of staff per school participate"
-            }
-          },
-          {
-            key: {
-              text: "Duration"
-            },
-            value: {
-              html: "3 day commitment for initial trainer training<sup>*</sup> <br> Trainers will have a year to deliver in-school training whilst having access to materials and support"
-            }
-          },
-          {
-            key: {
-              text: "Time commitment"
-            },
-            value: {
-              html: "Initial training for leaders: 20 hours <br>Delivery of training in school: 40 hours <br>1 year, can cover just core or cover much more"
-            }
-          },
-          {
-            key: {
-              text: "Delivery"
-            },
-            value: {
-              html: "Participants in the initial trainer training will have the option of in-person sessions or remotely. These participants will then deliver in-school training of DfE materials."
-            }
-          },
-          {
-            key: {
-              text: "Start date"
-            },
-            value: {
-              html: "Three start dates per year, at each half term"
-            }
-          },
-          {
-            key: {
-              text: "Assessment"
-            },
-            value: {
-              html: "Initial trainer training is not assessed but you will invited to submit a school improvement plan for peer review. <br>Participation within schools will be assessed on a continual basis and moderated by school leadership."
-            }
-          },
-          {
-            key: {
-              text: "Certification"
-            },
-            value: {
-              html: "Individuals that complete the initial trainer training will become TTE* inclusive training assessors <br>TTE<sup>*</sup> inclusive accredited school"
-            }
-          }
-        ]
-      }) }}
+     <h2 class="govuk-heading-l govuk-!-margin-top-6">The training process</h2>
+      <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Train to be an inclusive teacher trainer
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
+              <p class="app-step-nav__paragraph">A course for senior and or appropriate leaders within a setting to become inclusive trainers. We recommend at least two members of staff per school participate.</p>
+              {{ govukSummaryList({
+                rows: [
+                  {
+                    key: {
+                      text: "Duration"
+                    },
+                    value: {
+                      html: "3 days"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Time commitment"
+                    },
+                    value: {
+                      html: "20 hours"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Delivery"
+                    },
+                    value: {
+                      html: "Option of in-person or remote sessions"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Start date"
+                    },
+                    value: {
+                      html: "Three start dates per year, at each half term"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Assessment"
+                    },
+                    value: {
+                      html: "Not assessed but you will be invited to submit a school improvement plan for peer review"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Certification"
+                    },
+                    value: {
+                      html: "TTE<sup>*</sup> inclusive training assessors"
+                    }
+                  }
+                ]
+              }) }}
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Deliver in-school training to others 
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
+              <p class="app-step-nav__paragraph">The delivery of the training to a group of any size. Allowing a large number of teachers to have inclusive training. </p>
+
+              {{ govukSummaryList({
+                rows: [
+                  {
+                    key: {
+                      text: "Duration"
+                    },
+                    value: {
+                      html: "1 year"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Time commitment"
+                    },
+                    value: {
+                      html: "40 hours"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Delivery"
+                    },
+                    value: {
+                      html: "The trainers will deliver in-school training using DfE materials"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Start date"
+                    },
+                    value: {
+                      html: "To be arranged by the trainers"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Assessment"
+                    },
+                    value: {
+                      html: "Participation within schools will be assessed on a continual basis and moderated by school leadership"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Certification"
+                    },
+                    value: {
+                      html: "TTE<sup>*</sup> inclusive accredited school"
+                    }
+                  }
+                ]
+              }) }}
+            </div>
+          </li>
+
+          <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Become a TTE<sup>*</sup> inclusive accredited school
+                </span>
+              </h2>
+            </div>
+
+            <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
+              <p class="app-step-nav__paragraph">After the training has been delivered the school will receive inclusive school accreditation. </p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
   </div>
+  
 {% endblock %}
