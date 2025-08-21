@@ -7,14 +7,14 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your inclusive teaching fundamentals course choices</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your inclusive child development fundamentals course choices</h1>
       <p class="govuk-body-l">Use this page to pick your ideal setup for the course </p>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" action="check-answers" method="post">
             {{ govukRadios({
-              name: "TTEcoaching",
+              name: "TTEcoachingReception",
               fieldset: {
                 legend: {
                   text: "Could you commit to post-course coaching?",
@@ -35,7 +35,7 @@
             }) }}
             <hr>
             {{ govukRadios({
-              name: "TTEcourseDuration",
+              name: "TTEcourseDurationReception",
               fieldset: {
                 legend: {
                   text: "What would be your preferred course duration?",
@@ -64,7 +64,7 @@
             }) }}
             <hr>
             {{ govukRadios({
-              name: "TTEtimeCommitment",
+              name: "TTEtimeCommitmentReception",
               fieldset: {
                 legend: {
                   text: "What time commitment would best suit you? ",
@@ -89,7 +89,7 @@
             }) }}
             <hr>
             {{ govukRadios({
-              name: "TTEdelivery",
+              name: "TTEdeliveryReception",
               fieldset: {
                 legend: {
                   text: "Which delivery method do you prefer?",
@@ -119,12 +119,12 @@
                 classes: "govuk-label--m govuk-!-padding-top-6",
                 isPageHeading: true
               },
-              id: "ttestartdate",
-              name: "ttestartdate"
+              id: "ttestartdateReception",
+              name: "ttestartdateReception"
             }) }}
             <hr>
             {{ govukRadios({
-              name: "TTEassessment",
+              name: "TTEassessmentReception",
               fieldset: {
                 legend: {
                   text: "Which assessment method do you prefer?",
@@ -151,10 +151,10 @@
             }) }}
             <hr>
             {{ govukRadios({
-              name: "TTEcertification",
+              name: "TTEcertificationReception",
               fieldset: {
                 legend: {
-                  text: "Which certification would you like to receive?",
+                  text: "What kind of certification is most appropriate for this inclusive child development course?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
                 }
@@ -169,14 +169,18 @@
                   text: "Certificate of attendance"
                 },
                 {
-                  value: "Certification to level X",
-                  text: "Certification to level X"
+                  value: "Certification to level 3 (equivalent to an A-level)",
+                  text: "Certification to level 3 (equivalent to an A-level)"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
                 }
               ]
             }) }}
             <hr>
             {{ govukCheckboxes({
-              name: "TTEmodules",
+              name: "TTEmodulesReception",
               fieldset: {
                 legend: {
                   text: "Which optional modules would you like to do?",
@@ -199,6 +203,10 @@
                 {
                   value: "Supporting transitions and change",
                   text: "Supporting transitions and change"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
                 },
                 {
                   divider: "or"

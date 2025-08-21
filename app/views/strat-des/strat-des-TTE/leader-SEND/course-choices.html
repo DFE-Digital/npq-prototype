@@ -7,7 +7,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your inclusive teaching fundamentals course choices</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Your inclusive leadership fundamentals course choices</h1>
       <p class="govuk-body-l">Use this page to pick your ideal setup for the course </p>
 
       <div class="govuk-grid-row">
@@ -175,7 +175,7 @@
               name: "TTEcertificationleader",
               fieldset: {
                 legend: {
-                  text: "Which certification would you like to receive?",
+                  text: "What kind of certification is most appropriate for this inclusive teaching course?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
                 }
@@ -190,8 +190,12 @@
                   text: "Certificate of attendance"
                 },
                 {
-                  value: "Certification to level X",
-                  text: "Certification to level X"
+                  value: "Certification to level 2 (equivalent to level NVQ)",
+                  text: "Certification to level 2 (equivalent to level NVQ)"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
                 }
               ]
             }) }}
@@ -220,6 +224,10 @@
                 {
                   value: "Supporting transitions and change",
                   text: "Supporting transitions and change"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
                 },
                 {
                   divider: "or"
