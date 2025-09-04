@@ -1,0 +1,89 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+ 
+
+    
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <a href="app-details.html" class="govuk-back-link">Back</a>
+
+      <br>
+     
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Choose a different training status</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l">Change training status</h1>
+
+      <div class="govuk-inset-text">
+     
+
+      <p class="govuk-body"> <strong> User ID <br></strong>0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9</p>
+  
+      <p class="govuk-body"> <strong> Training status <br></strong>Active</p>
+
+    </div>
+
+
+    <div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="whereDoYouLive-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Choose a different training status
+      </h1>
+    </legend>
+    <p id="whereDoYouLive-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Choose a different training status
+    </p>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changeTrainingStatus-2" name="changeTrainingStatus" type="radio" value="deferred">
+        <label class="govuk-label govuk-radios__label" for="changeTrainingStatus-2">
+          Deferred
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changeTrainingStatus-3" name="changeTrainingStatus" type="radio" value="withdrawn">
+        <label class="govuk-label govuk-radios__label" for="changeTrainingStatus-3">
+          Withdrawn
+        </label>
+      </div>
+  </fieldset>
+</div>
+
+  
+
+    <!-- Submit and Cancel Links -->
+      <div class="govuk-button-group">
+        <a href="training-reason.html" class="govuk-button search-box__button" data-module="govuk-button">
+          Continue
+        </a>
+        <a class="govuk-link" href="app-details.html">Cancel</a>
+      </div>
+
+
+
+    </div>
+    
+  </div>
+  </div>
+  </div>
+   
+  </div>
+{% endblock %}
