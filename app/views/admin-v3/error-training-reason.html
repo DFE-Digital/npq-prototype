@@ -14,6 +14,21 @@
       <br>
       <br>
 
+       <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Choose a reason for changing training status</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <h1 class="govuk-heading-l">What's the reason for change?</h1>
 
       <div class="govuk-inset-text">
@@ -26,14 +41,14 @@
 
       </div>
 
-     
-
-      <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-    
-      <div class="govuk-radios" data-module="govuk-radios">
-       
-        <div class="govuk-radios__item">
+      <div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="whereDoYouLive-error">
+  
+    <p id="whereDoYouLive-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Choose a reason for changing training status
+    </p>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-2" name="chooseAdifferentTrainingStatus" type="radio" value="breavement">
           <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-2">
             Breavement
@@ -63,10 +78,12 @@
             Other
           </label>
         </div>
-      
-      </div>
-    </fieldset>
+    </div>
+  </fieldset>
 </div>
+
+     
+
 
   
 
@@ -76,14 +93,7 @@
           Change training status
         </a>
         <a class="govuk-link" href="app-details.html">Cancel</a>
-        
       </div>
-
-      <br>
-      <br>
-
-
-      <p> <a class="govuk-link" href="error-training-reason.html">Error when nothing is selected</a></p>
 
 
 
