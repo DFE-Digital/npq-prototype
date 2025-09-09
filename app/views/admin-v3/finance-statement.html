@@ -12,6 +12,12 @@
           href: "javascript:window.history.back()"
         }) }}
 
+        <br> 
+
+           <a href="/admin-v3/finance-statement-filter" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Show filter
+          </a>
+
         
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">National Society for Education, January 2025</h1>
       
@@ -74,6 +80,18 @@
                 </dd>
               </div>
 
+               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Payment run
+                </dt>
+                <dd class="govuk-summary-list__value">
+                   <strong class="govuk-tag govuk-tag--green">
+                    Yes
+                  </strong>
+
+                </dd>
+              </div>
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Payment status
@@ -96,19 +114,10 @@
               <h2 class="govuk-summary-card__title">
                 Statement summary
               </h2>
-
               <ul class="govuk-summary-card__actions">
-                <li class="govuk-summary-card__action">
-                  <a class="govuk-link" href="#">Save PDF for providers<span class="govuk-visually-hidden"> Save statement summary as PDF to send to providers</span></a>
-                </li>
-                <li class="govuk-summary-card__action">
                   <a class="govuk-link" href="#">Download declarations (CSV)<span class="govuk-visually-hidden">Download declarations (CSV)</span></a>
-                </li>
-                <li class="govuk-summary-card__action">
                   <a class="govuk-link" href="#">Freeze statement<span class="govuk-visually-hidden"> Freeze statement</span></a>
-                </li>
               </ul>
-           
           </div>
           <div class="govuk-summary-card__content">
 
@@ -205,6 +214,15 @@
             </dl>
           </div>
         </div>
+
+        <div class="govuk-inset-text">
+        Save a copy of this statement for:
+        <br> <br>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="pdf-statement-providers.html">providers</a></li>
+            <li><a href="#">DfE users</a></li>
+          </ul>
+      </div>
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Manual adjustments</h1>
 

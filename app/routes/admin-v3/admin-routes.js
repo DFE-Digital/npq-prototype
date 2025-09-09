@@ -169,9 +169,6 @@ module.exports = router => {
   router.get('/settings', function(req, res){
     res.redirect(v + 'settings')
   })
-
-
-
-
+  
   
 }
