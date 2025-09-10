@@ -1,372 +1,114 @@
 {% extends "layout-admin.html" %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">Courses</h1>
-    <p class="govuk-body">Choose a course from the list to view its details, including ID, identifier and description.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Courses</h1>
 
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-        <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                Early years leadership (EYL)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
-               <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">ID</th>
-              <td class="govuk-table__cell">9</td>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Identifier</th>
-              <td class="govuk-table__cell">npq-early-years-leadership</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Description</th>
-              <td class="govuk-table__cell"> Provides insights into managing staff and organisation to deliver
-                high-quality early years education and care.</td>
-            </tr>
-            <tr class="govuk-table__row">
-            </tr>
-          </tbody>
-        </table>
-          </div>
-        </div>
-        <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-                Executive leadership (EL)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-2" class="govuk-accordion__section-content">
-                 <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">ID</th>
-            <td class="govuk-table__cell">6</td>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Identifier</th>
-            <td class="govuk-table__cell">npq-executive-leadership</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Description</th>
-            <td class="govuk-table__cell"> Explores how to develop the expertise to run a multi-school organisation and
-              lead change and improvement.</td>
-          </tr>
-          <tr class="govuk-table__row">
-          </tr>
-        </tbody>
-      </table>
-          </div>
-        </div>
-        <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-              Headship (H)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-3" class="govuk-accordion__section-content">
-           <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">5</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-headship</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to become an expert school leader and outstanding headteacher.</td>
-        </tr>
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-        <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Leading behaviour and culture (LBC)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-               <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">2</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-leading-behaviour-culture</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to promote a culture of good behaviour and high expectations.
-          </td>
-        </tr>
+      <p class="govuk-body">
+        We offer specialist NPQs to help improve classroom teaching and subject expertise, and leadership NPQs to build leadership skills or prepare for a leadership role.
+      </p>
 
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Leading literacy (LL)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-            <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">10</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier </th>
-          <td class="govuk-table__cell">npq-leading-literacy</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to promote literacy across a whole school, year group, key
-            stage or phase.</td>
-        </tr>
+      <p class="govuk-body">
+        Find out more details about each course including their identifier and a description of what they offer the participant.
+      </p>
 
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Leading primary mathematics (LPM)
 
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-              <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">11</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-leading-primary-mathematics</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to use mastery approaches to lead maths teaching in school.
-          </td>
-        </tr>
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m">Specialist courses</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Identifier</th>
+      <th scope="col" class="govuk-table__header">Displayed in registration?</th>
+      <th class="govuk-table__cell">Description</th>
+    </tr>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading teacher development</th>
+      <td class="govuk-table__cell">npq-leading-teaching-development</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to help teachers in school develop their skills.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading teaching </th>
+      <td class="govuk-table__cell">npq-leading-teaching</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to lead the teaching and learning of a subject, year group or phase.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading behaviour and culture </th>
+      <td class="govuk-table__cell">npq-leading-behaviour-culture</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to promote a culture of good behaviour and high expectations.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading literacy</th>
+      <td class="govuk-table__cell">npq-leading-literacy</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to promote literacy across a whole school, year group, key stage or phase.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading primary mathematics</th>
+      <td class="govuk-table__cell">npq-leading-primary-mathematics</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to use mastery approaches to lead maths teaching in school.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</p>
 
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Leading teacher development (LTD)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-            <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">3</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-leading-teaching-development</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to help teachers in school develop their skills.</td>
-        </tr>
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m">Leadership courses</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Identifier</th>
+      <th scope="col" class="govuk-table__header">Displayed in registration?</th>
+      <th class="govuk-table__cell">Description</th>
+    </tr>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Senior leadership</th>
+      <td class="govuk-table__cell">npq-senior-leadership</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to develop leadership expertise to improve outcomes for teachers and pupils.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Headship</th>
+      <td class="govuk-table__cell">npq-headship</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to become an expert school leader and outstanding headteacher.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Executive leadership </th>
+      <td class="govuk-table__cell">npq-executive-leadership</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to develop the expertise to run a multi-school organisation and lead change and improvement.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Early years leadership</th>
+      <td class="govuk-table__cell">npq-early-years-leadership</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Provides insights into managing staff and organisation to deliver high-quality early years education and care.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Special educational needs co-ordinator (SENCO) </th>
+      <td class="govuk-table__cell">npq-senco</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Explores how to perform a SENCO role effectively and set the strategic direction of special educational needs policy in a school.</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Early headship coaching offer </th>
+      <td class="govuk-table__cell">npq-early-headship-coaching-offer</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">Offers structured support and networking opportunities for headteachers in their first 5 years of headship.</td>
+    </tr>
+  </tbody>
+</table>
 
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Leading teaching (LT)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-               <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">1</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-leading-teaching</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to lead the teaching and learning of a subject, year group or
-            phase.</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Special educational needs co-ordinator (SENCO)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-            <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">12</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-senco</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to perform a SENCO role effectively and set the strategic
-            direction of special educational needs policy in a school. </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                Senior leadership (SL)
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-              <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">4</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-senior-leadership</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell">Explores how to develop leadership expertise to improve outcomes for teachers
-            and pupils.</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-         <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-               Early headship coaching offer (EHCO) – not an NPQ
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-                <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">ID</th>
-          <td class="govuk-table__cell">8</td>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Identifier</th>
-          <td class="govuk-table__cell">npq-early-headship-coaching-offer</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Description</th>
-          <td class="govuk-table__cell"> Offers structured support and networking opportunities for headteachers in
-            their first 5 years of headship.</td>
-        </tr>
-
-        <tr class="govuk-table__row">
-        </tr>
-      </tbody>
-    </table>
-          </div>
-        </div>
-      </div>
+      
 
 </div>
 </div>
