@@ -113,7 +113,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-      <nav class="moj-side-navigation" aria-label="Side navigation">
+       <nav class="moj-side-navigation" aria-label="Side navigation">
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item">
           </li>
@@ -121,12 +121,10 @@
           </li>
           
           <li class="moj-side-navigation__item moj-side-navigation__item--active">
-            <a href="ltd-130824" aria-current="location" class="govuk-!-font-size-16">Leading teacher development 13 Aug 24</a>
+            <a href="ltd-130824" aria-current="location" class="govuk-!-font-size-16">Registration details</a>
           </li>
-        
-
           <li class="moj-side-navigation__item">
-            <a href="/admin-v3/registration-1/app-history-1.html" class="govuk-!-font-size-16">Application history</a>
+            <a href="/admin-v3/registration-1/app-history-1.html" class="govuk-!-font-size-16">Registration history</a>
           </li>
           
         </ul>
@@ -149,7 +147,8 @@
       </div>
 
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jorge Hund</h1><br>
+      <span class="govuk-caption-l">Jorge Hund, NPQ Leading teacher development (NPQLTD), 10 Sept 2025</span>
+      <h1 class="govuk-heading-l">Registration details</h1>
 
 
 
@@ -182,12 +181,12 @@
               text: "Provider approval status"
             },
             value: {
-              html: providerStatusHTML
+              text: "Pending"
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "change-to-pending-in-review.html",
                   text: "Change to pending"
                 }
               ]
@@ -393,25 +392,16 @@
             },
             value: {
               text: data['registration1--updated-date']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-log",
-                  text: "View change log"
-                }
-              ]
             }
           }
         ]
       }) }}
 
       {{ govukDetails({
-        summaryText: "View application as it appears on the lead provider API V3",
+        summaryText: "View application as it appears on the provider API V3",
         html: apiHTML
       }) }}
     </div>
   </div>
-
    
 {% endblock %}
