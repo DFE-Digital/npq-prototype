@@ -49,6 +49,8 @@
   <h1 class="govuk-heading-xl">
     Your leading literacy NPQ registration
   </h1>
+  <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
 
   {{ govukSummaryList({
     card: {
@@ -140,7 +142,12 @@
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details/school-funded.html' %}
+  {% include '../includes/registration-status/work-details/school-funded.html' %}<br>
+  <h2 class="govuk-heading-l">We’d like your feedback</h2>
+
+<p class="govuk-body">
+  Tell us about your experience using the registration service by <a href="https://forms.office.com/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-XFs6Aph9JFAlL3W5RWOR_5URTJBQUEwWDBYWFRGRE5BMk8zUFhGT0tSMy4u&route=shorturl" class="govuk-link">completing a short feedback form</a>.
+</p>
 
   {% include '../includes/registration-status/register-for-another-npq.html' %}
 
