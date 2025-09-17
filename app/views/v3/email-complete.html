@@ -16,12 +16,14 @@
 
     <p>Department for Education Teacher CPD</p>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
     <div class="govuk-body">
-      <p>Dear {{ data['first-name'] or "Mary"}}</p>
+      <p>Dear {{ data['first-name'] or "Mary,"}}</p>
 
       <p>
       {% if (data['choosenpq'] == "Early headship coaching offer") %}
-      You’ve registered for the Early headship coaching offer.
+      You’ve registered for the Early headship coaching offer with LLSE starting in autumn 2025.
       {% else %}
       You’ve registered for the {{ data['choosenpq'] or "Leading literacy" }} NPQ.
       {% endif %}
@@ -29,7 +31,7 @@
 
       <h2 class="govuk-heading-m">Apply through your provider</h2>
 
-      <p>You still need to apply for your NPQ through {{ data['provider'] or "Ambition Institute" }}.</p>
+      <p>You still need to apply through {{ data['provider'] or "Ambition Institute" }}.</p>
 
       <p>They will contact you to outline the next steps, including how to apply. </p>
 
