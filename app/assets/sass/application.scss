@@ -40,6 +40,32 @@
     max-width: 1200px;
 }
 
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 600px;
+  padding: 10px;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.card-text h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.card-text p {
+  margin: 5px 0 0;
+  font-size: 1em;
+}
+
 
 
 
