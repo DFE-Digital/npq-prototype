@@ -202,7 +202,7 @@ module.exports = router => {
         res.redirect(v + 'return-to-teaching')
       } 
       else {
-        res.redirect(v + 'where-school')
+        res.redirect(v + 'which-school')
       }
     } else {
       res.redirect(v + 'choose-npq')
