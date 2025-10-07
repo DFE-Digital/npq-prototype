@@ -215,7 +215,7 @@ module.exports = router => {
     var nurserysettingt = req.session.data['nurserysetting']
 
     if (nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)' || nurserysettingt == 'Local authority-maintained nursery') {
-      res.redirect(v + 'where-school')
+      res.redirect(v + 'which-school')
     } else {
       res.redirect(v + 'eyll/do-you-have-urn')
     }
