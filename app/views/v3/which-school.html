@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
@@ -19,13 +20,22 @@
 
     <h1 class="govuk-heading-xl">What is the name of your workplace?</h1>
 
-    <form class="form" action="choose-npq" method="post">
 
       {{ govukInput({
+        label: {
+        },
         hint: {
-          html: "Begin entering the name of your workplace, then select from the drop-down box that appears. For example, enter <strong>‘St Luk’</strong> and select <strong>‘St Lukes Primary School’</strong>. 
-          <br>
-           If you work for a trust, enter the name of the school that matches the postcode you gave."
+          html: '
+            <p class="govuk-body">You can search using your workplace’s:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>postcode</li>
+              <li>unique reference number (URN)</li>
+              <li>name</li>
+            </ul>
+            <p class="govuk-body">
+              If you work for a trust, use the details of one of its schools.
+            </p>
+          '
         },
         id: "whichschool",
         name: "whichschool"
@@ -38,15 +48,16 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p class="govuk-body">You can:</p>
+          <p class="govuk-body">Check the following:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>check the spelling and try entering part of the name</li>
-            <li>make sure the <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">name matches the postcode</a> you entered</li>
-            <li>make sure your web browser settings have JavaScript enabled</li>
+            <li>the postcode or URN – <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link"> make sure it’s correct (opens in new tab)</a></li>
+            <li>the spelling – try entering part of the name</li>
+            <li>your browser settings – JavaScript must be enabled</li>
           </ul>
           <p class="govuk-body">
-            If it’s still not listed, <a href="mailto:continuing-professional-development@digital.education.gov.uk" class="govuk-link">contact us</a> for support.
-          </p>
+            <p class="govuk-body">
+  If your workplace is still not listed, <a href="continuing-professional-development@digital.education.gov.uk" class="govuk-link"> contact us</a> for support.
+</p>
         </div>
       </details>
 
