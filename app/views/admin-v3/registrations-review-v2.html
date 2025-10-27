@@ -99,6 +99,7 @@
                 <option value="young_offender_institution">2021 to 2022</option>
               </select>
               </div>
+
             </div>
           <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
         </form>
@@ -107,7 +108,7 @@
       <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" aria-sort="none">Submitted</th>
+            <th scope="col" class="govuk-table__header">Submitted</th>
             <th scope="col" class="govuk-table__header">Name</th>
             <th scope="col" class="govuk-table__header">Review status</th>
             <th scope="col" class="govuk-table__header">Eligible for funding</th>
@@ -117,14 +118,19 @@
            
           </tr>
         </thead>
- 
+        <div class="govuk-form-group" style="display:flex; align-items:center; gap:12px; justify-content:flex-end;">
+  <label class="govuk-label govuk-label--s" for="sort" style="margin:0;">
+    Sort by
+  </label>
+  <select class="govuk-select" id="sort" name="sort" style="min-width:180px;">
+    <option value="updated" selected>Newest submissions first</option>
+    <option value="views">Oldest submissions first</option>
+  </select>
+</div>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
 
             <td class="govuk-table__cell">{{ data['registration3--submitted-date'] }}</td>
-
-            
-
 
             <td scope="row" class="govuk-table__cell">
              <strong>Jorge Hund</strong>
