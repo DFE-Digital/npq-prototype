@@ -23,7 +23,7 @@
       <p>We'll send updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> when registration opens for courses starting in autumn 2026. </p>
       {% if data['numberOfRegistrations'] != "0" %} 
 
-        <p><a href="../registration-status">Review your existing registrations</a>.</p>
+        <p><a href="/v3/registration-status/registration-status">Review your existing registrations</a>.</p>
       {% endif %}
     </div>
   </div>
