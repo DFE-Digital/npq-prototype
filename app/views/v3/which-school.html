@@ -4,7 +4,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  What’s the name of your workplace?
+What is the name of your workplace?
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,50 +18,45 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">What is the name of your workplace?</h1>
-
-
+    <form method="post" action="/v3/choose-npq">
       {{ govukInput({
         label: {
+          text: "What is the name of your workplace?",
+          classes: "govuk-label--l",
+          isPageHeading: true
         },
         hint: {
-          html: '
-            <p class="govuk-body">Search for your workplace by postcode, unique reference number (URN) or name.</p>
-
-            <p class="govuk-body">
-              If you work for a trust, use the details of one of its schools.
-            </p>
-          '
+          text: "Search for your workplace by postcode, unique reference number (URN) or name. If you work for a trust, use the details of one of its schools."
         },
         id: "whichschool",
         name: "whichschool"
       }) }}
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            I cannot find my workplace
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body">You could:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>use a mix of postcode, workplace name and URN to help narrow your search</a></li>
-            <li><a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">check the details you've entered are correct<la></a>, including spelling</li>
-          </ul>
-          <p class="govuk-body">
-            <p class="govuk-body">
-</p>
-        </div>
-      </details>
 
       <div class="govuk-!-margin-top-6">
         {{ govukButton({
           text: "Continue"
         }) }}
       </div>
-
     </form>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">If you cannot find your workplace</span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">You could:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use any combination of postcode, workplace name, URN or street name</li>
+          <li>
+            <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">
+              check your workplace details (opens in a new tab)
+            </a> – including spelling
+          </li>
+        </ul>
+      </div>
+    </details>
+
   </div>
 </div>
 {% endblock %}
