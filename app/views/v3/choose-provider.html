@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set signedIn = 'true' %}
+{% set signedIn = true %}
 
 {% block pageTitle %}
   Select your provider
@@ -16,179 +16,110 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="sharing-data" method="post">
-        <h1 class="govuk-heading-xl">Select your provider</h1>
 
-        {% if (data['choosenpq'] == "Early years leadership") or (data['choosenpq'] == "Leading literacy")%}
-          {{ govukRadios({
-            name: "provider",
-            id: "provider",
-            hint: {
-              text: "Select one of the providers offering your chosen course."
-            },
-            items: [
-              {
-                value: "Ambition Institute",
-                text: "Ambition Institute"
-              },
-              {
-                value: "National Institute of Teaching",
-                text: "National Institute of Teaching"
-              },
-              {
-                value: "Teach First",
-                text: "Teach First"
-              },
-              {
-                value: "University College London (UCL) Institute of Education",
-                text: "University College London (UCL) Institute of Education"
-              }
-            ]
-          }) }}
-        {% elseif (data['choosenpq'] == "Special educational needs co-ordinator (SENCO)")%}
+        {% if (data['choosenpq'] == "Early years leadership") or (data['choosenpq'] == "Leading literacy") %}
           {{ govukRadios({
             name: "provider",
             id: "provider",
             fieldset: {
-            },
-            hint: {
-              text: "Select one of the providers offering your chosen course."
+              legend: {
+                text: "Select your provider",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
             items: [
-              {
-                value: "Ambition Institute",
-                text: "Ambition Institute"
-              },
-              {
-                value: "Best Practice Network",
-                text: "Best Practice Network"
-              },
-              {
-                value: "National Society for Education",
-                text: "National Society for Education"
-              },
-              {
-                value: "National Institute of Teaching",
-                text: "National Institute of Teaching"
-              },
-              {
-                value: "Teach First",
-                text: "Teach First"
-              },
-              {
-                value: "University College London (UCL) Institute of Education",
-                text: "University College London (UCL) Institute of Education"
-              }
+              { value: "Ambition Institute", text: "Ambition Institute" },
+              { value: "National Institute of Teaching", text: "National Institute of Teaching" },
+              { value: "Teach First", text: "Teach First" },
+              { value: "University College London (UCL) Institute of Education", text: "University College London (UCL) Institute of Education" }
             ]
           }) }}
-        {% elseif (data['choosenpq'] == "Leading primary mathematics")%}
+
+        {% elif (data['choosenpq'] == "Special educational needs co-ordinator (SENCO)") %}
           {{ govukRadios({
             name: "provider",
             id: "provider",
             fieldset: {
+              legend: {
+                text: "Select your provider",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
             items: [
-              {
-                value: "Ambition Institute",
-                text: "Ambition Institute"
-              },
-              {
-                value: "National Society for Education",
-                text: "National Society for Education"
-              },
-              {
-                value: "LLSE",
-                text: "LLSE"
-              },
-              {
-                value: "National Institute of Teaching",
-                text: "National Institute of Teaching"
-              },
-              {
-                value: "Teach First",
-                text: "Teach First"
-              },
-              {
-                value: "University College London (UCL) Institute of Education",
-                text: "University College London (UCL) Institute of Education"
-              }
+              { value: "Ambition Institute", text: "Ambition Institute" },
+              { value: "Best Practice Network", text: "Best Practice Network" },
+              { value: "National Society for Education", text: "National Society for Education" },
+              { value: "National Institute of Teaching", text: "National Institute of Teaching" },
+              { value: "Teach First", text: "Teach First" },
+              { value: "University College London (UCL) Institute of Education", text: "University College London (UCL) Institute of Education" }
             ]
           }) }}
-        {% elseif (data['choosenpq'] == "Executive leadership")%}
-        {{ govukRadios({
-          name: "provider",
-          id: "provider",
-          fieldset: {
-          },
-          items: [
-            {
-              value: "Ambition Institute",
-              text: "Ambition Institute"
+
+        {% elif (data['choosenpq'] == "Leading primary mathematics") %}
+          {{ govukRadios({
+            name: "provider",
+            id: "provider",
+            fieldset: {
+              legend: {
+                text: "Select your provider",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
-            {
-              value: "Best Practice Network",
-              text: "Best Practice Network"
+            items: [
+              { value: "Ambition Institute", text: "Ambition Institute" },
+              { value: "National Society for Education", text: "National Society for Education" },
+              { value: "LLSE", text: "LLSE" },
+              { value: "National Institute of Teaching", text: "National Institute of Teaching" },
+              { value: "Teach First", text: "Teach First" },
+              { value: "University College London (UCL) Institute of Education", text: "University College London (UCL) Institute of Education" }
+            ]
+          }) }}
+
+        {% elif (data['choosenpq'] == "Executive leadership") %}
+          {{ govukRadios({
+            name: "provider",
+            id: "provider",
+            fieldset: {
+              legend: {
+                text: "Select your provider",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
-            {
-              value: "National Society for Education",
-              text: "National Society for Education"
-            },
-            {
-              value: "LLSE",
-              text: "LLSE"
-            },
-            {
-              value: "National Institute of Teaching",
-              text: "National Institute of Teaching"
-            },
-            {
-              value: "Teach First",
-              text: "Teach First"
-            },
-            {
-              value: "University College London (UCL) Institute of Education",
-              text: "University College London (UCL) Institute of Education"
-            }
-          ]
-        }) }}
+            items: [
+              { value: "Ambition Institute", text: "Ambition Institute" },
+              { value: "Best Practice Network", text: "Best Practice Network" },
+              { value: "National Society for Education", text: "National Society for Education" },
+              { value: "LLSE", text: "LLSE" },
+              { value: "National Institute of Teaching", text: "National Institute of Teaching" },
+              { value: "Teach First", text: "Teach First" },
+              { value: "University College London (UCL) Institute of Education", text: "University College London (UCL) Institute of Education" }
+            ]
+          }) }}
+
         {% else %}
           {{ govukRadios({
             name: "provider",
             id: "provider",
             fieldset: {
+              legend: {
+                text: "Select your provider",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
             items: [
-              {
-                value: "Ambition Institute",
-                text: "Ambition Institute"
-              },
-              {
-                value: "Best Practice Network",
-                text: "Best Practice Network"
-              },
-              {
-                value: "National Society for Education ",
-                text: "National Society for Education"
-              },
-              {
-                value: "LLSE",
-                text: "LLSE"
-              },
-              {
-                value: "National Institute of Teaching",
-                text: "National Institute of Teaching"
-              },
-              {
-                value: "Teacher Development Trust",
-                text: "Teacher Development Trust"
-              },
-              {
-                value: "Teach First",
-                text: "Teach First"
-              },
-              {
-                value: "University College London (UCL) Institute of Education",
-                text: "University College London (UCL) Institute of Education"
-              }
+              { value: "Ambition Institute", text: "Ambition Institute" },
+              { value: "Best Practice Network", text: "Best Practice Network" },
+              { value: "National Society for Education", text: "National Society for Education" },
+              { value: "LLSE", text: "LLSE" },
+              { value: "National Institute of Teaching", text: "National Institute of Teaching" },
+              { value: "Teacher Development Trust", text: "Teacher Development Trust" },
+              { value: "Teach First", text: "Teach First" },
+              { value: "University College London (UCL) Institute of Education", text: "University College London (UCL) Institute of Education" }
             ]
           }) }}
         {% endif %}
@@ -198,9 +129,7 @@
           iconFallbackText: "Warning"
         }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        {{ govukButton({ text: "Continue" }) }}
 
       </form>
     </div>
