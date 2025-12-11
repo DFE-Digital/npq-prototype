@@ -242,7 +242,7 @@ module.exports = router => {
     else if (mentort == 'Other') {
       res.redirect(v + 'choose-npq')
     } 
-    else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution') {
+    else if (mentort == 'In a hospital school' || mentort == 'In a young offender institution' || mentort == 'In an independent hospital education organisation') {
       res.redirect(v + 'other/employer')
     } 
     else {
