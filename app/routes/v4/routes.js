@@ -167,10 +167,12 @@ module.exports = router => {
 // ------------
   
   router.post(v + 'chosen', function(req, res){
-    var startdatet = req.session.data['startdate']
+    var startdate = req.session.data['startdate']
 
-    if (startdatet == 'no') {
-      res.redirect(v + 'apply-later')
+    if (startdate == 'april') {
+      const data = req.session.data
+      data.selfFunding = 'true'
+      res.redirect(v + 'choose-npq')
     } else {
       res.redirect(v + 'chosen')
     }
@@ -257,6 +259,10 @@ module.exports = router => {
 
   // Does the user work in England and checks all other funding requirements
   router.post(v + 'check-data/_funding-check', function(req, res){
+    if (req.session.data['selfFunding'] == 'true') {
+      res.redirect(v + 'choose-provider')
+      return
+    }
     var npqt = req.session.data['choosenpq']
     var teachadvisoryt = req.session.data['teachadvisory']
     var locationt = req.session.data['wheredoyouwork']
