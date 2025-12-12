@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% set signedIn = 'true' %}
+{% set signedIn = 'false' %}
 
 {% block pageTitle %}
   Do you want to start a course in autumn 2025?
@@ -34,11 +34,17 @@
         items: [
           {
             value: "april",
-            text: "April 2026"
+            text: "April 2026",
+            hint: {
+              text: "DfE scholarship funding is not available"
+            }
           },
           {
             value: "november",
-            text: "November 2026"
+            text: "November 2026",
+            hint: {
+              text: "The next few questions will assess your eligibility for DfE scholarship funding"
+            }
           }
         ]
       }) }}
