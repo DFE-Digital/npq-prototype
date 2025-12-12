@@ -14,7 +14,7 @@ module.exports = router => {
   router.get('/user-research/npq/new-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    res.redirect(v + 'course-start') 
+    res.redirect(v + 'check-answers')
   })
 
 
@@ -22,7 +22,7 @@ module.exports = router => {
     router.get('/user-research/npq/existing-user', (req, res) => {
     const data = req.session.data
     data.signedIn = 'true'
-    res.redirect(v + 'registration-status/registration-status')
+    res.redirect(v + 'check-answers')
   })
 
   // Redirect from Identity prototype - Closed state - sign up to email  
