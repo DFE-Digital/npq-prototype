@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  We cannot find your details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">We cannot find your details</h1>
+      <p>We cannot find a match with the details you’ve given:​​</p>
+
+      {{ govukTable({
+        firstCellIsHeader: true,
+        rows: [
+            [
+              {
+                text: "Teacher reference number (TRN)​"
+              },
+              {
+                text: "1234567"
+              }
+            ],
+            [
+              {
+                text: "Full name​"
+              },
+              {
+                text: "George Best​"
+              }
+            ],
+            [
+              {
+                text: "Date of birth​​"
+              },
+              {
+                text: "22 May 1946​​"
+              }
+            ],
+            [
+              {
+                text: "National Insurance number​"
+              },
+              {
+                text: "AB576890X​​"
+              }
+            ]
+        ]
+      }) }}
+
+      <p>This could be because:​​​</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you've abbreviated your first name, for example ‘Rob’ for ‘Robert’​​</li>
+        <li>your surname differs from Teaching Regulation Agency records​</li>
+        <li>you mistyped or entered incorrect details​</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Next steps</h2>
+
+      <p>You can:​​​</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check your TRN is correct using the <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">Find a lost TRN service</a>​</li>
+        <li>use the <a href="https://authorise-access-to-a-teaching-record.education.gov.uk/request-trn">Get a TRN service</a> if you’ve never received a TRN​​</li>
+      </ul>
+
+      <p>You can complete registration without validating your TRN, and our support team will manually match your details.​</p>
+
+      {{ govukWarningText({
+        text: "​If your TRN is not verified, your funded place cannot be confirmed and your NPQ application may be rejected by your provider.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Try again"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue registration",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

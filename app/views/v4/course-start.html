@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Do you want to start a course in autumn 2025?
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Course start</h1>
+    <p>NPQ courses start once a year every autumn.</p>
+    <p>Registrations are currently open for courses starting in autumn 2025.</p>
+    <p class="govuk-body govuk-!-margin-bottom-8">Early headship coaching offer start dates vary by provider and are throughout the year.</p>
+
+    <form class="form" action="chosen" method="post">
+      {{ govukRadios({
+        id: "startdate",
+        name: "startdate",
+        fieldset: {
+          legend: {
+            text: "Do you want to start a course in autumn 2025?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            hint: {
+              text: "You can also select this option if you've already started"
+            }
+          },
+          {
+            value: "no",
+            text: "No, I want to start later"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Which NPQ do you want to do?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Choose an NPQ</h1>
+      <p class="govuk-body govuk-!-margin-bottom-6">To register for an NPQ and the <a href="https://professional-development-for-teachers-leaders.education.gov.uk/early-headship-coaching-offer">Early headship coaching offer</a>, submit 2 separate registrations.</p>
+      
+      <h1 class="govuk-heading-m">Which NPQ do you want to do?</h1>
+      <form class="form" action="check-data/_funding-check" method="post">
+        
+        {% include './includes/npqs-list.html' %}
+        
+      </form>
+      
+    </div>
+    
+  </div>
+{% endblock %}

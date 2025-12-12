@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+What is the name of your workplace?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/v3/choose-npq">
+      {{ govukInput({
+        label: {
+          text: "What is the name of your workplace?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Search for your workplace by postcode, unique reference number (URN) or name. If you work for a trust, use the details of one of its schools."
+        },
+        id: "whichschool",
+        name: "whichschool"
+      }) }}
+
+      <div class="govuk-!-margin-top-6">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </div>
+    </form>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">If you cannot find your workplace</span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">You could:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use any combination of postcode, workplace name, URN or street name</li>
+          <li>
+            <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">
+              check your workplace details (opens in a new tab)
+            </a> – including spelling
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</div>
+{% endblock %}

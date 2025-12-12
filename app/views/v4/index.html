@@ -1,0 +1,273 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Register for a NPQ prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Register for a NPQ prototype
+      </h1>
+
+      {{ govukButton({
+        text: "View prototype",
+        href: "start-page"
+      }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Skip create DfE Identity account (GAI)
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://get-an-identity-prototype.herokuapp.com/auth/finish">Last page of GAI, linking back to NPQ service </a></li>
+            <li><a href="course-start">First page after GAI, if not previously registered </a></li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">
+        Navigate the prototype
+      </h2>
+
+      <p>The password for the Get an Identity prototype (i.e. the password you're asked for after
+        clicking "Start now") is: <strong>gai</strong></p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Returning users
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Use <strong>existing@email.com</strong> when asked for your email address.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            New user attempting to log in
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Use <strong>new@email.com</strong> when asked for your email address.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Private school journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Type <strong>‘private’</strong> when asked for the <strong>name of the school</strong>.</p>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            School or early years in eligibility check 
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Type '<strong>not-pp50</strong>' when asked for the <strong>name of the school</strong> or the <strong>Ofsted URN</strong>.</p>
+          <p>This will show the funding outcome (not eligible) for a workplace not in the eligibility list. </p>
+          <p>Entering anything else in those questions, shows the outcome for the workplace in the list (normally eligible, but subject to other rules).</p>
+        </div>
+      </details>
+
+<!-- LINKS TO PARTS OF THE PROTOTYPE STARTS HERE -->
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+      <h2 class="govuk-heading-l">Links to parts of the NPQ prototype</h2>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+        <li><a href="start-page">Start page </a></li>
+        <li><a href="check-answers">Check your answers page </a></li>
+        <li><a href="registration-status/registration-status">Confirmation page </a></li>
+        <li><a href="index-of-funding">View all funding outcome messages</a></li>
+      </ul>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Users who have already registered
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p><a href="https://lucid.app/lucidspark/e33a4231-5282-4a1f-b98d-694b4295d6cc/edit?invitationId=inv_31cc941f-c63c-4ac5-95fc-2775e26969fc&page=0_0#">Lucid board showing all registration flow routes, including funding messages</a></p>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing different funding statuses </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="registration-status/registration-status--scholarship-only">Message 1 - Eligible for Scholarship funding only </a></li>
+            <li><a href="registration-status/registration-status--not-funded-england">Message 2 - Not eligible for funding – not in England </a></li>
+            <li><a href="registration-status/registration-status--not-funded-previously-funded">Message 3 - Not eligible for funding – previously funded </a></li>
+            <li><a href="registration-status/registration-status--not-funded-setting">Message 4 - Not eligible for funding – not in an eligible setting </a></li>
+            <li><a href="registration-status/registration-status--not-funded-not-in-list">Message 5 - Not eligible for funding – not in eligible list (top PP50) </a></li>
+            <li><a href="registration-status/registration-status--not-funded-ofsted">Message 6 - Not eligible for funding – not Ofsted </a></li>
+            <li>Message 7 - same as 4</li>
+            <li><a href="registration-status/registration-status--not-funded-ehco">Message 8 - Not eligible for funding – EHCO that doesn't meet requirements </a></li>
+            <li><a href="registration-status/registration-status--scholarship-review">Message 9 - Funding – in review </a></li>
+            <li><a href="registration-status/registration-status--targeted-support">Pre April 2024 eligible for Targeted support funding </a></li>
+          </ul>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing provider application and course outcomes </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="registration-status/registration-status">User with one registration </a></li>
+            <li><a href="registration-status/multiple-registrations">User with multiple registrations </a> (showing all provider application and course outcomes)</li>
+            <li><a href="registration-status/registration-status--expired">User with one registration, that's expired </a></li>
+          </ul>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><strong>Provider application statuses</strong></li>
+            <li><a href="registration-status/registration-status--scholarship-review">Apply with provider</a></li>
+            <li><a href="registration-status/registration-status--scholarship-only">Successful application</a></li>
+            <li><a href="registration-status/registration-status--not-funded-setting">Unsuccessful application</a></li>
+            <li><a href="registration-status/registration-status--expired-closed">Expired registration, while service is closed</a></li>
+          </ul>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><strong>Course outcome statuses</strong></li>
+            <li><a href="registration-status/registration-status--not-funded-england">Course passed</a></li>
+            <li><a href="registration-status/registration-status--not-funded-ofsted">Course not passed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Other </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="submit">Registration straight after submitted</a></li>
+            <li><a href="email-complete">Confirmation email</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+           TRN not verified
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="trn">Do you have a TRN question </a></li>
+            <li><a href="get-a-trn">Get a TRN page </a></li>
+            <li><a href="trn-cannot-find-details">Cannot find details </a></li>
+          </ul>
+        </div>
+      </details>
+      
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Set data to take through prototype
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Registration pages showing different funding statuses </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="no-registrations">User with no registrations </a></li>
+            <li><a href="one-registration">User with one registration </a></li>
+            <li><a href="multiple-registrations">User with multiple registrations </a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Closed service 
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="closed-for-registations">Partial closure (closed for registrations, account access) </a></li>
+            <li><a href="closed-fully">Full closure </a></li>
+            <li><a href="start-page">Remove closed state</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Late registration – For users given access through admin panel </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="closed/late-registration--start-page">Late registration start page </a></li>
+            <li><a href="closed/late-registration--error-message">Late registration error message (when email address doesn't have access)</a></li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Design artefacts
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+          
+            <li>
+                <a href="https://www.figma.com/design/7QdZgkSGZPc9WkBUZGyFDK/NPQ-combined-admin?node-id=158-16631">
+                 Figma file
+                </a>
+            </li>
+
+            <li>
+              <a href="https://teacher-cpd.design-history.education.gov.uk/register-for-an-npq/">
+               Design histories
+              </a>
+          </li>
+             
+               <li>
+                <a href="https://lucid.app/lucidspark/656d1b13-e08a-4ef6-895c-37fadab5be55/edit?viewport_loc=-8117%2C-4419%2C28629%2C14073%2C0_0&invitationId=inv_2e29748f-211d-4adb-8110-53f22fe8fb44">
+                 NPQ combined admin lucid board
+                 </a>
+                </li>
+
+                <li>
+                  <a href="https://lucid.app/lucidspark/e33a4231-5282-4a1f-b98d-694b4295d6cc/edit?view_items=JgK1OhkEEdhA&invitationId=inv_31cc941f-c63c-4ac5-95fc-2775e26969fc">
+                   User flow lucid board
+                   </a>
+                  </li>
+                
+                  <li>
+                    <a href="https://lucid.app/lucidspark/6873ec20-8ae6-4890-bc5c-c1e428d18559/edit?invitationId=inv_5a4dae2e-6996-4ce0-8a6c-b1e567337538&page=0_0#">
+                     NPQ end-to-end service lucid board
+                     </a>
+                  </li>
+
+                  <li>
+                    <a href="https://lucid.app/lucidspark/76bda434-31a5-4bfb-9ce6-d06285397085/edit?invitationId=inv_1c491be0-d01a-4821-8e6b-8ce67dbe8a66&page=0_0#">
+                     NPQ admin finance rool lucid board
+                     </a>
+                  </li>
+
+                  <li>
+                    <a href="https://lucid.app/lucidspark/d586abff-33e0-428e-931c-7bebf1692a30/edit?invitationId=inv_2fa63182-d0db-492a-97ab-abede39ad6e0&page=0_0#">
+                     NPQ reg - Autumn 2024 changes lucid board
+                     </a>
+                  </li>
+                  
+                <li>
+                  <a href="https://github.com/DFE-Digital/npq-prototype">
+                    Git repository
+                  </a>
+                </li>
+              
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+{% endblock %}

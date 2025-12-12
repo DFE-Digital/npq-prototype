@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
+
+{% block pageTitle %}
+Registration status
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to your registrations",
+href: "./multiple-registrations"
+}) }}
+{% endblock %}
+
+{% set personaldetailsHTML %}
+<p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity
+    account</a> to check or change your personal details.</p>
+{% endset %}
+
+{% set fundingHTML %}
+
+<p class="govuk-!-margin-top-2">You are eligible for funding for the Headship NPQ course, but this does not guarantee a
+  funded place is available. Your provider must confirm you have a scholarship-funded place.<br>
+  <br>
+  Contact Ambition to check that they have a funded place to offer you.
+
+<h2 class="govuk-heading-s">If no funded place is available</h2>
+
+<p class="govuk-!-margin-bottom-0"></p>You can:
+<ul class="govuk-list govuk-list--bullet">
+  <li>register with a different provider</li>
+  <li>consider other payment options, such as self-funding or asking if your workplace or trust can cover the cost</li>
+</ul>
+
+{% endset %}
+
+{% block content %}
+<span class="govuk-caption-m">Submitted 11 July 2024</span>
+<h1 class="govuk-heading-xl">
+  Your leading teaching NPQ registration
+</h1>
+<p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
+{{ govukSummaryList({
+card: {
+title: {
+text: "Course details"
+}
+},
+rows: [
+{
+key: {
+text: "Course"
+},
+value: {
+html:
+'Leading teaching NPQ' },
+actions: {
+items: [
+{
+href: "../change-details",
+html: 'Change <span class="govuk-visually-hidden"> course</span>'
+}
+]
+}
+},
+{
+key: {
+text: "Provider"
+},
+value: {
+html:
+'Ambition Institute' },
+actions: {
+items: [
+{
+href: "../change-details",
+html: 'Change <span class="govuk-visually-hidden"> provider</span>'
+}
+]
+}
+},
+{
+key: {
+text: "Provider application"
+},
+value: {
+html:
+'<strong class="govuk-tag govuk-tag--yellow">
+  Apply with provider
+</strong> <br>
+<br>
+<p>You need to apply separately with your training provider.</p>
+
+<p>They’ll email you to explain what you need to do next.</p>
+
+<p class="govuk-body">During the application process, your provider will check your:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>identity</li>
+<li>place of work</li>
+<li>suitability for the NPQ course you’ve chosen</li>
+<li>eligibility for scholarship funding</li>
+<li>decision to complete an NPQ is supported by your workplace</li>
+</ul>'
+
+}
+}
+]
+}) }}
+
+{{ govukSummaryList({
+card: {
+title: {
+text: "Funding details"
+}
+},
+rows: [
+{
+key: {
+text: "Scholarship funding"
+},
+value: {
+html: fundingHTML
+}
+}
+]
+}) }}
+
+{{ govukSummaryList({
+card: {
+title: {
+text: "Personal details"
+}
+},
+rows: [
+{
+key: {
+classes: "display-none"
+},
+value: {
+html: personaldetailsHTML,
+classes: "govuk-!-width-full-width"
+}
+}
+]
+}) }}
+
+{% include '../includes/registration-status/work-details/ey-state-nursery.html' %}<br>
+<h2 class="govuk-heading-l">We’d like your feedback</h2>
+
+<p class="govuk-body">
+  Tell us about your experience using the registration service by <a href="https://forms.office.com/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-XFs6Aph9JFAlL3W5RWOR_5URTJBQUEwWDBYWFRGRE5BMk8zUFhGT0tSMy4u&route=shorturl" class="govuk-link">completing a short feedback form</a>.
+</p>
+{% include '../includes/registration-status/register-for-another-npq.html' %}
+
+{% include '../includes/prototype-links.html' %}
+
+{% endblock %}

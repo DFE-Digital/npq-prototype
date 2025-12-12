@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  What setting do you work in?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="where-school" method="post">
+        {{ govukRadios({
+          name: "whichsetting",
+          id: "whichsetting",
+          fieldset: {
+            legend: {
+              text: "What setting do you work in?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Make sure the information you provide is correct, as your provider will check your details. Register using your current workplace details, even if they will change soon.",
+            classes: "govuk-!-margin-bottom-6"
+          },
+          items: [
+            {
+              value: "Early years or childcare",
+              html: "<strong>Early years or childcare</strong>"
+            },
+            {
+              value: "School",
+              html: "<strong>School</strong>",
+              hint: {
+                html: "Includes:<div style='margin-top: 0.5em;'><ul><li>local authority maintained schools (some may provide hospital education, for example pupil referral units, alternative provision or special schools)</li><li>secure children’s homes and secure training centres</li></ul></div>"
+              }
+            },
+            {
+              value: "Academy trust",
+              html: "<strong>Academy trust</strong>",
+              hint: {
+                html: "Some may provide hospital education (for example, alternative provision or academy special schools)<div style='margin-top: 0.5em;'><ul>"
+              }
+            },
+            {
+              value: "16 to 19 educational setting",
+              html: "<strong>16 to 19 educational setting</strong>",
+                hint: {
+                  html: "Includes:<div style='margin-top: 0.5em;'><ul><li>sixth form colleges</li><li>further education colleges</li><li>schools that also teach ages 16 to 19</li></ul></div>"
+                }
+            },
+            {
+              value: "Another setting",
+              html: "<strong>Another setting</strong>",
+              hint: {
+                html: "For example:<div style='margin-top: 0.5em;'><ul><li>local authority (for staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles)</li><li>initial teacher training (ITT) providers (for ITT lead mentors)</li><li>independent hospital education organisations</li><li>young offender institutions</li></ul></div>"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Other",
+              html: "<strong>Other</strong>",
+              hint: {
+                html: "Select ‘Other’ if you were referred by the Return to Teaching Advisory (RTTA) service, or if none of the above options apply to you, for example you’re:<div style='margin-top: 0.5em;'><ul><li>self-employed</li><li>not working in an educational setting</li><li>an agency supply teacher</li><li>working in any other independent setting</li></ul></div>"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

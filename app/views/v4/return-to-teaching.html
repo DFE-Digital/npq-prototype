@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Did a return to teaching adviser refer you to this service? 
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set returnteachingHTML %}
+  <p class="govuk-body govuk-!-margin-top-2">The RTTA is a DfE service that provides you with an adviser who will give you one-to-one support to:</p>
+  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+    <li>find and apply for teaching vacancies</li>
+    <li>access courses to enhance your subject knowledge or teaching practice</li>
+  </ul>
+{% endset %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="choose-npq" method="post">
+      {{ govukRadios({
+        name: "teachadvisory",
+        id: "teachadvisory",
+        fieldset: {
+          legend: {
+            text: "Did a return to teaching adviser refer you to this service?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: returnteachingHTML
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
