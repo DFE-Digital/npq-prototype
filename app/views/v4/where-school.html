@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Where is your workplace located?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">What is the first part of your workplace postcode?</h1>
+
+    <form class="form" action="which-school" method="post">
+      {{ govukInput({
+        hint: {
+          html: "Enter <strong>just the first part of your workplace postcode</strong>, for example SW19. If you work for a trust, use the postcode of one of its schools."
+        },
+        id: "whereschool",
+        name: "whereschool"
+      }) }}
+      
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

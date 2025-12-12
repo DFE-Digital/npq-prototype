@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Check your answers and submit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <!-- NOT England -->
+    <!-- not funded for any -->
+  {% if data['wheredoyouwork'] == "No" %}
+    {% include './includes/answers/not-eng.html' %}
+
+  <!-- Private nursery with URN -->
+    <!-- Only funded for EYL -->
+  {% elseif (data['nurserysetting'] == "Private nursery") and (data['haveurn'] == 'Yes') %}
+    {% include './includes/answers/ey-funded.html' %}
+
+  <!-- Not a nursery with URN -->
+    <!-- Only funded for EYL -->
+  {% elseif (data['nurserysetting'] == "Another early years setting") and (data['haveurn'] == 'Yes') %}
+    {% include './includes/answers/ey-funded.html' %}
+
+  <!-- Childminder with URN -->
+    <!-- Only funded for EYL -->
+  {% elseif (data['nurserysetting'] == "As a childminder") and (data['haveurn'] == 'Yes') %}
+    {% include './includes/answers/ey-funded.html' %}
+
+  <!-- State nursery  -->
+    <!-- eligible for funding if in PP50 -->
+    <!-- EHCO not funded if -->
+  {% elseif ((data['nurserysetting'] == "Local authority-maintained nursery") or (data['nurserysetting'] == "Pre-school class or nursery that’s part of a school (maintained or independent)")) %}
+    {% include './includes/answers/ey-state-nursery.html' %}
+
+  <!-- Not OFSTED - not nursery or a private nursery -->
+    <!-- not funded for any -->
+  {% elseif (data['whichsetting'] == "Early years or childcare") and (data['haveurn'] == 'No') %}
+    {% include './includes/answers/ey-no-ofsted.html' %}
+
+  <!-- Private school -->
+    <!-- not funded for any -->
+  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") or (data['whichschool'] == "not-pp50") %}
+    {% include './includes/answers/private-school.html' %}
+
+  <!-- Another setting AND ITT -->
+    <!-- Only funded for LTD -->
+  {% elseif data['mentor'] == "As a lead mentor for an accredited initial teacher training (ITT) provider" %}
+    {% include './includes/answers/other-itt.html' %}
+
+  <!-- Another setting AND virtual school OR supply teacher -->
+    <!-- Goes to review. Funded for Maths, SENCO, Headship, EHCO -->
+    <!-- EHCO not funded if -->
+  {% elseif (data['mentor'] == "In a virtual school (local authority run organisations that support the education of children in care)") or (data['mentor'] == "As a teacher employed by a local authority to teach in more than one school") %}
+    {% include './includes/answers/other-local-authority.html' %}
+
+  <!-- Another setting AND hospital school OR young offender institution -->
+    <!-- Funded for Maths, SENCO, Headship, EHCO -->
+    <!-- EHCO not funded if -->
+  {% elseif (data['mentor'] == "In a hospital school") or (data['mentor'] == "In a young offender institution") %}
+    {% include './includes/answers/other-hospital-young-offenders.html' %}
+
+  <!-- Other, other setting -->
+    <!-- if return to teaching = goes to review. Otherwise not funded for any -->
+    {% elseif data['whichsetting'] == "Other" %}
+    {% include './includes/answers/other.html' %}
+
+  <!-- Funded schools -->
+    <!-- eligible for funding if in PP50 -->
+    <!-- EHCO not funded if -->
+  {% else %}
+    {% include './includes/answers/school-funded.html' %}
+  {% endif %}
+        <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    If you enter your information incorrectly it may result in you not being offered a funded place on an NPQ course.
+  </strong>
+</div>
+
+  {{ govukButton({
+    text: "Submit",
+    href: "submit"
+  }) }}
+
+{% endblock %}

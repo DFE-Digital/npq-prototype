@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+ Get email updates
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Get email updates</h1>
+    <p>We’ll let you know when registration opens for courses starting in autumn 2026.</p>
+    
+    <form class="form" action="./eoi-success" method="post">
+      {{ govukRadios({
+        name: "eoi-senco",
+        fieldset: {
+          legend: {
+            text: "Are you interested in the special educational needs co-ordinator (SENCO) NPQ?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No, I want to do a different NPQ"
+          }
+        ]
+      }) }}
+
+      <p>By requesting email updates, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers#NPQ">privacy notice</a>.</p>
+
+      {{ govukButton({
+        text: "Request email updates"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

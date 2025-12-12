@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Are you studying for, or have you completed an NPQ for Headship (NPQH)?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="ehco-headteacher" method="post">
+
+<h1 class="govuk-heading-xl">Eligibility for the Early headship coaching offer</h1>
+
+<p class="govuk-body govuk-!-margin-bottom-7">To be eligible for the Early headship coaching offer you need to do the Headship NPQ.</p>
+
+      {{ govukRadios({
+        name: "completednpqh",
+        id: "completednpqh",
+        fieldset: {
+          legend: {
+            text: "What stage are you at with the Headship NPQ?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "I have completed an NPQH",
+            text: "I’ve completed it"
+          },
+          {
+            value: "I am still studying for an NPQH",
+          text: "I’m doing it"
+          },
+          {
+            value: "I am about to start an NPQH",
+            text: "I’m starting it soon"
+          },
+          {
+            value: "None of the above",
+            text: "None of the above"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

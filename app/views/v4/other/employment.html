@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  How are you employed?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="role" method="post">
+      {{ govukRadios({
+        name: "mentor",
+        id: "mentor",
+        fieldset: {
+          legend: {
+            text: "How are you employed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "In an independent hospital education organisation",
+            text: "In an independent hospital education organisation"
+          },
+          {
+            value: "As a lead mentor for an accredited initial teacher training (ITT) provider",
+            text: "As a lead mentor for an accredited initial teacher training (ITT) provider"
+          },
+          {
+            value: "As a teacher employed by a local authority to teach in more than one school",
+            text: "As a teacher employed by a local authority to teach in more than one school",
+            hint: {
+              text: "This could be as a supply teacher or peripatetic teacher."
+            }
+          },
+          {
+            value: "In a virtual school (local authority run organisations that support the education of children in care)",
+            text: "In a virtual school (local authority run organisations that support the education of children in care)"
+          },
+          {
+            value: "In a young offender institution",
+            text: "In a young offender institution"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  What’s the name of your workplace?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Personal email address</h1>
+    <!-- Hint Text below the Question -->
+    <p class="govuk-body">  <p class="govuk-body">You must provide your personal email address so that you have access to your NPQ account, even if you change your place of work or study.
+      <br>
+      <div class="govuk-inset-text">
+        Providing a work email address could delay your application.
+</div>
+
+      </p></p>
+
+    <form class="form" action="choose-npq" method="post">
+
+      <h1 class="govuk-heading-l">What is your personal email address?</h1>
+      <label class="govuk-label" for="event-name">
+        We’ll send you a code to confirm your email address
+      </label>
+      <!-- Email Input Field -->
+      {{ govukInput({
+        hint: {
+        },
+        id: "personalEmail",
+        name: "personalEmail"
+      }) }}
+
+      <!-- Continue Button -->
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

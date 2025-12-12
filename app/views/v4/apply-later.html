@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Register at a later date
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">You cannot register yet</h1>
+
+    <p>Registrations are currently only open for courses starting in autumn 2025.</p>
+
+    <p class="govuk-body">The next cohort will begin their course in autumn 2026.</a><p>
+
+</p>
+</ul>
+<section class="govuk-!-margin-top-6">
+  <h2 class="govuk-heading-m">Stay informed</h2>
+  <p class="govuk-body">
+    You can sign up for email updates to:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>find out when NPQ registration opens</li>
+    <li>tell us if you're interested in the special educational needs co-ordinator (SENCO) NPQ</li>
+  </ul>
+  <p class="govuk-body"><a href="/v3/eoi-register-later/eoi-question" class="govuk-link">Sign up for updates</a></p>
+
+
+
+</section>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

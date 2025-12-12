@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+
+
+{% block pageTitle %}
+  Enter your or your employer’s Ofsted URN
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/v3/choose-npq" method="post">
+      {{ govukInput({
+        label: {
+          text: "Enter your or your employer’s Ofsted URN",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          text: "For example a 7 digit number (1234567) or a 6 digit number sometimes prefixed with EY (EY456789)"
+        },
+        id: "urn",
+        name: "urn"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

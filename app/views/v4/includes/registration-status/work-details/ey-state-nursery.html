@@ -1,0 +1,127 @@
+{% set englandHtml %}
+  {{ data['wheredoyouwork'] or 'Yes' }}
+{% endset %}
+
+{% set workSettingHtml %}
+  {{ data['whichsetting'] or 'Early years or childcare' }}
+{% endset %}
+
+{% set earlyYearsSettingHtml %}
+  {{ data['nurserysetting'] or 'Local authority-maintained nursery' }}
+{% endset %}
+
+{% set employerHtml %}
+  {{ data['whichschool'] or 'Lanterns Nursery School and Extended Services – Bereweeke Road, Winchester, Hampshire, SO22 6AJ' }}
+{% endset %}
+
+{% set mathsHtml %}
+  {% if data['mathsmastery'] == "Yes" %}
+    {{ data['mathsmastery'] }} 
+    {% elseif data['mathsmasteryother'] == "I’ve taken a course similar to the primary maths Teaching for Mastery programme" %}
+      {{ data['mathsmastery'] }} - but taken a similar course
+    {% else %}
+      {{ data['mathsmastery'] }} - but can show understanding of mastery approaches another way
+  {% endif %}
+{% endset %}
+
+{% set sencoHtml %}
+  {% if data['sencoinrole'] == "Yes" %}
+  {{ data['sencoinrole'] }} – since {{ data['sencostart-month'] | monthName or 'December'}} {{ data['sencostart-year'] or '2023'}}
+    {% else %}
+      {{ data['sencoinrole'] }}
+  {% endif %}
+{% endset %}
+
+{{ govukSummaryList({
+  card: {
+    classes: "govuk-!-margin-bottom-0",
+    title: {
+      text: "Work details"
+    },
+    actions: {
+      classes: 'govuk-visually-hidden',
+      items: [
+        {
+          href: "/registration-status/work-details/where-do-you-work",
+          text: "Change work details",
+          classes: "govuk-!-font-weight-regular"
+        }
+      ]
+    } if data['courseOutcome'] != "Started"
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        html: englandHtml
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        html: workSettingHtml
+      } 
+    },
+    {
+      key: {
+        text: "Early years setting"
+      },
+      value: {
+        html: earlyYearsSettingHtml
+      } 
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        html: employerHtml
+      } 
+    },
+    {
+      key: {
+        text: "Completed one year of the primary maths Teaching for Mastery programme"
+      },
+      value: {
+        html: mathsHtml
+      } 
+    } if data['choosenpq'] == "Leading primary mathematics",
+    {
+      key: {
+        text: "Special educational needs co-ordinator (SENCO)"
+      },
+      value: {
+        html: sencoHtml
+      } 
+    } if data['choosenpq'] == "Special educational needs co-ordinator (SENCO)",
+    {
+      key: {
+        text: "Headship NPQ stage"
+      },
+      value: {
+        text: data['completednpqh']
+      }
+    } if data['choosenpq'] == "Early headship coaching offer",
+    {
+      key: {
+        text: "Headteacher"
+      },
+      value: {
+        text: data['headteachers']
+      }
+    } if data['choosenpq'] == "Early headship coaching offer",
+    {
+      key: {
+        text: "First 5 years of headship"
+      },
+      value: {
+        text: data['earlyheadship']
+      }
+    } if (data['choosenpq'] == "Early headship coaching offer") and (data['headteachers'] != 'No')
+  ]
+}) }}
+
