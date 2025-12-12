@@ -259,10 +259,10 @@ module.exports = router => {
 
   // Does the user work in England and checks all other funding requirements
   router.post(v + 'check-data/_funding-check', function(req, res){
-    if (req.session.data['selfFunding'] == 'true') {
-      res.redirect(v + 'choose-provider')
-      return
-    }
+    // if (req.session.data['selfFunding'] == 'true') {
+    //   res.redirect(v + 'choose-provider')
+    //   return
+    // }
     var npqt = req.session.data['choosenpq']
     var teachadvisoryt = req.session.data['teachadvisory']
     var locationt = req.session.data['wheredoyouwork']
