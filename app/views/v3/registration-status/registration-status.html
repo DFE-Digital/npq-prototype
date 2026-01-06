@@ -283,24 +283,30 @@
     {% if (data['choosenpq'] == "Early headship coaching offer") %}
       Your Early headship coaching offer registration
     {% else %}
-      Your {{ data['choosenpq'] or "Leading teacher development" }} NPQ registration
+      Your {{ data['choosenpq'] or "Leading Teaching" }} registration
     {% endif %}
   </h1>
+
+<div class="govuk-inset-text">
+  <p class="govuk-body">
+  <a href="#" class="govuk-link">Update your personal information in your DfE Identity account</a>.
+</p>
+</div>
 
   {{ govukSummaryList({
     card: {
       title: {
-        text: "Course details"
+        text: "Registration details"
       }
     },
     rows: [
       {
-        key: {
-          text: "Course"
-        },
-        value: {
-          html: courseHTML
-        },
+        key: { text: "Registered on" },
+        value: { text: "14 August 2024" }
+      },
+      {
+        key: { text: "Course" },
+        value: { text: "Leading Teaching NPQ" },
         actions: {
           items: [
             {
@@ -311,12 +317,8 @@
         }
       },
       {
-        key: {
-          text: "Provider"
-        },
-        value: {
-          html: providerHTML
-        },
+        key: { text: "Provider" },
+        value: { text: "National Institute of Teaching" },
         actions: {
           items: [
             {
@@ -327,73 +329,39 @@
         }
       },
       {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html: providerstatusHTML
-        }
+        key: { text: "Funding" },
+        value: { text: "Not eligible for scholarship" }
       },
       {
-        key: {
-
-        },
-        value: {
-          html: coursedateHTML
-        }
-      } 
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Funding details"
+        key: { text: "Workplace" },
+        value: { text: "Holy Infant and St Anthony's Primary School, BL1 6QJ" }
       }
-    },
-    rows: [
+      ,
       {
-        key: {
-          text: "Scholarship funding"
-        },
-        value: {
-          html: scholarshipFundingHTML
-        }
-      },
-      {
-        key: {
-          text: "Course funding"
-        },
-        value: {
-          html: courseFundingHtml
-        }
-      } if (data['referrer'] != "inreview") and (data['referrer'] != "funded")
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          classes: "display-none"
-        },
-        value: {
-          html: personaldetailsHTML,
-          classes: "govuk-!-width-full-width"
-        }
+        key: { text: "Application/Registration ID" },
+        value: { text: data['workplaceContact'] or "9a9ed4cac2-acb4e-b009-ff8079afafda" }
       }
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details.html' %}
+  <h2>Next steps</h2>
 
-  {% include '../includes/registration-status/register-for-another-npq.html' %}
+  <p>Your provider will email you with instructions about how to apply for the course.</p>
 
+<p class="govuk-body">Once you've applied, they will check:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>you meet the course suitability requirements</li>
+  <li>funding is available (if you’re eligible)</li>
+</ul>
+<br>
+
+
+<a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Register for another course
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
   {% include '../includes/prototype-links.html' %}
 
 {% endblock %}
