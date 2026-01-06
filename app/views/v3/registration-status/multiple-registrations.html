@@ -28,355 +28,80 @@
 {% endset %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Your NPQ registrations</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Your registrations</h1>
+      
 
-  {{ govukInsetText({
-    html: '<a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.'
-  }) }}
+<div class="govuk-inset-text">
+  <p class="govuk-body">
+  <a href="#" class="govuk-link">Update your personal information in your DfE Identity account</a>.
+</p>
+</div>
 
-  <div class="govuk-rows" style="margin-top: 40px"></div>
+      <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Active registrations</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Course name</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Registered on</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Status</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Review details</th>
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Headship NPQ
-        <p class="govuk-!-margin-bottom-0">	LLSE (Leadership Learning Securing Excellence)</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--scholarship-review",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "16 August 2024"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--yellow">
-              Apply with provider
-            </strong>
-            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider.</p>'
-        }
-      }
-    ]
-  }) }}
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading Teaching NPQ</th>
+      <td class="govuk-table__cell">14 August 2024</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Apply with provider</strong></td>
+      <td class="govuk-table__cell"><p class="govuk-body">
+  <a href="#" class="govuk-link govuk-link--no-underline">Select</a>
+</p></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading Behaviour NPQ</th>
+      <td class="govuk-table__cell">8 July 2024</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Apply with provider</strong></td>
+      <td class="govuk-table__cell"><p class="govuk-body">
+  <a href="#" class="govuk-link govuk-link--no-underline">Select</a>
+</p></td>
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading teaching NPQ
-        <p class="govuk-!-margin-bottom-0">Ambition Institute</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--scholarship-only",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "11 July 2024"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      }
-    ]
-  }) }}
+  </tbody>
+</table>
+<br>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Expired registrations</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Course name</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Registered on</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Status</th>
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--not-funded-setting",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "2 July 2024"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--red">
-              Unsuccessful
-            </strong>'
-        }
-      }
-    ]
-  }) }}
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading Teaching NPQ</th>
+      <td class="govuk-table__cell">14 August 2024</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Expired</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Leading Behaviour NPQ</th>
+      <td class="govuk-table__cell">8 July 2024</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Expired</strong></td>
+  </tbody>
+</table>
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading teacher development NPQ
-        <p class="govuk-!-margin-bottom-0">Teacher Development Trust</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--targeted-support",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "4 March 2024"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      }
-    ]
-  }) }}
+</div>
+  </div>
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Senior leadership NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--not-funded-england",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "10 April 2021"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course outcome"
-        },
-        value: {
-          html: passedHtml
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">National Institute of Teaching</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--not-funded-ofsted",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "17 March 2021"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course outcome"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--red">
-              Not passed
-            </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Contact your training provider if you need to discuss this outcome.</p>'
-        }
-      }
-    ]
-  }) }}
-
-  <h3 class="govuk-heading-l govuk-!-margin-top-8">Expired registrations</h3>
-
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading behaviour and culture NPQ
-        <p class="govuk-!-margin-bottom-0">National Society for Education</p>'
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "24 July 2022"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html: expiredStatusHtml
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">Teach First</p>'
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "17 March 2022"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html: expiredStatusHtml
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        html: 'Leading literacy NPQ
-        <p class="govuk-!-margin-bottom-0">LLSE</p>'
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "24 July 2021"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html: expiredStatusHtml
-        }
-      }
-    ]
-  }) }}
-
-  {% include '../includes/registration-status/register-for-another-npq.html' %}
-
+<a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Register for another course
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
   {% include '../includes/prototype-links.html' %}
-
+  
 {% endblock %}
