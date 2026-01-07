@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% set signedIn = 'true' %}
+{% set signedIn = 'false' %}
 
 {% block pageTitle %}
-  Sharing your NPQ information
+  Continue to register
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,28 +16,13 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sharing your NPQ information</h1>
-    <p>All the information you enter for your NPQ registration will be shared with external organisations including auditors, evaluators, relevant bodies and training providers – this allows your provider to register you onto their course. </p>
-    <p>For more information about who we share your data with read our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers#NPQ">privacy notice</a>. </p>
-    <p>If you do not agree to share your information you will not be able to progress with your NPQ.</p>
-    <form class="form" action="check-answers" method="post">
-      {{ govukCheckboxes({
-        name: "sharedata",
-        fieldset: {
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes, I agree to share my information"
-          }
-        ]
-      }) }}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
-    </form>
+    <h1 class="govuk-heading-xl">Continue to register for an NPQ</h1>
+    {% set gaiURL = config.gaiPrototypeUrl + '/user-research/npq/id?' %}
+    {{ govukButton({
+      text: "Continue",
+      href: gaiURL,
+      isStartButton: true
+    }) }}
   </div>
 </div>
 
